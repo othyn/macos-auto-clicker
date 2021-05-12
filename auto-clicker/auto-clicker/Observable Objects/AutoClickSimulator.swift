@@ -85,9 +85,6 @@ class AutoClickSimulator: ObservableObject {
         mouseDown?.post(tap: .cghidEventTap)
         mouseUp?.post(tap: .cghidEventTap)
 
-        let xString = String(Int(clickingAtPoint.x))
-        let yString = String(Int(clickingAtPoint.y))
-
-        self.clickingAt = "x: \(xString), y: \(yString)"
+        self.clickingAt = "x: \(mouseX.rounded()), y: \(mouseY.rounded())"
     }
 }
