@@ -2,14 +2,15 @@
 
 A simple auto clicker for macOS Big Sur and above, built with ♥️ in Swift 5 & SwiftUI.
 
-<p align="center">
-    <img alt="screenshot" src="art/screenshot_v1.0.png" />
+<p align="middle">
+    <img alt="screenshot" src="art/screenshot_pink_v1.1.png" width="49%" />
+    <img alt="screenshot" src="art/screenshot_blue_v1.1.png" width="49%" />
 </p>
 
 
 ### Why tho?
 
-All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. So, given how simple they are to make, I figured I'd give it a shot, at whipped this up in an evening or two with the aim to make something more modern and maintainable.
+All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. So, given how simple they are to make, I figured I'd give it a shot, at whipped this up in an evening or two with the aim to make something more modern and maintainable. Plus, I get to write in easter eggs, who says love can't be colourful.
 
 ---
 
@@ -44,6 +45,7 @@ Hey00000, this needs implementing.
 ## Todo
 
 -   Dev cert from a paid dev account so I can sign the app!
+-   Semver auto version bumping and build numbers (see my ios-chronoscape repo)
 -   Tests
 -   Customise keybinds
 -   `brew` support
@@ -55,6 +57,30 @@ Hey00000, this needs implementing.
 ## Changelog
 
 Any and all project changes for releases should be documented below. Versioning follows the [SEMVER](https://semver.org/) standard.
+
+---
+
+### Version 1.1.0
+
+This should have been a patch release, but I don't have the build suite quite setup for it yet so its a minor release instead.
+
+#### Added
+
+-   Easter egg!
+
+#### Changed
+
+-   Minor code refactor and tidy up
+-   UI overhaul
+-   Shortcuts for the commands are now displayed underneath the buttons instead of in placeholder fields
+
+#### Fixed
+
+-   Nothing
+
+#### Removed
+
+-   Nothing
 
 ---
 
