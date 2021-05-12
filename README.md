@@ -45,6 +45,7 @@ Hey00000, this needs implementing.
 
 -   Dev cert from a paid dev account so I can sign the app!
 -   Tests
+-   Customise keybinds
 -   `brew` support
 -   'Keep ontop' option
 -   Menu bar mode/move app to menu bar popup
