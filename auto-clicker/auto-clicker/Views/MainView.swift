@@ -93,6 +93,7 @@ struct MainView: View {
                     }
 
                     TextField("Remaining clicks", value: self.$autoClickSimulator.remainingClicks, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disabled(true)
                 }
                 .padding(.trailing)
@@ -105,11 +106,10 @@ struct MainView: View {
                     }
 
                     TextField("Currently clicking at", text: self.$autoClickSimulator.clickingAt)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disabled(true)
                 }
             }
-            .padding(.bottom, 10)
-            .shadow(radius: 2)
 
             Spacer()
 
