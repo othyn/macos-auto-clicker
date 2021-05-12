@@ -45,6 +45,7 @@ Hey00000, this needs implementing.
 ## Todo
 
 -   Dev cert from a paid dev account so I can sign the app!
+-   Add global shortcuts (when app is not in focus), as the shortcuts currently only work in-app. Now I have AppDelegate hooks, I should be able to re-install `soffes/HotKey` via SPM and get them setup, making sure to place it somewhere where it won't get garbage collected
 -   Semver auto version bumping and build numbers (see my ios-chronoscape repo)
 -   Tests
 -   Customise keybinds
