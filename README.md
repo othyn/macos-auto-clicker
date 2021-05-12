@@ -2,6 +2,11 @@
 
 A simple auto clicker for macOS Big Sur and above, built with ♥️ in Swift 5 & SwiftUI.
 
+<p align="center">
+    <img alt="screenshot" src="art/screenshot_v1.0.png" />
+</p>
+
+
 ### Why tho?
 
 All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. So, given how simple they are to make, I figured I'd give it a shot, at whipped this up in an evening or two with the aim to make something more modern and maintainable.
