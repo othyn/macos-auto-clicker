@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
-		B53BDC50264BED93001F8E57 /* auto_clickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* auto_clickerApp.swift */; };
+		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
 		B53BDC52264BED93001F8E57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC51264BED93001F8E57 /* ContentView.swift */; };
 		B53BDC54264BED95001F8E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC53264BED95001F8E57 /* Assets.xcassets */; };
 		B53BDC57264BED95001F8E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoClickSimulator.swift; sourceTree = "<group>"; };
 		B53027F9264C2748002B8610 /* DelayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTimer.swift; sourceTree = "<group>"; };
 		B53BDC4C264BED93001F8E57 /* Auto Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Clicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B53BDC4F264BED93001F8E57 /* auto_clickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = auto_clickerApp.swift; sourceTree = "<group>"; };
+		B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoClickerApp.swift; sourceTree = "<group>"; };
 		B53BDC51264BED93001F8E57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B53BDC53264BED95001F8E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -59,14 +59,10 @@
 		B53BDC4E264BED93001F8E57 /* auto-clicker */ = {
 			isa = PBXGroup;
 			children = (
-				B53BDC4F264BED93001F8E57 /* auto_clickerApp.swift */,
-				B53BDC51264BED93001F8E57 /* ContentView.swift */,
-				B53BDC5F264BF3A8001F8E57 /* NumberField.swift */,
-				B53027F9264C2748002B8610 /* DelayTimer.swift */,
-				B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */,
-				B53BDC53264BED95001F8E57 /* Assets.xcassets */,
-				B53BDC58264BED95001F8E57 /* Info.plist */,
-				B53BDC59264BED95001F8E57 /* auto_clicker.entitlements */,
+				B598440C264C43E20021C3F6 /* Init */,
+				B598440A264C439B0021C3F6 /* Views */,
+				B5984409264C43860021C3F6 /* Observable Objects */,
+				B5984408264C435B0021C3F6 /* Build Assets */,
 				B53BDC55264BED95001F8E57 /* Preview Content */,
 			);
 			path = "auto-clicker";
@@ -78,6 +74,50 @@
 				B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5984408264C435B0021C3F6 /* Build Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B53BDC53264BED95001F8E57 /* Assets.xcassets */,
+				B53BDC58264BED95001F8E57 /* Info.plist */,
+				B53BDC59264BED95001F8E57 /* auto_clicker.entitlements */,
+			);
+			path = "Build Assets";
+			sourceTree = "<group>";
+		};
+		B5984409264C43860021C3F6 /* Observable Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B53027F9264C2748002B8610 /* DelayTimer.swift */,
+				B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */,
+			);
+			path = "Observable Objects";
+			sourceTree = "<group>";
+		};
+		B598440A264C439B0021C3F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B53BDC51264BED93001F8E57 /* ContentView.swift */,
+				B598440B264C43AE0021C3F6 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B598440B264C43AE0021C3F6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B53BDC5F264BF3A8001F8E57 /* NumberField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B598440C264C43E20021C3F6 /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */,
+			);
+			path = Init;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +195,7 @@
 			files = (
 				B53BDC52264BED93001F8E57 /* ContentView.swift in Sources */,
 				B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */,
-				B53BDC50264BED93001F8E57 /* auto_clickerApp.swift in Sources */,
+				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
 			);
@@ -284,14 +324,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "auto-clicker/auto_clicker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "auto-clicker/Build Assets/auto_clicker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"auto-clicker/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "auto-clicker/Info.plist";
+				INFOPLIST_FILE = "auto-clicker/Build Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -308,14 +348,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "auto-clicker/auto_clicker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "auto-clicker/Build Assets/auto_clicker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"auto-clicker/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "auto-clicker/Info.plist";
+				INFOPLIST_FILE = "auto-clicker/Build Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

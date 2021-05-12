@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct windowSize {
-    let width : CGFloat = 225
-    let height : CGFloat = 400
+    let width: CGFloat = 225
+    let height: CGFloat = 400
 }
 
 @main
-struct auto_clickerApp: App {
+struct AutoClickerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .frame(minWidth: windowSize().width, minHeight: windowSize().height)
                 .frame(maxWidth: windowSize().width, maxHeight: windowSize().height)
-//                .navigationTitle("Auto Clickr")
         }
     }
 }
