@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52AF7DC27CA81A300C16B97 /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B52AF7DB27CA81A300C16B97 /* DateStrings */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
@@ -15,6 +16,9 @@
 		B53BDC57264BED95001F8E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */; };
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
 		B5E49E5A264C7EBD00B2599E /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E49E59264C7EBD00B2599E /* GradientBackground.swift */; };
+		B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6394F27CA4CDD008B111A /* FieldConstants.swift */; };
+		B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */; };
+		B5E6395627CA76CB008B111A /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395527CA76CB008B111A /* Duration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,9 @@
 		B53BDC59264BED95001F8E57 /* auto_clicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = auto_clicker.entitlements; sourceTree = "<group>"; };
 		B53BDC5F264BF3A8001F8E57 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		B5E49E59264C7EBD00B2599E /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		B5E6394F27CA4CDD008B111A /* FieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldConstants.swift; sourceTree = "<group>"; };
+		B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchButtonStyle.swift; sourceTree = "<group>"; };
+		B5E6395527CA76CB008B111A /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +43,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52AF7DC27CA81A300C16B97 /* DateStrings in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B52AF7DA27CA81A300C16B97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B53BDC43264BED93001F8E57 = {
 			isa = PBXGroup;
 			children = (
 				B53BDC4E264BED93001F8E57 /* auto-clicker */,
 				B53BDC4D264BED93001F8E57 /* Products */,
+				B52AF7DA27CA81A300C16B97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				B598440C264C43E20021C3F6 /* Init */,
+				B5E6394E27CA4CB1008B111A /* Constants */,
+				B5E6395427CA76AB008B111A /* Enums */,
 				B598440A264C439B0021C3F6 /* Views */,
 				B5984409264C43860021C3F6 /* Observable Objects */,
 				B5984408264C435B0021C3F6 /* Build Assets */,
@@ -102,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B53BDC51264BED93001F8E57 /* MainView.swift */,
+				B5E6395127CA62DE008B111A /* Styles */,
 				B598440B264C43AE0021C3F6 /* Components */,
 			);
 			path = Views;
@@ -123,6 +142,30 @@
 			path = Init;
 			sourceTree = "<group>";
 		};
+		B5E6394E27CA4CB1008B111A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B5E6394F27CA4CDD008B111A /* FieldConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B5E6395127CA62DE008B111A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		B5E6395427CA76AB008B111A /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B5E6395527CA76CB008B111A /* Duration.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +183,7 @@
 			);
 			name = "auto-clicker";
 			packageProductDependencies = (
+				B52AF7DB27CA81A300C16B97 /* DateStrings */,
 			);
 			productName = "auto-clicker";
 			productReference = B53BDC4C264BED93001F8E57 /* Auto Clicker.app */;
@@ -152,7 +196,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					B53BDC4B264BED93001F8E57 = {
 						CreatedOnToolsVersion = 12.5;
@@ -169,6 +213,7 @@
 			);
 			mainGroup = B53BDC43264BED93001F8E57;
 			packageReferences = (
+				B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */,
 			);
 			productRefGroup = B53BDC4D264BED93001F8E57 /* Products */;
 			projectDirPath = "";
@@ -196,12 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */,
 				B53BDC52264BED93001F8E57 /* MainView.swift in Sources */,
 				B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */,
 				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
 				B5E49E5A264C7EBD00B2599E /* GradientBackground.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
+				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
+				B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +377,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "auto-clicker/Build Assets/auto_clicker.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"auto-clicker/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -341,6 +391,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
 				SWIFT_VERSION = 5.0;
@@ -353,8 +404,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "auto-clicker/Build Assets/auto_clicker.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"auto-clicker/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -365,6 +418,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
 				SWIFT_VERSION = 5.0;
@@ -393,6 +447,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/othyn/DateStrings.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B52AF7DB27CA81A300C16B97 /* DateStrings */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */;
+			productName = DateStrings;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B53BDC44264BED93001F8E57 /* Project object */;
 }

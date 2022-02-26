@@ -11,7 +11,7 @@ import Cocoa
 
 struct windowSize {
     static let width: CGFloat = 450
-    static let height: CGFloat = 390
+    static let height: CGFloat = 475
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate {

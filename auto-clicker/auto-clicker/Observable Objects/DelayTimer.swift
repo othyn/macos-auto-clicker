@@ -9,22 +9,21 @@ import Foundation
 
 class DelayTimer: ObservableObject {
 
-    private static let defaultDelaySeconds: Int = 3
     private static let defaultStartButtonText: String = "Start"
     
-    @Published var delayedStart: Bool = true
     @Published var isCountingDown: Bool = false
 
-    @Published var remainingDelaySeconds: Int = defaultDelaySeconds
+    @Published var remainingDelaySeconds: Int = DEFAULT_START_DELAY_IN_SECONDS
     @Published var startButtonText: String = defaultStartButtonText
 
     private var onFinish: () -> Void = {}
     private var timer: Timer?
 
-    func start(onFinish: @escaping () -> Void) -> Void {
+    func start(delayInSeconds: Int, onFinish: @escaping () -> Void) -> Void {
         self.onFinish = onFinish
 
-        if self.delayedStart {
+        if delayInSeconds > 0 {
+            self.remainingDelaySeconds = delayInSeconds
             self.isCountingDown = true
             
             self.updateButtonText()
@@ -50,7 +49,7 @@ class DelayTimer: ObservableObject {
     }
 
     func stop() -> Void {
-        self.remainingDelaySeconds = DelayTimer.defaultDelaySeconds
+        self.remainingDelaySeconds = DEFAULT_START_DELAY_IN_SECONDS
         self.startButtonText = DelayTimer.defaultStartButtonText
 
         self.isCountingDown = false

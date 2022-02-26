@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DateStrings",
+        "repositoryURL": "https://github.com/othyn/DateStrings.git",
+        "state": {
+          "branch": "master",
+          "revision": "f62aa72a623caa85d0b7ec4f5199d3d61708bf3a",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

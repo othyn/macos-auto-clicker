@@ -1,3 +1,6 @@
+## Remove new local build directory
+auto-clicker/derived_data
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
