@@ -2,8 +2,6 @@
 
 A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥️ in Swift 5 & SwiftUI.
 
-REPLACE WITH HALF AND HALF SCREEN SHOT SPLIT DOWN THE MIDDLE WITH LIGHT/DARK MODE
-
 <p align="middle">
     <img alt="screenshot" src="art/screenshot.png" width="70%" />
 </p>
