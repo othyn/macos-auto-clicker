@@ -6,6 +6,8 @@ A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with â™¥ï¸
     <img alt="screenshot" src="art/screenshot.png" width="70%" />
 </p>
 
+Supports both Light and Dark mode via respecting the system theme.
+
 ### Why tho?
 
 All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. So, given how simple they are to make, I figured I'd give it a shot, at whipped this up in an evening or two with the aim to make something more modern and maintainable. Plus, I get to write in easter eggs, who says love can't be colourful.
