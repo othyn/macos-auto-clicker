@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Cocoa
 
-struct windowSize {
+struct WindowSize {
     static let width: CGFloat = 450
     static let height: CGFloat = 475
 }
@@ -34,19 +34,24 @@ struct AutoClickerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView(background: self.background)
-                .frame(minWidth: windowSize.width, minHeight: windowSize.height)
-                .frame(maxWidth: windowSize.width, maxHeight: windowSize.height)
-                .font(.system(size: 12, weight: .medium, design: .rounded))
-                .background(
-                    VStack {
-                        Spacer()
-
-                        background
-                            .current
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                })
+            ActionStageView()
+                .frame(minWidth: WindowSize.width, minHeight: WindowSize.height)
+                .frame(maxWidth: WindowSize.width, maxHeight: WindowSize.height)
+                .padding()
+            
+//            MainView(background: self.background)
+//                .frame(minWidth: windowSize.width, minHeight: windowSize.height)
+//                .frame(maxWidth: windowSize.width, maxHeight: windowSize.height)
+//                .font(.system(size: 12, weight: .medium, design: .rounded))
+//                .background(
+//                    VStack {
+//                        Spacer()
+//
+//                        background
+//                            .current
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                })
         }
     }
 }

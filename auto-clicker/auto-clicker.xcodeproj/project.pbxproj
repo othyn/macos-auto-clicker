@@ -19,6 +19,15 @@
 		B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6394F27CA4CDD008B111A /* FieldConstants.swift */; };
 		B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */; };
 		B5E6395627CA76CB008B111A /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395527CA76CB008B111A /* Duration.swift */; };
+		B5E92AFE27F0B2F500A7FC63 /* ActionStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92AFD27F0B2F500A7FC63 /* ActionStageView.swift */; };
+		B5E92B0027F0CC6200A7FC63 /* DurationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92AFF27F0CC6200A7FC63 /* DurationTextField.swift */; };
+		B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */; };
+		B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */; };
+		B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */; };
+		B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */; };
+		B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */; };
+		B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */; };
+		B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,15 @@
 		B5E6394F27CA4CDD008B111A /* FieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldConstants.swift; sourceTree = "<group>"; };
 		B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchButtonStyle.swift; sourceTree = "<group>"; };
 		B5E6395527CA76CB008B111A /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		B5E92AFD27F0B2F500A7FC63 /* ActionStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionStageView.swift; sourceTree = "<group>"; };
+		B5E92AFF27F0CC6200A7FC63 /* DurationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTextField.swift; sourceTree = "<group>"; };
+		B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionStageLine.swift; sourceTree = "<group>"; };
+		B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalButtonStyle.swift; sourceTree = "<group>"; };
+		B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationModal.swift; sourceTree = "<group>"; };
+		B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSelector.swift; sourceTree = "<group>"; };
+		B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButtonStyle.swift; sourceTree = "<group>"; };
+		B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextFieldStyle.swift; sourceTree = "<group>"; };
+		B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedStyleDivider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				B53BDC51264BED93001F8E57 /* MainView.swift */,
+				B5E92AFD27F0B2F500A7FC63 /* ActionStageView.swift */,
 				B5E6395127CA62DE008B111A /* Styles */,
 				B598440B264C43AE0021C3F6 /* Components */,
 			);
@@ -130,6 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				B53BDC5F264BF3A8001F8E57 /* NumberField.swift */,
+				B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */,
+				B5E92AFF27F0CC6200A7FC63 /* DurationTextField.swift */,
+				B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */,
+				B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -154,6 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */,
+				B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */,
+				B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */,
+				B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */,
+				B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -242,14 +269,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */,
+				B5E92AFE27F0B2F500A7FC63 /* ActionStageView.swift in Sources */,
+				B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */,
+				B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */,
+				B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */,
+				B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */,
 				B53BDC52264BED93001F8E57 /* MainView.swift in Sources */,
 				B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */,
 				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
+				B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */,
+				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
 				B5E49E5A264C7EBD00B2599E /* GradientBackground.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
 				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
+				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,
 				B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */,
+				B5E92B0027F0CC6200A7FC63 /* DurationTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
