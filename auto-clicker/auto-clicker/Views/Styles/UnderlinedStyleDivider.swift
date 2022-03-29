@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct UnderlinedStyleDivider: View {
+    @EnvironmentObject var themeService: ThemeService
+    
     var body: some View {
         // https://stackoverflow.com/a/60410373/4494375
         VStack {
-            Divider()
-                .frame(height: 2)
-                .background(Color.blue)
-                .offset(x: 0, y: 12)
-//                        .padding(.horizontal, 30)
+            Rectangle()
+                .fill(self.themeService.active.backgroundColour.darker)
+                .offset(x: 0, y: 25)
+                .frame(height: 3)
+                .frame(minWidth: 10)
         }
     }
 }

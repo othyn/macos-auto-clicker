@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ActionStageLine<Content: View>: View {
-    @ViewBuilder
-    var content: () -> Content
+    @ViewBuilder var content: () -> Content
+    
+    @EnvironmentObject var themeService: ThemeService
 
     var body: some View {
         HStack() {
             HStack(content: content)
+                .font(.system(size: 32, weight: .light))
+                .foregroundColor(self.themeService.active.fontColour)
             
             Spacer()
         }

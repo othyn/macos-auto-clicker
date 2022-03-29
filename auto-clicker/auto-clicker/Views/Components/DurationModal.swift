@@ -10,6 +10,8 @@ import SwiftUI
 struct DurationModal: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @EnvironmentObject var themeService: ThemeService
+    
     @Binding var selected: Duration
 
     var body: some View {
@@ -30,7 +32,9 @@ struct DurationModal: View {
             }
             .buttonStyle(ModalButtonStyle(isDestructive: true))
         }
-        .frame(width: WindowSize.width / 3.5, height: WindowSize.height / 2.2)
-        .padding()
+        .frame(width: 200, height: 220)
+        .padding(.vertical, 14)
+        .padding(.horizontal, 5)
+        .background(self.themeService.active.backgroundColour).ignoresSafeArea()
     }
 }
