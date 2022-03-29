@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 import Cocoa
 
-struct windowSize {
-    static let width: CGFloat = 450
-    static let height: CGFloat = 475
+struct WindowSize {
+    static let width: CGFloat = 550
+    static let height: CGFloat = 430
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
@@ -30,23 +30,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 @main
 struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var background: GradientBackground = GradientBackground()
+    @StateObject var themeService = ThemeService()
 
     var body: some Scene {
         WindowGroup {
-            MainView(background: self.background)
-                .frame(minWidth: windowSize.width, minHeight: windowSize.height)
-                .frame(maxWidth: windowSize.width, maxHeight: windowSize.height)
-                .font(.system(size: 12, weight: .medium, design: .rounded))
-                .background(
-                    VStack {
-                        Spacer()
-
-                        background
-                            .current
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                })
+            ZStack {
+                self.themeService.active.backgroundColour.ignoresSafeArea()
+                
+                MainView()
+            }
+            .frame(minWidth: WindowSize.width, minHeight: WindowSize.height)
+            .frame(maxWidth: WindowSize.width, maxHeight: WindowSize.height)
+            .environmentObject(self.themeService)
         }
+        .windowStyle(.hiddenTitleBar)
     }
 }

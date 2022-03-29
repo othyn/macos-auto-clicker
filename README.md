@@ -6,7 +6,9 @@ A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥�
     <img alt="screenshot" src="art/screenshot.png" width="70%" />
 </p>
 
-Supports both Light and Dark mode via respecting the system theme.
+<p align="middle">
+    <sub>Press the ♥️ for a variety of colours, a few of the ones available are shown in the screenshot above!</sub>
+</p>
 
 ### Why tho?
 

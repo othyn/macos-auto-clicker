@@ -29,6 +29,13 @@ enum Duration: String, CustomStringConvertible, CaseIterable, Identifiable {
         }
     }
     
+    func buttonView(action: @escaping () -> Void) -> some View {
+        switch(self) {
+        case .milliseconds, .seconds, .minutes, .hours:
+            return Button(self.description, action: action)
+        }
+    }
+    
     func asTimeInterval(interval: Int) -> TimeInterval {
         switch(self) {
         case .milliseconds:

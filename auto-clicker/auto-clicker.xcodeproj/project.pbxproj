@@ -11,7 +11,6 @@
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
-		B53BDC52264BED93001F8E57 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC51264BED93001F8E57 /* MainView.swift */; };
 		B53BDC54264BED95001F8E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC53264BED95001F8E57 /* Assets.xcassets */; };
 		B53BDC57264BED95001F8E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */; };
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
@@ -19,6 +18,22 @@
 		B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6394F27CA4CDD008B111A /* FieldConstants.swift */; };
 		B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */; };
 		B5E6395627CA76CB008B111A /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395527CA76CB008B111A /* Duration.swift */; };
+		B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */; };
+		B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */; };
+		B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */; };
+		B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */; };
+		B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */; };
+		B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */; };
+		B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */; };
+		B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */; };
+		B5E92B1E27F1BC7E00A7FC63 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1D27F1BC7E00A7FC63 /* ThemeService.swift */; };
+		B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */; };
+		B5E92B2927F35DB800A7FC63 /* DynamicWidthNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */; };
+		B5F6A00F27F37440003CD730 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A00E27F37440003CD730 /* MainView.swift */; };
+		B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */; };
+		B5F6A01627F3900E003CD730 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01527F3900E003CD730 /* Color+Extensions.swift */; };
+		B5F6A01927F3970A003CD730 /* ThemeColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01827F3970A003CD730 /* ThemeColour.swift */; };
+		B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01A27F3A8A6003CD730 /* StatBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +41,6 @@
 		B53027F9264C2748002B8610 /* DelayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTimer.swift; sourceTree = "<group>"; };
 		B53BDC4C264BED93001F8E57 /* Auto Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Clicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoClickerApp.swift; sourceTree = "<group>"; };
-		B53BDC51264BED93001F8E57 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B53BDC53264BED95001F8E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B53BDC58264BED95001F8E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +50,22 @@
 		B5E6394F27CA4CDD008B111A /* FieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldConstants.swift; sourceTree = "<group>"; };
 		B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchButtonStyle.swift; sourceTree = "<group>"; };
 		B5E6395527CA76CB008B111A /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionStageLine.swift; sourceTree = "<group>"; };
+		B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalButtonStyle.swift; sourceTree = "<group>"; };
+		B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationModal.swift; sourceTree = "<group>"; };
+		B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSelector.swift; sourceTree = "<group>"; };
+		B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButtonStyle.swift; sourceTree = "<group>"; };
+		B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextFieldStyle.swift; sourceTree = "<group>"; };
+		B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedStyleDivider.swift; sourceTree = "<group>"; };
+		B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B5E92B1D27F1BC7E00A7FC63 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
+		B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthTextField.swift; sourceTree = "<group>"; };
+		B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthNumberField.swift; sourceTree = "<group>"; };
+		B5F6A00E27F37440003CD730 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Extensions.swift"; sourceTree = "<group>"; };
+		B5F6A01527F3900E003CD730 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		B5F6A01827F3970A003CD730 /* ThemeColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColour.swift; sourceTree = "<group>"; };
+		B5F6A01A27F3A8A6003CD730 /* StatBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +110,8 @@
 				B598440C264C43E20021C3F6 /* Init */,
 				B5E6394E27CA4CB1008B111A /* Constants */,
 				B5E6395427CA76AB008B111A /* Enums */,
+				B5F6A01027F38666003CD730 /* Extensions */,
+				B5F6A01727F396F2003CD730 /* Theme */,
 				B598440A264C439B0021C3F6 /* Views */,
 				B5984409264C43860021C3F6 /* Observable Objects */,
 				B5984408264C435B0021C3F6 /* Build Assets */,
@@ -119,7 +151,7 @@
 		B598440A264C439B0021C3F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B53BDC51264BED93001F8E57 /* MainView.swift */,
+				B5F6A00E27F37440003CD730 /* MainView.swift */,
 				B5E6395127CA62DE008B111A /* Styles */,
 				B598440B264C43AE0021C3F6 /* Components */,
 			);
@@ -129,7 +161,13 @@
 		B598440B264C43AE0021C3F6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */,
+				B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */,
 				B53BDC5F264BF3A8001F8E57 /* NumberField.swift */,
+				B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */,
+				B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */,
+				B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */,
+				B5F6A01A27F3A8A6003CD730 /* StatBox.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -154,6 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */,
+				B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */,
+				B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */,
+				B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */,
+				B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -162,8 +204,27 @@
 			isa = PBXGroup;
 			children = (
 				B5E6395527CA76CB008B111A /* Duration.swift */,
+				B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		B5F6A01027F38666003CD730 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */,
+				B5F6A01527F3900E003CD730 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5F6A01727F396F2003CD730 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				B5E92B1D27F1BC7E00A7FC63 /* ThemeService.swift */,
+				B5F6A01827F3970A003CD730 /* ThemeColour.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,13 +303,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */,
-				B53BDC52264BED93001F8E57 /* MainView.swift in Sources */,
+				B5F6A00F27F37440003CD730 /* MainView.swift in Sources */,
+				B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */,
+				B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */,
+				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
+				B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */,
+				B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */,
+				B5E92B1E27F1BC7E00A7FC63 /* ThemeService.swift in Sources */,
+				B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */,
+				B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */,
+				B5F6A01627F3900E003CD730 /* Color+Extensions.swift in Sources */,
+				B5E92B2927F35DB800A7FC63 /* DynamicWidthNumberField.swift in Sources */,
+				B5F6A01927F3970A003CD730 /* ThemeColour.swift in Sources */,
 				B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */,
 				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
+				B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */,
+				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
 				B5E49E5A264C7EBD00B2599E /* GradientBackground.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
 				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
+				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,
+				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
 				B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -362,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
