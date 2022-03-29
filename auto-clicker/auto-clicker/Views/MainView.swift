@@ -181,7 +181,9 @@ struct MainView: View {
                     Spacer()
                     
                     StatBox(title: "Final press at",
-                            value: "2022-03-30 00:00:00.000")
+                            value: self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
+                                   ? self.autoClickSimulator.finalClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS")
+                                   : self.estFinalClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS"))
                 
                     Spacer()
                 }
