@@ -9,23 +9,6 @@ import Foundation
 import SwiftUI
 import Cocoa
 
-struct WindowState {
-    static let width: CGFloat = 550
-    static let height: CGFloat = 430
-    
-    static var keepOnTop: Bool = false
-    
-    static func toggleKeepWindowOnTop(_ keepOnTop: Bool) -> Void {
-        if let window = NSApplication.shared.mainWindow {
-            if keepOnTop {
-                window.level = .floating
-            } else {
-                window.level = .normal
-            }
-        }
-    }
-}
-
 final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         if let window = NSApplication.shared.mainWindow {
@@ -81,8 +64,8 @@ struct AutoClickerApp: App {
                 
                 MainView()
             }
-            .frame(minWidth: WindowState.width, minHeight: WindowState.height)
-            .frame(maxWidth: WindowState.width, maxHeight: WindowState.height)
+            .frame(minWidth: WindowStateService.width, minHeight: WindowStateService.height)
+            .frame(maxWidth: WindowStateService.width, maxHeight: WindowStateService.height)
             .environmentObject(self.themeService)
         }
         .windowStyle(.hiddenTitleBar)
@@ -93,7 +76,7 @@ struct AutoClickerApp: App {
             }
         }
         .onChange(of: self.keepWindowOnTop) { isOn in
-            WindowState.toggleKeepWindowOnTop(isOn)
+            WindowStateService.toggleKeepWindowOnTop(isOn)
         }
     }
 }
