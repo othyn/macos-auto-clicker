@@ -29,6 +29,8 @@ struct MainView: View {
     
     @State private var repeatAmount: Int = DEFAULT_REPEAT_AMOUNT
     
+    @State private var showThemeName: Bool = false
+    
     var estNextClickAt: Date {
         .init(timeInterval: self.pressIntervalDuration.asTimeInterval(interval: self.pressInterval), since: .init())
     }
@@ -46,6 +48,20 @@ struct MainView: View {
                                                                 presses: self.pressAmount,
                                                                 iterations: self.repeatAmount)
                               })
+    }
+    
+    func changeColour() -> Void {
+        self.themeService.randomise()
+        
+        withAnimation {
+            self.showThemeName = true
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            withAnimation {
+                self.showThemeName = false
+            }
+        }
     }
     
     var body: some View {
@@ -192,11 +208,20 @@ struct MainView: View {
                 
                 // MARK: - Pretty Text
 
-                Text("with ♥️ by Othyn")
-                    .font(.system(size: 10, weight: .medium, design: .rounded))
-                    .foregroundColor(self.themeService.active.backgroundColour.lighter)
-                    .onTapGesture(perform: self.themeService.randomise)
-                    .padding(.bottom, 12)
+                HStack {
+                    if self.showThemeName {
+                        Text(self.themeService.active.rawValue)
+                            .font(.system(size: 10, weight: .medium, design: .rounded))
+                            .foregroundColor(self.themeService.active.backgroundColour.lighter)
+                            .padding(.trailing, -5)
+                    }
+                    
+                    Text("with ♥️ by Othyn")
+                        .font(.system(size: 10, weight: .medium, design: .rounded))
+                        .foregroundColor(self.themeService.active.backgroundColour.lighter)
+                        .onTapGesture(perform: self.changeColour)
+                }
+                .padding(.bottom, 12)
             }
             .background(self.themeService.active.backgroundColour.darker)
         }

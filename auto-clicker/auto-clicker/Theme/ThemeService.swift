@@ -13,10 +13,16 @@ public class ThemeService: ObservableObject {
     
     func randomise() -> Void {
         var newTheme: Theme
-        
-        repeat {
-            newTheme = Theme.allCases.randomElement()!
-        } while newTheme == self.active
+
+        if #available(macOS 12.0, *) {
+            repeat {
+                newTheme = Theme.allCases.randomElement()!
+            } while newTheme == self.active
+        } else {
+            repeat {
+                newTheme = Theme.allCases.randomElement()!
+            } while newTheme == self.active || Theme.macOS12Colours.contains(newTheme)
+        }
         
         self.active = newTheme
     }
