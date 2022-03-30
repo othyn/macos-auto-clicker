@@ -13,7 +13,7 @@ class DelayTimer: ObservableObject {
     
     @Published var isCountingDown: Bool = false
 
-    @Published var remainingDelaySeconds: Int = DEFAULT_START_DELAY
+    @Published var remainingDelaySeconds: Int = DEFAULT_START_DELAY_IN_SECONDS
     @Published var startButtonText: String = defaultStartButtonText
 
     private var onFinish: () -> Void = {}
@@ -49,7 +49,7 @@ class DelayTimer: ObservableObject {
     }
 
     func stop() -> Void {
-        self.remainingDelaySeconds = DEFAULT_START_DELAY
+        self.remainingDelaySeconds = DEFAULT_START_DELAY_IN_SECONDS
         self.startButtonText = DelayTimer.defaultStartButtonText
 
         self.isCountingDown = false

@@ -6,9 +6,7 @@ A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥�
     <img alt="screenshot" src="art/screenshot.png" width="70%" />
 </p>
 
-<p align="middle">
-    <sub>Press the ♥️ for a variety of colours, a few of the ones available are shown in the screenshot above!</sub>
-</p>
+Supports both Light and Dark mode via respecting the system theme.
 
 ### Why tho?
 
@@ -21,6 +19,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 - [Usage](#usage)
 - [Development](#development)
 - [Testing](#testing)
+- [Todo](#todo)
 - [Changelog](#changelog)
 
 ---
@@ -28,12 +27,6 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 ## Usage
 
 There is a compiled app binary in `dist` ready for use, but at the moment its unsigned as I don't have a paid dev cert, so it may not work for you. If thats the case, clone the project and build a copy using your own dev cert as you would any normal xcode project.
-
-### macOS Security
-
-You may recieve a popup when first using the app that the app cannot be verified, this is as at the moment I don't have a paid Apple developer account so I cannot notarize the app.
-
-When first using the app, you may need to right click and select the 'Open' option to provide a new prompt that will allow you to trust the app going forward and to open it as normal.
 
 ### macOS Permissions
 
@@ -76,6 +69,19 @@ Just to note though, this will overwrite the permissions of any archived/prod bu
 ## Testing
 
 Hey00000, this needs implementing.
+
+---
+
+## Todo
+
+- Dev cert from a paid dev account so I can sign the app!
+- Add global shortcuts (when app is not in focus), as the shortcuts currently only work in-app. Now I have AppDelegate hooks, I should be able to re-install `soffes/HotKey` via SPM and get them setup, making sure to place it somewhere where it won't get garbage collected
+- Semver auto version bumping and build numbers (see my ios-chronoscape repo)
+- Tests
+- Customise keybinds
+- `brew` support
+- 'Keep ontop' option
+- Menu bar mode/move app to menu bar popup
 
 ---
 

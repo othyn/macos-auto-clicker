@@ -11,7 +11,7 @@ import SwiftUI
 
 class AutoClickSimulator: ObservableObject {
 
-    private static let defaultClickingAt: String = "-"
+    private static let defaultClickingAt: String = "N/A"
 
     @Published var isAutoClicking: Bool = false
 
@@ -19,7 +19,7 @@ class AutoClickSimulator: ObservableObject {
 //    @Published var clickInterval: Int = 50
 //    @Published var amountOfClicks: Int = 1000
 
-    @Published var remainingInterations: Int = 0
+    @Published var remainingClicks: Int = 0
     @Published var clickingAt: String = defaultClickingAt
     
     @Published var nextClickAt: Date = .init()
@@ -27,8 +27,7 @@ class AutoClickSimulator: ObservableObject {
     
     // Said weird behaviour is still occuring in 12.2.1, thus having these defined in here instead of Published, I hate this though so much
     private var duration: Duration = .milliseconds
-    private var interval: Int = DEFAULT_PRESS_INTERVAL
-    private var amountOfPresses: Int = DEFAULT_REPEAT_AMOUNT
+    private var interval: Int = DEFAULT_CLICK_INTERVAL_IN_MILLISECONDS
     
     private var timer: Timer?
     private var mouseLocation: NSPoint { NSEvent.mouseLocation }
@@ -46,14 +45,13 @@ class AutoClickSimulator: ObservableObject {
 //                                          repeats: true)
 //    }
 
-    func start(duration: Duration, interval: Int, presses: Int, iterations: Int) -> Void {
+    func start(duration: Duration, interval: Int, iterations: Int) -> Void {
         self.isAutoClicking = true
         self.duration = duration
         self.interval = interval
-        self.amountOfPresses = presses
-        self.remainingInterations = iterations
+        self.remainingClicks = iterations
         
-        self.finalClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval * self.remainingInterations), since: .init())
+        self.finalClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval * self.remainingClicks), since: .init())
         
         let timeInterval = self.duration.asTimeInterval(interval: self.interval)
         self.nextClickAt = .init(timeInterval: timeInterval, since: .init())
@@ -65,13 +63,13 @@ class AutoClickSimulator: ObservableObject {
     }
 
     @objc func tick() -> Void {
-        self.remainingInterations -= 1
+        self.remainingClicks -= 1
 
-        self.press()
+        self.click()
         
         self.nextClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval), since: .init())
 
-        if self.remainingInterations <= 0 {
+        if self.remainingClicks <= 0 {
             self.stop()
         }
     }
@@ -80,7 +78,7 @@ class AutoClickSimulator: ObservableObject {
         self.isAutoClicking = false
 
         // Force zero, as the user could stop the timer early
-        self.remainingInterations = 0
+        self.remainingClicks = 0
 
         self.clickingAt = AutoClickSimulator.defaultClickingAt
 
@@ -89,7 +87,7 @@ class AutoClickSimulator: ObservableObject {
         }
     }
 
-    func press() -> Void {
+    func click() -> Void {
         let mouseX = self.mouseLocation.x
         let mouseY = NSHeight(NSScreen.screens[0].frame) - self.mouseLocation.y
 
@@ -98,16 +96,9 @@ class AutoClickSimulator: ObservableObject {
 
         let mouseDown = CGEvent(mouseEventSource: source, mouseType: .leftMouseDown, mouseCursorPosition: clickingAtPoint, mouseButton: .left)
         let mouseUp = CGEvent(mouseEventSource: source, mouseType: .leftMouseUp, mouseCursorPosition: clickingAtPoint, mouseButton: .left)
-        
-        // Reset the completed presses in this action cycle
-        var completedPressesThisAction = 0
-        
-        while completedPressesThisAction < self.amountOfPresses {
-            mouseDown?.post(tap: .cghidEventTap)
-            mouseUp?.post(tap: .cghidEventTap)
-            
-            completedPressesThisAction += 1
-        }
+
+        mouseDown?.post(tap: .cghidEventTap)
+        mouseUp?.post(tap: .cghidEventTap)
 
         self.clickingAt = "x: \(mouseX.rounded()), y: \(mouseY.rounded())"
     }
