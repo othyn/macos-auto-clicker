@@ -6,16 +6,35 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct SettingsView: View {
+    @Default(.appearanceSelectedTheme) var activeTheme
+    
     var body: some View {
         TabView {
             GeneralSettingsTabView()
                 .tabItem {
                     Label("General", systemImage: "gear")
                 }
+            
+            KeyboardShortcutsSettingsTabView()
+                .tabItem {
+                    Label("Keyboard Shortcuts", systemImage: "keyboard")
+                }
+            
+            WindowSettingsTabView()
+                .tabItem {
+                    Label("Window", systemImage: "macwindow")
+                }
+            
+            AppearanceSettingsTabView()
+                .tabItem {
+                    Label("Appearance", systemImage: "paintpalette")
+                }
         }
-        .frame(width: 350, height: 150)
+        .frame(width: WindowStateService.settingsWidth, height: WindowStateService.settingsHeight)
+        .padding()
     }
 }
 

@@ -8,10 +8,11 @@
 import SwiftUI
 import DateStrings
 import KeyboardShortcuts
+import Defaults
 
 struct MainView: View {
-    
-    @EnvironmentObject var themeService: ThemeService
+
+    @Default(.appearanceSelectedTheme) var activeTheme
     
     @StateObject var autoClickSimulator: AutoClickSimulator = AutoClickSimulator()
     @StateObject var delayTimer: DelayTimer = DelayTimer()
@@ -66,7 +67,7 @@ struct MainView: View {
     }
     
     func changeColour() -> Void {
-        self.themeService.randomise()
+        self.activeTheme.randomise()
         
         withAnimation {
             self.showThemeName = true
@@ -227,20 +228,20 @@ struct MainView: View {
 
                 HStack {
                     if self.showThemeName {
-                        Text(self.themeService.active.rawValue)
+                        Text(self.activeTheme.rawValue)
                             .font(.system(size: 10, weight: .medium, design: .rounded))
-                            .foregroundColor(self.themeService.active.backgroundColour.lighter)
+                            .foregroundColor(self.activeTheme.backgroundColour.lighter)
                             .padding(.trailing, -5)
                     }
                     
                     Text("with ♥️ by Othyn")
                         .font(.system(size: 10, weight: .medium, design: .rounded))
-                        .foregroundColor(self.themeService.active.backgroundColour.lighter)
+                        .foregroundColor(self.activeTheme.backgroundColour.lighter)
                         .onTapGesture(perform: self.changeColour)
                 }
                 .padding(.bottom, 12)
             }
-            .background(self.themeService.active.backgroundColour.darker)
+            .background(self.activeTheme.backgroundColour.darker)
             .onAppear(perform: self.registerKeyboardShortcuts)
         }
     }

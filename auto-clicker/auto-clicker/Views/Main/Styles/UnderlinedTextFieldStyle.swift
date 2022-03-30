@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct UnderlinedTextFieldStyle: TextFieldStyle {
     
     @Environment(\.isEnabled) private var isEnabled: Bool
     
-    @EnvironmentObject var themeService: ThemeService
+    @Default(.appearanceSelectedTheme) var activeTheme
     
     public func _body(configuration: TextField<_Label>) -> some View {
         configuration
             .textFieldStyle(.plain)
-            .foregroundColor(isEnabled ? self.themeService.active.fontColour : self.themeService.active.backgroundColour.darker)
+            .foregroundColor(isEnabled ? self.activeTheme.fontColour : self.activeTheme.backgroundColour.darker)
             .overlay(UnderlinedStyleDivider())
     }
 }

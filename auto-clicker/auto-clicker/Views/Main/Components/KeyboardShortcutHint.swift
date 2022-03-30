@@ -7,16 +7,16 @@
 
 import SwiftUI
 import KeyboardShortcuts
+import Defaults
 
 struct KeyboardShortcutHint: View {
-    
-    @EnvironmentObject var themeService: ThemeService
+    @Default(.appearanceSelectedTheme) var activeTheme
     
     let shortcut: KeyboardShortcuts.Name.Shortcut
     
     var body: some View {
         Text(shortcut.description)
-            .foregroundColor(self.themeService.active.backgroundColour.darker)
+            .foregroundColor(self.activeTheme.backgroundColour.darker)
             .font(.system(size: 11, weight: .medium, design: .rounded))
     }
 }

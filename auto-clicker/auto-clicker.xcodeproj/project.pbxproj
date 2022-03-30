@@ -16,6 +16,12 @@
 		B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761927F4A5BD00BB1CDA /* AppDelegate.swift */; };
 		B510761D27F4A68B00BB1CDA /* OptionsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761C27F4A68B00BB1CDA /* OptionsCommands.swift */; };
 		B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761E27F4B6F500BB1CDA /* KeyboardShortcutHint.swift */; };
+		B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762027F4BB4900BB1CDA /* AppearanceSettingsTabView.swift */; };
+		B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762227F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift */; };
+		B510762527F4BB7B00BB1CDA /* WindowSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */; };
+		B510762827F4BD5500BB1CDA /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = B510762727F4BD5500BB1CDA /* Defaults */; };
+		B510762A27F4BD8F00BB1CDA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762927F4BD8F00BB1CDA /* UserDefaults.swift */; };
+		B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
@@ -33,7 +39,6 @@
 		B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */; };
 		B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */; };
 		B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */; };
-		B5E92B1E27F1BC7E00A7FC63 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1D27F1BC7E00A7FC63 /* ThemeService.swift */; };
 		B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */; };
 		B5E92B2927F35DB800A7FC63 /* DynamicWidthNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */; };
 		B5F6A00F27F37440003CD730 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A00E27F37440003CD730 /* MainView.swift */; };
@@ -51,6 +56,11 @@
 		B510761927F4A5BD00BB1CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B510761C27F4A68B00BB1CDA /* OptionsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCommands.swift; sourceTree = "<group>"; };
 		B510761E27F4B6F500BB1CDA /* KeyboardShortcutHint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutHint.swift; sourceTree = "<group>"; };
+		B510762027F4BB4900BB1CDA /* AppearanceSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsTabView.swift; sourceTree = "<group>"; };
+		B510762227F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsSettingsTabView.swift; sourceTree = "<group>"; };
+		B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSettingsTabView.swift; sourceTree = "<group>"; };
+		B510762927F4BD8F00BB1CDA /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Workaround.swift"; sourceTree = "<group>"; };
 		B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoClickSimulator.swift; sourceTree = "<group>"; };
 		B53027F9264C2748002B8610 /* DelayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTimer.swift; sourceTree = "<group>"; };
 		B53BDC4C264BED93001F8E57 /* Auto Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Clicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +81,6 @@
 		B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextFieldStyle.swift; sourceTree = "<group>"; };
 		B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedStyleDivider.swift; sourceTree = "<group>"; };
 		B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		B5E92B1D27F1BC7E00A7FC63 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthTextField.swift; sourceTree = "<group>"; };
 		B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthNumberField.swift; sourceTree = "<group>"; };
 		B5F6A00E27F37440003CD730 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -86,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B510762827F4BD5500BB1CDA /* Defaults in Frameworks */,
 				B510760927F4A21500BB1CDA /* DateStrings in Frameworks */,
 				B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */,
 			);
@@ -124,7 +134,10 @@
 		B510761427F4A40A00BB1CDA /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				B510762027F4BB4900BB1CDA /* AppearanceSettingsTabView.swift */,
 				B510761527F4A43B00BB1CDA /* GeneralSettingsTabView.swift */,
+				B510762227F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift */,
+				B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -170,7 +183,6 @@
 				B5F6A01027F38666003CD730 /* Extensions */,
 				B510761B27F4A5DD00BB1CDA /* Menu */,
 				B510760D27F4A25400BB1CDA /* Services */,
-				B5F6A01727F396F2003CD730 /* Theme */,
 				B598440A264C439B0021C3F6 /* Views */,
 				B5984409264C43860021C3F6 /* Observable Objects */,
 				B5984408264C435B0021C3F6 /* Build Assets */,
@@ -244,6 +256,7 @@
 			children = (
 				B5E6394F27CA4CDD008B111A /* FieldConstants.swift */,
 				B510761727F4A58500BB1CDA /* KeyboardShortcuts.swift */,
+				B510762927F4BD8F00BB1CDA /* UserDefaults.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -272,19 +285,12 @@
 		B5F6A01027F38666003CD730 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B5F6A01827F3970A003CD730 /* ThemeColour.swift */,
 				B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */,
 				B5F6A01527F3900E003CD730 /* Color+Extensions.swift */,
+				B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B5F6A01727F396F2003CD730 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				B5E92B1D27F1BC7E00A7FC63 /* ThemeService.swift */,
-				B5F6A01827F3970A003CD730 /* ThemeColour.swift */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +312,7 @@
 			packageProductDependencies = (
 				B510760827F4A21500BB1CDA /* DateStrings */,
 				B510760B27F4A23300BB1CDA /* KeyboardShortcuts */,
+				B510762727F4BD5500BB1CDA /* Defaults */,
 			);
 			productName = "auto-clicker";
 			productReference = B53BDC4C264BED93001F8E57 /* Auto Clicker.app */;
@@ -337,6 +344,7 @@
 			packageReferences = (
 				B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */,
 				B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = B53BDC4D264BED93001F8E57 /* Products */;
 			projectDirPath = "";
@@ -366,14 +374,15 @@
 			files = (
 				B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */,
 				B5F6A00F27F37440003CD730 /* MainView.swift in Sources */,
+				B510762527F4BB7B00BB1CDA /* WindowSettingsTabView.swift in Sources */,
 				B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */,
 				B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */,
+				B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */,
 				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
 				B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */,
 				B510761D27F4A68B00BB1CDA /* OptionsCommands.swift in Sources */,
 				B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */,
-				B5E92B1E27F1BC7E00A7FC63 /* ThemeService.swift in Sources */,
 				B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */,
 				B510761127F4A33D00BB1CDA /* SettingsView.swift in Sources */,
 				B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */,
@@ -384,7 +393,9 @@
 				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
 				B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */,
 				B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */,
+				B510762A27F4BD8F00BB1CDA /* UserDefaults.swift in Sources */,
 				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
+				B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */,
 				B510761627F4A43B00BB1CDA /* GeneralSettingsTabView.swift in Sources */,
 				B510761827F4A58500BB1CDA /* KeyboardShortcuts.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
@@ -394,6 +405,7 @@
 				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
 				B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */,
+				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +621,14 @@
 				version = 1.5.0;
 			};
 		};
+		B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = exactVersion;
+				version = 6.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -621,6 +641,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		B510762727F4BD5500BB1CDA /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

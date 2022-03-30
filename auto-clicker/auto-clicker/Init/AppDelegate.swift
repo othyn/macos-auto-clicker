@@ -23,6 +23,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
+    func applicationWillBecomeActive(_ notification: Notification) {
+        WindowStateService.refreshKeepWindowOnTop()
+    }
+    
     func applicationWillUpdate(_ notification: Notification) {
         if let menu = NSApplication.shared.mainMenu {
             if let file = menu.items.first(where: { $0.title == "File"}) {

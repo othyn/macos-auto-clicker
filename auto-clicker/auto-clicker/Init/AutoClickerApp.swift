@@ -7,36 +7,39 @@
 
 import Foundation
 import SwiftUI
+import Defaults
 
 @main
 struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var themeService = ThemeService()
+    @Default(.appearanceSelectedTheme) var activeTheme
     
-    @State private var keepWindowOnTop: Bool = false
+//    @State private var keepWindowOnTop: Bool = false
 
     var body: some Scene {
         Settings {
             SettingsView()
+                .background(self.activeTheme.backgroundColour)
+                .foregroundColor(self.activeTheme.fontColour)
+                .font(.system(size: 14, weight: .medium))
         }
         
         WindowGroup {
             ZStack {
-                self.themeService.active.backgroundColour.ignoresSafeArea()
+                self.activeTheme.backgroundColour.ignoresSafeArea()
                 
                 MainView()
             }
             .frame(minWidth: WindowStateService.width, minHeight: WindowStateService.height)
             .frame(maxWidth: WindowStateService.width, maxHeight: WindowStateService.height)
-            .environmentObject(self.themeService)
         }
         .windowStyle(.hiddenTitleBar)
-        .commands {
-            OptionsCommands(keepWindowOnTop: self.$keepWindowOnTop)
-        }
-        .onChange(of: self.keepWindowOnTop) { isOn in
-            WindowStateService.toggleKeepWindowOnTop(isOn)
-        }
+//        .commands {
+//            OptionsCommands(keepWindowOnTop: self.$keepWindowOnTop)
+//        }
+//        .onChange(of: self.keepWindowOnTop) { isOn in
+//            WindowStateService.toggleKeepWindowOnTop(isOn)
+//        }
     }
 }

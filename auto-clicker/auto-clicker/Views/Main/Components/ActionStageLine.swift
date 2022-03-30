@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct ActionStageLine<Content: View>: View {
     @ViewBuilder var content: () -> Content
-    
-    @EnvironmentObject var themeService: ThemeService
+
+    @Default(.appearanceSelectedTheme) var activeTheme
 
     var body: some View {
         HStack() {
             HStack(content: content)
                 .font(.system(size: 32, weight: .light))
-                .foregroundColor(self.themeService.active.fontColour)
+                .foregroundColor(self.activeTheme.fontColour)
             
             Spacer()
         }

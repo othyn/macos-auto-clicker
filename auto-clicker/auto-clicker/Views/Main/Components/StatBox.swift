@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct StatBox: View {
-    
-    @EnvironmentObject var themeService: ThemeService
+
+    @Default(.appearanceSelectedTheme) var activeTheme
     
     let title: String
     let value: String
@@ -17,11 +18,11 @@ struct StatBox: View {
     var body: some View {
         VStack {
             Text(self.title.uppercased())
-                .foregroundColor(self.themeService.active.backgroundColour.lighter)
+                .foregroundColor(self.activeTheme.backgroundColour.lighter)
                 .font(.system(size: 10))
             
             Text(self.value)
-                .foregroundColor(self.themeService.active.backgroundColour.lighter)
+                .foregroundColor(self.activeTheme.backgroundColour.lighter)
                 .font(.system(size: 14))
         }
     }

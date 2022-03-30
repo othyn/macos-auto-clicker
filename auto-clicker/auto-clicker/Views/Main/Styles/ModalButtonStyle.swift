@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct ModalButtonStyle: ButtonStyle {
-    
-    @EnvironmentObject var themeService: ThemeService
+
+    @Default(.appearanceSelectedTheme) var activeTheme
     
     @State private var isHover = false
     
@@ -27,16 +28,16 @@ struct ModalButtonStyle: ButtonStyle {
         .font(.system(size: 18))
         .foregroundColor(
             self.isHover
-            ? self.themeService.active.fontColour
+            ? self.activeTheme.fontColour
             : self.isDestructive
-                ? self.themeService.active.backgroundColour.darker
-                : self.themeService.active.fontColour
+                ? self.activeTheme.backgroundColour.darker
+                : self.activeTheme.fontColour
         )
         .background((
             self.isHover
             ? configuration.isPressed
-                ? self.themeService.active.backgroundColour.lighter
-                : self.themeService.active.backgroundColour.darker
+                ? self.activeTheme.backgroundColour.lighter
+                : self.activeTheme.backgroundColour.darker
             : ThemeColour.clear)
             .cornerRadius(8)
         )

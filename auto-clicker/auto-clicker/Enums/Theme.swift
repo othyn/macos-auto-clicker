@@ -7,9 +7,10 @@
 
 import Foundation
 import SwiftUI
+import Defaults
 
 // Commented out colours are macOS 12 only
-enum Theme: String, CaseIterable {
+enum Theme: String, Identifiable, CaseIterable, Defaults.Serializable {
     
     static let lightness: Double = 1.4
     static let darkness: Double = 0.6
@@ -31,6 +32,10 @@ enum Theme: String, CaseIterable {
          Teal,
          White,
          Yellow
+    
+    var id: String {
+        self.rawValue
+    }
     
     // Even with the manual colour space calculated for the built in colours, I can't seem to get it to work
     // So I'll just exclude them from the randomisation
@@ -61,5 +66,21 @@ enum Theme: String, CaseIterable {
             case .Green, .White, .Yellow:
                 return .black
         }
+    }
+    
+    func randomise() -> Void {
+        var newTheme: Theme
+
+        if #available(macOS 12.0, *) {
+            repeat {
+                newTheme = Theme.allCases.randomElement()!
+            } while newTheme == Defaults[.appearanceSelectedTheme]
+        } else {
+            repeat {
+                newTheme = Theme.allCases.randomElement()!
+            } while newTheme == Defaults[.appearanceSelectedTheme] || Theme.macOS12Colours.contains(newTheme)
+        }
+
+        Defaults[.appearanceSelectedTheme] = newTheme
     }
 }

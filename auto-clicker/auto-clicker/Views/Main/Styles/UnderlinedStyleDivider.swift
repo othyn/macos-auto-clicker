@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct UnderlinedStyleDivider: View {
-    @EnvironmentObject var themeService: ThemeService
+    @Default(.appearanceSelectedTheme) var activeTheme
     
     var body: some View {
         // https://stackoverflow.com/a/60410373/4494375
         VStack {
             Rectangle()
-                .fill(self.themeService.active.backgroundColour.darker)
+                .fill(self.activeTheme.backgroundColour.darker)
                 .offset(x: 0, y: 25)
                 .frame(height: 3)
                 .frame(minWidth: 10)

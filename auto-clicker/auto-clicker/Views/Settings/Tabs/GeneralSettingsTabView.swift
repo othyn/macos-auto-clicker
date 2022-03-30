@@ -11,8 +11,8 @@ import KeyboardShortcuts
 struct GeneralSettingsTabView: View {
     var body: some View {
         Form {
-            KeyboardShortcuts.Recorder("Press Start Button:", name: .pressStartButton)
-            KeyboardShortcuts.Recorder("Press Stop Button:",  name: .pressStopButton)
+            Text("👉😎👉 zoop")
+                .font(.system(size: 32, weight: .medium))
         }
     }
 }
