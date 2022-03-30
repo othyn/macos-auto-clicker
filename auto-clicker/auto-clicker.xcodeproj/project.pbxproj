@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B52AF7DC27CA81A300C16B97 /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B52AF7DB27CA81A300C16B97 /* DateStrings */; };
+		B510760927F4A21500BB1CDA /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B510760827F4A21500BB1CDA /* DateStrings */; };
+		B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = B510760B27F4A23300BB1CDA /* KeyboardShortcuts */; };
+		B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510760E27F4A25400BB1CDA /* WindowStateService.swift */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
@@ -36,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B510760E27F4A25400BB1CDA /* WindowStateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateService.swift; sourceTree = "<group>"; };
 		B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoClickSimulator.swift; sourceTree = "<group>"; };
 		B53027F9264C2748002B8610 /* DelayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTimer.swift; sourceTree = "<group>"; };
 		B53BDC4C264BED93001F8E57 /* Auto Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Clicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,13 +74,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52AF7DC27CA81A300C16B97 /* DateStrings in Frameworks */,
+				B510760927F4A21500BB1CDA /* DateStrings in Frameworks */,
+				B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B510760D27F4A25400BB1CDA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B510760E27F4A25400BB1CDA /* WindowStateService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B52AF7DA27CA81A300C16B97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +121,7 @@
 				B5E6394E27CA4CB1008B111A /* Constants */,
 				B5E6395427CA76AB008B111A /* Enums */,
 				B5F6A01027F38666003CD730 /* Extensions */,
+				B510760D27F4A25400BB1CDA /* Services */,
 				B5F6A01727F396F2003CD730 /* Theme */,
 				B598440A264C439B0021C3F6 /* Views */,
 				B5984409264C43860021C3F6 /* Observable Objects */,
@@ -241,7 +254,8 @@
 			);
 			name = "auto-clicker";
 			packageProductDependencies = (
-				B52AF7DB27CA81A300C16B97 /* DateStrings */,
+				B510760827F4A21500BB1CDA /* DateStrings */,
+				B510760B27F4A23300BB1CDA /* KeyboardShortcuts */,
 			);
 			productName = "auto-clicker";
 			productReference = B53BDC4C264BED93001F8E57 /* Auto Clicker.app */;
@@ -271,7 +285,8 @@
 			);
 			mainGroup = B53BDC43264BED93001F8E57;
 			packageReferences = (
-				B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */,
+				B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */,
+				B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = B53BDC4D264BED93001F8E57 /* Products */;
 			projectDirPath = "";
@@ -320,6 +335,7 @@
 				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
 				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,
+				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
 				B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */,
 			);
@@ -521,21 +537,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */ = {
+		B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/othyn/DateStrings.git";
+			repositoryURL = "https://github.com/othyn/DateStrings";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.0.1;
+			};
+		};
+		B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B52AF7DB27CA81A300C16B97 /* DateStrings */ = {
+		B510760827F4A21500BB1CDA /* DateStrings */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */;
+			package = B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */;
 			productName = DateStrings;
+		};
+		B510760B27F4A23300BB1CDA /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
