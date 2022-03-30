@@ -9,11 +9,10 @@ import SwiftUI
 import Defaults
 
 struct UnderlinedTextFieldStyle: TextFieldStyle {
-    
     @Environment(\.isEnabled) private var isEnabled: Bool
-    
+
     @Default(.appearanceSelectedTheme) var activeTheme
-    
+
     public func _body(configuration: TextField<_Label>) -> some View {
         configuration
             .textFieldStyle(.plain)

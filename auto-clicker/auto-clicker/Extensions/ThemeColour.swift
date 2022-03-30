@@ -14,7 +14,7 @@ public extension ThemeColour {
     var lighter: ThemeColour {
         self.changeBrightness(Theme.lightness)
     }
-    
+
     var darker: ThemeColour {
         self.changeBrightness(Theme.darkness)
     }

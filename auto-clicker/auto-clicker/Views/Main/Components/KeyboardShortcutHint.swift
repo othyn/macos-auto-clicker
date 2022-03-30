@@ -11,9 +11,9 @@ import Defaults
 
 struct KeyboardShortcutHint: View {
     @Default(.appearanceSelectedTheme) var activeTheme
-    
+
     let shortcut: KeyboardShortcuts.Name.Shortcut
-    
+
     var body: some View {
         Text(shortcut.description)
             .foregroundColor(self.activeTheme.backgroundColour.darker)

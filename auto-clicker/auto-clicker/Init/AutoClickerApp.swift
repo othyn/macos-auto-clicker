@@ -12,7 +12,7 @@ import Defaults
 @main
 struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+
     @Default(.appearanceSelectedTheme) var activeTheme
 
     var body: some Scene {
@@ -22,11 +22,11 @@ struct AutoClickerApp: App {
                 .foregroundColor(self.activeTheme.fontColour)
                 .font(.system(size: 16, weight: .medium))
         }
-        
+
         WindowGroup {
             ZStack {
                 self.activeTheme.backgroundColour.ignoresSafeArea()
-                
+
                 MainView()
             }
             .frame(minWidth: WindowStateService.width, minHeight: WindowStateService.height)

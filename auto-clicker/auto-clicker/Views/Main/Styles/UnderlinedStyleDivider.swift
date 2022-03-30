@@ -10,7 +10,7 @@ import Defaults
 
 struct UnderlinedStyleDivider: View {
     @Default(.appearanceSelectedTheme) var activeTheme
-    
+
     var body: some View {
         // https://stackoverflow.com/a/60410373/4494375
         VStack {

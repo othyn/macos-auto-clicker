@@ -12,11 +12,11 @@ import Defaults
 struct WindowStateService {
     static let width: CGFloat = 550
     static let height: CGFloat = 430
-    
+
     static let settingsWidth: CGFloat = 400
     static let settingsHeight: CGFloat = 170
-    
-    static func toggleKeepWindowOnTop(_ keepOnTop: Bool) -> Void {
+
+    static func toggleKeepWindowOnTop(_ keepOnTop: Bool) {
         // This is somewhat finiky... I originally used NSApplication.shared.mainWindow as it contained the primary window
         //   but this has problems when using the preferences window as when the preferences window is open it becomes the
         //   mainWindow. So reverting back to NSApplication.shared.windows.first as the 'main' application window will be
@@ -32,8 +32,8 @@ struct WindowStateService {
             }
         }
     }
-    
-    static func refreshKeepWindowOnTop() -> Void {
+
+    static func refreshKeepWindowOnTop() {
         self.toggleKeepWindowOnTop(Defaults[.windowShouldKeepOnTop])
     }
 }

@@ -9,11 +9,10 @@ import SwiftUI
 import Defaults
 
 struct UnderlinedButtonStyle: ButtonStyle {
-    
     @Environment(\.isEnabled) private var isEnabled: Bool
-    
+
     @Default(.appearanceSelectedTheme) var activeTheme
-    
+
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .buttonStyle(.plain)

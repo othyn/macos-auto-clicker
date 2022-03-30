@@ -10,9 +10,9 @@ import Defaults
 
 struct DurationModal: View {
     @Environment(\.presentationMode) var presentationMode
-    
+
     @Default(.appearanceSelectedTheme) var activeTheme
-    
+
     @Binding var selected: Duration
 
     var body: some View {
@@ -20,7 +20,7 @@ struct DurationModal: View {
             ForEach(Duration.allCases) { unit in
                 unit.buttonView(action: {
                     self.presentationMode.wrappedValue.dismiss()
-                    
+
                     self.selected = unit
                 })
                 .buttonStyle(ModalButtonStyle())

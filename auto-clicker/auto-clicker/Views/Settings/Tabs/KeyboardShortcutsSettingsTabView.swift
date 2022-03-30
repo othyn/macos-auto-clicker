@@ -12,7 +12,7 @@ struct KeyboardShortcutsSettingsTabView: View {
     var body: some View {
         Form {
             KeyboardShortcuts.Recorder("Press Start Button:", name: .pressStartButton)
-            KeyboardShortcuts.Recorder("Press Stop Button:",  name: .pressStopButton)
+            KeyboardShortcuts.Recorder("Press Stop Button:", name: .pressStopButton)
         }
     }
 }

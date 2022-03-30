@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DurationSelector: View {
-    @State private var showingDurationModal: Bool = false
-    
+    @State private var showingDurationModal = false
+
     @Binding var selectedDuration: Duration
-    
+
     var body: some View {
         Button(self.selectedDuration.description) {
             self.showingDurationModal = true

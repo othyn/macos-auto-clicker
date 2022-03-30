@@ -9,19 +9,18 @@ import SwiftUI
 import Defaults
 
 struct ModalButtonStyle: ButtonStyle {
-
     @Default(.appearanceSelectedTheme) var activeTheme
-    
+
     @State private var isHover = false
-    
-    var isDestructive: Bool = false
-    
+
+    var isDestructive = false
+
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             Spacer()
-            
+
             configuration.label
-            
+
             Spacer()
         }
         .padding(.all, 10)

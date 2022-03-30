@@ -10,7 +10,7 @@ import Defaults
 
 struct AppearanceSettingsTabView: View {
     @Default(.appearanceSelectedTheme) var activeTheme
-    
+
     var body: some View {
         Form {
             LazyVGrid(columns: [.init(.adaptive(minimum: 70, maximum: 70))], spacing: 2) {
@@ -26,7 +26,7 @@ struct AppearanceSettingsTabView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(theme.backgroundColour.darker, lineWidth: 4)
                                 )
-                            
+
                             if theme == self.activeTheme {
                                 Image(systemName: "checkmark")
                                     .font(.system(size: 24, weight: .medium))

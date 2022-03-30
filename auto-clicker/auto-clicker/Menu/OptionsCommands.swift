@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct OptionsCommands: Commands {
-    
     @Binding var keepWindowOnTop: Bool
 
     var body: some Commands {

@@ -9,22 +9,21 @@ import SwiftUI
 import Defaults
 
 struct StopwatchButtonStyle: ButtonStyle {
-    
     var fontSize: CGFloat = 24
-    
+
     func makeBody(configuration: Self.Configuration) -> some View {
         SuperAmazingButton(configuration: configuration, fontSize: self.fontSize)
     }
 
     struct SuperAmazingButton: View {
         let configuration: ButtonStyle.Configuration
-        
+
         @Default(.appearanceSelectedTheme) var activeTheme
 
         @Environment(\.isEnabled) private var isEnabled: Bool
-        
+
         @State private var isHover = false
-        
+
         let fontSize: CGFloat
 
         var body: some View {

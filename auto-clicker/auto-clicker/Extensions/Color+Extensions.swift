@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Color {
     func changeBrightness(_ newBrightness: CGFloat) -> Color {
-        return NSColor(self)
+        NSColor(self)
             .changeBrightness(newBrightness)
             .Color
     }
