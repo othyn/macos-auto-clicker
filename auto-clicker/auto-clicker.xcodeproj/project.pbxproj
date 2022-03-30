@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B52AF7DC27CA81A300C16B97 /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B52AF7DB27CA81A300C16B97 /* DateStrings */; };
+		B510760927F4A21500BB1CDA /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B510760827F4A21500BB1CDA /* DateStrings */; };
+		B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = B510760B27F4A23300BB1CDA /* KeyboardShortcuts */; };
+		B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510760E27F4A25400BB1CDA /* WindowStateService.swift */; };
+		B510761127F4A33D00BB1CDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761027F4A33D00BB1CDA /* SettingsView.swift */; };
+		B510761627F4A43B00BB1CDA /* GeneralSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761527F4A43B00BB1CDA /* GeneralSettingsTabView.swift */; };
+		B510761827F4A58500BB1CDA /* KeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761727F4A58500BB1CDA /* KeyboardShortcuts.swift */; };
+		B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761927F4A5BD00BB1CDA /* AppDelegate.swift */; };
+		B510761D27F4A68B00BB1CDA /* OptionsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761C27F4A68B00BB1CDA /* OptionsCommands.swift */; };
+		B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510761E27F4B6F500BB1CDA /* KeyboardShortcutHint.swift */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
@@ -36,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B510760E27F4A25400BB1CDA /* WindowStateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateService.swift; sourceTree = "<group>"; };
+		B510761027F4A33D00BB1CDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B510761527F4A43B00BB1CDA /* GeneralSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsTabView.swift; sourceTree = "<group>"; };
+		B510761727F4A58500BB1CDA /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
+		B510761927F4A5BD00BB1CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B510761C27F4A68B00BB1CDA /* OptionsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCommands.swift; sourceTree = "<group>"; };
+		B510761E27F4B6F500BB1CDA /* KeyboardShortcutHint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutHint.swift; sourceTree = "<group>"; };
 		B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoClickSimulator.swift; sourceTree = "<group>"; };
 		B53027F9264C2748002B8610 /* DelayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTimer.swift; sourceTree = "<group>"; };
 		B53BDC4C264BED93001F8E57 /* Auto Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Clicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,13 +86,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52AF7DC27CA81A300C16B97 /* DateStrings in Frameworks */,
+				B510760927F4A21500BB1CDA /* DateStrings in Frameworks */,
+				B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B510760D27F4A25400BB1CDA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B510760E27F4A25400BB1CDA /* WindowStateService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B510761227F4A34500BB1CDA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B5F6A00E27F37440003CD730 /* MainView.swift */,
+				B5E6395127CA62DE008B111A /* Styles */,
+				B598440B264C43AE0021C3F6 /* Components */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B510761327F4A35400BB1CDA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B510761027F4A33D00BB1CDA /* SettingsView.swift */,
+				B510761427F4A40A00BB1CDA /* Tabs */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B510761427F4A40A00BB1CDA /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				B510761527F4A43B00BB1CDA /* GeneralSettingsTabView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		B510761B27F4A5DD00BB1CDA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B510761C27F4A68B00BB1CDA /* OptionsCommands.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		B52AF7DA27CA81A300C16B97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +168,8 @@
 				B5E6394E27CA4CB1008B111A /* Constants */,
 				B5E6395427CA76AB008B111A /* Enums */,
 				B5F6A01027F38666003CD730 /* Extensions */,
+				B510761B27F4A5DD00BB1CDA /* Menu */,
+				B510760D27F4A25400BB1CDA /* Services */,
 				B5F6A01727F396F2003CD730 /* Theme */,
 				B598440A264C439B0021C3F6 /* Views */,
 				B5984409264C43860021C3F6 /* Observable Objects */,
@@ -148,9 +209,8 @@
 		B598440A264C439B0021C3F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5F6A00E27F37440003CD730 /* MainView.swift */,
-				B5E6395127CA62DE008B111A /* Styles */,
-				B598440B264C43AE0021C3F6 /* Components */,
+				B510761227F4A34500BB1CDA /* Main */,
+				B510761327F4A35400BB1CDA /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +225,7 @@
 				B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */,
 				B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */,
 				B5F6A01A27F3A8A6003CD730 /* StatBox.swift */,
+				B510761E27F4B6F500BB1CDA /* KeyboardShortcutHint.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -173,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */,
+				B510761927F4A5BD00BB1CDA /* AppDelegate.swift */,
 			);
 			path = Init;
 			sourceTree = "<group>";
@@ -181,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				B5E6394F27CA4CDD008B111A /* FieldConstants.swift */,
+				B510761727F4A58500BB1CDA /* KeyboardShortcuts.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -241,7 +304,8 @@
 			);
 			name = "auto-clicker";
 			packageProductDependencies = (
-				B52AF7DB27CA81A300C16B97 /* DateStrings */,
+				B510760827F4A21500BB1CDA /* DateStrings */,
+				B510760B27F4A23300BB1CDA /* KeyboardShortcuts */,
 			);
 			productName = "auto-clicker";
 			productReference = B53BDC4C264BED93001F8E57 /* Auto Clicker.app */;
@@ -271,7 +335,8 @@
 			);
 			mainGroup = B53BDC43264BED93001F8E57;
 			packageReferences = (
-				B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */,
+				B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */,
+				B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = B53BDC4D264BED93001F8E57 /* Products */;
 			projectDirPath = "";
@@ -303,11 +368,14 @@
 				B5F6A00F27F37440003CD730 /* MainView.swift in Sources */,
 				B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */,
 				B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */,
+				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
 				B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */,
+				B510761D27F4A68B00BB1CDA /* OptionsCommands.swift in Sources */,
 				B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */,
 				B5E92B1E27F1BC7E00A7FC63 /* ThemeService.swift in Sources */,
 				B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */,
+				B510761127F4A33D00BB1CDA /* SettingsView.swift in Sources */,
 				B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */,
 				B5F6A01627F3900E003CD730 /* Color+Extensions.swift in Sources */,
 				B5E92B2927F35DB800A7FC63 /* DynamicWidthNumberField.swift in Sources */,
@@ -315,11 +383,15 @@
 				B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */,
 				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
 				B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */,
+				B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */,
 				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
+				B510761627F4A43B00BB1CDA /* GeneralSettingsTabView.swift in Sources */,
+				B510761827F4A58500BB1CDA /* KeyboardShortcuts.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
 				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
 				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,
+				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
 				B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */,
 			);
@@ -521,21 +593,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */ = {
+		B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/othyn/DateStrings.git";
+			repositoryURL = "https://github.com/othyn/DateStrings";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.0.1;
+			};
+		};
+		B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B52AF7DB27CA81A300C16B97 /* DateStrings */ = {
+		B510760827F4A21500BB1CDA /* DateStrings */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5E6395727CA7E6F008B111A /* XCRemoteSwiftPackageReference "DateStrings" */;
+			package = B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */;
 			productName = DateStrings;
+		};
+		B510760B27F4A23300BB1CDA /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

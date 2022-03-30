@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DateStrings
+import KeyboardShortcuts
 
 struct MainView: View {
     
@@ -48,6 +49,20 @@ struct MainView: View {
                                                                 presses: self.pressAmount,
                                                                 iterations: self.repeatAmount)
                               })
+    }
+    
+    func stop() -> Void {
+        self.autoClickSimulator.stop()
+    }
+    
+    func registerKeyboardShortcuts() -> Void {
+        KeyboardShortcuts.onKeyUp(for: .pressStartButton) { [self] in
+            self.start()
+        }
+        
+        KeyboardShortcuts.onKeyUp(for: .pressStopButton) { [self] in
+            self.stop()
+        }
     }
     
     func changeColour() -> Void {
@@ -157,23 +172,25 @@ struct MainView: View {
             // MARK: - Buttons
             
             HStack {
-                Button(action: self.start) {
-                    Text(self.delayTimer.startButtonText.uppercased()).kerning(1)
+                VStack {
+                    Button(action: self.start) {
+                        Text(self.delayTimer.startButtonText.uppercased()).kerning(1)
+                    }
+                    .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                    .buttonStyle(StopwatchButtonStyle())
+                    
+                    KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStartButton.shortcut!)
                 }
-                .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
-//                .keyboardShortcut("s", modifiers: [.command])
-                .buttonStyle(
-                    StopwatchButtonStyle()
-                )
 
-                Button(action: self.autoClickSimulator.stop) {
-                    Text("stop".uppercased()).kerning(1)
+                VStack {
+                    Button(action: self.stop) {
+                        Text("stop".uppercased()).kerning(1)
+                    }
+                    .disabled(!self.autoClickSimulator.isAutoClicking)
+                    .buttonStyle(StopwatchButtonStyle())
+                    
+                    KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStopButton.shortcut!)
                 }
-                .disabled(!self.autoClickSimulator.isAutoClicking)
-//                .keyboardShortcut("x", modifiers: [.command])
-                .buttonStyle(
-                    StopwatchButtonStyle()
-                )
                 
                 Spacer()
             }
@@ -224,6 +241,7 @@ struct MainView: View {
                 .padding(.bottom, 12)
             }
             .background(self.themeService.active.backgroundColour.darker)
+            .onAppear(perform: self.registerKeyboardShortcuts)
         }
     }
 }
