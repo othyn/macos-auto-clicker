@@ -14,15 +14,13 @@ struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @Default(.appearanceSelectedTheme) var activeTheme
-    
-//    @State private var keepWindowOnTop: Bool = false
 
     var body: some Scene {
         Settings {
             SettingsView()
                 .background(self.activeTheme.backgroundColour)
                 .foregroundColor(self.activeTheme.fontColour)
-                .font(.system(size: 14, weight: .medium))
+                .font(.system(size: 16, weight: .medium))
         }
         
         WindowGroup {
@@ -37,9 +35,6 @@ struct AutoClickerApp: App {
         .windowStyle(.hiddenTitleBar)
 //        .commands {
 //            OptionsCommands(keepWindowOnTop: self.$keepWindowOnTop)
-//        }
-//        .onChange(of: self.keepWindowOnTop) { isOn in
-//            WindowStateService.toggleKeepWindowOnTop(isOn)
 //        }
     }
 }

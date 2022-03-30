@@ -13,24 +13,31 @@ struct AppearanceSettingsTabView: View {
     
     var body: some View {
         Form {
-            Picker("Active Theme", selection: self.$activeTheme) {
+            LazyVGrid(columns: [.init(.adaptive(minimum: 70, maximum: 70))], spacing: 2) {
                 ForEach(Theme.allCases) { theme in
-                    HStack {
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(theme.backgroundColour)
-                            .frame(width: 20, height: 10)
-
-                        Text(theme.rawValue)
+                    Button(action: {
+                        self.activeTheme = theme
+                    }) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(theme.backgroundColour)
+                                .frame(width: 45, height: 45)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(theme.backgroundColour.darker, lineWidth: 4)
+                                )
+                            
+                            if theme == self.activeTheme {
+                                Image(systemName: "checkmark")
+                                    .font(.system(size: 24, weight: .medium))
+                            }
+                        }
+                        .padding(.bottom, 15)
                     }
-                    .tag(theme)
+                    .buttonStyle(.plain)
                 }
             }
-            
-//            Button("Randomise".uppercased()) {
-//                self.activeTheme.randomise()
-//            }
-//            .buttonStyle(StopwatchButtonStyle(fontSize: 16))
-//            .font(.system(size: 24))
+            .padding(.top, 15)
         }
     }
 }

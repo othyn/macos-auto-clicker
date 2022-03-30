@@ -14,7 +14,7 @@ struct WindowStateService {
     static let height: CGFloat = 430
     
     static let settingsWidth: CGFloat = 400
-    static let settingsHeight: CGFloat = 150
+    static let settingsHeight: CGFloat = 170
     
     static func toggleKeepWindowOnTop(_ keepOnTop: Bool) -> Void {
         // This is somewhat finiky... I originally used NSApplication.shared.mainWindow as it contained the primary window
