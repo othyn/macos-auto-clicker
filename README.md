@@ -12,7 +12,7 @@ A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with â™¥ï¸
 
 ### Why tho?
 
-All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. So, given how simple they are to make, I figured I'd give it a shot, at whipped this up in an evening or two with the aim to make something more modern and maintainable. Plus, I get to write in easter eggs, who says love can't be colourful.
+All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. This one aims to fix all that giving you flexibility and style. Plus, I get to write in easter eggs, who says love can't be colourful.
 
 ---
 
@@ -65,7 +65,7 @@ I ended up doing [a post on StackOverflow](https://stackoverflow.com/a/71276964/
 4. Select 'Accessibility' from the left side list
 5. Click the plus button at the bottom left of the list and find the `Auto Clicker.app` file to add it to the list that we put within the project directory, this should be something like `$GIT_CLONE_DIR/macos-auto-clicker/auto-clicker/derived_data/auto-clicker/Build/Products/Debug/Auto Clicker.app`
 6. Click the checkbox to the left of the 'Auto Clicker' app to check it if its not already checked
-7. Restart the 'Auto Clicker' app
+7. I've found that after each build, you will have to un-check and re-check the app in the list to get it to work again, so its worth leaving up during development
 
 Any builds should now have the relevant permissions.
 

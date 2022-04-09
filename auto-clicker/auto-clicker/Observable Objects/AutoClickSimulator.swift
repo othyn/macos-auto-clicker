@@ -12,22 +12,23 @@ import SwiftUI
 class AutoClickSimulator: ObservableObject {
     private static let defaultClickingAt: String = "-"
 
-    @Published var isAutoClicking = false
+    @Published public var isAutoClicking = false
 
     // Some weird behaviour on macOS 11.2.3 and Swift 5 causes the app to hang on launch with these published and being passed through to View Bindings
 //    @Published var clickInterval: Int = 50
 //    @Published var amountOfClicks: Int = 1000
 
-    @Published var remainingInterations: Int = 0
-    @Published var clickingAt: String = defaultClickingAt
+    @Published public var remainingInterations: Int = 0
+    @Published public var clickingAt: String = defaultClickingAt
 
-    @Published var nextClickAt: Date = .init()
-    @Published var finalClickAt: Date = .init()
+    @Published public var nextClickAt: Date = .init()
+    @Published public var finalClickAt: Date = .init()
 
     // Said weird behaviour is still occuring in 12.2.1, thus having these defined in here instead of Published, I hate this though so much
     private var duration: Duration = .milliseconds
     private var interval: Int = DEFAULT_PRESS_INTERVAL
     private var amountOfPresses: Int = DEFAULT_REPEAT_AMOUNT
+    private var input: Input = Input()
 
     private var timer: Timer?
     private var mouseLocation: NSPoint { NSEvent.mouseLocation }
@@ -45,10 +46,11 @@ class AutoClickSimulator: ObservableObject {
 //                                          repeats: true)
 //    }
 
-    func start(duration: Duration, interval: Int, presses: Int, iterations: Int) {
+    public func start(duration: Duration, interval: Int, input: Input, presses: Int, iterations: Int) {
         self.isAutoClicking = true
         self.duration = duration
         self.interval = interval
+        self.input = input
         self.amountOfPresses = presses
         self.remainingInterations = iterations
 
@@ -63,19 +65,7 @@ class AutoClickSimulator: ObservableObject {
                                           repeats: true)
     }
 
-    @objc func tick() {
-        self.remainingInterations -= 1
-
-        self.press()
-
-        self.nextClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval), since: .init())
-
-        if self.remainingInterations <= 0 {
-            self.stop()
-        }
-    }
-
-    func stop() {
+    public func stop() {
         self.isAutoClicking = false
 
         // Force zero, as the user could stop the timer early
@@ -88,26 +78,128 @@ class AutoClickSimulator: ObservableObject {
         }
     }
 
-    func press() {
+    @objc private func tick() {
+        self.remainingInterations -= 1
+
+        self.press()
+
+        self.nextClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval), since: .init())
+
+        if self.remainingInterations <= 0 {
+            self.stop()
+        }
+    }
+
+    private func updateClickingLocation() {
         let mouseX = self.mouseLocation.x
         let mouseY = NSHeight(NSScreen.screens[0].frame) - self.mouseLocation.y
 
-        let source = CGEventSource(stateID: .hidSystemState)
+        self.clickingAt = "x: \(mouseX.rounded()), y: \(mouseY.rounded())"
+    }
+
+    private let mouseDownEventMap: [NSEvent.EventType: CGEventType] = [
+        .leftMouseDown: .leftMouseDown,
+        .leftMouseUp: .leftMouseDown,
+        .rightMouseDown: .rightMouseDown,
+        .rightMouseUp: .rightMouseDown,
+        .otherMouseDown: .otherMouseDown,
+        .otherMouseUp: .otherMouseDown
+    ]
+
+    private let mouseUpEventMap: [NSEvent.EventType: CGEventType] = [
+        .leftMouseDown: .leftMouseUp,
+        .leftMouseUp: .leftMouseUp,
+        .rightMouseDown: .rightMouseUp,
+        .rightMouseUp: .rightMouseUp,
+        .otherMouseDown: .otherMouseUp,
+        .otherMouseUp: .otherMouseUp
+    ]
+
+    private let mouseButtonEventMap: [NSEvent.EventType: CGMouseButton] = [
+        .leftMouseDown: .left,
+        .leftMouseUp: .left,
+        .rightMouseDown: .right,
+        .rightMouseUp: .right,
+        .otherMouseDown: .center,
+        .otherMouseUp: .center
+    ]
+
+    private func generateMouseClickEvents(source: CGEventSource?) -> [CGEvent?] {
+        let mouseX = self.mouseLocation.x
+        let mouseY = NSHeight(NSScreen.screens[0].frame) - self.mouseLocation.y
+
         let clickingAtPoint = CGPoint(x: mouseX, y: mouseY)
 
-        let mouseDown = CGEvent(mouseEventSource: source, mouseType: .leftMouseDown, mouseCursorPosition: clickingAtPoint, mouseButton: .left)
-        let mouseUp = CGEvent(mouseEventSource: source, mouseType: .leftMouseUp, mouseCursorPosition: clickingAtPoint, mouseButton: .left)
+        let mouseDownType: CGEventType = mouseDownEventMap[self.input.type]!
+        let mouseUpType: CGEventType = mouseUpEventMap[self.input.type]!
+        let mouseButton: CGMouseButton = mouseButtonEventMap[self.input.type]!
 
-        // Reset the completed presses in this action cycle
+        let mouseDown = CGEvent(mouseEventSource: source,
+                                mouseType: mouseDownType,
+                                mouseCursorPosition: clickingAtPoint,
+                                mouseButton: mouseButton)
+
+        let mouseUp = CGEvent(mouseEventSource: source,
+                              mouseType: mouseUpType,
+                              mouseCursorPosition: clickingAtPoint,
+                              mouseButton: mouseButton)
+
+        return [mouseDown, mouseUp]
+    }
+
+    private func generateKeyPressEvents(source: CGEventSource?) -> [CGEvent?] {
+        #if DEBUG
+        print("PRESSING  |  [key] \(self.input.readable)  |  [MOD FLAGS] \(self.input.modifiers)")
+        #endif
+
+        let keyDown = CGEvent(keyboardEventSource: source,
+                              virtualKey: CGKeyCode(self.input.keyCode),
+                              keyDown: true)
+
+        let keyUp = CGEvent(keyboardEventSource: source,
+                            virtualKey: CGKeyCode(self.input.keyCode),
+                            keyDown: false)
+        
+        if self.input.modifiers.contains(.command) {
+            keyDown?.flags = CGEventFlags.maskCommand
+            keyUp?.flags = CGEventFlags.maskCommand
+        }
+        
+        if self.input.modifiers.contains(.control) {
+            keyDown?.flags = CGEventFlags.maskControl
+            keyUp?.flags = CGEventFlags.maskControl
+        }
+        
+        if self.input.modifiers.contains(.option) {
+            keyDown?.flags = CGEventFlags.maskAlternate
+            keyUp?.flags = CGEventFlags.maskAlternate
+        }
+
+        if self.input.modifiers.contains(.shift) {
+            keyDown?.flags = CGEventFlags.maskShift
+            keyUp?.flags = CGEventFlags.maskShift
+        }
+
+        return [keyDown, keyUp]
+    }
+
+    private func press() {
+        let source: CGEventSource? = CGEventSource(stateID: .hidSystemState)
+
+        let pressEvents = self.input.isMouseInput
+                            ? generateMouseClickEvents(source: source)
+                            : generateKeyPressEvents(source: source)
+
         var completedPressesThisAction = 0
 
         while completedPressesThisAction < self.amountOfPresses {
-            mouseDown?.post(tap: .cghidEventTap)
-            mouseUp?.post(tap: .cghidEventTap)
+            for event in pressEvents {
+                event?.post(tap: .cghidEventTap)
+            }
 
             completedPressesThisAction += 1
         }
 
-        self.clickingAt = "x: \(mouseX.rounded()), y: \(mouseY.rounded())"
+        updateClickingLocation()
     }
 }

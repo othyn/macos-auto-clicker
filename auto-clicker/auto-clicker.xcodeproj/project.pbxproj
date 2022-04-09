@@ -22,6 +22,11 @@
 		B510762827F4BD5500BB1CDA /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = B510762727F4BD5500BB1CDA /* Defaults */; };
 		B510762A27F4BD8F00BB1CDA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762927F4BD8F00BB1CDA /* UserDefaults.swift */; };
 		B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */; };
+		B510763227FF7EC800BB1CDA /* InputAwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763127FF7EC800BB1CDA /* InputAwareView.swift */; };
+		B510763527FF811B00BB1CDA /* PressKeyListenerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763427FF811B00BB1CDA /* PressKeyListenerModal.swift */; };
+		B510763727FF81A000BB1CDA /* PressKeyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763627FF81A000BB1CDA /* PressKeyListener.swift */; };
+		B510763B2800DDFF00BB1CDA /* NSEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */; };
+		B5107640280113DB00BB1CDA /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763F280113DB00BB1CDA /* Input.swift */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
@@ -61,6 +66,11 @@
 		B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSettingsTabView.swift; sourceTree = "<group>"; };
 		B510762927F4BD8F00BB1CDA /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Workaround.swift"; sourceTree = "<group>"; };
+		B510763127FF7EC800BB1CDA /* InputAwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAwareView.swift; sourceTree = "<group>"; };
+		B510763427FF811B00BB1CDA /* PressKeyListenerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressKeyListenerModal.swift; sourceTree = "<group>"; };
+		B510763627FF81A000BB1CDA /* PressKeyListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressKeyListener.swift; sourceTree = "<group>"; };
+		B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSEvent+Extensions.swift"; sourceTree = "<group>"; };
+		B510763F280113DB00BB1CDA /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoClickSimulator.swift; sourceTree = "<group>"; };
 		B53027F9264C2748002B8610 /* DelayTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTimer.swift; sourceTree = "<group>"; };
 		B53BDC4C264BED93001F8E57 /* Auto Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Clicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +160,22 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		B510763327FF7ECD00BB1CDA /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				B510763127FF7EC800BB1CDA /* InputAwareView.swift */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		B510763E2801139000BB1CDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B510763F280113DB00BB1CDA /* Input.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B52AF7DA27CA81A300C16B97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +209,7 @@
 				B5F6A01027F38666003CD730 /* Extensions */,
 				B510761B27F4A5DD00BB1CDA /* Menu */,
 				B510760D27F4A25400BB1CDA /* Services */,
+				B510763E2801139000BB1CDA /* Models */,
 				B598440A264C439B0021C3F6 /* Views */,
 				B5984409264C43860021C3F6 /* Observable Objects */,
 				B5984408264C435B0021C3F6 /* Build Assets */,
@@ -223,6 +250,7 @@
 			children = (
 				B510761227F4A34500BB1CDA /* Main */,
 				B510761327F4A35400BB1CDA /* Settings */,
+				B510763327FF7ECD00BB1CDA /* Libs */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +264,8 @@
 				B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */,
 				B5E92B0F27F1060A00A7FC63 /* DurationSelector.swift */,
 				B5E92B0D27F1036B00A7FC63 /* DurationModal.swift */,
+				B510763627FF81A000BB1CDA /* PressKeyListener.swift */,
+				B510763427FF811B00BB1CDA /* PressKeyListenerModal.swift */,
 				B5F6A01A27F3A8A6003CD730 /* StatBox.swift */,
 				B510761E27F4B6F500BB1CDA /* KeyboardShortcutHint.swift */,
 			);
@@ -289,6 +319,7 @@
 				B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */,
 				B5F6A01527F3900E003CD730 /* Color+Extensions.swift */,
 				B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */,
+				B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +429,8 @@
 				B510762527F4BB7B00BB1CDA /* WindowSettingsTabView.swift in Sources */,
 				B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */,
 				B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */,
+				B510763B2800DDFF00BB1CDA /* NSEvent+Extensions.swift in Sources */,
+				B510763227FF7EC800BB1CDA /* InputAwareView.swift in Sources */,
 				B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */,
 				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
@@ -409,16 +442,19 @@
 				B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */,
 				B5F6A01627F3900E003CD730 /* Color+Extensions.swift in Sources */,
 				B5E92B2927F35DB800A7FC63 /* DynamicWidthNumberField.swift in Sources */,
+				B510763727FF81A000BB1CDA /* PressKeyListener.swift in Sources */,
 				B5F6A01927F3970A003CD730 /* ThemeColour.swift in Sources */,
 				B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */,
 				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
 				B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */,
 				B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */,
+				B5107640280113DB00BB1CDA /* Input.swift in Sources */,
 				B510762A27F4BD8F00BB1CDA /* UserDefaults.swift in Sources */,
 				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
 				B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */,
 				B510761627F4A43B00BB1CDA /* GeneralSettingsTabView.swift in Sources */,
 				B510761827F4A58500BB1CDA /* KeyboardShortcuts.swift in Sources */,
+				B510763527FF811B00BB1CDA /* PressKeyListenerModal.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
 				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
