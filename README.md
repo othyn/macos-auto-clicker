@@ -18,6 +18,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 ## Index
 
+- [Downloads](#downloads)
 - [Usage](#usage)
 - [Development](#development)
 - [Testing](#testing)
@@ -25,9 +26,17 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 ---
 
+## Downloads
+
+Checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for direct App downloads. Here you can find the latest stable release and any pre-release builds too. There is also a compiled app binary in `dist` directory ready for use.
+
+At the moment, the app is unsigned as I don't (yet) have a paid dev cert, so it _may_ not work for you. If thats the case, clone the project and build a copy using your own dev cert as you would any normal xcode project.
+
+---
+
 ## Usage
 
-There is a compiled app binary in `dist` ready for use, but at the moment its unsigned as I don't have a paid dev cert, so it may not work for you. If thats the case, clone the project and build a copy using your own dev cert as you would any normal xcode project.
+It should hopefully be straight forward, hopefully 🤞 if not, drop an issue and I'll see what I can do! The main thing is remembering to allow the required permissions, in which to do so continue to read on...
 
 ### macOS Security
 
