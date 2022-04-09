@@ -10,11 +10,96 @@
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		rr2wP3zwGh0jlJEK4vp8J8ihtm0=
+		zYCXggqCYMA+DEEWFe7uq5b772U=
 		</data>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Info.plist</key>
+		<data>
+		09uCm0c6eh/BNoNd/eHi0Mp/2VY=
+		</data>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/cs.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RUpfNvbFx+2wv31yZ8V5ZnsI/U8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/de.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VaYIHxuVIVC2KFfJsbU2O08Ya9o=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ep3r5v0fafuptuLGznAzxjycEIU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mOXXbG+zAyt7pL1VVjBVGfV5tdw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/hu.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2NNcx8VpDZE0u6EJysb9vrBD8Qg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/ru.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lHv4168XGlhdq1tJb+hXaTkfL5k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/zh-Hans.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sywxLHBOAIw/1V+r9N6LYZAEEDA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/zh-TW.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			STDCz6QqY/UdQ8LoKu9kjVYfeL0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/libswift_Concurrency.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			BZs1xoJUNHufs7RJ+aweZ9IVjFw=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"059b35c68254347b9fb3b449f9ac1e67d2158c5c" or cdhash H"9130ff721a7ef595d81f54a1060c2e6d3f07fdbe"</string>
+		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>
 			<key>hash2</key>
@@ -26,8 +111,87 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6UPH/HU1ZmGtYI1PE840Q5GBM+Jlm+3jh5gi90kY1RU=
+			OSPAWW5qGoxpJuPQEb1q0P5VOIwFF59XQy+nNmDRnEM=
 			</data>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wyTgU850JTFIUv8/U3LAbcWW0PL1XvQt2M+x/OsYTVg=
+			</data>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/cs.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rq0D8JbSDWT+Kz6+YsOCkLbjuNJs70Gjjzor447FDck=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/de.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GFbtMdUoHtqRTVkhxXnVOSvBeaK1av8XyyzVp+3FBmI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cNekGzIgw936EzqDBCsy5R1rVV7FVaPdUNU1Ox3bAoY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/B0p7f6SazNZR+EnylO3fmQzpAMFmu1e8I/2RW6wYmM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/hu.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KI0GkVEwv3ceY1AI825jJz1ATVSBU87cqlAxdL5iB5A=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/ru.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lTDRBJ5m0PbX68dn36zvaH71I05JXAKGpRV9Fmu0Xg8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/zh-Hans.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZXS6YviD5Ij5mc7lHWGUQdOT1JGb8R+0ficITMeKymM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/zh-TW.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Bki/CDVHbW6R2UsfkOGlIPTcG0gx5+WkUhT/NCVz2v4=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>rules</key>
