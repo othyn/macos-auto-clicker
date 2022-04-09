@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import Defaults
 
+// TODO: This should really be a struct with a type Theme.Colour to store the Enum side of things...
+
 // Commented out colours are macOS 12 only
 enum Theme: String, Identifiable, CaseIterable, Defaults.Serializable {
     static let lightness: Double = 1.4

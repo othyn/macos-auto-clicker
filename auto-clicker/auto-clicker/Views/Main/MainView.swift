@@ -12,6 +12,7 @@ import Defaults
 
 struct MainView: View {
     @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.userSelectedInput) var pressInput
 
     @StateObject var autoClickSimulator = AutoClickSimulator()
     @StateObject var delayTimer = DelayTimer()
@@ -22,7 +23,6 @@ struct MainView: View {
     @State private var pressInterval: Int = DEFAULT_PRESS_INTERVAL
     @State private var pressIntervalDuration = Duration.milliseconds
 
-    @State private var pressKey: String = ""
     @State private var pressAmount: Int = DEFAULT_PRESS_AMOUNT
 
     @State private var startDelay: Int = DEFAULT_START_DELAY
@@ -42,13 +42,17 @@ struct MainView: View {
 
     // Stubbing methods to work around the weird hang issue
     func start() {
-        self.delayTimer.start(delayInSeconds: self.startDelay,
-                              onFinish: {
-                                  self.autoClickSimulator.start(duration: self.pressIntervalDuration,
-                                                                interval: self.pressInterval,
-                                                                presses: self.pressAmount,
-                                                                iterations: self.repeatAmount)
-                              })
+        self.delayTimer.start(
+            delayInSeconds: self.startDelay,
+            onFinish: {
+                self.autoClickSimulator.start(
+                    duration: self.pressIntervalDuration,
+                    interval: self.pressInterval,
+                    input: self.pressInput,
+                    presses: self.pressAmount,
+                    iterations: self.repeatAmount
+                )
+            })
     }
 
     func stop() {
@@ -100,13 +104,12 @@ struct MainView: View {
                 }
 
                 ActionStageLine {
-                    Text("press")
+                    Text("press '")
 
-                    Button("Left Click") {
-                    }
-                    .buttonStyle(UnderlinedButtonStyle())
-                    .disabled(true) // This feature is part of another feature branch
-//                    .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                    PressKeyListener()
+                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+
+                    Text("'")
 
 //                    DynamicWidthNumberField(text: "",
 //                                            min: MIN_CLICK_AMOUNT,
