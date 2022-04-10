@@ -11,10 +11,10 @@ import Defaults
 struct PressKeyListener: View {
     @State private var showingPressKeyListenerModal = false
 
-    @Default(.userSelectedInput) private var selectedInput
+    @Default(.userFormState) private var formState
 
     var body: some View {
-        Button(self.selectedInput.readable) {
+        Button(self.formState.pressInput.readable) {
             self.showingPressKeyListenerModal = true
         }
         .buttonStyle(UnderlinedButtonStyle())

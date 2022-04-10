@@ -48,6 +48,7 @@
 		B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */; };
 		B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */; };
 		B5E92B2927F35DB800A7FC63 /* DynamicWidthNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */; };
+		B5F5C60B28039AA40049B04D /* FormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5C60A28039AA40049B04D /* FormState.swift */; };
 		B5F6A00F27F37440003CD730 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A00E27F37440003CD730 /* MainView.swift */; };
 		B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */; };
 		B5F6A01627F3900E003CD730 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01527F3900E003CD730 /* Color+Extensions.swift */; };
@@ -97,6 +98,7 @@
 		B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthTextField.swift; sourceTree = "<group>"; };
 		B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthNumberField.swift; sourceTree = "<group>"; };
+		B5F5C60A28039AA40049B04D /* FormState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormState.swift; sourceTree = "<group>"; };
 		B5F6A00E27F37440003CD730 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Extensions.swift"; sourceTree = "<group>"; };
 		B5F6A01527F3900E003CD730 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		B510763E2801139000BB1CDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5F5C60A28039AA40049B04D /* FormState.swift */,
 				B510763F280113DB00BB1CDA /* Input.swift */,
 			);
 			path = Models;
@@ -487,6 +490,7 @@
 				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
 				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,
+				B5F5C60B28039AA40049B04D /* FormState.swift in Sources */,
 				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
 				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,

@@ -14,5 +14,5 @@ extension Defaults.Keys {
 
     static let appearanceSelectedTheme = Key<Theme>("appearance_selected_theme", default: .Blue)
 
-    static let userSelectedInput = Key<Input>("user_selected_input", default: Input())
+    static let userFormState = Key<FormState>("user_form_state", default: FormState())
 }
