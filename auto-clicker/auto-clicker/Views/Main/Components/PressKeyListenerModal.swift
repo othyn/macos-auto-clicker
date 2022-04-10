@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 import Carbon.HIToolbox
 
-fileprivate struct SmallText: View {
+private struct SmallText: View {
     var text: String
 
     init(_ text: String) {

@@ -1,5 +1,5 @@
 //
-//  StopwatchButtonStyle.swift
+//  ThemedButtonStyle.swift
 //  auto-clicker
 //
 //  Created by Ben Tindall on 26/02/2022.
@@ -8,11 +8,16 @@
 import SwiftUI
 import Defaults
 
-struct StopwatchButtonStyle: ButtonStyle {
+struct ThemedButtonStyle: ButtonStyle {
     var fontSize: CGFloat = 24
+    var width: CGFloat = 100
+    var height: CGFloat = 45
 
     func makeBody(configuration: Self.Configuration) -> some View {
-        SuperAmazingButton(configuration: configuration, fontSize: self.fontSize)
+        SuperAmazingButton(configuration: configuration,
+                           fontSize: self.fontSize,
+                           width: self.width,
+                           height: self.height)
     }
 
     struct SuperAmazingButton: View {
@@ -25,10 +30,12 @@ struct StopwatchButtonStyle: ButtonStyle {
         @State private var isHover = false
 
         let fontSize: CGFloat
+        let width: CGFloat
+        let height: CGFloat
 
         var body: some View {
             configuration.label
-                .frame(width: 100, height: 45)
+                .frame(width: self.width, height: self.height)
                 .foregroundColor(isEnabled ? self.activeTheme.fontColour : self.activeTheme.backgroundColour.darker)
                 .padding(.horizontal)
                 .padding(.bottom, 1)

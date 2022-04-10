@@ -13,6 +13,6 @@ extension Defaults.Keys {
     static let windowShouldKeepOnTop = Key<Bool>("window_should_keep_on_top", default: false)
 
     static let appearanceSelectedTheme = Key<Theme>("appearance_selected_theme", default: .Blue)
-    
+
     static let userSelectedInput = Key<Input>("user_selected_input", default: Input())
 }

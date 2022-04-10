@@ -17,6 +17,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             customToolbar.showsBaselineSeparator = false
             window.toolbar = customToolbar
         }
+
+        PermissionsService.acquireAccessibilityPrivileges()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-fileprivate class ZoopHelper: ObservableObject {
+private class ZoopHelper: ObservableObject {
     private static let maximumZoops: Int = 7
     private static let zoopDefault: String = "😴"
     private static let zoopVariants: [String] = [

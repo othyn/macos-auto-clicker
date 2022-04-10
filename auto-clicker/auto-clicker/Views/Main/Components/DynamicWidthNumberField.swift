@@ -57,8 +57,8 @@ struct DynamicWidthNumberField: View {
     }
 }
 
-//struct DynamicWidthNumberField_Previews: PreviewProvider {
+// struct DynamicWidthNumberField_Previews: PreviewProvider {
 //    static var previews: some View {
 //        NumberField(text: "Number Field", min: 0, max: 100, number: .constant(10))
 //    }
-//}
+// }

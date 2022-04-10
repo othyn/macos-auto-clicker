@@ -19,7 +19,6 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 ## Index
 
 - [Downloads](#downloads)
-- [Usage](#usage)
 - [Development](#development)
 - [Testing](#testing)
 - [Changelog](#changelog)
@@ -30,55 +29,17 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 Checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for direct App downloads. Here you can find the latest stable release and any pre-release builds too. There is also a compiled app binary in `dist` directory ready for use.
 
-At the moment, the app is unsigned as I don't (yet) have a paid dev cert, so it _may_ not work for you. If thats the case, clone the project and build a copy using your own dev cert as you would any normal xcode project.
+### Note
 
----
-
-## Usage
-
-It should hopefully be straight forward, hopefully 🤞 if not, drop an issue and I'll see what I can do! The main thing is remembering to allow the required permissions, in which to do so continue to read on...
-
-### macOS Security
-
-You may recieve a popup when first using the app that the app cannot be verified, this is as at the moment I don't have a paid Apple developer account so I cannot notarize the app.
-
-When first using the app, you may need to right click and select the 'Open' option to provide a new prompt that will allow you to trust the app going forward and to open it as normal.
-
-### macOS Permissions
-
-The app requires Accessibility permissions to be granted in order to enable the click functionality, without it the app won't be able to click and will appear to be doing nothing. You should be automatically prompted by macOS to enable this, so to enable it;
-
-1. Open System Preferences
-2. Click 'Security & Privacy'
-3. Click the padlock in the bottom right to make changes
-4. Select 'Accessibility' from the left side list
-5. Click the plus button at the bottom left of the list and find the `Auto Clicker.app` file to add it to the list _if it doesn't already appear in the list_
-6. Click the checkbox to the left of the 'Auto Clicker' app to check it if its not already checked
-7. Restart the 'Auto Clicker' app
+You may recieve a popup when first using the app that the app cannot be verified, this is as at the moment I don't have a paid Apple developer account so I cannot notarize the app. When first using the app, you may need to right click and select the 'Open' option to provide a prompt that will allow you to trust the app going forward and to open it as normal.
 
 ---
 
 ## Development
 
-This is a side project, so feel free to submit a PR for any functionality/bug fixes and go ham. There aren't any contributing guidelines or code styles as of yet.
+This is a side project, so feel free to submit a PR for any functionality/bug fixes and go ham. There aren't any contributing guidelines as of yet, code style is handled by `swiftlint` (`$ brew install swiftlint`) and should automatically fix the style upon build (there is a GH Action setup for this also).
 
 Make sure you open the project via the `*.xcworkspace` Workspace.
-
-### macOS Permissions
-
-I ended up doing [a post on StackOverflow](https://stackoverflow.com/a/71276964/4494375) as there were no answers to this question already, but I was having issues with app permissions during development. Found a way to do this after some trial and error, navigating through Xcode's (>11, currently 13) new build system.
-
-1. Open System Preferences
-2. Click 'Security & Privacy'
-3. Click the padlock in the bottom right to make changes
-4. Select 'Accessibility' from the left side list
-5. Click the plus button at the bottom left of the list and find the `Auto Clicker.app` file to add it to the list that we put within the project directory, this should be something like `$GIT_CLONE_DIR/macos-auto-clicker/auto-clicker/derived_data/auto-clicker/Build/Products/Debug/Auto Clicker.app`
-6. Click the checkbox to the left of the 'Auto Clicker' app to check it if its not already checked
-7. I've found that after each build, you will have to un-check and re-check the app in the list to get it to work again, so its worth leaving up during development
-
-Any builds should now have the relevant permissions.
-
-Just to note though, this will overwrite the permissions of any archived/prod builds as the app names and binaries are the same. They are easily added back though, just delete the permission for the build app and instead point it back at your prod app, usually in `/Applications`.
 
 ---
 

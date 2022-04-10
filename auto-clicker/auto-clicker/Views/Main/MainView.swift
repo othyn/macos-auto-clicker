@@ -157,7 +157,6 @@ struct MainView: View {
                                             number: self.$startDelay)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-
                     Text("\(self.startDelay == 1 ? "second" : "seconds") before starting.")
 
 //                    DurationSelector(selectedDuration: self.$repeatDelayDuration)
@@ -178,7 +177,7 @@ struct MainView: View {
                         Text(self.delayTimer.startButtonText.uppercased()).kerning(1)
                     }
                     .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
-                    .buttonStyle(StopwatchButtonStyle())
+                    .buttonStyle(ThemedButtonStyle())
 
                     KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStartButton.shortcut!)
                 }
@@ -188,7 +187,7 @@ struct MainView: View {
                         Text("stop".uppercased()).kerning(1)
                     }
                     .disabled(!self.autoClickSimulator.isAutoClicking)
-                    .buttonStyle(StopwatchButtonStyle())
+                    .buttonStyle(ThemedButtonStyle())
 
                     KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStopButton.shortcut!)
                 }
@@ -205,7 +204,6 @@ struct MainView: View {
 
             VStack {
                 HStack {
-                    
 //                    Spacer()
 //
 //                    StatBox(title: "Next press at",
@@ -217,7 +215,7 @@ struct MainView: View {
 //                            value: "2010-06-07 12:00:00.000")
 //
 //                    Spacer()
-                    
+
                     Spacer()
 
                     StatBox(title: "Next press at",
@@ -255,16 +253,16 @@ struct MainView: View {
                 .padding(.bottom, 12)
             }
             .background(self.activeTheme.backgroundColour.darker)
-            .onAppear(perform: self.registerKeyboardShortcuts)
         }
+        .onAppear(perform: self.registerKeyboardShortcuts)
     }
 }
 
-//struct ActionStageView_Previews: PreviewProvider {
+// struct ActionStageView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ActionStageView()
 //            .frame(minWidth: WindowSize.width)
 //            .frame(maxWidth: WindowSize.width)
 //            .padding(10)
 //    }
-//}
+// }

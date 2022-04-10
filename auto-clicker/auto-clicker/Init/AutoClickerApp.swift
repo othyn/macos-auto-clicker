@@ -15,6 +15,8 @@ struct AutoClickerApp: App {
 
     @Default(.appearanceSelectedTheme) var activeTheme
 
+    @State private var isTrusted = AXIsProcessTrusted()
+
     var body: some Scene {
         Settings {
             SettingsView()
@@ -27,10 +29,18 @@ struct AutoClickerApp: App {
             ZStack {
                 self.activeTheme.backgroundColour.ignoresSafeArea()
 
-                MainView()
+                if self.isTrusted {
+                    MainView()
+                } else {
+                    PermissionsView()
+                }
             }
             .frame(minWidth: WindowStateService.width, minHeight: WindowStateService.height)
             .frame(maxWidth: WindowStateService.width, maxHeight: WindowStateService.height)
+            .onAppear {
+                PermissionsService.pollAccessibilityPrivileges(onPermitted: { self.isTrusted = true },
+                                                               onDenied: { self.isTrusted = false })
+            }
         }
         .windowStyle(.hiddenTitleBar)
 //        .commands {
