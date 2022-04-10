@@ -204,7 +204,6 @@ struct MainView: View {
 
             VStack {
                 HStack {
-
 //                    Spacer()
 //
 //                    StatBox(title: "Next press at",

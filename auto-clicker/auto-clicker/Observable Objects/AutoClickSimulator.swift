@@ -28,7 +28,7 @@ class AutoClickSimulator: ObservableObject {
     private var duration: Duration = .milliseconds
     private var interval: Int = DEFAULT_PRESS_INTERVAL
     private var amountOfPresses: Int = DEFAULT_REPEAT_AMOUNT
-    private var input: Input = Input()
+    private var input = Input()
 
     private var timer: Timer?
     private var mouseLocation: NSPoint { NSEvent.mouseLocation }
