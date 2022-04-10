@@ -5,6 +5,8 @@
 //  Created by Ben Tindall on 26/02/2022.
 //
 
+// swiftlint:disable identifier_name
+
 import Foundation
 
 // MARK: - Press Interval

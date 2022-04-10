@@ -13,7 +13,8 @@ struct UnderlinedTextFieldStyle: TextFieldStyle {
 
     @Default(.appearanceSelectedTheme) var activeTheme
 
-    public func _body(configuration: TextField<_Label>) -> some View {
+    // swiftlint:disable:next identifier_name
+    func _body(configuration: TextField<_Label>) -> some View {
         configuration
             .textFieldStyle(.plain)
             .foregroundColor(isEnabled ? self.activeTheme.fontColour : self.activeTheme.backgroundColour.darker)

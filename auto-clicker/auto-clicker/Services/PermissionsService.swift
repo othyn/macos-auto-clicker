@@ -16,7 +16,7 @@ import Cocoa
 //  with the annoyance being that you have to apply the permissions on each app build...
 // See: https://stackoverflow.com/a/61890478/4494375
 
-class PermissionsService {
+final class PermissionsService {
     static func acquireAccessibilityPrivileges() {
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString: true]
         let enabled = AXIsProcessTrustedWithOptions(options)

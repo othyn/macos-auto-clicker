@@ -10,7 +10,7 @@ import SwiftUI
 
 public typealias ThemeColour = Color
 
-public extension ThemeColour {
+extension ThemeColour {
     var lighter: ThemeColour {
         self.changeBrightness(Theme.lightness)
     }

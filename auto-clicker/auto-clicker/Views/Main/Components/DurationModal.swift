@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct DurationModal: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) private var presentationMode
 
     @Default(.appearanceSelectedTheme) var activeTheme
 
@@ -36,6 +36,7 @@ struct DurationModal: View {
         .frame(width: 200, height: 220)
         .padding(.vertical, 14)
         .padding(.horizontal, 5)
-        .background(self.activeTheme.backgroundColour).ignoresSafeArea()
+        .background(self.activeTheme.backgroundColour)
+        .ignoresSafeArea()
     }
 }

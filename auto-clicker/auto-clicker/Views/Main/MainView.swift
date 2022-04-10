@@ -14,8 +14,8 @@ struct MainView: View {
     @Default(.appearanceSelectedTheme) var activeTheme
     @Default(.userSelectedInput) var pressInput
 
-    @StateObject var autoClickSimulator = AutoClickSimulator()
-    @StateObject var delayTimer = DelayTimer()
+    @StateObject private var autoClickSimulator = AutoClickSimulator()
+    @StateObject private var delayTimer = DelayTimer()
 
     // Some weird behaviour on macOS 11.2.3 and Swift 5 causes the app to hang on launch with these published and being passed through to View Bindings
     // For some reason placing any of this in an observable object will insta-hang the app, it never crashes but also never launches. No idea why as its
