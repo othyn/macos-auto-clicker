@@ -177,7 +177,7 @@ struct MainView: View {
                         Text(self.delayTimer.startButtonText.uppercased()).kerning(1)
                     }
                     .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
-                    .buttonStyle(StopwatchButtonStyle())
+                    .buttonStyle(ThemedButtonStyle())
 
                     KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStartButton.shortcut!)
                 }
@@ -187,7 +187,7 @@ struct MainView: View {
                         Text("stop".uppercased()).kerning(1)
                     }
                     .disabled(!self.autoClickSimulator.isAutoClicking)
-                    .buttonStyle(StopwatchButtonStyle())
+                    .buttonStyle(ThemedButtonStyle())
 
                     KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStopButton.shortcut!)
                 }
@@ -253,8 +253,8 @@ struct MainView: View {
                 .padding(.bottom, 12)
             }
             .background(self.activeTheme.backgroundColour.darker)
-            .onAppear(perform: self.registerKeyboardShortcuts)
         }
+        .onAppear(perform: self.registerKeyboardShortcuts)
     }
 }
 

@@ -33,8 +33,10 @@
 		B53BDC54264BED95001F8E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC53264BED95001F8E57 /* Assets.xcassets */; };
 		B53BDC57264BED95001F8E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */; };
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
+		B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46228032D3200C779FD /* PermissionsView.swift */; };
+		B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46428033A0F00C779FD /* PermissionsService.swift */; };
 		B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6394F27CA4CDD008B111A /* FieldConstants.swift */; };
-		B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */; };
+		B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */; };
 		B5E6395627CA76CB008B111A /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395527CA76CB008B111A /* Duration.swift */; };
 		B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */; };
 		B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */; };
@@ -80,8 +82,10 @@
 		B53BDC58264BED95001F8E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53BDC59264BED95001F8E57 /* auto_clicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = auto_clicker.entitlements; sourceTree = "<group>"; };
 		B53BDC5F264BF3A8001F8E57 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
+		B5B6B46228032D3200C779FD /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		B5B6B46428033A0F00C779FD /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
 		B5E6394F27CA4CDD008B111A /* FieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldConstants.swift; sourceTree = "<group>"; };
-		B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchButtonStyle.swift; sourceTree = "<group>"; };
+		B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButtonStyle.swift; sourceTree = "<group>"; };
 		B5E6395527CA76CB008B111A /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		B5E92B0127F0D0D400A7FC63 /* ActionStageLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionStageLine.swift; sourceTree = "<group>"; };
 		B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalButtonStyle.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B510760E27F4A25400BB1CDA /* WindowStateService.swift */,
+				B5B6B46428033A0F00C779FD /* PermissionsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		B510761227F4A34500BB1CDA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B5B6B46228032D3200C779FD /* PermissionsView.swift */,
 				B5F6A00E27F37440003CD730 /* MainView.swift */,
 				B5E6395127CA62DE008B111A /* Styles */,
 				B598440B264C43AE0021C3F6 /* Components */,
@@ -294,7 +300,7 @@
 		B5E6395127CA62DE008B111A /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				B5E6395227CA62EB008B111A /* StopwatchButtonStyle.swift */,
+				B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */,
 				B5E92B0B27F1032100A7FC63 /* ModalButtonStyle.swift */,
 				B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */,
 				B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */,
@@ -335,6 +341,7 @@
 				B53BDC49264BED93001F8E57 /* Frameworks */,
 				B53BDC4A264BED93001F8E57 /* Resources */,
 				B510762E27F4E72500BB1CDA /* Run Swiftlint */,
+				B5B6B466280345A700C779FD /* Reset Accessibility Permissions */,
 			);
 			buildRules = (
 			);
@@ -418,6 +425,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download via: brew install swiftlint\"\nfi\n";
 		};
+		B5B6B466280345A700C779FD /* Reset Accessibility Permissions */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Reset Accessibility Permissions";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "tccutil reset Accessibility $PRODUCT_BUNDLE_IDENTIFIER\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -432,6 +457,7 @@
 				B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */,
 				B510763B2800DDFF00BB1CDA /* NSEvent+Extensions.swift in Sources */,
 				B510763227FF7EC800BB1CDA /* InputAwareView.swift in Sources */,
+				B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */,
 				B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */,
 				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
@@ -451,6 +477,7 @@
 				B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */,
 				B5107640280113DB00BB1CDA /* Input.swift in Sources */,
 				B510762A27F4BD8F00BB1CDA /* UserDefaults.swift in Sources */,
+				B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */,
 				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
 				B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */,
 				B510761627F4A43B00BB1CDA /* GeneralSettingsTabView.swift in Sources */,
@@ -462,7 +489,7 @@
 				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,
 				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
-				B5E6395327CA62EB008B111A /* StopwatchButtonStyle.swift in Sources */,
+				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,
 				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
