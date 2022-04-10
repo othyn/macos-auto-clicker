@@ -22,7 +22,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: SwiftLint (Strict)
+      - name: SwiftLint
         uses: norio-nomura/action-swiftlint@3.2.1
-        with:
-          args: --strict
+      # - name: SwiftLint (Strict)
+      #   uses: norio-nomura/action-swiftlint@3.2.1
+      #   with:
+      #     args: --strict
