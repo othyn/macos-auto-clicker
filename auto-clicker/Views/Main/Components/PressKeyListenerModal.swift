@@ -25,7 +25,7 @@ private struct SmallText: View {
 struct PressKeyListenerModal: View {
     @Environment(\.presentationMode) private var presentationMode
 
-    @Default(.userSelectedInput) var selectedInput
+    @Default(.userSelectedInput) private var selectedInput
     @Default(.appearanceSelectedTheme) private var activeTheme
 
     @State private var escapeKeyStreak: Int = 0

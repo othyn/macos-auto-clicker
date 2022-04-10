@@ -11,7 +11,7 @@ import Defaults
 struct PressKeyListener: View {
     @State private var showingPressKeyListenerModal = false
 
-    @Default(.userSelectedInput) var selectedInput
+    @Default(.userSelectedInput) private var selectedInput
 
     var body: some View {
         Button(self.selectedInput.readable) {

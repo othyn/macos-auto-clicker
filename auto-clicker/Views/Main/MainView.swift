@@ -11,7 +11,7 @@ import KeyboardShortcuts
 import Defaults
 
 struct MainView: View {
-    @Default(.userSelectedInput) var pressInput
+    @Default(.userSelectedInput) private var pressInput
     @Default(.appearanceSelectedTheme) private var activeTheme
 
     @StateObject private var autoClickSimulator = AutoClickSimulator()
