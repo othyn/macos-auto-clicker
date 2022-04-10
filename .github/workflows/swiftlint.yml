@@ -5,14 +5,14 @@ on:
     branches: [ main, dev ]
     paths:
       - '.github/workflows/swiftlint.yml'
-      - 'auto-clicker/.swiftlint.yml'
-      - 'auto-clicker/auto-clicker/**/*.swift'
+      - '.swiftlint.yml'
+      - 'auto-clicker/**/*.swift'
   pull_request:
     branches: [ main, dev ]
     paths:
       - '.github/workflows/swiftlint.yml'
-      - 'auto-clicker/.swiftlint.yml'
-      - 'auto-clicker/auto-clicker/**/*.swift'
+      - '.swiftlint.yml'
+      - 'auto-clicker/**/*.swift'
 
 jobs:
   lint:
