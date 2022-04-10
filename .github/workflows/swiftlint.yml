@@ -1,0 +1,30 @@
+name: SwiftLint
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - '.github/workflows/swiftlint.yml'
+      - 'auto-clicker/.swiftlint.yml'
+      - 'auto-clicker/auto-clicker/**/*.swift'
+  pull_request:
+    branches:
+      - main
+      - dev
+    paths:
+      - '.github/workflows/swiftlint.yml'
+      - 'auto-clicker/.swiftlint.yml'
+      - 'auto-clicker/auto-clicker/**/*.swift'
+
+jobs:
+  SwiftLint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: SwiftLint (Strict)
+        uses: norio-nomura/action-swiftlint@3.2.1
+        with:
+          args: --strict
