@@ -334,7 +334,7 @@
 				B53BDC48264BED93001F8E57 /* Sources */,
 				B53BDC49264BED93001F8E57 /* Frameworks */,
 				B53BDC4A264BED93001F8E57 /* Resources */,
-				B510762E27F4E72500BB1CDA /* ShellScript */,
+				B510762E27F4E72500BB1CDA /* Run Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -400,7 +400,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B510762E27F4E72500BB1CDA /* ShellScript */ = {
+		B510762E27F4E72500BB1CDA /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,13 +409,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Swiftlint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"[warning] SwiftLint not installed, install with Brew:\"\n  echo \"$ brew install swiftlint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download via: brew install swiftlint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

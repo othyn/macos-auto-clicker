@@ -159,17 +159,17 @@ class AutoClickSimulator: ObservableObject {
         let keyUp = CGEvent(keyboardEventSource: source,
                             virtualKey: CGKeyCode(self.input.keyCode),
                             keyDown: false)
-        
+
         if self.input.modifiers.contains(.command) {
             keyDown?.flags = CGEventFlags.maskCommand
             keyUp?.flags = CGEventFlags.maskCommand
         }
-        
+
         if self.input.modifiers.contains(.control) {
             keyDown?.flags = CGEventFlags.maskControl
             keyUp?.flags = CGEventFlags.maskControl
         }
-        
+
         if self.input.modifiers.contains(.option) {
             keyDown?.flags = CGEventFlags.maskAlternate
             keyUp?.flags = CGEventFlags.maskAlternate

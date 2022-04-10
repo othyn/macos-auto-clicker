@@ -21,8 +21,8 @@ struct KeyboardShortcutHint: View {
     }
 }
 
-//struct KeyboardShortcutHint_Previews: PreviewProvider {
+// struct KeyboardShortcutHint_Previews: PreviewProvider {
 //    static var previews: some View {
 //        KeyboardShortcutHint()
 //    }
-//}
+// }

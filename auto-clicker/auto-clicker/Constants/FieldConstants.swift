@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - Press Interval
 
 let MIN_PRESS_INTERVAL: Int = 1
@@ -28,7 +27,6 @@ let MIN_REPEAT_AMOUNT: Int = 1
 let MAX_REPEAT_AMOUNT: Int = 100_000_000
 
 let DEFAULT_REPEAT_AMOUNT: Int = 100
-
 
 // MARK: - Start Delay
 

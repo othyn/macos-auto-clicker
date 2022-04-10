@@ -157,7 +157,6 @@ struct MainView: View {
                                             number: self.$startDelay)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-
                     Text("\(self.startDelay == 1 ? "second" : "seconds") before starting.")
 
 //                    DurationSelector(selectedDuration: self.$repeatDelayDuration)
@@ -205,7 +204,7 @@ struct MainView: View {
 
             VStack {
                 HStack {
-                    
+
 //                    Spacer()
 //
 //                    StatBox(title: "Next press at",
@@ -217,7 +216,7 @@ struct MainView: View {
 //                            value: "2010-06-07 12:00:00.000")
 //
 //                    Spacer()
-                    
+
                     Spacer()
 
                     StatBox(title: "Next press at",
@@ -260,11 +259,11 @@ struct MainView: View {
     }
 }
 
-//struct ActionStageView_Previews: PreviewProvider {
+// struct ActionStageView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ActionStageView()
 //            .frame(minWidth: WindowSize.width)
 //            .frame(maxWidth: WindowSize.width)
 //            .padding(10)
 //    }
-//}
+// }

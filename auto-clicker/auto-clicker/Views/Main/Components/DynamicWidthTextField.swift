@@ -29,7 +29,6 @@ struct DynamicWidthTextField: View {
     }
 }
 
-
 // https://stackoverflow.com/a/56729880/3902590
 struct GlobalGeometryGetter: View {
     @Binding var rect: CGRect
