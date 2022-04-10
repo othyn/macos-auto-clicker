@@ -9,12 +9,12 @@ on:
 jobs:
   build:
     name: Build and analyse with Xcode
-    runs-on: macos-latest
+    runs-on: macos-12
 
     strategy:
       matrix:
         xcode:
-          - ^13
+          - ^13.3
         # swift:
         #   - ~5.6 # Xcode 13.3
 
