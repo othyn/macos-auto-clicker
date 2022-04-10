@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DelayTimer: ObservableObject {
+final class DelayTimer: ObservableObject {
     private static let defaultStartButtonText: String = "Start"
 
     @Published var isCountingDown = false

@@ -14,7 +14,7 @@ struct ActionStageLine<Content: View>: View {
     @Default(.appearanceSelectedTheme) var activeTheme
 
     var body: some View {
-        HStack() {
+        HStack {
             HStack(content: content)
                 .font(.system(size: 32, weight: .light))
                 .foregroundColor(self.activeTheme.fontColour)
@@ -26,7 +26,7 @@ struct ActionStageLine<Content: View>: View {
 
 struct ActionStageLine_Previews: PreviewProvider {
     static var previews: some View {
-        ActionStageLine() {
+        ActionStageLine {
             Text("Test")
         }
     }

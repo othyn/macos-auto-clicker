@@ -16,7 +16,7 @@ struct DynamicWidthTextField: View {
 
     var body: some View {
         ZStack {
-            Text(text == "" ? title : text)
+            Text(text.isEmpty ? title : text)
                 .background(GlobalGeometryGetter(rect: $textRect))
                 .layoutPriority(1)
                 .opacity(0)

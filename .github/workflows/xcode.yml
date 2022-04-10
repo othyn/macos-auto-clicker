@@ -1,0 +1,31 @@
+name: Xcode - Build and Analyze
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build:
+    name: Build and analyse with Xcode
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        xcode:
+          - ^13
+        # swift:
+        #   - ~5.6 # Xcode 13.3
+
+    steps:
+      - name: Build
+        uses: mxcl/xcodebuild@v1
+        with:
+          platform: macOS
+          xcode: ${{ matrix.xcode }}
+          # swift: ${{ matrix.swift }} # selects the newest Xcode version that provides the requested Swift version
+          action: build # change to test when tests are written
+          # code-coverage: true
+          # warnings-as-errors: true
+          # configuration: release

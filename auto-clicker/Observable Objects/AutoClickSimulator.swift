@@ -9,20 +9,17 @@ import Foundation
 import Combine
 import SwiftUI
 
-class AutoClickSimulator: ObservableObject {
-    private static let defaultClickingAt: String = "-"
-
-    @Published public var isAutoClicking = false
+final class AutoClickSimulator: ObservableObject {
+    @Published var isAutoClicking = false
 
     // Some weird behaviour on macOS 11.2.3 and Swift 5 causes the app to hang on launch with these published and being passed through to View Bindings
 //    @Published var clickInterval: Int = 50
 //    @Published var amountOfClicks: Int = 1000
 
-    @Published public var remainingInterations: Int = 0
-    @Published public var clickingAt: String = defaultClickingAt
+    @Published var remainingInterations: Int = 0
 
-    @Published public var nextClickAt: Date = .init()
-    @Published public var finalClickAt: Date = .init()
+    @Published var nextClickAt: Date = .init()
+    @Published var finalClickAt: Date = .init()
 
     // Said weird behaviour is still occuring in 12.2.1, thus having these defined in here instead of Published, I hate this though so much
     private var duration: Duration = .milliseconds
@@ -46,7 +43,7 @@ class AutoClickSimulator: ObservableObject {
 //                                          repeats: true)
 //    }
 
-    public func start(duration: Duration, interval: Int, input: Input, presses: Int, iterations: Int) {
+    func start(duration: Duration, interval: Int, input: Input, presses: Int, iterations: Int) {
         self.isAutoClicking = true
         self.duration = duration
         self.interval = interval
@@ -65,13 +62,11 @@ class AutoClickSimulator: ObservableObject {
                                           repeats: true)
     }
 
-    public func stop() {
+    func stop() {
         self.isAutoClicking = false
 
         // Force zero, as the user could stop the timer early
         self.remainingInterations = 0
-
-        self.clickingAt = AutoClickSimulator.defaultClickingAt
 
         if let timer = self.timer {
             timer.invalidate()
@@ -88,13 +83,6 @@ class AutoClickSimulator: ObservableObject {
         if self.remainingInterations <= 0 {
             self.stop()
         }
-    }
-
-    private func updateClickingLocation() {
-        let mouseX = self.mouseLocation.x
-        let mouseY = NSHeight(NSScreen.screens[0].frame) - self.mouseLocation.y
-
-        self.clickingAt = "x: \(mouseX.rounded()), y: \(mouseY.rounded())"
     }
 
     private let mouseDownEventMap: [NSEvent.EventType: CGEventType] = [
@@ -126,7 +114,7 @@ class AutoClickSimulator: ObservableObject {
 
     private func generateMouseClickEvents(source: CGEventSource?) -> [CGEvent?] {
         let mouseX = self.mouseLocation.x
-        let mouseY = NSHeight(NSScreen.screens[0].frame) - self.mouseLocation.y
+        let mouseY = NSScreen.main!.frame.height - self.mouseLocation.y
 
         let clickingAtPoint = CGPoint(x: mouseX, y: mouseY)
 
@@ -199,7 +187,5 @@ class AutoClickSimulator: ObservableObject {
 
             completedPressesThisAction += 1
         }
-
-        updateClickingLocation()
     }
 }

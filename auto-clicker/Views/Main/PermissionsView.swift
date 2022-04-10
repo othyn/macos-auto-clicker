@@ -33,6 +33,11 @@ struct PermissionsView: View {
 
             Button("Open System Preferences", action: openSystemPreferences)
                 .buttonStyle(ThemedButtonStyle(fontSize: 16, width: 220))
+                .padding(.bottom, 25)
+
+            Text("The app will automatically unlock within a few seconds of the permission being granted.")
+                .font(.system(size: 12))
+                .multilineTextAlignment(.center)
         }
         .foregroundColor(self.activeTheme.fontColour)
         .padding(.horizontal, 35)

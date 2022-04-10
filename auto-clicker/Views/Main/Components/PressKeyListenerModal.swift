@@ -23,7 +23,7 @@ private struct SmallText: View {
 }
 
 struct PressKeyListenerModal: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) private var presentationMode
 
     @Default(.appearanceSelectedTheme) var activeTheme
     @Default(.userSelectedInput) var selectedInput
@@ -71,7 +71,8 @@ struct PressKeyListenerModal: View {
         .frame(width: 300, height: 150)
         .padding(.vertical, 14)
         .padding(.horizontal, 5)
-        .background(self.activeTheme.backgroundColour).ignoresSafeArea()
+        .background(self.activeTheme.backgroundColour)
+        .ignoresSafeArea()
         .overlay(InputAwareView(onPress: handleInputEvent))
     }
 }
