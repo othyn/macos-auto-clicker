@@ -11,8 +11,8 @@ import KeyboardShortcuts
 import Defaults
 
 struct MainView: View {
-    @Default(.appearanceSelectedTheme) var activeTheme
     @Default(.userSelectedInput) var pressInput
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     @StateObject private var autoClickSimulator = AutoClickSimulator()
     @StateObject private var delayTimer = DelayTimer()

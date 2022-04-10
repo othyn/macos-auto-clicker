@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct UnderlinedStyleDivider: View {
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     var body: some View {
         // https://stackoverflow.com/a/60410373/4494375

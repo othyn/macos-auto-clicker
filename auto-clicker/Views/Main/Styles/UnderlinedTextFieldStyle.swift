@@ -11,7 +11,7 @@ import Defaults
 struct UnderlinedTextFieldStyle: TextFieldStyle {
     @Environment(\.isEnabled) private var isEnabled: Bool
 
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     // swiftlint:disable:next identifier_name
     func _body(configuration: TextField<_Label>) -> some View {

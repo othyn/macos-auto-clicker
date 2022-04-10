@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct ModalButtonStyle: ButtonStyle {
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     @State private var isHover = false
 

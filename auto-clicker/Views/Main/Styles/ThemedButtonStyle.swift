@@ -23,7 +23,7 @@ struct ThemedButtonStyle: ButtonStyle {
     struct SuperAmazingButton: View {
         let configuration: ButtonStyle.Configuration
 
-        @Default(.appearanceSelectedTheme) var activeTheme
+        @Default(.appearanceSelectedTheme) private var activeTheme
 
         @Environment(\.isEnabled) private var isEnabled: Bool
 

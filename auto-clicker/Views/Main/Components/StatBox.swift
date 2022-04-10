@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct StatBox: View {
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     let title: String
     let value: String

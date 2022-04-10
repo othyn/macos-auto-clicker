@@ -11,7 +11,7 @@ import Defaults
 struct ActionStageLine<Content: View>: View {
     @ViewBuilder var content: () -> Content
 
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     var body: some View {
         HStack {

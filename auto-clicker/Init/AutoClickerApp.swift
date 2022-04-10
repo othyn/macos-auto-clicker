@@ -13,7 +13,7 @@ import Defaults
 struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     @State private var isTrusted = AXIsProcessTrusted()
 

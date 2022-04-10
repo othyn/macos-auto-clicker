@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct SettingsView: View {
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     var body: some View {
         TabView {

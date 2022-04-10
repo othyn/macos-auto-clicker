@@ -10,7 +10,7 @@ import KeyboardShortcuts
 import Defaults
 
 struct KeyboardShortcutHint: View {
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     let shortcut: KeyboardShortcuts.Name.Shortcut
 

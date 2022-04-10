@@ -11,7 +11,7 @@ import Defaults
 struct DurationModal: View {
     @Environment(\.presentationMode) private var presentationMode
 
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     @Binding var selected: Duration
 

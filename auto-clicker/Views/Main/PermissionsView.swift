@@ -9,7 +9,7 @@ import SwiftUI
 import Defaults
 
 struct PermissionsView: View {
-    @Default(.appearanceSelectedTheme) var activeTheme
+    @Default(.appearanceSelectedTheme) private var activeTheme
 
     func openSystemPreferences() {
         NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
