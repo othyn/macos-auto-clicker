@@ -2,25 +2,23 @@ name: SwiftLint
 
 on:
   push:
-    branches:
-      - main
-      - dev
+    branches: [ main, dev ]
     paths:
       - '.github/workflows/swiftlint.yml'
       - 'auto-clicker/.swiftlint.yml'
       - 'auto-clicker/auto-clicker/**/*.swift'
   pull_request:
-    branches:
-      - main
-      - dev
+    branches: [ main, dev ]
     paths:
       - '.github/workflows/swiftlint.yml'
       - 'auto-clicker/.swiftlint.yml'
       - 'auto-clicker/auto-clicker/**/*.swift'
 
 jobs:
-  SwiftLint:
+  lint:
+    name: Ensure project code standards are adhered to
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
