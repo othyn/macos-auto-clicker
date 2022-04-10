@@ -19,8 +19,11 @@ jobs:
         #   - ~5.6 # Xcode 13.3
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Check Working Directory
         run: |
+          pwd
           ls -lah
       - name: Build
         uses: mxcl/xcodebuild@v1
