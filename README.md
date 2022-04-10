@@ -1,5 +1,8 @@
 # Auto Clicker for macOS
 
+[![Lint](https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml)
+[![Build](https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml/badge.svg)](https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml)
+
 A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥️ in Swift 5 & SwiftUI.
 
 <p align="middle">
