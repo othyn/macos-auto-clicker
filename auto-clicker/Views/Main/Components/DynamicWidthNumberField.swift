@@ -17,48 +17,43 @@ struct DynamicWidthNumberField: View {
 
     @State private var rawString: String = ""
 
-    func numericValidator(newValue: String) {
-        let newValueNumbersOnly = newValue.filter { "0123456789".contains($0) }
+    func setInitNumber() {
+        self.rawString = String(self.number)
+    }
 
-        guard newValue == newValueNumbersOnly else {
-            self.rawString = newValueNumbersOnly
-            return
-        }
+    func validate(oldRawString: String, newRawString: String) {
+        let newRawStringNumeric = newRawString.filter { "0123456789".contains($0) }
 
-        guard let newValueInt = Int(newValueNumbersOnly) else {
+
+        // Guard that the new value contains numeric characters only
+        // Guard that the new value numeric only string is int cast successfully (should never fail anyway)
+        // Else set the string to the last valid numerical value
+        guard newRawString == newRawStringNumeric, var newNumber = Int(newRawStringNumeric) else {
             self.rawString = String(self.number)
             return
         }
 
-        guard newValueInt >= self.min else {
-            self.rawString = String(self.min)
-            return
+        // Range validation
+        if newNumber < self.min {
+            newNumber = self.min
+        }
+        if newNumber > self.max {
+            newNumber = self.max
         }
 
-        guard newValueInt <= self.max else {
-            self.rawString = String(self.max)
-            return
-        }
+        self.number = newNumber
 
         // Hacky way to stop leading and stacked zeros
-        self.rawString = String(newValueInt)
-
-        self.number = newValueInt
+        self.rawString = String(self.number)
     }
 
     var body: some View {
         DynamicWidthTextField(title: self.text, text: self.$rawString)
             .textFieldStyle(UnderlinedTextFieldStyle())
             .padding(.horizontal, 5)
-            .onReceive(Just(self.rawString), perform: self.numericValidator)
-            .onAppear(perform: {
-                self.rawString = String(self.number)
-            })
+            .onChange(of: self.rawString) { [rawString] newValue in
+                self.validate(oldRawString: rawString, newRawString: newValue)
+            }
+            .onAppear(perform: self.setInitNumber)
     }
 }
-
-// struct DynamicWidthNumberField_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NumberField(text: "Number Field", min: 0, max: 100, number: .constant(10))
-//    }
-// }
