@@ -35,36 +35,28 @@ private class InputView: NSView {
 
     // left mouse down
     override func mouseDown(with event: NSEvent) {
-        #if DEBUG
-            print(">> [left mouse] \(event)")
-        #endif
+        LoggerService.pressInputEvent(event: event)
 
         self.onPress(Input(event))
     }
 
     // right mouse down
     override func rightMouseDown(with event: NSEvent) {
-        #if DEBUG
-            print(">> [right mouse] \(event)")
-        #endif
+        LoggerService.pressInputEvent(event: event)
 
         self.onPress(Input(event))
     }
 
     // other mouse down
     override func otherMouseDown(with event: NSEvent) {
-        #if DEBUG
-            print(">> [other mouse] \(event)")
-        #endif
+        LoggerService.pressInputEvent(event: event)
 
         self.onPress(Input(event))
     }
 
     // any keyboard key down
     override func keyDown(with event: NSEvent) {
-        #if DEBUG
-            print(">> [key] \(event)")
-        #endif
+        LoggerService.pressInputEvent(event: event)
 
         self.onPress(Input(event))
     }

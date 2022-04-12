@@ -20,26 +20,17 @@ struct MainView: View {
     @State private var showThemeName = false
 
     var estNextClickAt: Date {
-        .init(timeInterval: self.formState.pressIntervalDuration.asTimeInterval(interval: self.formState.pressInterval), since: .init())
+        .init(timeInterval: self.formState.pressIntervalDuration.asTimeInterval(interval: self.formState.pressInterval),
+              since: .init())
     }
 
     var estFinalClickAt: Date {
-        .init(timeInterval: self.formState.pressIntervalDuration.asTimeInterval(interval: self.formState.pressInterval * self.formState.repeatAmount), since: .init())
+        .init(timeInterval: self.formState.pressIntervalDuration.asTimeInterval(interval: self.formState.pressInterval * self.formState.repeatAmount),
+              since: .init())
     }
 
-    // Stubbing methods to work around the weird hang issue
     func start() {
-        self.delayTimer.start(
-            delayInSeconds: self.formState.startDelay,
-            onFinish: {
-                self.autoClickSimulator.start(
-                    duration: self.formState.pressIntervalDuration,
-                    interval: self.formState.pressInterval,
-                    input: self.formState.pressInput,
-                    presses: self.formState.pressAmount,
-                    iterations: self.formState.repeatAmount
-                )
-            })
+        self.delayTimer.start(onFinish: self.autoClickSimulator.start)
     }
 
     func stop() {
@@ -98,14 +89,6 @@ struct MainView: View {
 
                     Text("'")
 
-//                    DynamicWidthNumberField(text: "",
-//                                            min: MIN_CLICK_AMOUNT,
-//                                            max: MAX_CLICK_AMOUNT,
-//                                            number: (self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
-//                                                     ? self.$autoClickSimulator.remainingPressesThisAction
-//                                                     : self.$clickAmount))
-//                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
-
                     DynamicWidthNumberField(text: "",
                                             min: MIN_PRESS_AMOUNT,
                                             max: MAX_PRESS_AMOUNT,
@@ -117,14 +100,6 @@ struct MainView: View {
 
                 ActionStageLine {
                     Text("repeat")
-
-//                    DynamicWidthNumberField(text: "",
-//                                            min: MIN_REPEAT_AMOUNT,
-//                                            max: MAX_REPEAT_AMOUNT,
-//                                            number: (self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
-//                                                     ? self.$autoClickSimulator.remainingInterations
-//                                                     : self.$repeatAmount))
-//                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
                     DynamicWidthNumberField(text: "",
                                             min: MIN_REPEAT_AMOUNT,
@@ -145,11 +120,6 @@ struct MainView: View {
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
                     Text("\(self.formState.startDelay == 1 ? "second" : "seconds") before starting.")
-
-//                    DurationSelector(selectedDuration: self.$repeatDelayDuration)
-//                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
-
-//                    Text(",")
                 }
             }
             .padding(.top, 20)
@@ -171,7 +141,7 @@ struct MainView: View {
 
                 VStack {
                     Button(action: self.stop) {
-                        Text("stop".uppercased()).kerning(1)
+                        Text("STOP").kerning(1)
                     }
                     .disabled(!self.autoClickSimulator.isAutoClicking)
                     .buttonStyle(ThemedButtonStyle())

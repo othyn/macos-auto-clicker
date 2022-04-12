@@ -6,19 +6,21 @@
 //
 
 import Foundation
+import Defaults
 
 final class DelayTimer: ObservableObject {
     private static let defaultStartButtonText: String = "Start"
 
     @Published var isCountingDown = false
-
     @Published var remainingDelaySeconds: Int = DEFAULT_START_DELAY
     @Published var startButtonText: String = defaultStartButtonText
 
     private var onFinish: () -> Void = {}
     private var timer: Timer?
 
-    func start(delayInSeconds: Int, onFinish: @escaping () -> Void) {
+    func start(onFinish: @escaping () -> Void) {
+        let delayInSeconds = Defaults[.userFormState].startDelay
+
         self.onFinish = onFinish
 
         if delayInSeconds > 0 {

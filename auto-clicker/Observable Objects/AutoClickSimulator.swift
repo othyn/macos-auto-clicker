@@ -8,13 +8,10 @@
 import Foundation
 import Combine
 import SwiftUI
+import Defaults
 
 final class AutoClickSimulator: ObservableObject {
     @Published var isAutoClicking = false
-
-    // Some weird behaviour on macOS 11.2.3 and Swift 5 causes the app to hang on launch with these published and being passed through to View Bindings
-//    @Published var clickInterval: Int = 50
-//    @Published var amountOfClicks: Int = 1000
 
     @Published var remainingInterations: Int = 0
 
@@ -30,26 +27,14 @@ final class AutoClickSimulator: ObservableObject {
     private var timer: Timer?
     private var mouseLocation: NSPoint { NSEvent.mouseLocation }
 
-    // Some weird behaviour on macOS 11.2.3 and Swift 5 causes the app to hang on launch with these published and being passed through to View Bindings
-//    func start() -> Void {
-//        self.isAutoClicking = true
-//
-//        self.remainingClicks = self.amountOfClicks
-//
-//        self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(Double(self.clickInterval) / 1000),
-//                                          target: self,
-//                                          selector: #selector(self.tick),
-//                                          userInfo: nil,
-//                                          repeats: true)
-//    }
-
-    func start(duration: Duration, interval: Int, input: Input, presses: Int, iterations: Int) {
+    func start() {
         self.isAutoClicking = true
-        self.duration = duration
-        self.interval = interval
-        self.input = input
-        self.amountOfPresses = presses
-        self.remainingInterations = iterations
+
+        self.duration = Defaults[.userFormState].pressIntervalDuration
+        self.interval = Defaults[.userFormState].pressInterval
+        self.input = Defaults[.userFormState].pressInput
+        self.amountOfPresses = Defaults[.userFormState].pressAmount
+        self.remainingInterations = Defaults[.userFormState].repeatAmount
 
         self.finalClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval * self.remainingInterations), since: .init())
 
@@ -136,10 +121,6 @@ final class AutoClickSimulator: ObservableObject {
     }
 
     private func generateKeyPressEvents(source: CGEventSource?) -> [CGEvent?] {
-        #if DEBUG
-        print("PRESSING  |  [key] \(self.input.readable)  |  [MOD FLAGS] \(self.input.modifiers)")
-        #endif
-
         let keyDown = CGEvent(keyboardEventSource: source,
                               virtualKey: CGKeyCode(self.input.keyCode),
                               keyDown: true)
@@ -182,7 +163,9 @@ final class AutoClickSimulator: ObservableObject {
 
         while completedPressesThisAction < self.amountOfPresses {
             for event in pressEvents {
-                event?.post(tap: .cghidEventTap)
+                event!.post(tap: .cghidEventTap)
+
+                LoggerService.simPress(input: self.input, location: event!.location)
             }
 
             completedPressesThisAction += 1

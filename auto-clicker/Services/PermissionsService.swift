@@ -16,33 +16,25 @@ import Cocoa
 //  with the annoyance being that you have to apply the permissions on each app build...
 // See: https://stackoverflow.com/a/61890478/4494375
 
-final class PermissionsService {
+final class PermissionsService: ObservableObject {
+    @Published var isTrusted: Bool = AXIsProcessTrusted()
+
+    func pollAccessibilityPrivileges() {
+        LoggerService.permissionTrustedState()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.isTrusted = AXIsProcessTrusted()
+
+            if !self.isTrusted {
+                self.pollAccessibilityPrivileges()
+            }
+        }
+    }
+
     static func acquireAccessibilityPrivileges() {
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString: true]
         let enabled = AXIsProcessTrustedWithOptions(options)
 
-        #if DEBUG
-        if enabled {
-            NSLog("App permissions granted")
-        } else {
-            NSLog("App permissions not granted")
-        }
-        #endif
-    }
-
-    static func pollAccessibilityPrivileges(onPermitted: @escaping () -> Void, onDenied: @escaping () -> Void) {
-        #if DEBUG
-        NSLog("Is trusted: \(AXIsProcessTrusted())")
-        #endif
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            if AXIsProcessTrusted() {
-                onPermitted()
-            } else {
-                onDenied()
-
-                PermissionsService.pollAccessibilityPrivileges(onPermitted: onPermitted, onDenied: onDenied)
-            }
-        }
+        LoggerService.permissionState(enabled: enabled)
     }
 }

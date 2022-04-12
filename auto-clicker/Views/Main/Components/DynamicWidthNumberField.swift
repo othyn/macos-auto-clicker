@@ -24,6 +24,11 @@ struct DynamicWidthNumberField: View {
     func validate(oldRawString: String, newRawString: String) {
         let newRawStringNumeric = newRawString.filter { "0123456789".contains($0) }
 
+        LoggerService.numberValidator(view: self,
+                                      oldNumber: self.number,
+                                      oldString: oldRawString,
+                                      newString: newRawString,
+                                      newIntString: newRawStringNumeric)
 
         // Guard that the new value contains numeric characters only
         // Guard that the new value numeric only string is int cast successfully (should never fail anyway)
