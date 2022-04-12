@@ -25,14 +25,14 @@ private struct SmallText: View {
 struct PressKeyListenerModal: View {
     @Environment(\.presentationMode) private var presentationMode
 
-    @Default(.userSelectedInput) private var selectedInput
     @Default(.appearanceSelectedTheme) private var activeTheme
+    @Default(.userFormState) private var formState
 
     @State private var escapeKeyStreak: Int = 0
 
     func handleInputEvent(input: Input) {
         guard !input.isMouseInput else {
-            self.selectedInput = input
+            self.formState.pressInput = input
 
             return
         }
@@ -49,7 +49,7 @@ struct PressKeyListenerModal: View {
         }
 
         if input.keyCode != kVK_Escape || (input.keyCode == kVK_Escape && self.escapeKeyStreak > 1) {
-            Defaults[.userSelectedInput] = input
+            self.formState.pressInput = input
 
             self.escapeKeyStreak = 0
         }
@@ -61,7 +61,7 @@ struct PressKeyListenerModal: View {
 
             Spacer()
 
-            Text(self.selectedInput.readable)
+            Text(self.formState.pressInput.readable)
 
             Spacer()
 

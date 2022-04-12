@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Duration: String, CustomStringConvertible, CaseIterable, Identifiable {
+enum Duration: String, CustomStringConvertible, CaseIterable, Identifiable, Codable {
     case milliseconds = "Millisecond(s)"
     case seconds = "Second(s)"
     case minutes = "Minute(s)"

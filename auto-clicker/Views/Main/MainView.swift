@@ -11,46 +11,33 @@ import KeyboardShortcuts
 import Defaults
 
 struct MainView: View {
-    @Default(.userSelectedInput) private var pressInput
     @Default(.appearanceSelectedTheme) private var activeTheme
+    @Default(.userFormState) private var formState
 
     @StateObject private var autoClickSimulator = AutoClickSimulator()
     @StateObject private var delayTimer = DelayTimer()
 
-    // Some weird behaviour on macOS 11.2.3 and Swift 5 causes the app to hang on launch with these published and being passed through to View Bindings
-    // For some reason placing any of this in an observable object will insta-hang the app, it never crashes but also never launches. No idea why as its
-    // near impossible to debug!
-    @State private var pressInterval: Int = DEFAULT_PRESS_INTERVAL
-    @State private var pressIntervalDuration = Duration.milliseconds
-
-    @State private var pressAmount: Int = DEFAULT_PRESS_AMOUNT
-
-    @State private var startDelay: Int = DEFAULT_START_DELAY
-//    @State private var repeatDelayDuration: Duration = Duration.seconds
-
-    @State private var repeatAmount: Int = DEFAULT_REPEAT_AMOUNT
-
     @State private var showThemeName = false
 
     var estNextClickAt: Date {
-        .init(timeInterval: self.pressIntervalDuration.asTimeInterval(interval: self.pressInterval), since: .init())
+        .init(timeInterval: self.formState.pressIntervalDuration.asTimeInterval(interval: self.formState.pressInterval), since: .init())
     }
 
     var estFinalClickAt: Date {
-        .init(timeInterval: self.pressIntervalDuration.asTimeInterval(interval: self.pressInterval * self.repeatAmount), since: .init())
+        .init(timeInterval: self.formState.pressIntervalDuration.asTimeInterval(interval: self.formState.pressInterval * self.formState.repeatAmount), since: .init())
     }
 
     // Stubbing methods to work around the weird hang issue
     func start() {
         self.delayTimer.start(
-            delayInSeconds: self.startDelay,
+            delayInSeconds: self.formState.startDelay,
             onFinish: {
                 self.autoClickSimulator.start(
-                    duration: self.pressIntervalDuration,
-                    interval: self.pressInterval,
-                    input: self.pressInput,
-                    presses: self.pressAmount,
-                    iterations: self.repeatAmount
+                    duration: self.formState.pressIntervalDuration,
+                    interval: self.formState.pressInterval,
+                    input: self.formState.pressInput,
+                    presses: self.formState.pressAmount,
+                    iterations: self.formState.repeatAmount
                 )
             })
     }
@@ -94,10 +81,10 @@ struct MainView: View {
                     DynamicWidthNumberField(text: "",
                                             min: MIN_PRESS_INTERVAL,
                                             max: MAX_PRESS_INTERVAL,
-                                            number: self.$pressInterval)
+                                            number: self.$formState.pressInterval)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    DurationSelector(selectedDuration: self.$pressIntervalDuration)
+                    DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
                     Text(",")
@@ -122,10 +109,10 @@ struct MainView: View {
                     DynamicWidthNumberField(text: "",
                                             min: MIN_PRESS_AMOUNT,
                                             max: MAX_PRESS_AMOUNT,
-                                            number: self.$pressAmount)
+                                            number: self.$formState.pressAmount)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    Text("\(self.pressAmount == 1 ? "time" : "times"),")
+                    Text("\(self.formState.pressAmount == 1 ? "time" : "times"),")
                 }
 
                 ActionStageLine {
@@ -142,10 +129,10 @@ struct MainView: View {
                     DynamicWidthNumberField(text: "",
                                             min: MIN_REPEAT_AMOUNT,
                                             max: MAX_REPEAT_AMOUNT,
-                                            number: self.$repeatAmount)
+                                            number: self.$formState.repeatAmount)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    Text("\(self.repeatAmount == 1 ? "time" : "times").")
+                    Text("\(self.formState.repeatAmount == 1 ? "time" : "times").")
                 }
 
                 ActionStageLine {
@@ -154,10 +141,10 @@ struct MainView: View {
                     DynamicWidthNumberField(text: "",
                                             min: MIN_START_DELAY,
                                             max: MAX_START_DELAY,
-                                            number: self.$startDelay)
+                                            number: self.$formState.startDelay)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    Text("\(self.startDelay == 1 ? "second" : "seconds") before starting.")
+                    Text("\(self.formState.startDelay == 1 ? "second" : "seconds") before starting.")
 
 //                    DurationSelector(selectedDuration: self.$repeatDelayDuration)
 //                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
