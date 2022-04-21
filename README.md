@@ -172,10 +172,9 @@ Distributed under the MIT License. See [LICENSE](https://github.com/othyn/macos-
 
 Use this section to mention useful resources and libraries that you have used in your projects.
 
-- Readme: [Shields.io](https://shields.io/)
-- Readme: [Awesome README](https://github.com/matiassingers/awesome-readme)
-- Readme: [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
-- Readme: [Readme Template](https://github.com/othneildrew/Best-README-Template)
+- Readme: [shields.io](https://shields.io/)
+- Readme: [ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+- Readme: [Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
 - Package: [sindresorhus/KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts)
 - Package: [sindresorhus/Defaults](https://github.com/sindresorhus/Defaults)
 - Package: [othyn/DateStrings](https://github.com/othyn/DateStrings)
