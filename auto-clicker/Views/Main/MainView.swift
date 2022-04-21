@@ -12,7 +12,7 @@ import Defaults
 
 struct MainView: View {
     @Default(.appearanceSelectedTheme) private var activeTheme
-    @Default(.userFormState) private var formState
+    @Default(.autoClickerState) private var formState
 
     @StateObject private var autoClickSimulator = AutoClickSimulator()
     @StateObject private var delayTimer = DelayTimer()

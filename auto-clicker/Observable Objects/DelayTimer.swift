@@ -19,7 +19,7 @@ final class DelayTimer: ObservableObject {
     private var timer: Timer?
 
     func start(onFinish: @escaping () -> Void) {
-        let delayInSeconds = Defaults[.userFormState].startDelay
+        let delayInSeconds = Defaults[.autoClickerState].startDelay
 
         self.onFinish = onFinish
 

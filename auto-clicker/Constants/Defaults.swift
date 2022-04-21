@@ -1,5 +1,5 @@
 //
-//  UserDefaults.swift
+//  Defaults.swift
 //  auto-clicker
 //
 //  Created by Ben Tindall on 30/03/2022.
@@ -14,5 +14,5 @@ extension Defaults.Keys {
 
     static let appearanceSelectedTheme = Key<Theme>("appearance_selected_theme", default: .Blue)
 
-    static let userFormState = Key<FormState>("user_form_state", default: FormState())
+    static let autoClickerState = Key<FormState>("user_form_state", default: FormState())
 }

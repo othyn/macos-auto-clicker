@@ -26,7 +26,7 @@ struct PressKeyListenerModal: View {
     @Environment(\.presentationMode) private var presentationMode
 
     @Default(.appearanceSelectedTheme) private var activeTheme
-    @Default(.userFormState) private var formState
+    @Default(.autoClickerState) private var formState
 
     @State private var escapeKeyStreak: Int = 0
 

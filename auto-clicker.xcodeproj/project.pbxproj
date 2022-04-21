@@ -20,7 +20,7 @@
 		B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762227F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift */; };
 		B510762527F4BB7B00BB1CDA /* WindowSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */; };
 		B510762827F4BD5500BB1CDA /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = B510762727F4BD5500BB1CDA /* Defaults */; };
-		B510762A27F4BD8F00BB1CDA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762927F4BD8F00BB1CDA /* UserDefaults.swift */; };
+		B510762A27F4BD8F00BB1CDA /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762927F4BD8F00BB1CDA /* Defaults.swift */; };
 		B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */; };
 		B510763227FF7EC800BB1CDA /* InputAwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763127FF7EC800BB1CDA /* InputAwareView.swift */; };
 		B510763527FF811B00BB1CDA /* PressKeyListenerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763427FF811B00BB1CDA /* PressKeyListenerModal.swift */; };
@@ -68,7 +68,7 @@
 		B510762027F4BB4900BB1CDA /* AppearanceSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsTabView.swift; sourceTree = "<group>"; };
 		B510762227F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsSettingsTabView.swift; sourceTree = "<group>"; };
 		B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSettingsTabView.swift; sourceTree = "<group>"; };
-		B510762927F4BD8F00BB1CDA /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		B510762927F4BD8F00BB1CDA /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Workaround.swift"; sourceTree = "<group>"; };
 		B510763127FF7EC800BB1CDA /* InputAwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAwareView.swift; sourceTree = "<group>"; };
 		B510763427FF811B00BB1CDA /* PressKeyListenerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressKeyListenerModal.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 			children = (
 				B5E6394F27CA4CDD008B111A /* FieldConstants.swift */,
 				B510761727F4A58500BB1CDA /* KeyboardShortcuts.swift */,
-				B510762927F4BD8F00BB1CDA /* UserDefaults.swift */,
+				B510762927F4BD8F00BB1CDA /* Defaults.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */,
 				B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */,
 				B5107640280113DB00BB1CDA /* Input.swift in Sources */,
-				B510762A27F4BD8F00BB1CDA /* UserDefaults.swift in Sources */,
+				B510762A27F4BD8F00BB1CDA /* Defaults.swift in Sources */,
 				B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */,
 				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
 				B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */,

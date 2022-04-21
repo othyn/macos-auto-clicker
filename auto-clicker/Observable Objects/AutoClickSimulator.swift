@@ -30,11 +30,11 @@ final class AutoClickSimulator: ObservableObject {
     func start() {
         self.isAutoClicking = true
 
-        self.duration = Defaults[.userFormState].pressIntervalDuration
-        self.interval = Defaults[.userFormState].pressInterval
-        self.input = Defaults[.userFormState].pressInput
-        self.amountOfPresses = Defaults[.userFormState].pressAmount
-        self.remainingInterations = Defaults[.userFormState].repeatAmount
+        self.duration = Defaults[.autoClickerState].pressIntervalDuration
+        self.interval = Defaults[.autoClickerState].pressInterval
+        self.input = Defaults[.autoClickerState].pressInput
+        self.amountOfPresses = Defaults[.autoClickerState].pressAmount
+        self.remainingInterations = Defaults[.autoClickerState].repeatAmount
 
         self.finalClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval * self.remainingInterations), since: .init())
 
