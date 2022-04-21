@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "datestrings",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/othyn/DateStrings.git",
+      "state" : {
+        "revision" : "f62aa72a623caa85d0b7ec4f5199d3d61708bf3a",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "defaults",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/Defaults",
+      "state" : {
+        "revision" : "119f654d44f7b90f00dc11f7dd1c94a36f12576b",
+        "version" : "6.2.1"
+      }
+    },
+    {
+      "identity" : "keyboardshortcuts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts",
+      "state" : {
+        "revision" : "0dcedd56994d871f243f3d9c76590bfd9f8aba69",
+        "version" : "1.5.0"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,166 +1,174 @@
-# Auto Clicker for macOS
+<div align="center">
+    <img src="art/icon/Icon-1024.png" alt="logo" width="250" height="auto" />
+    <h1>Auto Clicker for macOS</h1>
+    <p>A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥️ in Swift 5 & SwiftUI.</p>
+</div>
 
-A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥️ in Swift 5 & SwiftUI.
+<div align="center">
+    <p>
+        <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml">
+            <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml/badge.svg" alt="lint" />
+        </a>
+        <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml">
+            <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml/badge.svg" alt="build" />
+        </a>
+        <a href="https://github.com/othyn/macos-auto-clicker/graphs/contributors">
+            <img src="https://img.shields.io/github/contributors/othyn/macos-auto-clicker" alt="contributors" />
+        </a>
+        <a href="https://github.com/othyn/macos-auto-clicker/network/members">
+            <img src="https://img.shields.io/github/forks/othyn/macos-auto-clicker" alt="forks" />
+        </a>
+        <a href="https://github.com/othyn/macos-auto-clicker/stargazers">
+            <img src="https://img.shields.io/github/stars/othyn/macos-auto-clicker" alt="stars" />
+        </a>
+        <a href="https://github.com/othyn/macos-auto-clicker/issues/">
+            <img src="https://img.shields.io/github/issues/othyn/macos-auto-clicker" alt="open issues" />
+        </a>
+        <a href="https://github.com/othyn/macos-auto-clicker/blob/master/LICENSE">
+            <img src="https://img.shields.io/github/license/othyn/macos-auto-clicker.svg" alt="license" />
+        </a>
+    </p>
+</div>
 
-<p align="middle">
+<div align="center">
+    <h4>
+        <a href="https://github.com/othyn/macos-auto-clicker/issues/">Report Bug</a>
+        <span> · </span>
+        <a href="https://github.com/othyn/macos-auto-clicker/issues/">Request Feature</a>
+    </h4>
+</div>
+
+<br />
+
+<!-- Table of Contents -->
+
+# :notebook_with_decorative_cover: Table of Contents
+
+- [About the Project](#star2-about-the-project)
+  - [Screenshots](#camera-screenshots)
+  - [Tech Stack](#space_invader-tech-stack)
+  - [Features](#dart-features)
+- [Getting Started](#toolbox-getting-started)
+  - [Download](#floppy_disk-download)
+  - [Development](#gear-development)
+  <!-- - [Running Tests](#test_tube-running-tests) -->
+  - [Builds](#triangular_flag_on_post-builds)
+- [Roadmap](https://github.com/users/othyn/projects/1)
+- [Changelog](https://github.com/othyn/macos-auto-clicker/releases)
+- [License](#warning-license)
+- [Acknowledgements](#gem-acknowledgements)
+
+<!-- About the Project -->
+
+## :star2: About the Project
+
+All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. This one aims to fix all that giving you flexibility and style. Plus, I get to write in easter eggs, who says love can't be colourful.
+
+<!-- Screenshots -->
+
+### :camera: Screenshots
+
+<div align="center">
     <img alt="screenshot" src="art/screenshot.png" width="70%" />
-</p>
+</div>
 
-Supports both Light and Dark mode via respecting the system theme.
+<!-- TechStack -->
 
-### Why tho?
+### :space_invader: Tech Stack
 
-All the auto clickers out there were either really outdated, old, buggy and/or have legacy code bases. So, given how simple they are to make, I figured I'd give it a shot, at whipped this up in an evening or two with the aim to make something more modern and maintainable. Plus, I get to write in easter eggs, who says love can't be colourful.
+<ul>
+    <li>Swift</li>
+    <li>Swift UI</li>
+    <li>Package: <a href="https://github.com/sindresorhus/KeyboardShortcuts">sindresorhus/KeyboardShortcuts</a></li>
+    <li>Package: <a href="https://github.com/sindresorhus/Defaults">sindresorhus/Defaults</a></li>
+    <li>Package: <a href="https://github.com/othyn/DateStrings">othyn/DateStrings</a></li>
+</ul>
 
----
+<!-- Features -->
 
-## Index
+### :dart: Features
 
-- [Usage](#usage)
-- [Development](#development)
-- [Testing](#testing)
-- [Todo](#todo)
-- [Changelog](#changelog)
+- An auto clicker of mouse buttons and presser of keyboard keys!
+- Allows for pressing or clicking;
+  - ... of any mouse or keyboard button
+  - ... at a given interval
+  - ... for a given amount of presses per interval
+  - ... for a given amount of times
+  - ... after a delayed start
+- Custom keyboard shortcuts to start and stop the clicking or pressing globally
+- Option to keep the window on top for easy access
+- Persists all your options between sessions
+- Fresh and modern UI/UX
+- Lots of colour schemes to suit what ever you prefer
 
----
+<!-- Getting Started -->
 
-## Usage
+## :toolbox: Getting Started
 
-There is a compiled app binary in `dist` ready for use, but at the moment its unsigned as I don't have a paid dev cert, so it may not work for you. If thats the case, clone the project and build a copy using your own dev cert as you would any normal xcode project.
+<!-- Download -->
 
-### macOS Permissions
+### :floppy_disk: Download
 
-The app requires Accessibility permissions to be granted in order to enable the click functionality, without it the app won't be able to click and will appear to be doing nothing. You should be automatically prompted by macOS to enable this, so to enable it;
+Checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for direct App downloads for the version you want to use. Here you can find the latest stable release and any pre-release builds too. There is also a compiled app binary in `dist` directory ready for use.
 
-1. Open System Preferences
-2. Click 'Security & Privacy'
-3. Click the padlock in the bottom right to make changes
-4. Select 'Accessibility' from the left side list
-5. Click the plus button at the bottom left of the list and find the `Auto Clicker.app` file to add it to the list _if it doesn't already appear in the list_
-6. Click the checkbox to the left of the 'Auto Clicker' app to check it if its not already checked
-7. Restart the 'Auto Clicker' app
+You may recieve a popup when first using the app that the app cannot be verified, this is as at the moment I don't have a paid Apple developer account so I cannot notarize the app. When first using the app, you may need to right click and select the 'Open' option to provide a prompt that will allow you to trust the app going forward and to open it as normal.
 
----
+<!-- Development -->
 
-## Development
+### :gear: Development
 
-This is a side project, so feel free to submit a PR for any functionality/bug fixes and go ham. There aren't any contributing guidelines or code styles as of yet.
+As simple as cloning the project and opening it in Xcode! Make sure you open the project via the `*.xcworkspace` Workspace.
 
-Make sure you open the project via the `*.xcworkspace` Workspace.
+Remember to install the Swift package dependencies once you've opened it for the first time too.
 
-### macOS Permissions
+Build and run through Xcode as you normally would to a macOS target. As a note, the build 'number' will automatically be set to the latest short commit hash when the application is built.
 
-I ended up doing [a post on StackOverflow](https://stackoverflow.com/a/71276964/4494375) as there were no answers to this question already, but I was having issues with app permissions during development. Found a way to do this after some trial and error, navigating through Xcode's (>11, currently 13) new build system.
+This is a side project, so feel free to submit a PR for any functionality/bug fixes and go ham. There aren't any contributing guidelines as of yet, code style is handled by `swiftlint` (`$ brew install swiftlint`) and should automatically fix the style upon build (there is a GH Action setup for this also).
 
-1. Open System Preferences
-2. Click 'Security & Privacy'
-3. Click the padlock in the bottom right to make changes
-4. Select 'Accessibility' from the left side list
-5. Click the plus button at the bottom left of the list and find the `Auto Clicker.app` file to add it to the list that we put within the project directory, this should be something like `$GIT_CLONE_DIR/macos-auto-clicker/auto-clicker/derived_data/auto-clicker/Build/Products/Debug/Auto Clicker.app`
-6. Click the checkbox to the left of the 'Auto Clicker' app to check it if its not already checked
-7. Restart the 'Auto Clicker' app
+<!-- Running Tests -->
 
-Any builds should now have the relevant permissions.
+<!-- ### :test_tube: Running Tests
 
-Just to note though, this will overwrite the permissions of any archived/prod builds as the app names and binaries are the same. They are easily added back though, just delete the permission for the build app and instead point it back at your prod app, usually in `/Applications`.
+To run tests, run the following command
 
----
+```bash
+  yarn test test
+``` -->
 
-## Testing
+<!-- Builds -->
 
-Hey00000, this needs implementing.
+### :triangular_flag_on_post: Builds
 
----
+I've tried to automate much of the build process behind scripts for the sake of ease and introducing better CD pipelines in the future.
 
-## Todo
+#### App
 
-- Dev cert from a paid dev account so I can sign the app!
-- Add global shortcuts (when app is not in focus), as the shortcuts currently only work in-app. Now I have AppDelegate hooks, I should be able to re-install `soffes/HotKey` via SPM and get them setup, making sure to place it somewhere where it won't get garbage collected
-- Semver auto version bumping and build numbers (see my ios-chronoscape repo)
-- Tests
-- Customise keybinds
-- `brew` support
-- 'Keep ontop' option
-- Menu bar mode/move app to menu bar popup
+To build the release version of the app, run `./release`. This will do a clean release build of the app and publish it to `dist/Auto Clicker.app`, along with building the DMG to `dist/Auto Clicker.dmg`.
 
----
+#### Icons
 
-## Changelog
+If the icon is updated in Figma, export the fragments from Figma using the Export option which will export each required size to PNG. Save these into the `art/icon/fragments` folder.
 
-Any and all project changes for releases should be documented below. Versioning follows the [SemVer](https://semver.org/) standard.
+Once done, update the icon images with their relevant size counterpart in Xcode `Build Assets/Assets.xcassets/AppIcon`.
 
----
+To build the required `.icns` icon file that is bundled with the DMG output, run `art/icon/build`. This should generate a refreshed `art/icon/AutoClicker.icns` that will then be picked up when a new DMG is built.
 
-### Version 1.2.0
+<!-- License -->
 
-Various functionality tweaks alongside UI/UX changes.
+## :warning: License
 
-#### Added
+Distributed under the MIT License. See [LICENSE](https://github.com/othyn/macos-auto-clicker/blob/main/LICENSE) for more information.
 
-- Added a Workspace `auto-clicker.xcworkspace` that should be worked from which allows for easier local relative build paths so permissions can be given more easily to allow for clicking functionality to work
-- Click interval is now measured in selectable; Milliseconds, Seconds, Minutes and Hours. This makes the click interval selection much more intuitive
-- There are now two more readouts for 'Next click at' and 'Final click at' that will show what date/time the next and final clicks will occur at
-- Instructions to this README on setting up macOS permissions that the app requires
+<!-- Acknowledgments -->
 
-#### Changed
+## :gem: Acknowledgements
 
-- Updated `dist/README.md` with new instructions for Xcode 13
-- Updated button styling to be more visually appealing and easier to read
-- Upped the maximum amount of clicks to 100,000,000 to allow for a 'virtually unlimited' mode
-- Instead of a checkbox, the start delay is now a user inputted variable between 0 (instant) and 60 seconds
-- The 'Remaining clicks' and 'Currently clicking at' UI elements are now Text View's instead of disabled TextField's
-- Updated screenshot with new UI
+Use this section to mention useful resources and libraries that you have used in your projects.
 
-#### Fixed
-
-- Nothing
-
-#### Removed
-
-- Nothing
-
----
-
-### Version 1.1.0
-
-This should have been a patch release, but I don't have the build suite quite setup for it yet so its a minor release instead.
-
-#### Added
-
-- Easter egg!
-
-#### Changed
-
-- Minor code refactor and tidy up
-- UI overhaul
-- Shortcuts for the commands are now displayed underneath the buttons instead of in placeholder fields
-
-#### Fixed
-
-- Nothing
-
-#### Removed
-
-- Nothing
-
----
-
-### Version 1.0.0
-
-Initial release.
-
-#### Added
-
-- Everything
-
-#### Changed
-
-- Everything
-
-#### Fixed
-
-- Everything
-
-#### Removed
-
-- Everything
+- Readme: [Shields.io](https://shields.io/)
+- Readme: [Awesome README](https://github.com/matiassingers/awesome-readme)
+- Readme: [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
+- Readme: [Readme Template](https://github.com/othneildrew/Best-README-Template)
+- Package: [sindresorhus/KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts)
+- Package: [sindresorhus/Defaults](https://github.com/sindresorhus/Defaults)
+- Package: [othyn/DateStrings](https://github.com/othyn/DateStrings)

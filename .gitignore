@@ -1,5 +1,9 @@
 ## Remove new local build directory
-auto-clicker/derived_data
+derived_data
+
+# Remove build log files
+dist/logs/*
+!dist/logs/.gitkeep
 
 # Xcode
 #
