@@ -52,7 +52,7 @@
   - [Download](#floppy_disk-download)
   - [Development](#gear-development)
   <!-- - [Running Tests](#test_tube-running-tests) -->
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Builds](#triangular_flag_on_post-builds)
 - [Roadmap](https://github.com/users/othyn/projects/1)
 - [Changelog](https://github.com/othyn/macos-auto-clicker/releases)
 - [License](#warning-license)
@@ -135,23 +135,23 @@ To run tests, run the following command
   yarn test test
 ``` -->
 
-<!-- Deployment -->
+<!-- Builds -->
 
-### :triangular_flag_on_post: Deployment
+### :triangular_flag_on_post: Builds
 
-With Xcode (currently 13.2.1) open and having it as the foreground app (so it takes over the menu bar with its menu items), do the following:
+I've tried to automate much of the build process behind scripts for the sake of ease and introducing better CD pipelines in the future.
 
-1. With the project open, ensure the Version and Build are incremented in the `auto-clicker.xcodeproj` 'General' tab under the `auto-clicker` Target on the left
-2. Then in the menu bar click 'Product' then 'Archive'
-3. This brings up the project organizer with a list of Archives
-4. Next with the desired Archive selected, click 'Distribute App'
-5. Select 'Copy App' and press 'Next'
-6. In the file dialogue, open the `/dist` directory and click 'Export'
-7. Navigate to the `/dist` directory in Finder and pull the Archive out of the auto-generated subdirectory and into the root `/dist` directory, overwriting the existing `Auto Clicker.app` with the new `Auto Clicker.app`
+#### App
 
-I would like to get this automated by a GitHub Action at some point, although its proving challenging!
+To build the release version of the app, run `./release`. This will do a clean release build of the app and publish it to `dist/Auto Clicker.app`, along with building the DMG to `dist/Auto Clicker.dmg`.
 
-Further reading can be found here: [https://jameshfisher.com/2017/08/12/xcode-build-dmg-for-distribution-macos/](https://jameshfisher.com/2017/08/12/xcode-build-dmg-for-distribution-macos/)
+#### Icons
+
+If the icon is updated in Figma, export the fragments from Figma using the Export option which will export each required size to PNG. Save these into the `art/icon/fragments` folder.
+
+Once done, update the icon images with their relevant size counterpart in Xcode `Build Assets/Assets.xcassets/AppIcon`.
+
+To build the required `.icns` icon file that is bundled with the DMG output, run `art/icon/build`. This should generate a refreshed `art/icon/AutoClicker.icns` that will then be picked up when a new DMG is built.
 
 <!-- License -->
 

@@ -1,0 +1,59 @@
+#!/bin/sh
+
+if ! command -v create-dmg 1>/dev/null 2>&1; then
+    echo 'You need to install `create-dmg` first!'
+    echo '$ brew install create-dmg'
+    exit 1
+fi
+
+echo "Have you remembered to update the version number?"
+read -p "Press Enter when ready" </dev/tty
+
+THIS_DIR=$(realpath `dirname $0`)
+BUILD_PATH="${THIS_DIR}/dist/build"
+ARCHIVE_PATH="${BUILD_PATH}/archive"
+APP_PATH="${THIS_DIR}/dist/Auto Clicker.app"
+DMG_PATH="${THIS_DIR}/dist/Auto Clicker.dmg"
+
+echo "[Info] Building archive..."
+
+xcodebuild \
+    -workspace "${THIS_DIR}/auto-clicker.xcworkspace" \
+    -scheme auto-clicker \
+    -configuration release \
+    -archivePath "${ARCHIVE_PATH}" \
+    clean \
+    archive
+
+echo "[Info] Building release..."
+
+xcodebuild \
+    -exportArchive \
+    -exportOptionsPlist "${THIS_DIR}/dist/export_options.plist" \
+    -archivePath "${ARCHIVE_PATH}.xcarchive" \
+    -exportPath "${APP_PATH}"
+
+echo "[Info] Cleaning DMG output..."
+
+test -f "${DMG_PATH}" && rm "${DMG_PATH}"
+
+echo "[Info] Creating DMG..."
+
+create-dmg \
+    --volname "Auto Clicker" \
+    --volicon "${THIS_DIR}/art/icon/AutoClicker.icns" \
+    --background "${THIS_DIR}/art/dmg_bkg.png" \
+    --window-pos 200 120 \
+    --window-size 800 400 \
+    --icon-size 100 \
+    --icon "Auto Clicker.app" 200 190 \
+    --hide-extension "Auto Clicker.app" \
+    --app-drop-link 600 185 \
+    "${DMG_PATH}" \
+    "${APP_PATH}"
+
+echo "[Info] Cleaning up build..."
+
+rm -r "${BUILD_PATH}"
+
+echo "Done!"
