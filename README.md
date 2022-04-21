@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="art/icon/Icon-1024.png" alt="logo" width="250" height="auto" />
+    <img src="art/icon/fragments/Icon-1024.png" alt="logo" width="250" height="auto" />
     <h1>Auto Clicker for macOS</h1>
     <p>A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥️ in Swift 5 & SwiftUI.</p>
 </div>
