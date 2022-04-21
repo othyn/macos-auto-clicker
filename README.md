@@ -9,9 +9,9 @@
         <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml">
             <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml/badge.svg" alt="lint" />
         </a>
-        <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml">
+        <!-- <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml">
             <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml/badge.svg" alt="build" />
-        </a>
+        </a> -->
         <a href="https://github.com/othyn/macos-auto-clicker/graphs/contributors">
             <img src="https://img.shields.io/github/contributors/othyn/macos-auto-clicker" alt="contributors" />
         </a>
