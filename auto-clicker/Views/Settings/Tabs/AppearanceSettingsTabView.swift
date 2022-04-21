@@ -29,7 +29,7 @@ struct AppearanceSettingsTabView: View {
 
                             if theme == self.activeTheme {
                                 Image(systemName: "checkmark")
-                                    .font(.system(size: 24, weight: .medium))
+                                    .font(.system(size: 24))
                             }
                         }
                         .padding(.bottom, 15)

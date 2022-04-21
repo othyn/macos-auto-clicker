@@ -53,7 +53,7 @@ struct GeneralSettingsTabView: View {
         Form {
             Button(self.zoopHelper.zoopText, action: self.zoopHelper.startZooping)
                 .buttonStyle(.plain)
-                .font(.system(size: 32, weight: .medium))
+                .font(.system(size: 32))
         }
     }
 }

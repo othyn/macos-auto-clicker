@@ -22,7 +22,7 @@ struct AutoClickerApp: App {
             SettingsView()
                 .background(self.activeTheme.backgroundColour)
                 .foregroundColor(self.activeTheme.fontColour)
-                .font(.system(size: 16, weight: .medium))
+                .font(.system(size: 16))
         }
 
         WindowGroup {
