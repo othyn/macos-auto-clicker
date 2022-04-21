@@ -12,6 +12,9 @@
         <!-- <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml">
             <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml/badge.svg" alt="build" />
         </a> -->
+        <a href="https://github.com/othyn/macos-auto-clicker/releases">
+            <img src="https://img.shields.io/github/downloads/othyn/macos-auto-clicker/total" alt="lint" />
+        </a>
         <a href="https://github.com/othyn/macos-auto-clicker/graphs/contributors">
             <img src="https://img.shields.io/github/contributors/othyn/macos-auto-clicker" alt="contributors" />
         </a>
@@ -32,9 +35,11 @@
 
 <div align="center">
     <h4>
-        <a href="https://github.com/othyn/macos-auto-clicker/issues/">Report Bug</a>
+        <a href="https://github.com/othyn/macos-auto-clicker/releases/download/v1.3.0/Auto.Clicker.dmg">Download Latest Version</a>
         <span> · </span>
-        <a href="https://github.com/othyn/macos-auto-clicker/issues/">Request Feature</a>
+        <a href="https://github.com/othyn/macos-auto-clicker/issues">Report Bug</a>
+        <span> · </span>
+        <a href="https://github.com/othyn/macos-auto-clicker/issues">Request Feature</a>
     </h4>
 </div>
 
@@ -109,9 +114,11 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 ### :floppy_disk: Download
 
-Checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for direct App downloads for the version you want to use. Here you can find the latest stable release and any pre-release builds too. There is also a compiled app binary in `dist` directory ready for use.
+Download: [v1.3.0 - New Beginnings](https://github.com/othyn/macos-auto-clicker/releases/download/v1.3.0/Auto.Clicker.dmg)
 
-You may recieve a popup when first using the app that the app cannot be verified, this is as at the moment I don't have a paid Apple developer account so I cannot notarize the app. When first using the app, you may need to right click and select the 'Open' option to provide a prompt that will allow you to trust the app going forward and to open it as normal.
+**When first using the app, you will need to right click the app and click 'Open', then on the macOS popup window select 'Open' again to trust this version of the app going forward.** This is as at the moment I don't have a paid Apple developer account in order to notarize the app.
+
+**For more downloads**, checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for app downloads of any version you want to use, even pre-release builds too. There is also a compiled app binary in `dist` directory ready for use.
 
 <!-- Development -->
 
