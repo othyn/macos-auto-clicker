@@ -1,6 +1,10 @@
 ## Remove new local build directory
 derived_data
 
+# Remove build log files
+dist/logs/*
+!dist/logs/.gitkeep
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore

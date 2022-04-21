@@ -6,14 +6,23 @@ if ! command -v create-dmg 1>/dev/null 2>&1; then
     exit 1
 fi
 
-echo "Have you remembered to update the version number?"
-read -p "Press Enter when ready" </dev/tty
+echo "[[ Running Auto Clicker build ]]"
+
+echo "[Prompt] Have you remembered to update the version number?"
+read -p "If yes, press [enter] to continue" </dev/tty
 
 THIS_DIR=$(realpath `dirname $0`)
-BUILD_PATH="${THIS_DIR}/dist/build"
+DIST_PATH="${THIS_DIR}/dist"
+BUILD_PATH="${DIST_PATH}/build"
 ARCHIVE_PATH="${BUILD_PATH}/archive"
-APP_PATH="${THIS_DIR}/dist/Auto Clicker.app"
-DMG_PATH="${THIS_DIR}/dist/Auto Clicker.dmg"
+LOG_PATH="${DIST_PATH}/logs"
+APP_PATH="${DIST_PATH}/Auto Clicker.app"
+DMG_PATH="${DIST_PATH}/Auto Clicker.dmg"
+
+echo "[Info] Cleaning existing builds..."
+
+test -d "${APP_PATH}" && rm -r "${APP_PATH}"
+test -f "${DMG_PATH}" && rm "${DMG_PATH}"
 
 echo "[Info] Building archive..."
 
@@ -23,21 +32,42 @@ xcodebuild \
     -configuration release \
     -archivePath "${ARCHIVE_PATH}" \
     clean \
-    archive
+    archive \
+    > "${LOG_PATH}/last_archive.log" 2>&1
 
 echo "[Info] Building release..."
 
 xcodebuild \
     -exportArchive \
-    -exportOptionsPlist "${THIS_DIR}/dist/export_options.plist" \
+    -exportOptionsPlist "${DIST_PATH}/export_options.plist" \
     -archivePath "${ARCHIVE_PATH}.xcarchive" \
-    -exportPath "${APP_PATH}"
+    -exportPath "${DIST_PATH}" \
+     > "${LOG_PATH}/last_release.log" 2>&1
 
-echo "[Info] Cleaning DMG output..."
+echo "[Info] Cleaning up build..."
 
-test -f "${DMG_PATH}" && rm "${DMG_PATH}"
+rm -r "${BUILD_PATH}"
 
-echo "[Info] Creating DMG..."
+
+echo "[Info] Testing app build version..."
+
+APP_VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "${APP_PATH}/Contents/Info.plist")
+APP_BUILD=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "${APP_PATH}/Contents/Info.plist")
+CURRENT_COMMIT_HASH=`git rev-parse --short HEAD`
+
+echo "  >    App build version : ${APP_VERSION}"
+echo "  >     App build number : ${APP_BUILD}"
+echo "  >  Current commit hash : ${CURRENT_COMMIT_HASH}"
+
+if [ "${APP_BUILD}" = "${CURRENT_COMMIT_HASH}" ]; then
+    echo '[Info] Latest build number and commit hash match, all good!'
+else
+    echo '[Error] Latest build number does not match the latest commit hash, could be a stale build.'
+    echo 'Exiting!'
+    exit 1
+fi
+
+echo "[Info] Creating DMG... (this will cause Finder to popup)"
 
 create-dmg \
     --volname "Auto Clicker" \
@@ -50,10 +80,7 @@ create-dmg \
     --hide-extension "Auto Clicker.app" \
     --app-drop-link 600 185 \
     "${DMG_PATH}" \
-    "${APP_PATH}"
-
-echo "[Info] Cleaning up build..."
-
-rm -r "${BUILD_PATH}"
+    "${APP_PATH}" \
+    > "${LOG_PATH}/last_dmg.log" 2>&1
 
 echo "Done!"
