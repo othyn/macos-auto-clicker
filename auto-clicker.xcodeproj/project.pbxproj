@@ -55,6 +55,7 @@
 		B5F6A01627F3900E003CD730 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01527F3900E003CD730 /* Color+Extensions.swift */; };
 		B5F6A01927F3970A003CD730 /* ThemeColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01827F3970A003CD730 /* ThemeColour.swift */; };
 		B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A01A27F3A8A6003CD730 /* StatBox.swift */; };
+		C4345BB52846056000365CF9 /* ProcessInfo+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4345BB42846056000365CF9 /* ProcessInfo+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		B5F6A01527F3900E003CD730 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		B5F6A01827F3970A003CD730 /* ThemeColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColour.swift; sourceTree = "<group>"; };
 		B5F6A01A27F3A8A6003CD730 /* StatBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBox.swift; sourceTree = "<group>"; };
+		C4345BB42846056000365CF9 /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 				B5F6A01527F3900E003CD730 /* Color+Extensions.swift */,
 				B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */,
 				B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */,
+				C4345BB42846056000365CF9 /* ProcessInfo+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				B5F5C60B28039AA40049B04D /* FormState.swift in Sources */,
 				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
+				C4345BB52846056000365CF9 /* ProcessInfo+Extensions.swift in Sources */,
 				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,
 				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
 			);
@@ -659,7 +663,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
 				SWIFT_VERSION = 5.0;
@@ -686,7 +690,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
 				SWIFT_VERSION = 5.0;

@@ -7,6 +7,7 @@
 
 import Foundation
 import Defaults
+import Combine
 
 final class DelayTimer: ObservableObject {
     private static let defaultStartButtonText: String = "Start"
@@ -17,6 +18,7 @@ final class DelayTimer: ObservableObject {
 
     private var onFinish: () -> Void = {}
     private var timer: Timer?
+    private var activity: Cancellable?
 
     func start(onFinish: @escaping () -> Void) {
         let delayInSeconds = Defaults[.autoClickerState].startDelay
@@ -26,6 +28,7 @@ final class DelayTimer: ObservableObject {
         if delayInSeconds > 0 {
             self.remainingDelaySeconds = delayInSeconds
             self.isCountingDown = true
+            self.activity = ProcessInfo.processInfo.beginActivity(.delayTimer)
 
             self.updateButtonText()
 
@@ -54,6 +57,9 @@ final class DelayTimer: ObservableObject {
         self.startButtonText = DelayTimer.defaultStartButtonText
 
         self.isCountingDown = false
+
+        self.activity?.cancel()
+        self.activity = nil
 
         self.onFinish()
 
