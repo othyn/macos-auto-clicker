@@ -67,7 +67,7 @@ else
     exit 1
 fi
 
-echo "[Info] Creating DMG... (this will cause Finder to popup)"
+echo "[Info] Creating DMG... (this will cause Finder to popup, just sit tight it will disappear on its own when its done)"
 
 create-dmg \
     --volname "Auto Clicker" \
