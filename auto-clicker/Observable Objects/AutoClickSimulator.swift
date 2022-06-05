@@ -26,9 +26,12 @@ final class AutoClickSimulator: ObservableObject {
 
     private var timer: Timer?
     private var mouseLocation: NSPoint { NSEvent.mouseLocation }
+    private var activity: Cancellable?
 
     func start() {
         self.isAutoClicking = true
+
+        self.activity = ProcessInfo.processInfo.beginActivity(.autoClicking)
 
         self.duration = Defaults[.autoClickerState].pressIntervalDuration
         self.interval = Defaults[.autoClickerState].pressInterval
@@ -49,6 +52,9 @@ final class AutoClickSimulator: ObservableObject {
 
     func stop() {
         self.isAutoClicking = false
+
+        self.activity?.cancel()
+        self.activity = nil
 
         // Force zero, as the user could stop the timer early
         self.remainingInterations = 0
