@@ -40,8 +40,9 @@ struct AutoClickerApp: App {
             .onAppear(perform: self.permissionsService.pollAccessibilityPrivileges)
         }
         .windowStyle(.hiddenTitleBar)
-//        .commands {
+        .commands {
+            HelpCommands()
 //            OptionsCommands(keepWindowOnTop: self.$keepWindowOnTop)
-//        }
+        }
     }
 }
