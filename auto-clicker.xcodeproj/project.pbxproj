@@ -670,6 +670,7 @@
 				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -697,6 +698,7 @@
 				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
