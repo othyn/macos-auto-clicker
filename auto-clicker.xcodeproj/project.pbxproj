@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50022CA2875F5BF00610474 /* HelpCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50022C92875F5BF00610474 /* HelpCommands.swift */; };
 		B510760927F4A21500BB1CDA /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B510760827F4A21500BB1CDA /* DateStrings */; };
 		B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = B510760B27F4A23300BB1CDA /* KeyboardShortcuts */; };
 		B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510760E27F4A25400BB1CDA /* WindowStateService.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50022C92875F5BF00610474 /* HelpCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCommands.swift; sourceTree = "<group>"; };
 		B510760E27F4A25400BB1CDA /* WindowStateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateService.swift; sourceTree = "<group>"; };
 		B510761027F4A33D00BB1CDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B510761527F4A43B00BB1CDA /* GeneralSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsTabView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B510761C27F4A68B00BB1CDA /* OptionsCommands.swift */,
+				B50022C92875F5BF00610474 /* HelpCommands.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
 				B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */,
+				B50022CA2875F5BF00610474 /* HelpCommands.swift in Sources */,
 				B510761D27F4A68B00BB1CDA /* OptionsCommands.swift in Sources */,
 				B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */,
 				B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */,
