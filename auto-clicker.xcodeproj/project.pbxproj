@@ -386,11 +386,11 @@
 			};
 			buildConfigurationList = B53BDC47264BED93001F8E57 /* Build configuration list for PBXProject "auto-clicker" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = "en-GB";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"en-GB",
 			);
 			mainGroup = B53BDC43264BED93001F8E57;
 			packageReferences = (
