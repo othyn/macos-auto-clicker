@@ -40,6 +40,7 @@
 		B5BCE809287C2F4D00B739AD /* SmallText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCE808287C2F4D00B739AD /* SmallText.swift */; };
 		B5BCE80A287C343900B739AD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5BCE80C287C343900B739AD /* Localizable.strings */; };
 		B5BCE80D287C344200B739AD /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B5BCE80F287C344200B739AD /* Localizable.stringsdict */; };
+		B5BCE811287C38ED00B739AD /* CGVector+DefaultsSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */; };
 		B5E4213728057BA900C2CA2D /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4213628057BA900C2CA2D /* LoggerService.swift */; };
 		B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6394F27CA4CDD008B111A /* FieldConstants.swift */; };
 		B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */; };
@@ -97,6 +98,7 @@
 		B5BCE808287C2F4D00B739AD /* SmallText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallText.swift; sourceTree = "<group>"; };
 		B5BCE80B287C343900B739AD /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B5BCE80E287C344200B739AD /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "en-GB"; path = "en-GB.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
+		B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+DefaultsSerializable.swift"; sourceTree = "<group>"; };
 		B5E4213628057BA900C2CA2D /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
 		B5E6394F27CA4CDD008B111A /* FieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldConstants.swift; sourceTree = "<group>"; };
 		B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButtonStyle.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */,
 				C4345BB42846056000365CF9 /* ProcessInfo+Extensions.swift */,
 				B5BCE804287BFB5A00B739AD /* Color+ExpressibleByStringLiteral.swift */,
+				B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
 				B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */,
 				B50022CA2875F5BF00610474 /* HelpCommands.swift in Sources */,
+				B5BCE811287C38ED00B739AD /* CGVector+DefaultsSerializable.swift in Sources */,
 				B5E92B0C27F1032100A7FC63 /* ModalButtonStyle.swift in Sources */,
 				B5E92B1027F1060A00A7FC63 /* DurationSelector.swift in Sources */,
 				B510761127F4A33D00BB1CDA /* SettingsView.swift in Sources */,
