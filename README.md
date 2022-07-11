@@ -152,6 +152,10 @@ The project makes use of the Apple default `Localizable.strings` and `Localizabl
 
 More information on Apple's localisation practices can be found on [their official docs](https://developer.apple.com/localization/), and [their official docs for Xcode](https://developer.apple.com/documentation/xcode/localization). There is also an application, [`mohakapt/Stringz`](https://github.com/mohakapt/Stringz), who's sole intent is to make writing and maintaining language translations easier. See [issue #36](https://github.com/othyn/macos-auto-clicker/issues/36) for some more useful links and resources for implementing translations.
 
+<div align=center>
+    <img width="75%" src="art/ref/readme_localisations_guide.jpg"/>
+</div>
+
 <!-- Running Tests -->
 
 <!-- ### :test_tube: Running Tests
