@@ -13,7 +13,7 @@ struct DurationSelector: View {
     @Binding var selectedDuration: Duration
 
     var body: some View {
-        Button(self.selectedDuration.description) {
+        Button(self.selectedDuration.localised) {
             self.showingDurationModal = true
         }
         .buttonStyle(UnderlinedButtonStyle())

@@ -12,10 +12,10 @@ struct HelpCommands: Commands {
 
     var body: some Commands {
         CommandGroup(replacing: .help, addition: {
-            Button("Request a feature...") {
+            Button("help_commands_request_a_feature") {
                 NSWorkspace.shared.open(URL(string: self.ghIssueLink)!)
             }
-            Button("Raise an issue...") {
+            Button("help_commands_report_a_bug") {
                 NSWorkspace.shared.open(URL(string: self.ghIssueLink)!)
             }
         })

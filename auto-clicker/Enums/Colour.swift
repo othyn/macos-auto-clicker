@@ -1,23 +1,15 @@
 //
-//  Theme.swift
+//  Colour.swift
 //  auto-clicker
 //
-//  Created by Ben Tindall on 28/03/2022.
+//  Created by Ben Tindall on 11/07/2022.
 //
 
 import Foundation
 import SwiftUI
 import Defaults
 
-// TODO: This should really be a struct with a type Theme.Colour to store the Enum side of things...
-
-// Commented out colours are macOS 12 only
-enum Theme: String, Identifiable, CaseIterable, Defaults.Serializable {
-    static let lightness: Double = 1.4
-    static let darkness: Double = 0.6
-
-    static let macOS12Colours: [Theme] = [.Brown, .Cyan, .Indigo, .Mint, .Teal]
-
+enum Colour: ThemeColour, Identifiable, CaseIterable, Codable {
     case Black,
          Blue,
          Brown,
@@ -34,13 +26,46 @@ enum Theme: String, Identifiable, CaseIterable, Defaults.Serializable {
          White,
          Yellow
 
-    var id: String {
-        self.rawValue
+    var id: ThemeColour {
+        self.normalised
     }
 
-    // Even with the manual colour space calculated for the built in colours, I can't seem to get it to work
-    // So I'll just exclude them from the randomisation
-    var backgroundColour: ThemeColour {
+    var localised: LocalizedStringKey {
+        switch self {
+        case .Black:
+            return "colour_black"
+        case .Blue:
+            return "colour_blue"
+        case .Brown:
+            return "colour_brown"
+        case .Cyan:
+            return "colour_cyan"
+        case .Gray:
+            return "colour_gray"
+        case .Green:
+            return "colour_green"
+        case .Indigo:
+            return "colour_indigo"
+        case .Mint:
+            return "colour_mint"
+        case .Orange:
+            return "colour_orange"
+        case .Pink:
+            return "colour_pink"
+        case .Purple:
+            return "colour_purple"
+        case .Red:
+            return "colour_red"
+        case .Teal:
+            return "colour_teal"
+        case .White:
+            return "colour_white"
+        case .Yellow:
+            return "colour_yellow"
+        }
+    }
+
+    var normalised: ThemeColour {
         switch self {
         case .Black:
             return .black
@@ -93,43 +118,5 @@ enum Theme: String, Identifiable, CaseIterable, Defaults.Serializable {
         case .Yellow:
             return .yellow
         }
-    }
-
-    var fontColour: ThemeColour {
-        switch self {
-        case .Black,
-             .Blue,
-             .Brown,
-             .Cyan,
-             .Gray,
-             .Indigo,
-             .Mint,
-             .Orange,
-             .Pink,
-             .Purple,
-             .Red,
-             .Teal:
-            return .white
-        case .Green,
-             .White,
-             .Yellow:
-            return .black
-        }
-    }
-
-    func randomise() {
-        var newTheme: Theme
-
-        if #available(macOS 12.0, *) {
-            repeat {
-                newTheme = Theme.allCases.randomElement()!
-            } while newTheme == Defaults[.appearanceSelectedTheme]
-        } else {
-            repeat {
-                newTheme = Theme.allCases.randomElement()!
-            } while newTheme == Defaults[.appearanceSelectedTheme] || Theme.macOS12Colours.contains(newTheme)
-        }
-
-        Defaults[.appearanceSelectedTheme] = newTheme
     }
 }

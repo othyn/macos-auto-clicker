@@ -11,12 +11,12 @@ import Defaults
 struct StatBox: View {
     @Default(.appearanceSelectedTheme) private var activeTheme
 
-    let title: String
+    let title: LocalizedStringKey
     let value: String
 
     var body: some View {
         VStack {
-            Text(self.title.uppercased())
+            Text(self.title, comment: "Stat box title")
                 .foregroundColor(self.activeTheme.backgroundColour.lighter)
                 .font(.system(size: 10))
 

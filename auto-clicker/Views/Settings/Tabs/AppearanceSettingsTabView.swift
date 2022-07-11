@@ -14,20 +14,20 @@ struct AppearanceSettingsTabView: View {
     var body: some View {
         Form {
             LazyVGrid(columns: [.init(.adaptive(minimum: 70, maximum: 70))], spacing: 2) {
-                ForEach(Theme.allCases) { theme in
+                ForEach(Colour.allCases) { colour in
                     Button(action: {
-                        self.activeTheme = theme
+                        self.activeTheme.currentColour = colour
                     }) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(theme.backgroundColour)
+                                .fill(colour.normalised)
                                 .frame(width: 45, height: 45)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(theme.backgroundColour.darker, lineWidth: 4)
+                                        .stroke(colour.normalised.darker, lineWidth: 4)
                                 )
 
-                            if theme == self.activeTheme {
+                            if colour == self.activeTheme.currentColour {
                                 Image(systemName: "checkmark")
                                     .font(.system(size: 24))
                             }
