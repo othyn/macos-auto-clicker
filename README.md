@@ -150,11 +150,11 @@ The project makes use of the Apple default `Localizable.strings` and `Localizabl
 8. The new language will appear in the `Localisation` folder as a new version of the `Localizable.strings` file, with the language code identifier along with the file and appearing as the parent directory in the `Localisation` folder. E.g. for France this would be `fr`. You will know if the translation file has been picked up by Xcode as the language will appear with the amount of `Localizable.strings` translation files found by Xcode in that 'Localizations' table mentioned in step 5.
 9. Once you have written the translations by providing the appropriate new strings in the language you've chosen as are required by the application, please submit a new PR to merge in the new language as a supported language.
 
-More information on Apple's localisation practices can be found on [their official docs](https://developer.apple.com/localization/), and [their official docs for Xcode](https://developer.apple.com/documentation/xcode/localization). There is also an application, [`mohakapt/Stringz`](https://github.com/mohakapt/Stringz), who's sole intent is to make writing and maintaining language translations easier. See [issue #36](https://github.com/othyn/macos-auto-clicker/issues/36) for some more useful links and resources for implementing translations.
-
 <div align=center>
-    <img width="75%" src="art/ref/readme_localisations_guide.jpg"/>
+    <img width="90%" src="art/ref/readme_localisations_guide.jpg"/>
 </div>
+
+More information on Apple's localisation practices can be found on [their official docs](https://developer.apple.com/localization/), and [their official docs for Xcode](https://developer.apple.com/documentation/xcode/localization). There is also an application, [`mohakapt/Stringz`](https://github.com/mohakapt/Stringz), who's sole intent is to make writing and maintaining language translations easier. See [issue #36](https://github.com/othyn/macos-auto-clicker/issues/36) for some more useful links and resources for implementing translations.
 
 <!-- Running Tests -->
 
