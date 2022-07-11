@@ -56,7 +56,7 @@
 - [Getting Started](#toolbox-getting-started)
   - [Download](#floppy_disk-download)
   - [Development](#gear-development)
-  - [Localisation](#speechballoon-localisation)
+  - [Localisation](#speech_balloon-localisation)
   <!-- - [Running Tests](#test_tube-running-tests) -->
   - [Builds](#triangular_flag_on_post-builds)
 - [Roadmap](https://github.com/users/othyn/projects/1)
