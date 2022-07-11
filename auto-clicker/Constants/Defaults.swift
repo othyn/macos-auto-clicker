@@ -12,7 +12,7 @@ import Defaults
 extension Defaults.Keys {
     static let windowShouldKeepOnTop = Key<Bool>("window_should_keep_on_top", default: false)
 
-    static let appearanceSelectedTheme = Key<Theme>("appearance_selected_theme", default: .Blue)
+    static let appearanceSelectedTheme = Key<Theme>("appearance_selected_theme", default: Theme())
 
     static let autoClickerState = Key<FormState>("user_form_state", default: FormState())
 }
