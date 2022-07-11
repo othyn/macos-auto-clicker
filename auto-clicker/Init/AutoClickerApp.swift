@@ -20,8 +20,6 @@ struct AutoClickerApp: App {
     var body: some Scene {
         Settings {
             SettingsView()
-                .background(self.activeTheme.backgroundColour)
-                .foregroundColor(self.activeTheme.fontColour)
                 .font(.system(size: 16))
         }
 
