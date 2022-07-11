@@ -12,10 +12,10 @@ public typealias ThemeColour = Color
 
 extension ThemeColour {
     var lighter: ThemeColour {
-        self.changeBrightness(Theme.lightness)
+        self.changeBrightness(ThemeService.lightness)
     }
 
     var darker: ThemeColour {
-        self.changeBrightness(Theme.darkness)
+        self.changeBrightness(ThemeService.darkness)
     }
 }

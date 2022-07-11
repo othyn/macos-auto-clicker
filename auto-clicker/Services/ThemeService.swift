@@ -1,17 +1,15 @@
 //
-//  Theme.swift
+//  ThemeService.swift
 //  auto-clicker
 //
 //  Created by Ben Tindall on 28/03/2022.
 //
 
-// TODO: Convert to using Colour, will need to update defaults loading
-
 import Foundation
 import SwiftUI
 import Defaults
 
-final class Theme: Codable, Defaults.Serializable {
+final class ThemeService: Codable, Defaults.Serializable {
     static let lightness: Double = 1.4
     static let darkness: Double = 0.6
 

@@ -49,7 +49,7 @@
 		B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */; };
 		B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */; };
 		B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */; };
-		B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */; };
+		B5E92B1C27F1BA5E00A7FC63 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B1B27F1BA5E00A7FC63 /* ThemeService.swift */; };
 		B5E92B2427F1C99600A7FC63 /* DynamicWidthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */; };
 		B5E92B2927F35DB800A7FC63 /* DynamicWidthNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */; };
 		B5F5C60B28039AA40049B04D /* FormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5C60A28039AA40049B04D /* FormState.swift */; };
@@ -104,7 +104,7 @@
 		B5E92B1127F1074900A7FC63 /* UnderlinedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButtonStyle.swift; sourceTree = "<group>"; };
 		B5E92B1327F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextFieldStyle.swift; sourceTree = "<group>"; };
 		B5E92B1727F10A9E00A7FC63 /* UnderlinedStyleDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedStyleDivider.swift; sourceTree = "<group>"; };
-		B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B5E92B1B27F1BA5E00A7FC63 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		B5E92B2327F1C99600A7FC63 /* DynamicWidthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthTextField.swift; sourceTree = "<group>"; };
 		B5E92B2827F35DB800A7FC63 /* DynamicWidthNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthNumberField.swift; sourceTree = "<group>"; };
 		B5F5C60A28039AA40049B04D /* FormState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormState.swift; sourceTree = "<group>"; };
@@ -328,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				B5E6395527CA76CB008B111A /* Duration.swift */,
-				B5E92B1B27F1BA5E00A7FC63 /* Theme.swift */,
 				B5BCE802287BF59900B739AD /* Colour.swift */,
 			);
 			path = Enums;
@@ -530,7 +529,7 @@
 				B5BCE803287BF59900B739AD /* Colour.swift in Sources */,
 				B5F5C60B28039AA40049B04D /* FormState.swift in Sources */,
 				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
-				B5E92B1C27F1BA5E00A7FC63 /* Theme.swift in Sources */,
+				B5E92B1C27F1BA5E00A7FC63 /* ThemeService.swift in Sources */,
 				C4345BB52846056000365CF9 /* ProcessInfo+Extensions.swift in Sources */,
 				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,
 				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
