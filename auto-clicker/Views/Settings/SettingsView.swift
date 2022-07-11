@@ -15,22 +15,22 @@ struct SettingsView: View {
         TabView {
             GeneralSettingsTabView()
                 .tabItem {
-                    Label("General", systemImage: "gear")
+                    Label("settings_general", systemImage: "gear")
                 }
 
             KeyboardShortcutsSettingsTabView()
                 .tabItem {
-                    Label("Keyboard Shortcuts", systemImage: "keyboard")
+                    Label("settings_keyboard_shortcuts", systemImage: "keyboard")
                 }
 
             WindowSettingsTabView()
                 .tabItem {
-                    Label("Window", systemImage: "macwindow")
+                    Label("settings_window", systemImage: "macwindow")
                 }
 
             AppearanceSettingsTabView()
                 .tabItem {
-                    Label("Appearance", systemImage: "paintpalette")
+                    Label("settings_appearance", systemImage: "paintpalette")
                 }
         }
         .frame(width: WindowStateService.settingsWidth, height: WindowStateService.settingsHeight)

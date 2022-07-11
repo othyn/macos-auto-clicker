@@ -11,7 +11,8 @@ import Defaults
 struct WindowSettingsTabView: View {
     var body: some View {
         Form {
-            Defaults.Toggle("Should Stay On Top", key: .windowShouldKeepOnTop)
+            // 'init(localized:table:bundle:locale:comment:)' is only available in macOS 12 or newer, so have to use the old way to maintain compatibility!
+            Defaults.Toggle(String(format: NSLocalizedString("settings_window_stay_ontop", comment: "Settings Window window should stay ontop toggle")), key: .windowShouldKeepOnTop)
                 .onChange { isOn in
                     WindowStateService.toggleKeepWindowOnTop(isOn)
                 }

@@ -53,7 +53,8 @@ struct NumberField: View {
                 .onReceive(Just(self.rawString), perform: self.numericValidator)
 
             HStack {
-                Text("min: \(self.min), max: \(self.max)")
+                // 'init(localized:table:bundle:locale:comment:)' is only available in macOS 12 or newer, so have to use the old way to maintain compatibility!
+                Text(String(format: NSLocalizedString("min: %lld, max: %lld", comment: "Number field min-max label"), self.min, self.max))
                     .foregroundColor(.secondary)
                     .font(.system(size: 10))
 
@@ -67,8 +68,8 @@ struct NumberField: View {
     }
 }
 
-struct NumberField_Previews: PreviewProvider {
-    static var previews: some View {
-        NumberField(text: "Number Field", min: 0, max: 100, number: .constant(10))
-    }
-}
+//struct NumberField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NumberField(text: "Number Field", min: 0, max: 100, number: .constant(10))
+//    }
+//}

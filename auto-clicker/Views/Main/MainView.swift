@@ -67,7 +67,7 @@ struct MainView: View {
 
             VStack {
                 ActionStageLine {
-                    Text("Every")
+                    Text("main_window_every", comment: "Main window 'Every'")
 
                     DynamicWidthNumberField(text: "",
                                             min: MIN_PRESS_INTERVAL,
@@ -78,16 +78,14 @@ struct MainView: View {
                     DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    Text(",")
+                    Text("main_window_comma", comment: "Main window comma")
                 }
 
                 ActionStageLine {
-                    Text("press '")
+                    Text("main_window_press", comment: "Main window 'press'")
 
                     PressKeyListener()
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
-
-                    Text("'")
 
                     DynamicWidthNumberField(text: "",
                                             min: MIN_PRESS_AMOUNT,
@@ -95,11 +93,11 @@ struct MainView: View {
                                             number: self.$formState.pressAmount)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    Text("\(self.formState.pressAmount == 1 ? "time" : "times"),")
+                    Text(self.formState.pressAmount == 1 ? "main_window_time" : "main_window_times", comment: "Main window 'time(s)'") + Text("main_window_comma", comment: "Main window comma")
                 }
 
                 ActionStageLine {
-                    Text("repeat")
+                    Text("main_window_repeat", comment: "Main window 'repeat'")
 
                     DynamicWidthNumberField(text: "",
                                             min: MIN_REPEAT_AMOUNT,
@@ -107,11 +105,11 @@ struct MainView: View {
                                             number: self.$formState.repeatAmount)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    Text("\(self.formState.repeatAmount == 1 ? "time" : "times").")
+                    Text(self.formState.repeatAmount == 1 ? "main_window_time" : "main_window_times", comment: "Main window 'time(s)'") + Text("main_window_full_stop", comment: "Main window full stop")
                 }
 
                 ActionStageLine {
-                    Text("Wait")
+                    Text("main_window_wait", comment: "Main window 'Wait'")
 
                     DynamicWidthNumberField(text: "",
                                             min: MIN_START_DELAY,
@@ -119,7 +117,7 @@ struct MainView: View {
                                             number: self.$formState.startDelay)
                         .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
 
-                    Text("\(self.formState.startDelay == 1 ? "second" : "seconds") before starting.")
+                    Text(self.formState.startDelay == 1 ? "main_window_second" : "main_window_seconds", comment: "Main window 'second(s)'") + Text("main_window_before_starting", comment: "Main window 'before starting'") + Text("main_window_full_stop", comment: "Main window full stop")
                 }
             }
             .padding(.top, 20)
@@ -131,7 +129,11 @@ struct MainView: View {
             HStack {
                 VStack {
                     Button(action: self.start) {
-                        Text(self.delayTimer.startButtonText.uppercased()).kerning(1)
+                        if self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown {
+                            Text(self.delayTimer.countdownText).kerning(1)
+                        } else {
+                            Text("main_window_start_btn", comment: "Main window start button").kerning(1)
+                        }
                     }
                     .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
                     .buttonStyle(ThemedButtonStyle())
@@ -141,7 +143,7 @@ struct MainView: View {
 
                 VStack {
                     Button(action: self.stop) {
-                        Text("STOP").kerning(1)
+                        Text("main_window_stop_btn", comment: "Main window stop button").kerning(1)
                     }
                     .disabled(!self.autoClickSimulator.isAutoClicking)
                     .buttonStyle(ThemedButtonStyle())
@@ -175,14 +177,14 @@ struct MainView: View {
 
                     Spacer()
 
-                    StatBox(title: "Next press at",
+                    StatBox(title: "main_window_stat_box_next_press_at",
                             value: self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
                                    ? self.autoClickSimulator.nextClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS")
                                    : self.estNextClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS"))
 
                     Spacer()
 
-                    StatBox(title: "Final press at",
+                    StatBox(title: "main_window_stat_box_final_press_at",
                             value: self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
                                    ? self.autoClickSimulator.finalClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS")
                                    : self.estFinalClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS"))
@@ -196,13 +198,13 @@ struct MainView: View {
 
                 HStack {
                     if self.showThemeName {
-                        Text(self.activeTheme.rawValue)
+                        Text(self.activeTheme.currentColour.localised, comment: "Colour Enum")
                             .font(.system(size: 10, weight: .medium, design: .rounded))
                             .foregroundColor(self.activeTheme.backgroundColour.lighter)
                             .padding(.trailing, -5)
                     }
 
-                    Text("with ♥️ by Othyn")
+                    Text("main_window_repo_vanity", comment: "Main window repo vanity plate")
                         .font(.system(size: 10, weight: .medium, design: .rounded))
                         .foregroundColor(self.activeTheme.backgroundColour.lighter)
                         .onTapGesture(perform: self.changeColour)

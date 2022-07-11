@@ -9,19 +9,6 @@ import SwiftUI
 import Defaults
 import Carbon.HIToolbox
 
-private struct SmallText: View {
-    var text: String
-
-    init(_ text: String) {
-        self.text = text
-    }
-
-    var body: some View {
-        Text(self.text)
-            .font(.system(size: 10))
-    }
-}
-
 struct PressKeyListenerModal: View {
     @Environment(\.presentationMode) private var presentationMode
 
@@ -57,7 +44,7 @@ struct PressKeyListenerModal: View {
 
     var body: some View {
         VStack {
-            SmallText("Press your desired input...")
+            SmallText("key_listener_modal_press_prompt")
 
             Spacer()
 
@@ -65,8 +52,8 @@ struct PressKeyListenerModal: View {
 
             Spacer()
 
-            SmallText("Hold the escape key when done.")
-            SmallText("To use the escape key itself, press it twice.")
+            SmallText("key_listener_modal_dismiss_key_prompt")
+            SmallText("key_listener_modal_dismiss_key_override")
         }
         .frame(width: 300, height: 150)
         .padding(.vertical, 14)

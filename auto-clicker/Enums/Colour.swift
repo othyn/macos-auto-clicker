@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Defaults
 
-enum Colour: ThemeColour, Identifiable, CaseIterable, CustomStringConvertible, Codable {
+enum Colour: ThemeColour, Identifiable, CaseIterable, Codable {
     case Black,
          Blue,
          Brown,
@@ -30,38 +30,38 @@ enum Colour: ThemeColour, Identifiable, CaseIterable, CustomStringConvertible, C
         self.normalised
     }
 
-    var description: String {
+    var localised: LocalizedStringKey {
         switch self {
         case .Black:
-            return "Black"
+            return "colour_black"
         case .Blue:
-            return "Blue"
+            return "colour_blue"
         case .Brown:
-            return "Brown"
+            return "colour_brown"
         case .Cyan:
-            return "Cyan"
+            return "colour_cyan"
         case .Gray:
-            return "Gray"
+            return "colour_gray"
         case .Green:
-            return "Green"
+            return "colour_green"
         case .Indigo:
-            return "Indigo"
+            return "colour_indigo"
         case .Mint:
-            return "Mint"
+            return "colour_mint"
         case .Orange:
-            return "Orange"
+            return "colour_orange"
         case .Pink:
-            return "Pink"
+            return "colour_pink"
         case .Purple:
-            return "Purple"
+            return "colour_purple"
         case .Red:
-            return "Red"
+            return "colour_red"
         case .Teal:
-            return "Teal"
+            return "colour_teal"
         case .White:
-            return "White"
+            return "colour_white"
         case .Yellow:
-            return "Yellow"
+            return "colour_yellow"
         }
     }
 

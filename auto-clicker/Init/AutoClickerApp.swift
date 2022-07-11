@@ -40,7 +40,6 @@ struct AutoClickerApp: App {
         .windowStyle(.hiddenTitleBar)
         .commands {
             HelpCommands()
-//            OptionsCommands(keepWindowOnTop: self.$keepWindowOnTop)
         }
     }
 }
