@@ -2,17 +2,17 @@ name: Lint
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [main, dev]
     paths:
-      - '.github/workflows/swiftlint.yml'
-      - '.swiftlint.yml'
-      - 'auto-clicker/**/*.swift'
+      - ".github/workflows/swiftlint.yml"
+      - ".swiftlint.yml"
+      - "auto-clicker/**/*.swift"
   pull_request:
-    branches: [ main, dev ]
+    branches: [main, dev]
     paths:
-      - '.github/workflows/swiftlint.yml'
-      - '.swiftlint.yml'
-      - 'auto-clicker/**/*.swift'
+      - ".github/workflows/swiftlint.yml"
+      - ".swiftlint.yml"
+      - "auto-clicker/**/*.swift"
 
 jobs:
   lint:

@@ -131,7 +131,7 @@ Remember to install the Swift package dependencies once you've opened it for the
 
 Build and run through Xcode as you normally would to a macOS target. As a note, the build 'number' will automatically be set to the latest short commit hash when the application is built.
 
-This is a side project, so feel free to submit a PR for any functionality/bug fixes and go ham. There aren't any contributing guidelines as of yet, code style is handled by `swiftlint` (`$ brew install swiftlint`) and should automatically fix the style upon build (there is a GH Action setup for this also).
+This is a side project, so feel free to submit a PR for any functionality/bug fixes and go ham. There aren't any contributing guidelines as of yet, code style is handled by `swiftlint` (`$ brew install swiftlint`) and should automatically fix the style upon build. There is a [GitHub Action](.github/workflows/swiftlint.yml) setup to run on all code submitted, so it can't be avoided.
 
 ### :speech_balloon: Localisation
 
@@ -170,11 +170,19 @@ To run tests, run the following command
 
 ### :triangular_flag_on_post: Builds
 
-I've tried to automate much of the build process behind scripts for the sake of ease and introducing better CD pipelines in the future.
+The build process has been automated to provide beta integration builds and production deployment builds, all accessible via the [projects releases page]().
 
 #### App
 
-To build the release version of the app, run `./release`. This will do a clean release build of the app and publish it to `dist/Auto Clicker.app`, along with building the DMG to `dist/Auto Clicker.dmg`.
+[Fastlane](https://docs.fastlane.tools/actions/build_mac_app/) handles the builds with automatic `.app` and `.dmg` release targets (can be easily installed via Brew ~ `$ brew install fastlane`). This is further automated behind [GitHub Actions](.github/workflows/cicd.yml) to make the process even more fluid and provide automated CI/CD releases onto the [projects releases page](https://github.com/othyn/macos-auto-clicker/releases).
+
+To locally test the fastlane build, run:
+
+```sh
+$ fastlane release
+```
+
+Which should generate the required `dist/Auto Clicker.app`, `dist/Auto Clicker.app.dSYM.zip` and `dist/Auto Clicker.dmg` build fragments.
 
 #### Icons
 

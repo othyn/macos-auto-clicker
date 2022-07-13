@@ -1,0 +1,154 @@
+➜  fastlane release
+[✔] 🚀
+[19:00:09]: fastlane detected a Gemfile in the current directory
+[19:00:09]: However, it seems like you didn't use `bundle exec`
+[19:00:09]: To launch fastlane faster, please use
+[19:00:09]:
+[19:00:09]: $ bundle exec fastlane release
+[19:00:09]:
+[19:00:09]: Get started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile
+objc[73187]: Class AppleTypeCRetimerRestoreInfoHelper is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdeb0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x104b844f8). One of the two will be used. Which one is undefined.
+objc[73187]: Class AppleTypeCRetimerFirmwareAggregateRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf00) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x104b84548). One of the two will be used. Which one is undefined.
+objc[73187]: Class AppleTypeCRetimerFirmwareRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf50) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x104b84598). One of the two will be used. Which one is undefined.
+objc[73187]: Class ATCRTRestoreInfoFTABFile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdfa0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x104b845e8). One of the two will be used. Which one is undefined.
+objc[73187]: Class AppleTypeCRetimerFirmwareCopier is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdff0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x104b84638). One of the two will be used. Which one is undefined.
+objc[73187]: Class ATCRTRestoreInfoFTABSubfile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fe040) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x104b84688). One of the two will be used. Which one is undefined.
+[19:00:09]: ------------------------------
+[19:00:09]: --- Step: default_platform ---
+[19:00:09]: ------------------------------
+[19:00:09]: Driving the lane 'mac release' 🚀
+[19:00:09]: -----------------
+[19:00:09]: --- Step: gym ---
+[19:00:09]: -----------------
+[19:00:09]: Resolving Swift Package Manager dependencies...
+[19:00:09]: $ xcodebuild -resolvePackageDependencies -workspace auto-clicker.xcworkspace -scheme auto-clicker
+[19:00:09]: ▸ objc[73189]: Class AppleTypeCRetimerRestoreInfoHelper is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdeb0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x10606c4f8). One of the two will be used. Which one is undefined.
+[19:00:09]: ▸ objc[73189]: Class AppleTypeCRetimerFirmwareAggregateRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf00) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x10606c548). One of the two will be used. Which one is undefined.
+[19:00:09]: ▸ objc[73189]: Class AppleTypeCRetimerFirmwareRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf50) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x10606c598). One of the two will be used. Which one is undefined.
+[19:00:09]: ▸ objc[73189]: Class ATCRTRestoreInfoFTABFile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdfa0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x10606c5e8). One of the two will be used. Which one is undefined.
+[19:00:09]: ▸ objc[73189]: Class AppleTypeCRetimerFirmwareCopier is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdff0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x10606c638). One of the two will be used. Which one is undefined.
+[19:00:09]: ▸ objc[73189]: Class ATCRTRestoreInfoFTABSubfile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fe040) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x10606c688). One of the two will be used. Which one is undefined.
+[19:00:09]: ▸ 2022-07-13 19:00:09.924 xcodebuild[73189:38576536] Requested but did not find extension point with identifier Xcode.IDEKit.ExtensionSentinelHostApplications for extension Xcode.DebuggerFoundation.AppExtensionHosts.watchOS of plug-in com.apple.dt.IDEWatchSupportCore
+[19:00:09]: ▸ 2022-07-13 19:00:09.925 xcodebuild[73189:38576536] Requested but did not find extension point with identifier Xcode.IDEKit.ExtensionPointIdentifierToBundleIdentifier for extension Xcode.DebuggerFoundation.AppExtensionToBundleIdentifierMap.watchOS of plug-in com.apple.dt.IDEWatchSupportCore
+[19:00:10]: ▸ Command line invocation:
+[19:00:10]: ▸     /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -resolvePackageDependencies -workspace auto-clicker.xcworkspace -scheme auto-clicker
+[19:00:10]: ▸ User defaults from command line:
+[19:00:10]: ▸     IDEPackageSupportUseBuiltinSCM = YES
+[19:00:10]: ▸ Resolve Package Graph
+[19:00:10]: ▸ Resolved source packages:
+[19:00:10]: ▸   Defaults: https://github.com/sindresorhus/Defaults @ 6.2.1
+[19:00:10]: ▸   KeyboardShortcuts: https://github.com/sindresorhus/KeyboardShortcuts @ 1.5.0
+[19:00:10]: ▸   DateStrings: https://github.com/othyn/DateStrings.git @ 1.0.1
+[19:00:10]: ▸ --- xcodebuild: WARNING: Using the first of multiple matching destinations:
+[19:00:10]: ▸ { platform:macOS, arch:arm64, id:00006000-001A51C90E62801E }
+[19:00:10]: ▸ { platform:macOS, arch:x86_64, id:00006000-001A51C90E62801E }
+[19:00:10]: ▸ { platform:macOS, name:Any Mac }
+[19:00:10]: ▸ resolved source packages: Defaults, KeyboardShortcuts, DateStrings
+[19:00:10]: $ xcodebuild -showBuildSettings -workspace auto-clicker.xcworkspace -scheme auto-clicker
+objc[73198]: Class AppleTypeCRetimerRestoreInfoHelper is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdeb0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1065f84f8). One of the two will be used. Which one is undefined.
+objc[73198]: Class AppleTypeCRetimerFirmwareAggregateRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf00) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1065f8548). One of the two will be used. Which one is undefined.
+objc[73198]: Class AppleTypeCRetimerFirmwareRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf50) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1065f8598). One of the two will be used. Which one is undefined.
+objc[73198]: Class ATCRTRestoreInfoFTABFile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdfa0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1065f85e8). One of the two will be used. Which one is undefined.
+objc[73198]: Class AppleTypeCRetimerFirmwareCopier is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdff0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1065f8638). One of the two will be used. Which one is undefined.
+objc[73198]: Class ATCRTRestoreInfoFTABSubfile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fe040) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1065f8688). One of the two will be used. Which one is undefined.
+2022-07-13 19:00:10.569 xcodebuild[73198:38576611] Requested but did not find extension point with identifier Xcode.IDEKit.ExtensionSentinelHostApplications for extension Xcode.DebuggerFoundation.AppExtensionHosts.watchOS of plug-in com.apple.dt.IDEWatchSupportCore
+2022-07-13 19:00:10.569 xcodebuild[73198:38576611] Requested but did not find extension point with identifier Xcode.IDEKit.ExtensionPointIdentifierToBundleIdentifier for extension Xcode.DebuggerFoundation.AppExtensionToBundleIdentifierMap.watchOS of plug-in com.apple.dt.IDEWatchSupportCore
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006000-001A51C90E62801E }
+{ platform:macOS, arch:x86_64, id:00006000-001A51C90E62801E }
+{ platform:macOS, name:Any Mac }
+
++--------------------------------------+--------------------------------------------------------+
+|                                    Summary for gym 2.207.0                                    |
++--------------------------------------+--------------------------------------------------------+
+| scheme                               | auto-clicker                                           |
+| workspace                            | auto-clicker.xcworkspace                               |
+| clean                                | true                                                   |
+| output_directory                     | dist                                                   |
+| export_method                        | mac-application                                        |
+| output_name                          | Auto Clicker                                           |
+| silent                               | false                                                  |
+| skip_package_ipa                     | false                                                  |
+| skip_package_pkg                     | false                                                  |
+| build_path                           | /Users/ben/Library/Developer/Xcode/Archives/2022-07-13 |
+| result_bundle                        | false                                                  |
+| buildlog_path                        | ~/Library/Logs/gym                                     |
+| destination                          | generic/platform=macOS                                 |
+| xcodebuild_formatter                 | xcpretty                                               |
+| skip_profile_detection               | false                                                  |
+| xcodebuild_command                   | xcodebuild                                             |
+| skip_package_dependencies_resolution | false                                                  |
+| disable_package_automatic_updates    | false                                                  |
+| use_system_scm                       | false                                                  |
+| xcode_path                           | /Applications/Xcode.app                                |
++--------------------------------------+--------------------------------------------------------+
+
+[19:00:11]: $ set -o pipefail && xcodebuild -workspace auto-clicker.xcworkspace -scheme auto-clicker -destination 'generic/platform=macOS' -archivePath /Users/ben/Library/Developer/Xcode/Archives/2022-07-13/Auto\ Clicker\ 2022-07-13\ 19.00.11.xcarchive clean archive | tee /Users/ben/Library/Logs/gym/Auto\ Clicker-auto-clicker.log | xcpretty
+[19:00:11]: ▸ objc[73212]: Class AppleTypeCRetimerRestoreInfoHelper is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdeb0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1040b84f8). One of the two will be used. Which one is undefined.
+[19:00:11]: ▸ objc[73212]: Class AppleTypeCRetimerFirmwareAggregateRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf00) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1040b8548). One of the two will be used. Which one is undefined.
+[19:00:11]: ▸ objc[73212]: Class AppleTypeCRetimerFirmwareRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf50) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1040b8598). One of the two will be used. Which one is undefined.
+[19:00:11]: ▸ objc[73212]: Class ATCRTRestoreInfoFTABFile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdfa0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1040b85e8). One of the two will be used. Which one is undefined.
+[19:00:11]: ▸ objc[73212]: Class AppleTypeCRetimerFirmwareCopier is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdff0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1040b8638). One of the two will be used. Which one is undefined.
+[19:00:11]: ▸ objc[73212]: Class ATCRTRestoreInfoFTABSubfile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fe040) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1040b8688). One of the two will be used. Which one is undefined.
+[19:00:11]: ▸ 2022-07-13 19:00:11.374 xcodebuild[73212:38576702] Requested but did not find extension point with identifier Xcode.IDEKit.ExtensionSentinelHostApplications for extension Xcode.DebuggerFoundation.AppExtensionHosts.watchOS of plug-in com.apple.dt.IDEWatchSupportCore
+[19:00:11]: ▸ 2022-07-13 19:00:11.375 xcodebuild[73212:38576702] Requested but did not find extension point with identifier Xcode.IDEKit.ExtensionPointIdentifierToBundleIdentifier for extension Xcode.DebuggerFoundation.AppExtensionToBundleIdentifierMap.watchOS of plug-in com.apple.dt.IDEWatchSupportCore
+[19:00:11]: ▸ Clean Succeeded
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/zh-TW.lproj/Localizable.strings
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/en.lproj/Localizable.strings
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/zh-Hans.lproj/Localizable.strings
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/hu.lproj/Localizable.strings
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/ru.lproj/Localizable.strings
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/es.lproj/Localizable.strings
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/de.lproj/Localizable.strings
+[19:00:12]: ▸ Copying /Users/ben/git/macos-auto-clicker/derived_data/auto-clicker/Build/Intermediates.noindex/ArchiveIntermediates/auto-clicker/IntermediateBuildFilesPath/UninstalledProducts/macosx/KeyboardShortcuts_KeyboardShortcuts.bundle/Contents/Resources/cs.lproj/Localizable.strings
+[19:00:12]: ▸ Processing empty-KeyboardShortcuts_KeyboardShortcuts.plist
+[19:00:14]: ▸ Touching KeyboardShortcuts_KeyboardShortcuts.bundle (in target 'KeyboardShortcuts_KeyboardShortcuts' from project 'KeyboardShortcuts')
+[19:00:15]: ▸ Linking DateStrings.o
+[19:00:15]: ▸ Linking DateStrings.o
+[19:00:15]: ▸ Linking Defaults.o
+[19:00:15]: ▸ Linking Defaults.o
+[19:00:15]: ▸ Linking KeyboardShortcuts.o
+[19:00:15]: ▸ Linking KeyboardShortcuts.o
+[19:00:18]: ▸ Linking Auto\
+[19:00:18]: ▸ Linking Auto\
+[19:00:18]: ▸ Copying Localizable.strings
+[19:00:18]: ▸ Copying Localizable.strings
+[19:00:18]: ▸ Processing Info.plist
+[19:00:18]: ▸ Running script 'Increment Build'
+[19:00:19]: ▸ Generating 'Auto\ Clicker.app.dSYM'
+[19:00:19]: ▸ Running script 'Run Swiftlint'
+[19:00:19]: ▸ Running script 'Reset Accessibility Permissions'
+[19:00:19]: ▸ Touching Auto\ Clicker.app (in target 'auto-clicker' from project 'auto-clicker')
+[19:00:19]: ▸ Archive Succeeded
+[19:00:19]: Compressing 1 dSYM(s)
+[19:00:19]: $ cd '/Users/ben/Library/Developer/Xcode/Archives/2022-07-13/Auto Clicker 2022-07-13 19.00.11.xcarchive/dSYMs' && zip -r '/Users/ben/git/macos-auto-clicker/dist/Auto Clicker.app.dSYM.zip' *.dSYM
+[19:00:20]: ▸   adding: Auto Clicker.app.dSYM/ (stored 0%)
+[19:00:20]: ▸   adding: Auto Clicker.app.dSYM/Contents/ (stored 0%)
+[19:00:20]: ▸   adding: Auto Clicker.app.dSYM/Contents/Resources/ (stored 0%)
+[19:00:20]: ▸   adding: Auto Clicker.app.dSYM/Contents/Resources/DWARF/ (stored 0%)
+[19:00:20]: ▸   adding: Auto Clicker.app.dSYM/Contents/Resources/DWARF/Auto Clicker (deflated 61%)
+[19:00:20]: ▸   adding: Auto Clicker.app.dSYM/Contents/Info.plist (deflated 51%)
+
+[19:00:20]: Successfully exported and compressed dSYM file
+[19:00:20]: Successfully exported the .app file:
+[19:00:20]: dist/Auto Clicker.app
+[19:00:20]: Generated plist file with the following values:
+[19:00:20]: ▸ -----------------------------------------
+[19:00:20]: ▸ {
+[19:00:20]: ▸   "method": "mac-application"
+[19:00:20]: ▸ }
+[19:00:20]: ▸ -----------------------------------------
+[19:00:20]: $ /usr/bin/xcrun /opt/homebrew/Cellar/fastlane/2.207.0/libexec/gems/fastlane-2.207.0/gym/lib/assets/wrap_xcodebuild/xcbuild-safe.sh -exportArchive -exportOptionsPlist '/var/folders/yg/lsx9t25x6nz96ndwmg5t7f200000gp/T/gym_config20220713-73182-wj9c9u.plist' -archivePath /Users/ben/Library/Developer/Xcode/Archives/2022-07-13/Auto\ Clicker\ 2022-07-13\ 19.00.11.xcarchive -exportPath '/var/folders/yg/lsx9t25x6nz96ndwmg5t7f200000gp/T/gym_output20220713-73182-pegnpb'
+[19:00:20]: Successfully exported and signed the pkg file:
+[19:00:20]: /Users/ben/git/macos-auto-clicker/dist/Auto Clicker.app
+
++------+------------------+-------------+
+|           fastlane summary            |
++------+------------------+-------------+
+| Step | Action           | Time (in s) |
++------+------------------+-------------+
+| 1    | default_platform | 0           |
+| 2    | gym              | 11          |
++------+------------------+-------------+
+
+[19:00:20]: fastlane.tools finished successfully 🎉

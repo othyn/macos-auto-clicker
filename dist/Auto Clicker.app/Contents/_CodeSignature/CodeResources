@@ -88,6 +88,24 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/en-GB.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OGTtk2yRu4Zr0VwqY5yfodjfH9I=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en-GB.lproj/Localizable.stringsdict</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			94jGiqiFwOJqrijRJrJ8jKDXVPI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -189,6 +207,24 @@
 			<key>hash2</key>
 			<data>
 			Bki/CDVHbW6R2UsfkOGlIPTcG0gx5+WkUhT/NCVz2v4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en-GB.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Vp+Nc6mSWWpWgc67hAzg+HKR/DzBzlU0J33TPbWPE6Q=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en-GB.lproj/Localizable.stringsdict</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OMU89WIipWOsJFIrtPwyOddm7SJ+D3cGvuzxlUfwckU=
 			</data>
 			<key>optional</key>
 			<true/>

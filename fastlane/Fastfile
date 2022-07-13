@@ -13,11 +13,33 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-default_platform(:ios)
+default_platform(:mac)
 
-platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+# https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
+platform :mac do
+  desc "Build the release version of the Auto Clicker app"
+  isReleasable = analyze_commits(match: '*')
+  tag = "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}"
+  lane :release do
+    # https://docs.fastlane.tools/actions/build_mac_app/#parameters
+    gym(
+      scheme: "auto-clicker",
+      workspace: "auto-clicker.xcworkspace",
+      clean: true,
+      output_directory: "dist",
+      export_method: "mac-application"
+    )
   end
 end
+
+# https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
+# Left this in as an example ~ could setup a Discord channel for this?
+# error do |lane, exception|
+#   slack(
+#     # message with short human friendly message
+#     message: exception.to_s,
+#     success: false,
+#     # Output containing extended log output
+#     payload: { "Output" => exception.error_info.to_s }
+#   )
+# end

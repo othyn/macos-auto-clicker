@@ -27,7 +27,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>cdde35a</string>
+	<string>eb7cd7f</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -49,6 +49,6 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>11.0</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>with ♥️ by Othyn</string>
+	<string>Othyn ~ Ben Tindall</string>
 </dict>
 </plist>
