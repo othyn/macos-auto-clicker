@@ -1,0 +1,68 @@
+➜  fastlane init
+[✔] 🚀
+objc[70996]: Class AppleTypeCRetimerRestoreInfoHelper is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdeb0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x105a6c4f8). One of the two will be used. Which one is undefined.
+objc[70996]: Class AppleTypeCRetimerFirmwareAggregateRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf00) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x105a6c548). One of the two will be used. Which one is undefined.
+objc[70996]: Class AppleTypeCRetimerFirmwareRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdf50) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x105a6c598). One of the two will be used. Which one is undefined.
+objc[70996]: Class ATCRTRestoreInfoFTABFile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdfa0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x105a6c5e8). One of the two will be used. Which one is undefined.
+objc[70996]: Class AppleTypeCRetimerFirmwareCopier is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fdff0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x105a6c638). One of the two will be used. Which one is undefined.
+objc[70996]: Class ATCRTRestoreInfoFTABSubfile is implemented in both /usr/lib/libauthinstall.dylib (0x1eb7fe040) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x105a6c688). One of the two will be used. Which one is undefined.
+[✔] Looking for iOS and Android projects in current directory...
+[18:37:20]: Detected an iOS/macOS project in the current directory: 'auto-clicker.xcworkspace'
+[18:37:20]: -----------------------------
+[18:37:20]: --- Welcome to fastlane 🚀 ---
+[18:37:20]: -----------------------------
+[18:37:20]: fastlane can help you with all kinds of automation for your mobile app
+[18:37:20]: We recommend automating one task first, and then gradually automating more over time
+[18:37:20]: What would you like to use fastlane for?
+1. 📸  Automate screenshots
+2. 👩‍✈️  Automate beta distribution to TestFlight
+3. 🚀  Automate App Store distribution
+4. 🛠  Manual setup - manually setup your project to automate your tasks
+?  4
+[18:37:23]: ------------------------------------------------------------
+[18:37:23]: --- Setting up fastlane so you can manually configure it ---
+[18:37:23]: ------------------------------------------------------------
+[18:37:23]: Installing dependencies for you...
+[18:37:23]: $ bundle update
+[18:37:40]: --------------------------------------------------------
+[18:37:40]: --- ✅  Successfully generated fastlane configuration ---
+[18:37:40]: --------------------------------------------------------
+[18:37:40]: Generated Fastfile at path `./fastlane/Fastfile`
+[18:37:40]: Generated Appfile at path `./fastlane/Appfile`
+[18:37:40]: Gemfile and Gemfile.lock at path `Gemfile`
+[18:37:40]: Please check the newly generated configuration files into git along with your project
+[18:37:40]: This way everyone in your team can benefit from your fastlane setup
+[18:37:40]: Continue by pressing Enter ⏎
+
+[18:38:15]: fastlane will collect the number of errors for each action to detect integration issues
+[18:38:15]: No sensitive/private information will be uploaded, more information: https://docs.fastlane.tools/#metrics
+[18:38:15]: ----------------------
+[18:38:15]: --- fastlane lanes ---
+[18:38:15]: ----------------------
+[18:38:15]: fastlane uses a `Fastfile` to store the automation configuration
+[18:38:15]: Within that, you'll see different lanes.
+[18:38:15]: Each is there to automate a different task, like screenshots, code signing, or pushing new releases
+[18:38:15]: Continue by pressing Enter ⏎
+
+[18:38:22]: --------------------------------------
+[18:38:22]: --- How to customize your Fastfile ---
+[18:38:22]: --------------------------------------
+[18:38:22]: Use a text editor of your choice to open the newly created Fastfile and take a look
+[18:38:22]: You can now edit the available lanes and actions to customize the setup to fit your needs
+[18:38:22]: To get a list of all the available actions, open https://docs.fastlane.tools/actions
+[18:38:22]: Continue by pressing Enter ⏎
+
+[18:38:31]: ------------------------------
+[18:38:31]: --- Where to go from here? ---
+[18:38:31]: ------------------------------
+[18:38:31]: 📸  Learn more about how to automatically generate localized App Store screenshots:
+[18:38:31]:             https://docs.fastlane.tools/getting-started/ios/screenshots/
+[18:38:31]: 👩‍✈️  Learn more about distribution to beta testing services:
+[18:38:31]:             https://docs.fastlane.tools/getting-started/ios/beta-deployment/
+[18:38:31]: 🚀  Learn more about how to automate the App Store release process:
+[18:38:31]:             https://docs.fastlane.tools/getting-started/ios/appstore-deployment/
+[18:38:31]: 👩‍⚕️  Learn more about how to setup code signing with fastlane
+[18:38:31]:             https://docs.fastlane.tools/codesigning/getting-started/
+[18:38:31]:
+[18:38:31]: To try your new fastlane setup, just enter and run
+[18:38:31]: $ fastlane custom_lane
