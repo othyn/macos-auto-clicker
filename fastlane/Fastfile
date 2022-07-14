@@ -24,6 +24,7 @@ platform :mac do
 
     # https://docs.fastlane.tools/actions/commit_version_bump/
     commit_version_bump(
+      message: "chore: Fastlane automated version bump"
       xcodeproj: "auto-clicker.xcodeproj"
     )
 
