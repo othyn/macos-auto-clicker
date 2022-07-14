@@ -62,7 +62,7 @@ platform :mac do
 
       # https://docs.fastlane.tools/actions/sh/#sh
       # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-      sh "../node_modules/.bin/create-dmg build/Auto\\ Clicker.app --overwrite build", log: true, error_callback: -> (result) {
+      sh "../node_modules/.bin/create-dmg ../build/Auto\\ Clicker.app --overwrite ../build", log: true, error_callback: -> (result) {
         error_occurred = false
       }
 
