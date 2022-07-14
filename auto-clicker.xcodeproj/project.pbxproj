@@ -479,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "tccutil reset Accessibility $PRODUCT_BUNDLE_IDENTIFIER\n";
+			shellScript = "# The 'OR true' will ensure that if tccutil returns an error due to the bundle not yet being available\n#  the command will still exit with a 0 code to ensure the CI/CD pipeline doesn't fail.\ntccutil reset Accessibility $PRODUCT_BUNDLE_IDENTIFIER || true\n";
 		};
 		B5FEAF342811D25B0099AAA7 /* Increment Build */ = {
 			isa = PBXShellScriptBuildPhase;
