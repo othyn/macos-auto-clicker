@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# https://github.com/xotahal/fastlane-plugin-semantic_release/blob/f93db152f83842d99344f6db2d93b487cb59df4b/lib/fastlane/plugin/semantic_release/helper/semantic_release_helper.rb#L10
+COMMIT_MESSAGE=$(cat ${1})
+VALID_COMMIT_PREFIXES="docs|fix|feat|chore|style|refactor|perf|test"
+VALID_COMMIT_PREFIX_REGEX="^(${VALID_COMMIT_PREFIXES})(\((.*)\))?(!?)\: (.*)$"
+
+echo "[DEBUG] Commit msg ~ ${COMMIT_MESSAGE}"
+echo "[DEBUG] Valid commit prefixes ~ ${VALID_COMMIT_PREFIXES}"
+echo "[DEBUG] Valid commit prefix regex ~ ${VALID_COMMIT_PREFIX_REGEX}"
+echo "--- --- --- --- ---"
+
+if ! [[ "${COMMIT_MESSAGE}" =~ ${VALID_COMMIT_PREFIX_REGEX} ]]; then
+    echo "[ERROR] Commit message must begin with :~"
+    echo "[ERROR] ${VALID_COMMIT_PREFIXES}:"
+    echo "[ERROR] Example :~"
+    echo "[ERROR] docs: Update the lovely documentation"
+    exit 1
+fi
+
+exit 0
