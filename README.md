@@ -125,11 +125,14 @@ Download: [v1.3.2](https://github.com/othyn/macos-auto-clicker/releases/download
 
 ### :gear: Development
 
-As simple as cloning the project and opening it in Xcode!
+As simple as cloning the project and following the setup checklist below to get things going!
 
 #### Project Setup Checklist
 
-- **Make sure you open the project via the `*.xcworkspace` Workspace.**
+- Clone the repo locally to somewhere you prefer on your machine.
+- Navigate into the repo directory on the terminal or open in your favourite editor/IDE.
+- Run `make setup` to setup some of the projects dependencies, such as the pre-commit githooks to check for valid commit messages.
+- **Make sure you open the project in Xcode via the `auto-clicker.xcworkspace` Workspace.**
 - Remember to install the Swift package dependencies once you've opened it for the first time too.
 - Build and run through Xcode as you normally would to a macOS target.
   - As a note, the build 'number' will automatically be set to the latest short commit hash when the application is built.
@@ -141,6 +144,8 @@ Code style is handled by `swiftlint` (`$ brew install swiftlint`) and should aut
 #### Commit Format Requirements
 
 In order to trigger releases with [Fastlane Semantic Release](https://github.com/xotahal/fastlane-plugin-semantic_release), [conventional commit formatting](https://www.conventionalcommits.org/en/v1.0.0) (more specifically, a subset of the [Angular rules](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type) that Fastlane Semantic Release defaults to) **must** be adhered to in order to generate the correct automated changelogs that accompany the release and provide the required keywords so that automated [Semver](https://semver.org/) versioning can triggered.
+
+**PR's will be rejected if the commits are not formatted correctly, so make use of the githook for the repo which can easily be installed by running `make setup`.**
 
 The following are all items that should be prefixed to your commit message to trigger the desired described attached effect, the `*` just representing a wildcard in this example to demonstrate where your actual commit message should reside:
 
