@@ -1,27 +1,18 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:mac)
 
 # https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
 platform :mac do
   desc "Build the release version of the Auto Clicker app"
   tag = "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}"
+
   isReleasable = analyze_commits(
     match: '*'
   )
+
+  increment_version_number_in_xcodeproj(
+    version_number: lane_context[SharedValues::RELEASE_NEXT_VERSION] # Automatically increment minor version number
+  )
+
   lane :release do
     # https://docs.fastlane.tools/actions/build_mac_app/#parameters
     gym(
@@ -32,53 +23,45 @@ platform :mac do
       export_method: "mac-application"
     )
   end
-end
 
-if isReleasable
-  add_git_tag(
-    tag: tag
-  )
+  if isReleasable
+    add_git_tag(
+      tag: tag
+    )
 
-  push_to_git_remote
+    push_to_git_remote
 
-  notes = conventional_changelog(
-    format: 'markdown',
-    title: 'macOS Auto Clicker',
-    display_title: false,
-    commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
-    sections: {
-      feat: ":star2: Features",
-      fix: ":bug: Bug Fixes",
-      refactor: ":recycle: Code Refactoring",
-      perf: ":rocket: Performance Improvements",
-      chore: ":wrench: Chores",
-      test: ":vertical_traffic_light: Testing",
-      docs: ":book: Documentation",
-      no_type: ":ghost: Unknown... spooky!"
+    notes = conventional_changelog(
+      format: 'markdown',
+      title: 'macOS Auto Clicker',
+      display_title: false,
+      commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
+      sections: {
+        feat: ":star2: Features",
+        fix: ":bug: Bug Fixes",
+        refactor: ":recycle: Code Refactoring",
+        perf: ":rocket: Performance Improvements",
+        chore: ":wrench: Chores",
+        test: ":vertical_traffic_light: Testing",
+        docs: ":book: Documentation",
+        no_type: ":ghost: Unknown... spooky!"
+      }
+    )
+
+    sh "node_modules/.bin/create-dmg dist/Auto\\ Clicker.app --overwrite dist", log: true, error_callback: -> (result) {
+      error_occurred = false
     }
-  )
 
-  set_github_release(
-    repository_name: "othyn/macos-auto-clicker",
-    api_bearer: ENV["GITHUB_TOKEN"],
-    name: "Release #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}",
-    tag_name: tag,
-    description: notes,
-    commitish: "main",
-    upload_assets: ["auto-clicker.app", "auto-clicker.app.dSYM.zip"]
-  )
-else
-  print("Not flagged as a release candiate, doing nothing.")
+    set_github_release(
+      repository_name: "othyn/macos-auto-clicker",
+      api_bearer: ENV["GITHUB_TOKEN"],
+      name: "Release #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}",
+      tag_name: tag,
+      description: notes,
+      commitish: "main",
+      upload_assets: ["Auto Clicker #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}.dmg", "Auto Clicker.app.dSYM.zip"]
+    )
+  else
+    print("Not flagged as a release candiate, doing nothing.")
+  end
 end
-
-# https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
-# Left this in as an example ~ could setup a Discord channel for this?
-# error do |lane, exception|
-#   slack(
-#     # message with short human friendly message
-#     message: exception.to_s,
-#     success: false,
-#     # Output containing extended log output
-#     payload: { "Output" => exception.error_info.to_s }
-#   )
-# end
