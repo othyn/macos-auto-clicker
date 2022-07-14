@@ -119,7 +119,7 @@ Download: [v1.3.2](https://github.com/othyn/macos-auto-clicker/releases/download
 
 **When first using the app, you will need to right click the app and click 'Open', then on the macOS popup window select 'Open' again to trust this version of the app going forward.** This is as at the moment I don't have a paid Apple developer account in order to notarize the app.
 
-**For more downloads**, checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for app downloads of any version you want to use, even pre-release builds too. There is also a compiled app binary in `dist` directory ready for use.
+**For more downloads**, checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for app downloads of any version you want to use, even pre-release builds too.
 
 <!-- Development -->
 
@@ -243,7 +243,7 @@ To locally test the fastlane build, run:
 $ fastlane release
 ```
 
-Which should generate the required `dist/Auto Clicker.app`, `dist/Auto Clicker.app.dSYM.zip` and `dist/Auto Clicker.dmg` build fragments.
+Which should generate the required `build/Auto Clicker.app`, `build/Auto Clicker.app.dSYM.zip` and `build/Auto Clicker.dmg` build fragments.
 
 #### Icons
 

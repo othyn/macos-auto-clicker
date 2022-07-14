@@ -1,10 +1,6 @@
 ## Remove new local build directory
 derived_data
 
-# Remove build log files
-dist/logs/*
-!dist/logs/.gitkeep
-
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -17,7 +13,8 @@ xcuserdata/
 *.xccheckout
 
 ## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-build/
+build/*
+!build/.gitkeep
 DerivedData/
 *.moved-aside
 *.pbxuser
