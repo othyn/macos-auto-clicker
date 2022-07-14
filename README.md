@@ -125,13 +125,69 @@ Download: [v1.3.2](https://github.com/othyn/macos-auto-clicker/releases/download
 
 ### :gear: Development
 
-As simple as cloning the project and opening it in Xcode! Make sure you open the project via the `*.xcworkspace` Workspace.
+As simple as cloning the project and opening it in Xcode!
 
-Remember to install the Swift package dependencies once you've opened it for the first time too.
+#### Project Setup Checklist
 
-Build and run through Xcode as you normally would to a macOS target. As a note, the build 'number' will automatically be set to the latest short commit hash when the application is built.
+- **Make sure you open the project via the `*.xcworkspace` Workspace.**
+- Remember to install the Swift package dependencies once you've opened it for the first time too.
+- Build and run through Xcode as you normally would to a macOS target.
+  - As a note, the build 'number' will automatically be set to the latest short commit hash when the application is built.
 
-This is a side project, so feel free to submit a PR for any functionality/bug fixes and go ham. There aren't any contributing guidelines as of yet, code style is handled by `swiftlint` (`$ brew install swiftlint`) and should automatically fix the style upon build. There is a [GitHub Action](.github/workflows/swiftlint.yml) setup to run on all code submitted, so it can't be avoided.
+This is a side project, so feel free to submit a PR for any functionality/bug fixes.
+
+Code style is handled by `swiftlint` (`$ brew install swiftlint`) and should automatically fix the style upon build. There is a [GitHub Action](.github/workflows/swiftlint.yml) setup to run on all code submitted, so it can't be avoided!
+
+#### Commit Format Requirements
+
+In order to trigger releases with [Fastlane Semantic Release](https://github.com/xotahal/fastlane-plugin-semantic_release), [conventional commit formatting](https://www.conventionalcommits.org/en/v1.0.0) (more specifically, a subset of the [Angular rules](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type) that Fastlane Semantic Release defaults to) **must** be adhered to in order to generate the correct automated changelogs that accompany the release and provide the required keywords so that automated [Semver](https://semver.org/) versioning can triggered.
+
+The following are all items that should be prefixed to your commit message to trigger the desired described attached effect, the `*` just representing a wildcard in this example to demonstrate where your actual commit message should reside:
+
+- `feat: *`
+  - Triggers: A minor version bump & release
+  - Use case: You've implemented a new feature or functionality to the app.
+  - Example version bump & release: `1.3.5` > `1.4.0`
+  - Example commit: `feat: added awesome new button`
+  - Example release title heading: `:star2: Features`
+- `fix: *`
+  - Triggers: A patch version bump & release
+  - Use case: You've fixed a bug within the app.
+  - Example version bump & release: `1.4.0` > `1.4.1`
+  - Example commit: `fix: fixed crash after awesome new button is pressed`
+  - Example release title heading: `:bug: Bug Fixes`
+- `docs: *`
+  - Triggers: Nothing
+  - Use case: You've updated associated documentation for the app.
+  - Example version bump & release: _N/A_
+  - Example commit: `docs: updated docs to explain the awesome new button`
+  - Example release title heading: `:book: Documentation`
+- `chore: *`
+  - Triggers: Nothing
+  - Use case: You've updated supporting tooling or performed repo maintenance that doesn't require an app release.
+  - Example version bump & release: _N/A_
+  - Example commit: `chore: implement automated CI/CD process`
+  - Example release title heading: `:wrench: Chores`
+- `refactor: *`
+  - Triggers: Nothing
+  - Use case: You've refactored part of the project.
+  - Example version bump & release: _N/A_
+  - Example commit: `refactor: tweaked the awesome buttons action method`
+  - Example release title heading: `:recycle: Code Refactoring`
+- `perf: *`
+  - Triggers: Nothing
+  - Use case: You've improved the performance of the project.
+  - Example version bump & release: _N/A_
+  - Example commit: `perf: improved the CI/CD process speed`
+  - Example release title heading: `:rocket: Performance Improvements`
+- `test: *`
+  - Triggers: Nothing
+  - Use case: You've modified the test suite in some way.
+  - Example version bump & release: _N/A_
+  - Example commit: `test: improved the test suite`
+  - Example release title heading: `:vertical_traffic_light: Testing`
+
+_Note: Major versions are not automatically incremented._
 
 ### :speech_balloon: Localisation
 
