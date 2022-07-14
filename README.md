@@ -161,18 +161,6 @@ The following are all items that should be prefixed to your commit message to tr
   - Example version bump & release: `1.4.0` > `1.4.1`
   - Example commit: `fix: fixed crash after awesome new button is pressed`
   - Example release title heading: `:bug: Bug Fixes`
-- `docs: *`
-  - Triggers: Nothing
-  - Use case: You've updated associated documentation for the app.
-  - Example version bump & release: _N/A_
-  - Example commit: `docs: updated docs to explain the awesome new button`
-  - Example release title heading: `:book: Documentation`
-- `chore: *`
-  - Triggers: Nothing
-  - Use case: You've updated supporting tooling or performed repo maintenance that doesn't require an app release.
-  - Example version bump & release: _N/A_
-  - Example commit: `chore: implement automated CI/CD process`
-  - Example release title heading: `:wrench: Chores`
 - `refactor: *`
   - Triggers: Nothing
   - Use case: You've refactored part of the project.
@@ -185,12 +173,24 @@ The following are all items that should be prefixed to your commit message to tr
   - Example version bump & release: _N/A_
   - Example commit: `perf: improved the CI/CD process speed`
   - Example release title heading: `:rocket: Performance Improvements`
+- `chore: *`
+  - Triggers: Nothing
+  - Use case: You've updated supporting tooling or performed repo maintenance that doesn't require an app release.
+  - Example version bump & release: _N/A_
+  - Example commit: `chore: implement automated CI/CD process`
+  - Example release title heading: `:wrench: Chores`
 - `test: *`
   - Triggers: Nothing
   - Use case: You've modified the test suite in some way.
   - Example version bump & release: _N/A_
   - Example commit: `test: improved the test suite`
   - Example release title heading: `:vertical_traffic_light: Testing`
+- `docs: *`
+  - Triggers: Nothing
+  - Use case: You've updated associated documentation for the app.
+  - Example version bump & release: _N/A_
+  - Example commit: `docs: updated docs to explain the awesome new button`
+  - Example release title heading: `:book: Documentation`
 
 _Note: Major versions are not automatically incremented._
 

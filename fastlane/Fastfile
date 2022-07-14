@@ -18,8 +18,10 @@ default_platform(:mac)
 # https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
 platform :mac do
   desc "Build the release version of the Auto Clicker app"
-  isReleasable = analyze_commits(match: '*')
   tag = "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}"
+  isReleasable = analyze_commits(
+    match: '*'
+  )
   lane :release do
     # https://docs.fastlane.tools/actions/build_mac_app/#parameters
     gym(
@@ -30,6 +32,43 @@ platform :mac do
       export_method: "mac-application"
     )
   end
+end
+
+if isReleasable
+  add_git_tag(
+    tag: tag
+  )
+
+  push_to_git_remote
+
+  notes = conventional_changelog(
+    format: 'markdown',
+    title: 'macOS Auto Clicker',
+    display_title: false,
+    commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
+    sections: {
+      feat: ":star2: Features",
+      fix: ":bug: Bug Fixes",
+      refactor: ":recycle: Code Refactoring",
+      perf: ":rocket: Performance Improvements",
+      chore: ":wrench: Chores",
+      test: ":vertical_traffic_light: Testing",
+      docs: ":book: Documentation",
+      no_type: ":ghost: Unknown... spooky!"
+    }
+  )
+
+  set_github_release(
+    repository_name: "othyn/macos-auto-clicker",
+    api_bearer: ENV["GITHUB_TOKEN"],
+    name: "Release #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}",
+    tag_name: tag,
+    description: notes,
+    commitish: "main",
+    upload_assets: ["auto-clicker.app", "auto-clicker.app.dSYM.zip"]
+  )
+else
+  print("Not flagged as a release candiate, doing nothing.")
 end
 
 # https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
