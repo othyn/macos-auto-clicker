@@ -6,12 +6,12 @@
 
 <div align="center">
     <p>
+        <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/cicd.yml">
+            <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/cicd.yml/badge.svg" alt="build" />
+        </a>
         <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml">
             <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/swiftlint.yml/badge.svg" alt="lint" />
         </a>
-        <!-- <a href="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml">
-            <img src="https://github.com/othyn/macos-auto-clicker/actions/workflows/xcode.yml/badge.svg" alt="build" />
-        </a> -->
         <a href="https://github.com/othyn/macos-auto-clicker/releases">
             <img src="https://img.shields.io/github/downloads/othyn/macos-auto-clicker/total" alt="lint" />
         </a>
