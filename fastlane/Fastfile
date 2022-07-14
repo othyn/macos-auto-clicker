@@ -32,6 +32,9 @@ platform :mac do
       xcodeproj: "auto-clicker.xcodeproj"
     )
 
+    # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
+    push_to_git_remote
+
     if isReleasable
       # https://docs.fastlane.tools/actions/add_git_tag/#add_git_tag
       add_git_tag(
