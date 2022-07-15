@@ -33,7 +33,16 @@ jobs:
       - name: Install create-dmg (Yarn install)
         run: yarn install
 
-      - name: Fastlane Build
+      - name: Fastlane Build - Beta
+        if: github.ref == 'refs/heads/dev'
+        uses: maierj/fastlane-action@v2.2.0
+        with:
+          lane: "beta"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fastlane Build - Release
+        if: github.ref == 'refs/heads/main'
         uses: maierj/fastlane-action@v2.2.0
         with:
           lane: "release"

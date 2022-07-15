@@ -2,7 +2,95 @@ default_platform(:mac)
 
 # https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
 platform :mac do
-  desc "Build the release version of the Auto Clicker app"
+  desc "Build the release a version of the Auto Clicker app"
+
+  lane :beta do
+    # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
+    # https://github.com/xotahal/fastlane-plugin-semantic_release
+    isReleasable = analyze_commits(
+      match: 'beta*'
+    )
+
+    # https://docs.fastlane.tools/plugins/available-plugins/#versioning
+    # https://github.com/SiarheiFedartsou/fastlane-plugin-versioning
+    increment_version_number_in_xcodeproj(
+      version_number: "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}"
+    )
+
+    # https://docs.fastlane.tools/actions/build_mac_app/#parameters
+    gym(
+      scheme: "auto-clicker",
+      workspace: "auto-clicker.xcworkspace",
+      clean: true,
+      output_directory: "build",
+      export_method: "mac-application"
+    )
+
+    # https://docs.fastlane.tools/actions/commit_version_bump/
+    commit_version_bump(
+      message: "chore: Fastlane automated version bump (beta)",
+      xcodeproj: "auto-clicker.xcodeproj",
+      include: %w[Gemfile.lock]
+    )
+
+    # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
+    push_to_git_remote
+
+    if isReleasable
+      # https://docs.fastlane.tools/actions/add_git_tag/#add_git_tag
+      add_git_tag(
+        tag: "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}"
+      )
+
+      # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
+      push_to_git_remote
+
+      # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
+      # https://github.com/xotahal/fastlane-plugin-semantic_release
+      notes = conventional_changelog(
+        format: 'markdown',
+        title: 'macOS Auto Clicker',
+        display_title: false,
+        commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
+        sections: {
+          feat: ":star2: Features",
+          fix: ":bug: Bug Fixes",
+          refactor: ":recycle: Code Refactoring",
+          perf: ":rocket: Performance Improvements",
+          chore: ":wrench: Chores",
+          test: ":vertical_traffic_light: Testing",
+          docs: ":book: Documentation",
+          no_type: ":ghost: Unknown... spooky!"
+        }
+      )
+
+      # https://docs.fastlane.tools/actions/sh/#sh
+      # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
+      sh "../node_modules/.bin/create-dmg ../build/Auto\\ Clicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+        # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
+        #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
+        # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
+        #  but this does not appear to be possible
+        error_occurred = false
+      }
+
+      # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
+      set_github_release(
+        repository_name: "othyn/macos-auto-clicker",
+        api_bearer: ENV["GITHUB_TOKEN"],
+        name: "Beta Release #{lane_context[SharedValues::RELEASE_NEXT_VERSION]} (#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]})",
+        tag_name: "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}",
+        description: notes,
+        commitish: "main",
+        upload_assets: [
+          "build/Auto Clicker v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}.dmg",
+          "build/Auto Clicker.app.dSYM.zip"
+        ]
+      )
+    else
+      print("Not flagged as a release candiate, doing nothing.")
+    end
+  end
 
   lane :release do
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
