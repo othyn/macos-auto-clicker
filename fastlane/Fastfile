@@ -82,7 +82,10 @@ platform :mac do
         tag_name: "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}",
         description: notes,
         commitish: "main",
-        upload_assets: ["Auto Clicker #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}.dmg", "Auto Clicker.app.dSYM.zip"]
+        upload_assets: [
+          "build/Auto Clicker #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}.dmg",
+          "build/Auto Clicker.app.dSYM.zip"
+        ]
       )
     else
       print("Not flagged as a release candiate, doing nothing.")
