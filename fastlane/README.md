@@ -15,13 +15,21 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Mac
 
+### mac beta
+
+```sh
+[bundle exec] fastlane mac beta
+```
+
+Build the release a version of the Auto Clicker app
+
 ### mac release
 
 ```sh
 [bundle exec] fastlane mac release
 ```
 
-Build the release version of the Auto Clicker app
+
 
 ----
 

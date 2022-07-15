@@ -81,6 +81,7 @@ platform :mac do
         name: "Beta Release #{lane_context[SharedValues::RELEASE_NEXT_VERSION]} (#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]})",
         tag_name: "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}",
         description: notes,
+        is_prerelease: true,
         commitish: "main",
         upload_assets: [
           "build/Auto Clicker v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}.dmg",
