@@ -17,25 +17,27 @@ struct PermissionsView: View {
 
     var body: some View {
         VStack {
-            Text("Permissions Required 🔐")
+            Text("permissions_help_title", comment: "Permissions helper splash window title")
                 .font(.system(size: 32))
                 .padding(.bottom, 25)
 
-            Text("macOS requires that this app has accessibility permissions granted to it in order to press the specified keys or buttons.")
+            Text("permissions_help_first_paragraph", comment: "Permissions helper splash window description")
                 .font(.system(size: 16))
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 15)
 
-            Text("You should have already been prompted by macOS to grant these permissions but if not, here's a handy button to get you there:")
+            Text("permissions_help_second_paragraph", comment: "Permissions helper splash window description extended")
                 .font(.system(size: 16))
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 25)
 
-            Button("Open System Preferences", action: openSystemPreferences)
-                .buttonStyle(ThemedButtonStyle(fontSize: 16, width: 220))
-                .padding(.bottom, 25)
+            Button(action: openSystemPreferences) {
+                Text("permissions_help_open_sys_pref_btn", comment: "Open system preferences button")
+            }
+            .buttonStyle(ThemedButtonStyle(fontSize: 16, width: 220))
+            .padding(.bottom, 25)
 
-            Text("The app will automatically unlock within a few seconds of the permission being granted.")
+            Text("permissions_help_unlock_note", comment: "Permissions helper splash window unlock note")
                 .font(.system(size: 12))
                 .multilineTextAlignment(.center)
         }

@@ -20,8 +20,6 @@ struct AutoClickerApp: App {
     var body: some Scene {
         Settings {
             SettingsView()
-                .background(self.activeTheme.backgroundColour)
-                .foregroundColor(self.activeTheme.fontColour)
                 .font(.system(size: 16))
         }
 
@@ -35,13 +33,15 @@ struct AutoClickerApp: App {
                     PermissionsView()
                 }
             }
-            .frame(minWidth: WindowStateService.width, minHeight: WindowStateService.height)
-            .frame(maxWidth: WindowStateService.width, maxHeight: WindowStateService.height)
+            .frame(minWidth: WindowStateService.width,
+//                   maxWidth: WindowStateService.width,
+                   minHeight: WindowStateService.height,
+                   maxHeight: WindowStateService.height)
             .onAppear(perform: self.permissionsService.pollAccessibilityPrivileges)
         }
         .windowStyle(.hiddenTitleBar)
-//        .commands {
-//            OptionsCommands(keepWindowOnTop: self.$keepWindowOnTop)
-//        }
+        .commands {
+            HelpCommands()
+        }
     }
 }

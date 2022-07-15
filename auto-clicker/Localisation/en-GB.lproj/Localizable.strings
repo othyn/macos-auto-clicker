@@ -1,0 +1,62 @@
+"permissions_help_title"             = "Permissions Required 🔐";
+"permissions_help_first_paragraph"   = "macOS requires that this app has accessibility permissions granted to it in order to press the specified keys or buttons.";
+"permissions_help_second_paragraph"  = "You should have already been prompted by macOS to grant these permissions but if not, here's a handy button to get you there:";
+"permissions_help_open_sys_pref_btn" = "Open System Preferences";
+"permissions_help_unlock_note"       = "The app will automatically unlock within a few seconds of the permission being granted.";
+
+"main_window_comma"                   = ",";
+"main_window_full_stop"               = ".";
+"main_window_every"                   = "Every";
+"main_window_press"                   = "press";
+"main_window_time"                    = "time";
+"main_window_times"                   = "times";
+"main_window_repeat"                  = "repeat";
+"main_window_wait"                    = "Wait";
+"main_window_second"                  = "second";
+"main_window_seconds"                 = "seconds";
+"main_window_before_starting"         = " before starting";
+"main_window_start_btn"               = "START";
+"main_window_stop_btn"                = "STOP";
+"main_window_stat_box_next_press_at"  = "NEXT PRESS AT";
+"main_window_stat_box_final_press_at" = "FINAL PRESS AT";
+"main_window_repo_vanity"             = "with ♥️ by Othyn";
+
+"duration_milliseconds"        = "Millisecond(s)";
+"duration_seconds"             = "Second(s)";
+"duration_minutes"             = "Minutes(s)";
+"duration_hours"               = "Hours(s)";
+"duration_modal_cancel_button" = "Cancel";
+
+"key_listener_modal_press_prompt"         = "Press your desired input...";
+"key_listener_modal_dismiss_key_prompt"   = "Hold the escape key when done.";
+"key_listener_modal_dismiss_key_override" = "To use the escape key itself, press it twice.";
+
+"settings_general"                  = "General";
+"settings_keyboard_shortcuts"       = "Keyboard Shortcuts";
+"settings_window"                   = "Window";
+"settings_appearance"               = "Appearance";
+"settings_keyboard_shortcuts_start" = "Start auto clicker";
+"settings_keyboard_shortcuts_stop"  = "Stop auto clicker";
+"settings_window_stay_ontop"        = "Window should stay ontop";
+
+"help_commands_request_a_feature" = "Request a feature...";
+"help_commands_report_a_bug"      = "Report a problem...";
+
+"colour_black"  = "Black";
+"colour_blue"   = "Blue";
+"colour_brown"  = "Brown";
+"colour_cyan"   = "Cyan";
+"colour_gray"   = "Gray";
+"colour_green"  = "Green";
+"colour_indigo" = "Indigo";
+"colour_mint"   = "Mint";
+"colour_orange" = "Orange";
+"colour_pink"   = "Pink";
+"colour_purple" = "Purple";
+"colour_red"    = "Red";
+"colour_teal"   = "Teal";
+"colour_white"  = "White";
+"colour_yellow" = "Yellow";
+
+// NumberField (Legacy)
+"min: %lld, max: %lld" = "min: %lld, max: %lld";

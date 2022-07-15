@@ -10,11 +10,11 @@ import Defaults
 import Combine
 
 final class DelayTimer: ObservableObject {
-    private static let defaultStartButtonText: String = "Start"
+    private static let defaultCountdownText: String = "-"
 
     @Published var isCountingDown = false
     @Published var remainingDelaySeconds: Int = DEFAULT_START_DELAY
-    @Published var startButtonText: String = defaultStartButtonText
+    @Published var countdownText: String = DelayTimer.defaultCountdownText
 
     private var onFinish: () -> Void = {}
     private var timer: Timer?
@@ -54,7 +54,7 @@ final class DelayTimer: ObservableObject {
 
     func stop() {
         self.remainingDelaySeconds = DEFAULT_START_DELAY
-        self.startButtonText = DelayTimer.defaultStartButtonText
+        self.countdownText = DelayTimer.defaultCountdownText
 
         self.isCountingDown = false
 
@@ -69,6 +69,6 @@ final class DelayTimer: ObservableObject {
     }
 
     func updateButtonText() {
-        self.startButtonText = String(self.remainingDelaySeconds)
+        self.countdownText = String(self.remainingDelaySeconds)
     }
 }

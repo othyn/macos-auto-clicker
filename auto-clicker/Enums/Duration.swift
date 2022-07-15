@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 enum Duration: String, CustomStringConvertible, CaseIterable, Identifiable, Codable {
-    case milliseconds = "Millisecond(s)"
-    case seconds = "Second(s)"
-    case minutes = "Minute(s)"
-    case hours = "Hour(s)"
+    case milliseconds = "duration_milliseconds"
+    case seconds = "duration_seconds"
+    case minutes = "duration_minutes"
+    case hours = "duration_hours"
 
     var id: String {
         self.rawValue
@@ -20,6 +20,10 @@ enum Duration: String, CustomStringConvertible, CaseIterable, Identifiable, Coda
 
     var description: String {
         self.rawValue
+    }
+
+    var localised: LocalizedStringKey {
+        LocalizedStringKey(self.description)
     }
 
     var textView: some View {
@@ -32,7 +36,9 @@ enum Duration: String, CustomStringConvertible, CaseIterable, Identifiable, Coda
     func buttonView(action: @escaping () -> Void) -> some View {
         switch self {
         case .milliseconds, .seconds, .minutes, .hours:
-            return Button(self.description, action: action)
+                return Button(action: action) {
+                    Text(self.localised, comment: "Duration option buttons")
+                }
         }
     }
 

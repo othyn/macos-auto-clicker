@@ -10,8 +10,8 @@ import Cocoa
 import Defaults
 
 struct WindowStateService {
-    static let width: CGFloat = 550
-    static let height: CGFloat = 430
+    static let width: CGFloat = Defaults.Keys.windowSize.defaultValue.dx
+    static let height: CGFloat = Defaults.Keys.windowSize.defaultValue.dy
 
     static let settingsWidth: CGFloat = 400
     static let settingsHeight: CGFloat = 170

@@ -28,7 +28,7 @@ struct DurationModal: View {
 
             // 'init(_:role:action:)' is only available in macOS 12.0 or newer
             // so cannot use a .destructive theme
-            Button("Cancel") {
+            Button("duration_modal_cancel_button") {
                 self.presentationMode.wrappedValue.dismiss()
             }
             .buttonStyle(ModalButtonStyle(isDestructive: true))
