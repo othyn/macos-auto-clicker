@@ -13,6 +13,8 @@ struct WindowStateService {
     static let minWidth: CGFloat = 550
     static let minHeight: CGFloat = 430
 
+    static let maxDimensionMultiplier: CGFloat = 1.3
+
     static let settingsMinWidth: CGFloat = 400
     static let settingsMinHeight: CGFloat = 170
 

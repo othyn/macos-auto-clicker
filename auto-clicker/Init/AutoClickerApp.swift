@@ -13,8 +13,6 @@ import Defaults
 struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
-    @Default(.windowSize) private var windowSize
-
     var body: some Scene {
         Settings {
             SettingsView()
@@ -22,17 +20,11 @@ struct AutoClickerApp: App {
         }
 
         WindowGroup {
-            GeometryReader { geometry in
-                ACWindow()
-                    .onChange(of: geometry.size) { newSize in
-                        self.windowSize.dx = newSize.width
-                        print(self.windowSize)
-                    }
-            }
-            .frame(minWidth: WindowStateService.minWidth,
-                   idealWidth: self.windowSize.dx,
-                   minHeight: WindowStateService.minHeight,
-                   maxHeight: WindowStateService.minHeight)
+            ACWindow()
+                .frame(minWidth: WindowStateService.minWidth,
+                       maxWidth: WindowStateService.minWidth * WindowStateService.maxDimensionMultiplier,
+                       minHeight: WindowStateService.minHeight,
+                       maxHeight: WindowStateService.minHeight)
         }
         .windowStyle(.hiddenTitleBar)
         .commands {
