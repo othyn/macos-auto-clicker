@@ -28,7 +28,7 @@ This so that issues can easily be broken down into who, what and why to best ass
 
 In reality though, any issue that is well presented and described should be fine. The semantics can be ironed out later!
 
-Assignees and Labels should be set appropriately. The Project should be set to 'macOS Auto Clicker' and Milestone can be left blank as the versioning is handled automatically so having it manually defined just gets annoying to keep in sync (although good for planning). Feel free to make use of GitHub's 'Create a branch for this issue or link a pull request.' feature under the 'Development' section on the issue sidebar to quickly and easily create the required development branch for this issue, making sure to base it from the `dev` branch.
+Assignees and Labels should be set appropriately. The Project should be set to 'macOS Auto Clicker'. The Milestone can be left blank if whats being developed is being developed as a standalone 'thing', however should the development be part of a larger bundle of 'things' (an [Epic](https://www.atlassian.com/agile/project-management/epics)), it should be set to the overarching theme of the development; for an example of this see the existing [Ease of Installation](https://github.com/othyn/macos-auto-clicker/milestone/9) or [Advanced Mode](https://github.com/othyn/macos-auto-clicker/milestone/8) project Milestones (Epics), in which they also have detailed descriptions on what they aim to accomplish. Feel free to make use of GitHub's 'Create a branch for this issue or link a pull request.' feature under the 'Development' section on the issue sidebar to quickly and easily create the required development branch for this issue, making sure to base it from the `dev` branch.
 
 # :gift: Project Setup
 
@@ -137,7 +137,7 @@ _Note: Major versions are not automatically incremented._
 
 Any development against the project should reside in its own development branch using the `dev` branch as its base, later being PR'd back into `dev` when development is completed.
 
-There is a [PR template](.github/pull_request_template.md) that will auto populate the PR with required information to fill in. Reviewers, Assignees and Labels should be set appropriately. The Project should be set to 'macOS Auto Clicker' and Milestone can be left blank as the versioning is handled automatically so having it manually defined just gets annoying to keep in sync (although good for planning).
+There is a [PR template](.github/pull_request_template.md) that will auto populate the PR with required information to fill in. Reviewers, Assignees and Labels should be set appropriately. The Project should be set to 'macOS Auto Clicker'. The Milestone can be left blank if whats being developed is being developed as a standalone 'thing', however should the development be part of a larger bundle of 'things' (an [Epic](https://www.atlassian.com/agile/project-management/epics)), it should be set to the overarching theme of the development; for an example of this see the existing [Ease of Installation](https://github.com/othyn/macos-auto-clicker/milestone/9) or [Advanced Mode](https://github.com/othyn/macos-auto-clicker/milestone/8) project Milestones (Epics), in which they also have detailed descriptions on what they aim to accomplish.
 
 The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when the `dev` branch is pushed to and kick off a new beta build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section above for more details).
 
