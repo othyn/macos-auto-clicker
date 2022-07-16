@@ -22,7 +22,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        true
+        WindowStateService.shouldExitOnClose()
     }
 
     func applicationWillBecomeActive(_ notification: Notification) {

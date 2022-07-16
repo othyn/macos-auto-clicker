@@ -40,4 +40,8 @@ struct WindowStateService {
     static func refreshKeepWindowOnTop() {
         self.toggleKeepWindowOnTop(Defaults[.windowShouldKeepOnTop])
     }
+
+    static func shouldExitOnClose() -> Bool {
+        Defaults[.appShouldQuitOnClose]
+    }
 }
