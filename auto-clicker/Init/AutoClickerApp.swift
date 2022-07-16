@@ -16,7 +16,6 @@ struct AutoClickerApp: App {
     var body: some Scene {
         Settings {
             SettingsView()
-                .font(.system(size: 16))
         }
 
         WindowGroup {

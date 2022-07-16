@@ -13,7 +13,7 @@ struct AppearanceSettingsTabView: View {
 
     var body: some View {
         Form {
-            LazyVGrid(columns: [.init(.adaptive(minimum: 70, maximum: 70))], spacing: 2) {
+            LazyVGrid(columns: [.init(.adaptive(minimum: 80, maximum: 80))], spacing: 2) {
                 ForEach(Colour.allCases) { colour in
                     Button(action: {
                         self.activeTheme.currentColour = colour
@@ -21,10 +21,10 @@ struct AppearanceSettingsTabView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(colour.normalised)
-                                .frame(width: 45, height: 45)
+                                .frame(width: 55, height: 55)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(colour.normalised.darker, lineWidth: 4)
+                                        .stroke(colour.normalised.darker, lineWidth: 3)
                                 )
 
                             if colour == self.activeTheme.currentColour {

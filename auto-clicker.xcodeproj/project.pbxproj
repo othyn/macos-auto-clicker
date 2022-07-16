@@ -33,6 +33,7 @@
 		B53BDC54264BED95001F8E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC53264BED95001F8E57 /* Assets.xcassets */; };
 		B53BDC57264BED95001F8E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */; };
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
+		B5B0B2AD2882DCCC00462F11 /* Zoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B2AC2882DCCC00462F11 /* Zoop.swift */; };
 		B5B0B2AF2882EE6E00462F11 /* ACWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */; };
 		B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46228032D3200C779FD /* PermissionsView.swift */; };
 		B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46428033A0F00C779FD /* PermissionsService.swift */; };
@@ -42,6 +43,9 @@
 		B5BCE80A287C343900B739AD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5BCE80C287C343900B739AD /* Localizable.strings */; };
 		B5BCE80D287C344200B739AD /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B5BCE80F287C344200B739AD /* Localizable.stringsdict */; };
 		B5BCE811287C38ED00B739AD /* CGVector+DefaultsSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */; };
+		B5D603EF2883027D00655D2C /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603EE2883027D00655D2C /* SettingsTabView.swift */; };
+		B5D603F12883035E00655D2C /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603F02883035E00655D2C /* ContainerView.swift */; };
+		B5D603F528830A3600655D2C /* SettingsTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603F428830A3600655D2C /* SettingsTabItemView.swift */; };
 		B5E4213728057BA900C2CA2D /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4213628057BA900C2CA2D /* LoggerService.swift */; };
 		B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6394F27CA4CDD008B111A /* FieldConstants.swift */; };
 		B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */; };
@@ -92,6 +96,7 @@
 		B53BDC58264BED95001F8E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53BDC59264BED95001F8E57 /* auto_clicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = auto_clicker.entitlements; sourceTree = "<group>"; };
 		B53BDC5F264BF3A8001F8E57 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
+		B5B0B2AC2882DCCC00462F11 /* Zoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoop.swift; sourceTree = "<group>"; };
 		B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACWindow.swift; sourceTree = "<group>"; };
 		B5B6B46228032D3200C779FD /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
 		B5B6B46428033A0F00C779FD /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 		B5BCE80B287C343900B739AD /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B5BCE80E287C344200B739AD /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "en-GB"; path = "en-GB.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+DefaultsSerializable.swift"; sourceTree = "<group>"; };
+		B5D603EE2883027D00655D2C /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
+		B5D603F02883035E00655D2C /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		B5D603F428830A3600655D2C /* SettingsTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabItemView.swift; sourceTree = "<group>"; };
 		B5E4213628057BA900C2CA2D /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
 		B5E6394F27CA4CDD008B111A /* FieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldConstants.swift; sourceTree = "<group>"; };
 		B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButtonStyle.swift; sourceTree = "<group>"; };
@@ -174,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				B510761027F4A33D00BB1CDA /* SettingsView.swift */,
+				B5D603EE2883027D00655D2C /* SettingsTabView.swift */,
+				B5D603F428830A3600655D2C /* SettingsTabItemView.swift */,
 				B510761427F4A40A00BB1CDA /* Tabs */,
 			);
 			path = Settings;
@@ -182,10 +192,10 @@
 		B510761427F4A40A00BB1CDA /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				B510762027F4BB4900BB1CDA /* AppearanceSettingsTabView.swift */,
 				B510761527F4A43B00BB1CDA /* GeneralSettingsTabView.swift */,
 				B510762227F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift */,
 				B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */,
+				B510762027F4BB4900BB1CDA /* AppearanceSettingsTabView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -281,6 +291,7 @@
 			children = (
 				B53027F9264C2748002B8610 /* DelayTimer.swift */,
 				B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */,
+				B5B0B2AC2882DCCC00462F11 /* Zoop.swift */,
 			);
 			path = "Observable Objects";
 			sourceTree = "<group>";
@@ -356,6 +367,7 @@
 		B5F6A01027F38666003CD730 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B5D603F02883035E00655D2C /* ContainerView.swift */,
 				B5F6A01827F3970A003CD730 /* ThemeColour.swift */,
 				B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */,
 				B5F6A01527F3900E003CD730 /* Color+Extensions.swift */,
@@ -519,6 +531,7 @@
 				B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */,
 				B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */,
 				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
+				B5D603F528830A3600655D2C /* SettingsTabItemView.swift in Sources */,
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
 				B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */,
 				B50022CA2875F5BF00610474 /* HelpCommands.swift in Sources */,
@@ -532,8 +545,10 @@
 				B510763727FF81A000BB1CDA /* PressKeyListener.swift in Sources */,
 				B5F6A01927F3970A003CD730 /* ThemeColour.swift in Sources */,
 				B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */,
+				B5D603EF2883027D00655D2C /* SettingsTabView.swift in Sources */,
 				B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */,
 				B5E92B1227F1074900A7FC63 /* UnderlinedButtonStyle.swift in Sources */,
+				B5D603F12883035E00655D2C /* ContainerView.swift in Sources */,
 				B5BCE805287BFB5A00B739AD /* Color+ExpressibleByStringLiteral.swift in Sources */,
 				B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */,
 				B5107640280113DB00BB1CDA /* Input.swift in Sources */,
@@ -555,6 +570,7 @@
 				B5F5C60B28039AA40049B04D /* FormState.swift in Sources */,
 				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* ThemeService.swift in Sources */,
+				B5B0B2AD2882DCCC00462F11 /* Zoop.swift in Sources */,
 				C4345BB52846056000365CF9 /* ProcessInfo+Extensions.swift in Sources */,
 				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,
 				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
