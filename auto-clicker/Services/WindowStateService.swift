@@ -10,11 +10,11 @@ import Cocoa
 import Defaults
 
 struct WindowStateService {
-    static let width: CGFloat = Defaults.Keys.windowSize.defaultValue.dx
-    static let height: CGFloat = Defaults.Keys.windowSize.defaultValue.dy
+    static let minWidth: CGFloat = 550
+    static let minHeight: CGFloat = 430
 
-    static let settingsWidth: CGFloat = 400
-    static let settingsHeight: CGFloat = 170
+    static let settingsMinWidth: CGFloat = 400
+    static let settingsMinHeight: CGFloat = 170
 
     static func toggleKeepWindowOnTop(_ keepOnTop: Bool) {
         // This is somewhat finiky... I originally used NSApplication.shared.mainWindow as it contained the primary window
@@ -35,5 +35,9 @@ struct WindowStateService {
 
     static func refreshKeepWindowOnTop() {
         self.toggleKeepWindowOnTop(Defaults[.windowShouldKeepOnTop])
+    }
+
+    static func shouldExitOnClose() -> Bool {
+        Defaults[.appShouldQuitOnClose]
     }
 }
