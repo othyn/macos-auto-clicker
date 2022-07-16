@@ -12,10 +12,16 @@ struct GeneralSettingsTabView: View {
     @StateObject private var zoop = Zoop()
 
     var body: some View {
-        Form {
-            Button(self.zoop.text, action: self.zoop.start)
-                .buttonStyle(.plain)
-                .font(.system(size: 32))
+        SettingsTabView {
+            HStack {
+                Spacer()
+
+                Button(self.zoop.text, action: self.zoop.start)
+                    .buttonStyle(.plain)
+                    .font(.system(size: 28))
+
+                Spacer()
+            }
         }
     }
 }

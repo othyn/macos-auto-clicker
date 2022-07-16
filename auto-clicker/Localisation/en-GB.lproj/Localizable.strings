@@ -31,13 +31,19 @@
 "key_listener_modal_dismiss_key_prompt"   = "Hold the escape key when done.";
 "key_listener_modal_dismiss_key_override" = "To use the escape key itself, press it twice.";
 
-"settings_general"                  = "General";
-"settings_keyboard_shortcuts"       = "Keyboard Shortcuts";
-"settings_window"                   = "Window";
-"settings_appearance"               = "Appearance";
+"settings_general"            = "General";
+"settings_keyboard_shortcuts" = "Keyboard Shortcuts";
+"settings_window"             = "Window";
+"settings_appearance"         = "Appearance";
+
+"settings_keyboard_shortcuts_title" = "Global";
 "settings_keyboard_shortcuts_start" = "Start auto clicker";
 "settings_keyboard_shortcuts_stop"  = "Stop auto clicker";
-"settings_window_stay_ontop"        = "Window should stay ontop";
+"settings_keyboard_shortcuts_help"  = "Global shortcuts to start and stop the auto click functionality.";
+
+"settings_window_stay_ontop_title" = "Visibility";
+"settings_window_stay_ontop"       = "Keep the main window ontop";
+"settings_window_stay_ontop_help"  = "When you click on another window, this defines whether the window should dissapear behind the other windows (macOS default behaviour), or stay on top of all other windows.";
 
 "help_commands_request_a_feature" = "Request a feature...";
 "help_commands_report_a_bug"      = "Report a problem...";
