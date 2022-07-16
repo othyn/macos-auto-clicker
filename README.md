@@ -150,4 +150,6 @@ Use this section to mention useful resources and libraries that you have used in
 - Package: [sindresorhus/Defaults](https://github.com/sindresorhus/Defaults)
 - Package: [othyn/DateStrings](https://github.com/othyn/DateStrings)
 
+---
+
 _Why a mouse emoji? Auto Clicker > Click with a mouse > Mouse! ... yeah, I know... I know..._
