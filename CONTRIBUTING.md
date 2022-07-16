@@ -10,9 +10,8 @@ This may not as of yet be a complete guide and changes will be made as the proje
 
 - [Issue Strategy](#mailbox_with_mail-issue-strategy)
 - [Project Setup](#gift-project-setup)
+- [Branching Strategy](#seedling-branching-strategy) <!-- NEXT LINE (having it there messes up formatting): - [Running Tests](#test_tube-running-tests) -->
 - [Localisation Strategy](#speech_balloon-localisation-strategy)
-- [Branching Strategy](#seedling-branching-strategy)
-<!-- - [Running Tests](#test_tube-running-tests) -->
 - [Commit Strategy](#memo-commit-strategy)
 - [PR Strategy](#leftwards_arrow_with_hook-pr-strategy)
 - [Build Strategy](#wrench-builds)
@@ -45,6 +44,19 @@ This is a side project, so feel free to submit a PR for any functionality/bug fi
 
 Code style is handled by `swiftlint` (`$ brew install swiftlint`) and should automatically fix the style upon build. There is a [GitHub Action](.github/workflows/swiftlint.yml) setup to run on all code submitted, so it can't be avoided!
 
+# :seedling: Branching Strategy
+
+The main project branches are;
+
+- `main`
+  - Holds the 'source of truth' for the current (newest) release version detailed in the [releases page](https://github.com/othyn/macos-auto-clicker/releases).
+  - The only branch that should be PR'd into `main` is `dev`.
+  - The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when this branch is pushed to and kick off a new build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section below for more details).
+- `dev`
+  - Holds the 'source of truth' for the current beta release version detailed in the [releases page](https://github.com/othyn/macos-auto-clicker/releases).
+  - Any development against the project should reside in its own development branch using the `dev` branch as its base, later being PR'd back into `dev` when development is completed.
+  - The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when this branch is pushed to and kick off a new beta build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section below for more details)
+
 # :speech_balloon: Localisation Strategy
 
 This project supports localisation! Please see the pinned [language support issue](https://github.com/othyn/macos-auto-clicker/issues/10) as a discussion place for new language support. See the [`auto-clicker/Localisation`](https://github.com/othyn/macos-auto-clicker/tree/main/auto-clicker/Localisation) project directory to view currently supported languages, the project default being `en-GB`.
@@ -67,19 +79,6 @@ The project makes use of the Apple default `Localizable.strings` and `Localizabl
 </div>
 
 More information on Apple's localisation practices can be found on [their official docs](https://developer.apple.com/localization/), and [their official docs for Xcode](https://developer.apple.com/documentation/xcode/localization). There is also an application, [`mohakapt/Stringz`](https://github.com/mohakapt/Stringz), who's sole intent is to make writing and maintaining language translations easier. See [issue #36](https://github.com/othyn/macos-auto-clicker/issues/36) for some more useful links and resources for implementing translations.
-
-# :seedling: Branching Strategy
-
-The main project branches are;
-
-- `main`
-  - Holds the 'source of truth' for the current (newest) release version detailed in the [releases page](https://github.com/othyn/macos-auto-clicker/releases).
-  - The only branch that should be PR'd into `main` is `dev`.
-  - The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when this branch is pushed to and kick off a new build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section below for more details).
-- `dev`
-  - Holds the 'source of truth' for the current beta release version detailed in the [releases page](https://github.com/othyn/macos-auto-clicker/releases).
-  - Any development against the project should reside in its own development branch using the `dev` branch as its base, later being PR'd back into `dev` when development is completed.
-  - The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when this branch is pushed to and kick off a new beta build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section below for more details)
 
 # :memo: Commit Strategy
 
