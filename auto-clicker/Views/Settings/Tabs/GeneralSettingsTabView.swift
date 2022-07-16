@@ -34,6 +34,7 @@ struct GeneralSettingsTabView: View {
                         " " + String(format: NSLocalizedString("settings_general_menu_bar_show_icon", comment: "Icon in menu bar toggle")),
                         key: .menuBarShowIcon
                     )
+                    .onChange(MenuBarService.toggle)
 
                     Image(systemName: "cursorarrow.click.badge.clock")
                 }

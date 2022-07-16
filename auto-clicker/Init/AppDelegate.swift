@@ -9,8 +9,6 @@ import Foundation
 import Cocoa
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
-    private var statusItem: NSStatusItem!
-
     func applicationDidFinishLaunching(_ notification: Notification) {
         if let window = NSApplication.shared.mainWindow {
             window.titlebarAppearsTransparent = true
@@ -20,11 +18,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             window.toolbar = customToolbar
         }
 
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-
-        if let button = statusItem.button {
-            button.image = NSImage(systemSymbolName: "cursorarrow.click.badge.clock", accessibilityDescription: "auto clicker")
-        }
+        MenuBarService.refreshState()
 
         PermissionsService.acquireAccessibilityPrivileges()
     }
