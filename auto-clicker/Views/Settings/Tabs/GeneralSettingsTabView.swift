@@ -25,6 +25,48 @@ struct GeneralSettingsTabView: View {
                 )
             }
 
+            SettingsTabItemView(
+                title: "settings_general_menu_bar_show_icon_title",
+                help: "settings_general_menu_bar_show_icon_help"
+            ) {
+                HStack {
+                    Defaults.Toggle(
+                        " " + String(format: NSLocalizedString("settings_general_menu_bar_show_icon", comment: "Icon in menu bar toggle")),
+                        key: .menuBarShowIcon
+                    )
+
+                    Image(systemName: "cursorarrow.click.badge.clock")
+                }
+            }
+
+            SettingsTabItemView(
+                help: "settings_general_menu_bar_start_to_help"
+            ) {
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_general_menu_bar_start_to", comment: "Start app to menu bar toggle")),
+                    key: .menuBarStartTo
+                )
+            }
+
+            SettingsTabItemView(
+                help: "settings_general_menu_bar_minimise_to_help"
+            ) {
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_general_menu_bar_minimise_to", comment: "Minimise app to menu bar toggle")),
+                    key: .menuBarStartTo
+                )
+            }
+
+            SettingsTabItemView(
+                help: "settings_general_menu_bar_close_to_help",
+                divider: true
+            ) {
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_general_menu_bar_close_to", comment: "Close app to menu bar toggle")),
+                    key: .menuBarStartTo
+                )
+            }
+
             Spacer()
 
             HStack {

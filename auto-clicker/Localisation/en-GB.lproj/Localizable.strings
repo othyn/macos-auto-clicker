@@ -40,6 +40,19 @@
 "settings_general_app_should_quit_on_close"       = "Quit app on main window close";
 "settings_general_app_should_quit_on_close_help"  = "When the main window of the application is closed, instead of keeping the app running in the background (macOS default behaviour), quit the app.";
 
+"settings_general_menu_bar_show_icon_title" = "Menu Bar";
+"settings_general_menu_bar_show_icon"       = "Show menu bar icon";
+"settings_general_menu_bar_show_icon_help"  = "Always show an icon in the macOS menu bar where the app and quick access functionality can be accessed.";
+
+"settings_general_menu_bar_start_to"       = "Start app to menu bar";
+"settings_general_menu_bar_start_to_help"  = "When the app is started, show it only as the menu bar icon instead of also on the dock.";
+
+"settings_general_menu_bar_minimise_to"       = "Minimise app to menu bar";
+"settings_general_menu_bar_minimise_to_help"  = "When the app is minimised, show it as the menu bar icon.";
+
+"settings_general_menu_bar_close_to"       = "Start app to menu bar";
+"settings_general_menu_bar_close_to_help"  = "When the app is closed, show it in the menu bar instead of quitting the app. If using the 'Quit app on main window close' functionality, then this option will have no effect.";
+
 "settings_keyboard_shortcuts_title" = "Global";
 "settings_keyboard_shortcuts_start" = "Start auto clicker";
 "settings_keyboard_shortcuts_stop"  = "Stop auto clicker";
