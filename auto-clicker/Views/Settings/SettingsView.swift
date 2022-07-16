@@ -29,7 +29,7 @@ struct SettingsView: View {
                     Label("settings_general", systemImage: "gear")
                 }
                 .onAppear {
-                    self.changeFrameHeight(WindowStateService.settingsMinHeight)
+                    self.changeFrameHeight(WindowStateService.settingsMinHeight * 1.5)
                 }
 
             KeyboardShortcutsSettingsTabView()
@@ -45,7 +45,7 @@ struct SettingsView: View {
                     Label("settings_window", systemImage: "macwindow")
                 }
                 .onAppear {
-                    self.changeFrameHeight(WindowStateService.settingsMinHeight / 2)
+                    self.changeFrameHeight(WindowStateService.settingsMinHeight / 1.5)
                 }
 
             AppearanceSettingsTabView()
