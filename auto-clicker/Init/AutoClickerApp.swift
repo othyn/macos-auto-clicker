@@ -13,30 +13,17 @@ import Defaults
 struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
-    @Default(.appearanceSelectedTheme) private var activeTheme
-
-    @StateObject private var permissionsService = PermissionsService()
-
     var body: some Scene {
         Settings {
             SettingsView()
         }
 
         WindowGroup {
-            ZStack {
-                self.activeTheme.backgroundColour.ignoresSafeArea()
-
-                if self.permissionsService.isTrusted {
-                    MainView()
-                } else {
-                    PermissionsView()
-                }
-            }
-            .frame(minWidth: WindowStateService.width,
-//                   maxWidth: WindowStateService.width,
-                   minHeight: WindowStateService.height,
-                   maxHeight: WindowStateService.height)
-            .onAppear(perform: self.permissionsService.pollAccessibilityPrivileges)
+            ACWindow()
+                .frame(minWidth: WindowStateService.minWidth,
+                       maxWidth: WindowStateService.minWidth * WindowStateService.maxDimensionMultiplier,
+                       minHeight: WindowStateService.minHeight,
+                       maxHeight: WindowStateService.minHeight)
         }
         .windowStyle(.hiddenTitleBar)
         .commands {

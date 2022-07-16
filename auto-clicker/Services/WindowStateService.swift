@@ -10,11 +10,13 @@ import Cocoa
 import Defaults
 
 struct WindowStateService {
-    static let width: CGFloat = Defaults.Keys.windowSize.defaultValue.dx
-    static let height: CGFloat = Defaults.Keys.windowSize.defaultValue.dy
+    static let minWidth: CGFloat = 550
+    static let minHeight: CGFloat = 430
 
-    static let settingsWidth: CGFloat = 500
-    static let settingsHeight: CGFloat = 200
+    static let maxDimensionMultiplier: CGFloat = 1.3
+
+    static let settingsMinWidth: CGFloat = 500
+    static let settingsMinHeight: CGFloat = 200
 
     static var settingsWidthSide: CGFloat {
         WindowStateService.settingsWidth / 5

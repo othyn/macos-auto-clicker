@@ -56,7 +56,7 @@ struct SettingsView: View {
                     self.changeFrameHeight(WindowStateService.settingsHeight)
                 }
         }
-        .frame(width: WindowStateService.settingsWidth, height: self.frameHeight)
+        .frame(width: WindowStateService.settingsMinWidth, height: self.frameHeight)
         .padding()
         // Would love to theme the tab bar, but I can only find information on iOS and UITabBar
         // with NSTabView not having that much information on how to do this...
