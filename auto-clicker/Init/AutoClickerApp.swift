@@ -20,10 +20,10 @@ struct AutoClickerApp: App {
 
         WindowGroup {
             ACWindow()
-                .frame(minWidth: WindowStateService.minWidth,
-                       maxWidth: WindowStateService.minWidth * WindowStateService.maxDimensionMultiplier,
-                       minHeight: WindowStateService.minHeight,
-                       maxHeight: WindowStateService.minHeight)
+                .frame(minWidth: WindowStateService.mainWindowMinWidth,
+                       maxWidth: WindowStateService.mainWindowMinWidth * WindowStateService.mainWindowMaxDimensionMultiplier,
+                       minHeight: WindowStateService.mainWindowMinHeight,
+                       maxHeight: WindowStateService.mainWindowMinHeight)
         }
         .windowStyle(.hiddenTitleBar)
         .commands {
