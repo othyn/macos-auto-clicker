@@ -7,6 +7,7 @@
 
 import Foundation
 import Cocoa
+import Defaults
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -46,8 +47,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     // Hacky workaround in SwiftUI in order to have macOS persist the window size state
     // https://stackoverflow.com/a/72558375/4494375
     func windowShouldClose(_ sender: NSWindow) -> Bool {
-        NSApp.hide(nil)
+        if !Defaults[.appShouldQuitOnClose] {
+            NSApp.hide(nil)
+            return false
+        }
 
-        return false
+        return true
     }
 }
