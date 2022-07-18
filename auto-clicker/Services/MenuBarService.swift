@@ -28,6 +28,7 @@ final class MenuBarService {
     static var startMenuItem: NSMenuItem?
     static var stopMenuItem: NSMenuItem?
     static var hideOrShowMenuItem: NSMenuItem?
+    static var preferencesMenuItem: NSMenuItem?
     static var quitMenuItem: NSMenuItem?
 
     static func create() {
@@ -82,6 +83,16 @@ final class MenuBarService {
         )
         self.hideOrShowMenuItem!.target = self
         menu.addItem(self.hideOrShowMenuItem!)
+
+        menu.addItem(NSMenuItem.separator())
+
+        self.preferencesMenuItem = NSMenuItem(
+            title: NSLocalizedString("menu_bar_item_preferences", comment: "Menu bar item preferences option"),
+            action: #selector(self.menuActionPreferences),
+            keyEquivalent: ","
+        )
+        self.preferencesMenuItem!.target = self
+        menu.addItem(self.preferencesMenuItem!)
 
         menu.addItem(NSMenuItem.separator())
 
@@ -145,6 +156,15 @@ final class MenuBarService {
             NSApp.unhide(nil)
         } else {
             NSApp.hide(nil)
+        }
+    }
+
+    @objc static func menuActionPreferences(sender: NSMenuItem) {
+        // https://stackoverflow.com/questions/65355696/how-to-programatically-open-settings-window-in-a-macos-swiftui-app
+        if #available(macOS 13, *) {
+            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+        } else {
+            NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
         }
     }
 
