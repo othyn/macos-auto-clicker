@@ -11,6 +11,9 @@ import SwiftUI
 import Defaults
 
 final class AutoClickSimulator: ObservableObject {
+    static var shared: AutoClickSimulator = .init()
+    private init() {}
+
     @Published var isAutoClicking = false
 
     @Published var remainingInterations: Int = 0
@@ -30,6 +33,14 @@ final class AutoClickSimulator: ObservableObject {
 
     func start() {
         self.isAutoClicking = true
+
+        if let startMenuItem = MenuBarService.startMenuItem {
+            startMenuItem.isEnabled = false
+        }
+
+        if let stopMenuItem = MenuBarService.stopMenuItem {
+            stopMenuItem.isEnabled = true
+        }
 
         self.activity = ProcessInfo.processInfo.beginActivity(.autoClicking)
 
@@ -52,6 +63,14 @@ final class AutoClickSimulator: ObservableObject {
 
     func stop() {
         self.isAutoClicking = false
+
+        if let startMenuItem = MenuBarService.startMenuItem {
+            startMenuItem.isEnabled = true
+        }
+
+        if let stopMenuItem = MenuBarService.stopMenuItem {
+            stopMenuItem.isEnabled = false
+        }
 
         self.activity?.cancel()
         self.activity = nil

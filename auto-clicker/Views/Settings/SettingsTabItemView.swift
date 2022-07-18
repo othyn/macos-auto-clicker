@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SettingsTabItemView<Content: View>: View {
-    var title: LocalizedStringKey
-    var help: LocalizedStringKey
+    var title: LocalizedStringKey?
+    var help: LocalizedStringKey?
     var divider: Bool
     var content: () -> Content
 
-    init(title: LocalizedStringKey, help: LocalizedStringKey, divider: Bool = false, @ViewBuilder content: @escaping () -> Content) {
+    init(title: LocalizedStringKey? = nil, help: LocalizedStringKey? = nil, divider: Bool = false, @ViewBuilder content: @escaping () -> Content) {
         self.title = title
         self.help = help
         self.divider = divider
@@ -23,16 +23,16 @@ struct SettingsTabItemView<Content: View>: View {
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                Text(self.title)
+                // Setting an empty string so we still get the frame size applied for layout uniformity
+                Text(self.title ?? "")
                     .fontWeight(.bold)
                     .frame(width: WindowStateService.settingsWidthSide, alignment: .trailing)
 
                 VStack(alignment: .leading) {
                     VStack(content: self.content)
 
-                    // swiftlint:disable empty_string
-                    if self.help != "" {
-                        Text(self.help)
+                    if let help = self.help {
+                        Text(help)
                             .font(.footnote)
                     }
                 }

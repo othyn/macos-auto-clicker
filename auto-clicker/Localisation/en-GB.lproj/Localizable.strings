@@ -36,9 +36,16 @@
 "settings_window"             = "Window";
 "settings_appearance"         = "Appearance";
 
-"settings_general_app_should_quit_on_close_title" = "State";
+"settings_general_app_should_quit_on_close_title" = "Lifecycle";
 "settings_general_app_should_quit_on_close"       = "Quit app on main window close";
 "settings_general_app_should_quit_on_close_help"  = "When the main window of the application is closed, instead of keeping the app running in the background (macOS default behaviour), quit the app.";
+
+"settings_general_menu_bar_show_icon_title" = "Menu Bar";
+"settings_general_menu_bar_show_icon"       = "Show menu bar icon";
+"settings_general_menu_bar_show_icon_help"  = "Always show an icon in the macOS menu bar where the app and quick access functionality can be accessed.";
+
+"settings_general_menu_bar_hide_dock"      = "Hide dock icon";
+"settings_general_menu_bar_hide_dock_help" = "Instead of the app running from the dock, the app will instead run from the menu bar.";
 
 "settings_keyboard_shortcuts_title" = "Global";
 "settings_keyboard_shortcuts_start" = "Start auto clicker";
@@ -46,11 +53,20 @@
 "settings_keyboard_shortcuts_help"  = "Global shortcuts to start and stop the auto click functionality.";
 
 "settings_window_stay_ontop_title" = "Visibility";
-"settings_window_stay_ontop"       = "Keep the main window ontop";
+"settings_window_stay_ontop"       = "Always keep the main window on top";
 "settings_window_stay_ontop_help"  = "When you click on another window, this defines whether the window should dissapear behind the other windows (macOS default behaviour), or stay on top of all other windows.";
 
 "help_commands_request_a_feature" = "Request a feature...";
 "help_commands_report_a_bug"      = "Report a problem...";
+
+"menu_bar_item_start"            = "Start now";
+"menu_bar_item_stop"             = "Stop now";
+"menu_bar_item_hide_show_show"   = "Show";
+"menu_bar_item_hide_show_hide"   = "Hide";
+"menu_bar_item_hide_show_suffix" = "app";
+"menu_bar_item_preferences"      = "Preferences...";
+"menu_bar_item_about"            = "About...";
+"menu_bar_item_quit"             = "Quit";
 
 "colour_black"  = "Black";
 "colour_blue"   = "Blue";

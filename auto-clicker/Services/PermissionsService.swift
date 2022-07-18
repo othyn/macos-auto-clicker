@@ -19,14 +19,19 @@ import Cocoa
 final class PermissionsService: ObservableObject {
     @Published var isTrusted: Bool = AXIsProcessTrusted()
 
-    func pollAccessibilityPrivileges() {
+    static var shared: PermissionsService = .init()
+    private init() {}
+
+    func pollAccessibilityPrivileges(onTrusted: @escaping () -> Void) {
         LoggerService.permissionTrustedState()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.isTrusted = AXIsProcessTrusted()
 
             if !self.isTrusted {
-                self.pollAccessibilityPrivileges()
+                self.pollAccessibilityPrivileges(onTrusted: onTrusted)
+            } else {
+                onTrusted()
             }
         }
     }

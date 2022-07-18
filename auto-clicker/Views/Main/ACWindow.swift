@@ -11,7 +11,7 @@ import Defaults
 struct ACWindow: View {
     @Default(.appearanceSelectedTheme) private var activeTheme
 
-    @StateObject private var permissionsService = PermissionsService()
+    @StateObject private var permissionsService = PermissionsService.shared
 
     var body: some View {
         ZStack {
@@ -23,6 +23,10 @@ struct ACWindow: View {
                 PermissionsView()
             }
         }
-        .onAppear(perform: self.permissionsService.pollAccessibilityPrivileges)
+        .onAppear {
+            self.permissionsService.pollAccessibilityPrivileges(onTrusted: {
+                MenuBarService.enableAllMenuBarItems()
+            })
+        }
     }
 }
