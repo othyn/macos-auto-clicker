@@ -75,4 +75,9 @@ final class MenuBarService {
     static func hidePopover(_ sender: AnyObject) {
         self.statusBarPopover!.performClose(sender)
     }
+
+    @objc static func menuActionShow(sender: NSMenuItem) {
+        // Err... nearly! This implementation opens a new main window each time...
+        // NSWorkspace.shared.open(URL(string: "auto-clicker://mainWindow"))
+    }
 }
