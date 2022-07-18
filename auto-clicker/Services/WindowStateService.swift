@@ -10,11 +10,17 @@ import Cocoa
 import Defaults
 
 struct WindowStateService {
-    static let width: CGFloat = Defaults.Keys.windowSize.defaultValue.dx
-    static let height: CGFloat = Defaults.Keys.windowSize.defaultValue.dy
+    static let mainWindowMinWidth: CGFloat = 550
+    static let mainWindowMinHeight: CGFloat = 430
+    static let mainWindowMaxDimensionMultiplier: CGFloat = 1.3
 
-    static let settingsWidth: CGFloat = 400
-    static let settingsHeight: CGFloat = 170
+    static let settingsMinWidth: CGFloat = 500
+    static var settingsWidthSide: CGFloat {
+        WindowStateService.settingsMinWidth / 5
+    }
+
+    static let menuBarWidth: CGFloat = 150
+    static let menuBarHeight: CGFloat = 500
 
     static func toggleKeepWindowOnTop(_ keepOnTop: Bool) {
         // This is somewhat finiky... I originally used NSApplication.shared.mainWindow as it contained the primary window
@@ -35,5 +41,19 @@ struct WindowStateService {
 
     static func refreshKeepWindowOnTop() {
         self.toggleKeepWindowOnTop(Defaults[.windowShouldKeepOnTop])
+    }
+
+    static func shouldExitOnClose() -> Bool {
+        Defaults[.appShouldQuitOnClose]
+    }
+
+    static func toggleDockIcon(showIcon: Bool) -> Bool {
+        showIcon
+            ? NSApp.setActivationPolicy(NSApplication.ActivationPolicy.regular)
+            : NSApp.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
+    }
+
+    static func refreshDockIconState() {
+        _ = self.toggleDockIcon(showIcon: !Defaults[.menuBarHideDock])
     }
 }

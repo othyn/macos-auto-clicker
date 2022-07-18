@@ -14,10 +14,18 @@ struct MainView: View {
     @Default(.appearanceSelectedTheme) private var activeTheme
     @Default(.autoClickerState) private var formState
 
-    @StateObject private var autoClickSimulator = AutoClickSimulator()
-    @StateObject private var delayTimer = DelayTimer()
+    @StateObject private var autoClickSimulator = AutoClickSimulator.shared
+    @StateObject private var delayTimer = DelayTimer.shared
 
     @State private var showThemeName = false
+
+    var hasStarted: Bool {
+        self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
+    }
+
+    var hasStopped: Bool {
+        !self.autoClickSimulator.isAutoClicking
+    }
 
     var estNextClickAt: Date {
         .init(timeInterval: self.formState.pressIntervalDuration.asTimeInterval(interval: self.formState.pressInterval),
@@ -73,10 +81,10 @@ struct MainView: View {
                                             min: MIN_PRESS_INTERVAL,
                                             max: MAX_PRESS_INTERVAL,
                                             number: self.$formState.pressInterval)
-                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                        .disabled(self.hasStarted)
 
                     DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
-                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                        .disabled(self.hasStarted)
 
                     Text("main_window_comma", comment: "Main window comma")
                 }
@@ -85,13 +93,13 @@ struct MainView: View {
                     Text("main_window_press", comment: "Main window 'press'")
 
                     PressKeyListener()
-                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                        .disabled(self.hasStarted)
 
                     DynamicWidthNumberField(text: "",
                                             min: MIN_PRESS_AMOUNT,
                                             max: MAX_PRESS_AMOUNT,
                                             number: self.$formState.pressAmount)
-                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                        .disabled(self.hasStarted)
 
                     Text(self.formState.pressAmount == 1 ? "main_window_time" : "main_window_times", comment: "Main window 'time(s)'") + Text("main_window_comma", comment: "Main window comma")
                 }
@@ -103,7 +111,7 @@ struct MainView: View {
                                             min: MIN_REPEAT_AMOUNT,
                                             max: MAX_REPEAT_AMOUNT,
                                             number: self.$formState.repeatAmount)
-                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                        .disabled(self.hasStarted)
 
                     Text(self.formState.repeatAmount == 1 ? "main_window_time" : "main_window_times", comment: "Main window 'time(s)'") + Text("main_window_full_stop", comment: "Main window full stop")
                 }
@@ -115,7 +123,7 @@ struct MainView: View {
                                             min: MIN_START_DELAY,
                                             max: MAX_START_DELAY,
                                             number: self.$formState.startDelay)
-                        .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                        .disabled(self.hasStarted)
 
                     Text(self.formState.startDelay == 1 ? "main_window_second" : "main_window_seconds", comment: "Main window 'second(s)'") + Text("main_window_before_starting", comment: "Main window 'before starting'") + Text("main_window_full_stop", comment: "Main window full stop")
                 }
@@ -129,13 +137,13 @@ struct MainView: View {
             HStack {
                 VStack {
                     Button(action: self.start) {
-                        if self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown {
+                        if self.hasStarted {
                             Text(self.delayTimer.countdownText).kerning(1)
                         } else {
                             Text("main_window_start_btn", comment: "Main window start button").kerning(1)
                         }
                     }
-                    .disabled(self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown)
+                    .disabled(self.hasStarted)
                     .buttonStyle(ThemedButtonStyle())
 
                     KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStartButton.shortcut!)
@@ -145,7 +153,7 @@ struct MainView: View {
                     Button(action: self.stop) {
                         Text("main_window_stop_btn", comment: "Main window stop button").kerning(1)
                     }
-                    .disabled(!self.autoClickSimulator.isAutoClicking)
+                    .disabled(self.hasStopped)
                     .buttonStyle(ThemedButtonStyle())
 
                     KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStopButton.shortcut!)
@@ -163,29 +171,17 @@ struct MainView: View {
 
             VStack {
                 HStack {
-//                    Spacer()
-//
-//                    StatBox(title: "Next press at",
-//                            value: "2010-06-07 10:00:00.000")
-//
-//                    Spacer()
-//
-//                    StatBox(title: "Final press at",
-//                            value: "2010-06-07 12:00:00.000")
-//
-//                    Spacer()
-
                     Spacer()
 
                     StatBox(title: "main_window_stat_box_next_press_at",
-                            value: self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
+                            value: self.hasStarted
                                    ? self.autoClickSimulator.nextClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS")
                                    : self.estNextClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS"))
 
                     Spacer()
 
                     StatBox(title: "main_window_stat_box_final_press_at",
-                            value: self.autoClickSimulator.isAutoClicking || self.delayTimer.isCountingDown
+                            value: self.hasStarted
                                    ? self.autoClickSimulator.finalClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS")
                                    : self.estFinalClickAt.asString(inFormat: "yyyy-MM-dd HH:mm:ss.SSS"))
 

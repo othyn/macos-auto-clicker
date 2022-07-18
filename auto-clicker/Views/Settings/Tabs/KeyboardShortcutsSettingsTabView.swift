@@ -10,10 +10,21 @@ import KeyboardShortcuts
 
 struct KeyboardShortcutsSettingsTabView: View {
     var body: some View {
-        Form {
-            // 'init(localized:table:bundle:locale:comment:)' is only available in macOS 12 or newer, so have to use the old way to maintain compatibility!
-            KeyboardShortcuts.Recorder(String(format: NSLocalizedString("settings_keyboard_shortcuts_start", comment: "Settings Keyboard Shortcut to Start the auto clicker")), name: .pressStartButton)
-            KeyboardShortcuts.Recorder(String(format: NSLocalizedString("settings_keyboard_shortcuts_stop", comment: "Settings Keyboard Shortcut to Stop the auto clicker")), name: .pressStopButton)
+        SettingsTabView {
+            SettingsTabItemView(
+                title: "settings_keyboard_shortcuts_title",
+                help: "settings_keyboard_shortcuts_help"
+            ) {
+                KeyboardShortcuts.Recorder(
+                    String(format: NSLocalizedString("settings_keyboard_shortcuts_start", comment: "Settings Keyboard Shortcut to Start the auto clicker")),
+                    name: .pressStartButton
+                )
+
+                KeyboardShortcuts.Recorder(
+                    String(format: NSLocalizedString("settings_keyboard_shortcuts_stop", comment: "Settings Keyboard Shortcut to Stop the auto clicker")),
+                    name: .pressStopButton
+                )
+            }
         }
     }
 }

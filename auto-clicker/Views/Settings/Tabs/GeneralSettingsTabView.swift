@@ -7,53 +7,76 @@
 
 import Foundation
 import SwiftUI
-
-private class ZoopHelper: ObservableObject {
-    private static let maximumZoops: Int = 7
-    private static let zoopDefault: String = "😴"
-    private static let zoopVariants: [String] = [
-        "👉😎👉",
-        "👈😎👈"
-    ]
-
-    @Published var zoopTimer: Timer?
-    @Published var zoopLoop: Int = 0
-    @Published var zoopText: String = zoopDefault
-
-    func startZooping() {
-        self.zoopTimer = Timer.scheduledTimer(timeInterval: 0.25,
-                                              target: self,
-                                              selector: #selector(getZoopedNerd(timer:)),
-                                              userInfo: nil,
-                                              repeats: true)
-    }
-
-    @objc func getZoopedNerd(timer: Timer) {
-        withAnimation {
-            guard self.zoopLoop <= ZoopHelper.maximumZoops else {
-                self.zoopLoop = 0
-                self.zoopText = ZoopHelper.zoopDefault
-
-                self.zoopTimer?.invalidate()
-
-                return
-            }
-
-            self.zoopText = ZoopHelper.zoopVariants[self.zoopLoop % ZoopHelper.zoopVariants.count] + " zoop"
-
-            self.zoopLoop += 1
-        }
-    }
-}
+import Defaults
 
 struct GeneralSettingsTabView: View {
-    @StateObject private var zoopHelper = ZoopHelper()
+    @StateObject private var zoop = Zoop()
+
+    @Default(.menuBarShowIcon) private var menuBarShowIcon
+    @Default(.appShouldQuitOnClose) private var appShouldQuitOnClose
 
     var body: some View {
-        Form {
-            Button(self.zoopHelper.zoopText, action: self.zoopHelper.startZooping)
-                .buttonStyle(.plain)
-                .font(.system(size: 32))
+        SettingsTabView {
+            SettingsTabItemView(
+                title: "settings_general_app_should_quit_on_close_title",
+                help: "settings_general_app_should_quit_on_close_help",
+                divider: true
+            ) {
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_general_app_should_quit_on_close", comment: "App should quit on close toggle")),
+                    key: .appShouldQuitOnClose
+                )
+            }
+
+            SettingsTabItemView(
+                title: "settings_general_menu_bar_show_icon_title",
+                help: "settings_general_menu_bar_show_icon_help"
+            ) {
+                HStack {
+                    Defaults.Toggle(
+                        " " + String(format: NSLocalizedString("settings_general_menu_bar_show_icon", comment: "Icon in menu bar toggle")),
+                        key: .menuBarShowIcon
+                    )
+                    .onChange { isOn in
+                        MenuBarService.toggle(isOn)
+
+                        // If the menu bar icon is turned off, enforce that the dock icon is restored
+                        //  otherwise the user can get stuck!
+                        if !isOn {
+                            Defaults[.menuBarHideDock] = false
+                            WindowStateService.refreshDockIconState()
+                        }
+                    }
+
+                    Image(systemName: "cursorarrow.click.badge.clock")
+                }
+            }
+
+            SettingsTabItemView(
+                help: "settings_general_menu_bar_hide_dock_help",
+                divider: true
+            ) {
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_general_menu_bar_hide_dock", comment: "Hide dock icon toggle")),
+                    key: .menuBarHideDock
+                )
+                .onChange { _ in
+                    WindowStateService.refreshDockIconState()
+                }
+                .disabled(!self.menuBarShowIcon)
+            }
+
+            Spacer()
+
+            HStack {
+                Spacer()
+
+                Button(self.zoop.text, action: self.zoop.start)
+                    .buttonStyle(.plain)
+                    .font(.system(size: 28))
+
+                Spacer()
+            }
         }
     }
 }

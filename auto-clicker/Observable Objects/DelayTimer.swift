@@ -10,6 +10,9 @@ import Defaults
 import Combine
 
 final class DelayTimer: ObservableObject {
+    static var shared: DelayTimer = .init()
+    private init() {}
+
     private static let defaultCountdownText: String = "-"
 
     @Published var isCountingDown = false
@@ -24,6 +27,14 @@ final class DelayTimer: ObservableObject {
         let delayInSeconds = Defaults[.autoClickerState].startDelay
 
         self.onFinish = onFinish
+
+        if let startMenuItem = MenuBarService.startMenuItem {
+            startMenuItem.isEnabled = false
+        }
+
+        if let stopMenuItem = MenuBarService.stopMenuItem {
+            stopMenuItem.isEnabled = true
+        }
 
         if delayInSeconds > 0 {
             self.remainingDelaySeconds = delayInSeconds
