@@ -25,6 +25,8 @@ final class MenuBarService {
     static var statusBarItem: NSStatusItem?
     static var statusBarPopover: NSPopover?
 
+    static var hideOrShowMenuItem: NSMenuItem?
+
     static func create() {
         self.statusBar = NSStatusBar.system
         self.statusBarItem = self.statusBar!.statusItem(withLength: NSStatusItem.variableLength)
@@ -65,13 +67,13 @@ final class MenuBarService {
 
         menu.addItem(NSMenuItem.separator())
 
-        let showMenuItem = NSMenuItem(
-          title: "Show App",
-          action: #selector(menuActionShow),
-          keyEquivalent: ""
+        self.hideOrShowMenuItem = NSMenuItem(
+            title: (NSApp.isHidden ? "Show" : "Hide") + " App",
+            action: #selector(menuActionHideOrShow),
+            keyEquivalent: ""
         )
-        showMenuItem.target = self
-        menu.addItem(showMenuItem)
+        self.hideOrShowMenuItem!.target = self
+        menu.addItem(self.hideOrShowMenuItem!)
 
         menu.addItem(NSMenuItem.separator())
 
@@ -130,17 +132,11 @@ final class MenuBarService {
         print("stop")
     }
 
-    @objc static func menuActionShow(sender: NSMenuItem) {
-        // Err... nearly! This implementation opens a new main window each time...
-        // NSWorkspace.shared.open(URL(string: "auto-clicker://mainWindow"))
-
-        print(NSApplication.shared.windows)
-
-        if let window = NSApplication.shared.mainWindow {
-            print("Menu Bar: menuActionShow pressed")
-            window.makeKeyAndOrderFront(nil)
-            print(window.isVisible)
-            print(window.isMiniaturized)
+    @objc static func menuActionHideOrShow(sender: NSMenuItem) {
+        if NSApp.isHidden {
+            NSApp.unhide(nil)
+        } else {
+            NSApp.hide(nil)
         }
     }
 

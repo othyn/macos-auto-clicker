@@ -20,8 +20,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
         // Hacky workaround in SwiftUI in order to have macOS persist the window size state
         // https://stackoverflow.com/a/72558375/4494375
-        let mainWindow = NSApp.windows[0]
-        mainWindow.delegate = self
+        NSApp.windows[0].delegate = self
 
         MenuBarService.refreshState()
 
@@ -34,6 +33,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     func applicationWillBecomeActive(_ notification: Notification) {
         WindowStateService.refreshKeepWindowOnTop()
+    }
+
+    func applicationDidHide(_ notification: Notification) {
+        if let hideOrShowMenuItem = MenuBarService.hideOrShowMenuItem {
+            hideOrShowMenuItem.title = "Show App"
+        }
+    }
+
+    func applicationDidUnhide(_ notification: Notification) {
+        if let hideOrShowMenuItem = MenuBarService.hideOrShowMenuItem {
+            hideOrShowMenuItem.title = "Hide App"
+        }
     }
 
     // Hacky workaround in SwiftUI in order to have macOS persist the window size state
