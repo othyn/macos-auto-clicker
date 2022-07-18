@@ -66,6 +66,7 @@ final class MenuBarService {
             action: #selector(menuActionStop),
             keyEquivalent: KeyboardShortcuts.Name.pressStopButton.shortcut!.descriptionKeyOnly.lowercased()
         )
+        self.stopMenuItem!.isEnabled = false
         self.stopMenuItem!.target = self
         menu.addItem(self.stopMenuItem!)
 
