@@ -65,8 +65,8 @@
 "help_commands_request_a_feature" = "Request a feature...";
 "help_commands_report_a_bug"      = "Report a problem...";
 
-"menu_bar_item_start"            = "Start";
-"menu_bar_item_stop"             = "Stop";
+"menu_bar_item_start"            = "Start now";
+"menu_bar_item_stop"             = "Stop now";
 "menu_bar_item_hide_show_show"   = "Show";
 "menu_bar_item_hide_show_hide"   = "Hide";
 "menu_bar_item_hide_show_suffix" = "main window";
