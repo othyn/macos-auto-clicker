@@ -8,7 +8,7 @@
 import Foundation
 import Cocoa
 
-final class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         if let window = NSApplication.shared.mainWindow {
             window.titlebarAppearsTransparent = true
@@ -17,6 +17,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             customToolbar.showsBaselineSeparator = false
             window.toolbar = customToolbar
         }
+
+        // Hacky workaround in SwiftUI in order to have macOS persist the window size state
+        // https://stackoverflow.com/a/72558375/4494375
+        let mainWindow = NSApp.windows[0]
+        mainWindow.delegate = self
 
         MenuBarService.refreshState()
 
@@ -29,5 +34,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillBecomeActive(_ notification: Notification) {
         WindowStateService.refreshKeepWindowOnTop()
+    }
+
+    // Hacky workaround in SwiftUI in order to have macOS persist the window size state
+    // https://stackoverflow.com/a/72558375/4494375
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        NSApp.hide(nil)
+
+        return false
     }
 }
