@@ -10,15 +10,11 @@ import SwiftUI
 final class LoggerService {
     private static func log(file: String, function: String, _ lines: [String]) {
         #if DEBUG
-        NSLog("---")
-
-        NSLog("Caller: \(file) ~ \(function)")
+        NSLog(">~  Who: \(file) ~ \(function)")
 
         for line in lines {
-            NSLog(line)
+            NSLog(">~ What: \(line)")
         }
-
-        NSLog("---")
         #endif
     }
 
