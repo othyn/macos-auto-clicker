@@ -18,14 +18,13 @@ struct AutoClickerApp: App {
             SettingsView()
         }
 
-        WindowGroup("mainWindow") {
+        WindowGroup {
             ACWindow()
                 .frame(minWidth: WindowStateService.mainWindowMinWidth,
                        maxWidth: WindowStateService.mainWindowMinWidth * WindowStateService.mainWindowMaxDimensionMultiplier,
                        minHeight: WindowStateService.mainWindowMinHeight,
                        maxHeight: WindowStateService.mainWindowMinHeight)
         }
-        .handlesExternalEvents(matching: ["mainWindow"])
         .windowStyle(.hiddenTitleBar)
         .commands {
             HelpCommands()

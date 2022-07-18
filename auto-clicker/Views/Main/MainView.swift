@@ -163,18 +163,6 @@ struct MainView: View {
 
             VStack {
                 HStack {
-//                    Spacer()
-//
-//                    StatBox(title: "Next press at",
-//                            value: "2010-06-07 10:00:00.000")
-//
-//                    Spacer()
-//
-//                    StatBox(title: "Final press at",
-//                            value: "2010-06-07 12:00:00.000")
-//
-//                    Spacer()
-
                     Spacer()
 
                     StatBox(title: "main_window_stat_box_next_press_at",
