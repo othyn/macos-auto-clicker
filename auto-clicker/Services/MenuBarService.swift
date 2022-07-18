@@ -9,6 +9,7 @@ import Foundation
 import Cocoa
 import Defaults
 import SwiftUI
+import KeyboardShortcuts
 
 // Good references:
 // - https://khorbushko.github.io/article/2021/04/30/minimal-macOS-menu-bar-extra%27s-app-with-SwiftUI.html
@@ -35,9 +36,54 @@ final class MenuBarService {
             statusBarButton.target = self
         }
 
-        self.statusBarPopover!.contentSize = NSSize(width: WindowStateService.menuBarWidth, height: WindowStateService.menuBarHeight)
-        self.statusBarPopover!.behavior = .transient
-        self.statusBarPopover!.contentViewController = NSHostingController(rootView: StatusBarView())
+//        Styling just didn't really work, this would work well for a Menu Bar app, but not for just simple clickable Menu Items...
+//        self.statusBarPopover!.contentSize = NSSize(width: WindowStateService.menuBarWidth, height: WindowStateService.menuBarHeight)
+//        self.statusBarPopover!.behavior = .transient
+//        self.statusBarPopover!.contentViewController = NSHostingController(rootView: MenuBarView())
+
+        self.statusBarItem!.menu = self.buildMenu()
+    }
+
+    private static func buildMenu() -> NSMenu {
+        let menu = NSMenu()
+
+        let startMenuItem = NSMenuItem(
+          title: "Start",
+          action: #selector(menuActionStart),
+          keyEquivalent: KeyboardShortcuts.Name.pressStartButton.shortcut!.descriptionKeyOnly.lowercased()
+        )
+        startMenuItem.target = self
+        menu.addItem(startMenuItem)
+
+        let stopMenuItem = NSMenuItem(
+          title: "Stop",
+          action: #selector(menuActionStop),
+          keyEquivalent: KeyboardShortcuts.Name.pressStopButton.shortcut!.descriptionKeyOnly.lowercased()
+        )
+        stopMenuItem.target = self
+        menu.addItem(stopMenuItem)
+
+        menu.addItem(NSMenuItem.separator())
+
+        let showMenuItem = NSMenuItem(
+          title: "Show App",
+          action: #selector(menuActionShow),
+          keyEquivalent: ""
+        )
+        showMenuItem.target = self
+        menu.addItem(showMenuItem)
+
+        menu.addItem(NSMenuItem.separator())
+
+        let quitMenuItem = NSMenuItem(
+          title: "Quit",
+          action: #selector(menuActionQuit),
+          keyEquivalent: "q"
+        )
+        quitMenuItem.target = self
+        menu.addItem(quitMenuItem)
+
+        return menu
     }
 
     static func destroy() {
@@ -76,8 +122,29 @@ final class MenuBarService {
         self.statusBarPopover!.performClose(sender)
     }
 
+    @objc static func menuActionStart(sender: NSMenuItem) {
+        print("start")
+    }
+
+    @objc static func menuActionStop(sender: NSMenuItem) {
+        print("stop")
+    }
+
     @objc static func menuActionShow(sender: NSMenuItem) {
         // Err... nearly! This implementation opens a new main window each time...
         // NSWorkspace.shared.open(URL(string: "auto-clicker://mainWindow"))
+
+        print(NSApplication.shared.windows)
+
+        if let window = NSApplication.shared.mainWindow {
+            print("Menu Bar: menuActionShow pressed")
+            window.makeKeyAndOrderFront(nil)
+            print(window.isVisible)
+            print(window.isMiniaturized)
+        }
+    }
+
+    @objc static func menuActionQuit(sender: NSMenuItem) {
+        NSApp.terminate(self)
     }
 }

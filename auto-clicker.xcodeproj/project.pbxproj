@@ -44,7 +44,8 @@
 		B5BCE80D287C344200B739AD /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B5BCE80F287C344200B739AD /* Localizable.stringsdict */; };
 		B5BCE811287C38ED00B739AD /* CGVector+DefaultsSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */; };
 		B5BF09402883230D008092D9 /* MenuBarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BF093F2883230D008092D9 /* MenuBarService.swift */; };
-		B5BF094328832A4E008092D9 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BF094228832A4E008092D9 /* StatusBarView.swift */; };
+		B5BF094328832A4E008092D9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BF094228832A4E008092D9 /* MenuBarView.swift */; };
+		B5BF094528847346008092D9 /* KeyboardShortcuts+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BF094428847346008092D9 /* KeyboardShortcuts+Extensions.swift */; };
 		B5D603EF2883027D00655D2C /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603EE2883027D00655D2C /* SettingsTabView.swift */; };
 		B5D603F12883035E00655D2C /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603F02883035E00655D2C /* ContainerView.swift */; };
 		B5D603F528830A3600655D2C /* SettingsTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603F428830A3600655D2C /* SettingsTabItemView.swift */; };
@@ -109,7 +110,8 @@
 		B5BCE80E287C344200B739AD /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "en-GB"; path = "en-GB.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+DefaultsSerializable.swift"; sourceTree = "<group>"; };
 		B5BF093F2883230D008092D9 /* MenuBarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarService.swift; sourceTree = "<group>"; };
-		B5BF094228832A4E008092D9 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		B5BF094228832A4E008092D9 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		B5BF094428847346008092D9 /* KeyboardShortcuts+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardShortcuts+Extensions.swift"; sourceTree = "<group>"; };
 		B5D603EE2883027D00655D2C /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
 		B5D603F02883035E00655D2C /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		B5D603F428830A3600655D2C /* SettingsTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabItemView.swift; sourceTree = "<group>"; };
@@ -342,7 +344,7 @@
 		B5BF094128832A3F008092D9 /* Menu Bar */ = {
 			isa = PBXGroup;
 			children = (
-				B5BF094228832A4E008092D9 /* StatusBarView.swift */,
+				B5BF094228832A4E008092D9 /* MenuBarView.swift */,
 			);
 			path = "Menu Bar";
 			sourceTree = "<group>";
@@ -390,6 +392,7 @@
 				C4345BB42846056000365CF9 /* ProcessInfo+Extensions.swift */,
 				B5BCE804287BFB5A00B739AD /* Color+ExpressibleByStringLiteral.swift */,
 				B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */,
+				B5BF094428847346008092D9 /* KeyboardShortcuts+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5BF094528847346008092D9 /* KeyboardShortcuts+Extensions.swift in Sources */,
 				B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */,
 				B5F6A00F27F37440003CD730 /* MainView.swift in Sources */,
 				B510762527F4BB7B00BB1CDA /* WindowSettingsTabView.swift in Sources */,
@@ -589,7 +593,7 @@
 				C4345BB52846056000365CF9 /* ProcessInfo+Extensions.swift in Sources */,
 				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,
 				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
-				B5BF094328832A4E008092D9 /* StatusBarView.swift in Sources */,
+				B5BF094328832A4E008092D9 /* MenuBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

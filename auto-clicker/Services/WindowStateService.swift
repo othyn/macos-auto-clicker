@@ -19,7 +19,7 @@ struct WindowStateService {
         WindowStateService.settingsMinWidth / 5
     }
 
-    static let menuBarWidth: CGFloat = 200
+    static let menuBarWidth: CGFloat = 150
     static let menuBarHeight: CGFloat = 500
 
     static func toggleKeepWindowOnTop(_ keepOnTop: Bool) {
