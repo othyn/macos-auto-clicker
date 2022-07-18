@@ -12,6 +12,9 @@ import Defaults
 struct GeneralSettingsTabView: View {
     @StateObject private var zoop = Zoop()
 
+    @Default(.menuBarShowIcon) private var menuBarShowIcon
+    @Default(.appShouldQuitOnClose) private var appShouldQuitOnClose
+
     var body: some View {
         SettingsTabView {
             SettingsTabItemView(
@@ -47,6 +50,7 @@ struct GeneralSettingsTabView: View {
                     " " + String(format: NSLocalizedString("settings_general_menu_bar_start_to", comment: "Start app to menu bar toggle")),
                     key: .menuBarStartTo
                 )
+                .disabled(!self.menuBarShowIcon)
             }
 
             SettingsTabItemView(
@@ -54,8 +58,9 @@ struct GeneralSettingsTabView: View {
             ) {
                 Defaults.Toggle(
                     " " + String(format: NSLocalizedString("settings_general_menu_bar_minimise_to", comment: "Minimise app to menu bar toggle")),
-                    key: .menuBarStartTo
+                    key: .menuBarMinimiseTo
                 )
+                .disabled(!self.menuBarShowIcon)
             }
 
             SettingsTabItemView(
@@ -64,8 +69,9 @@ struct GeneralSettingsTabView: View {
             ) {
                 Defaults.Toggle(
                     " " + String(format: NSLocalizedString("settings_general_menu_bar_close_to", comment: "Close app to menu bar toggle")),
-                    key: .menuBarStartTo
+                    key: .menuBarCloseTo
                 )
+                .disabled(!self.menuBarShowIcon || self.appShouldQuitOnClose)
             }
 
             Spacer()
