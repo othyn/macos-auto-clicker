@@ -48,7 +48,7 @@
 "settings_general_menu_bar_start_to_help"  = "When the app is started, show it only as the menu bar icon instead of also on the dock.";
 
 "settings_general_menu_bar_minimise_to"       = "Minimise app to menu bar";
-"settings_general_menu_bar_minimise_to_help"  = "When the app is minimised, show it as the menu bar icon.";
+"settings_general_menu_bar_minimise_to_help"  = "When the app is minimised, show it as the menu bar icon and not in the dock.";
 
 "settings_general_menu_bar_close_to"       = "Close app to menu bar";
 "settings_general_menu_bar_close_to_help"  = "When the app is closed, show it in the menu bar instead of quitting the app. If using the 'Quit app on main window close' functionality, then this option will have no effect.";
@@ -65,12 +65,12 @@
 "help_commands_request_a_feature" = "Request a feature...";
 "help_commands_report_a_bug"      = "Report a problem...";
 
-"menu_bar_item_start"          = "Start";
-"menu_bar_item_stop"           = "Stop";
-"menu_bar_item_hide_show_show" = "Show";
-"menu_bar_item_hide_show_hide" = "Hide";
-"menu_bar_item_hide_show_app"  = "app";
-"menu_bar_item_quit"           = "Quit";
+"menu_bar_item_start"            = "Start";
+"menu_bar_item_stop"             = "Stop";
+"menu_bar_item_hide_show_show"   = "Show";
+"menu_bar_item_hide_show_hide"   = "Hide";
+"menu_bar_item_hide_show_suffix" = "main window";
+"menu_bar_item_quit"             = "Quit";
 
 "colour_black"  = "Black";
 "colour_blue"   = "Blue";

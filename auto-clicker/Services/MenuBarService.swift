@@ -76,7 +76,7 @@ final class MenuBarService {
             title: (NSApp.isHidden
                     ? NSLocalizedString("menu_bar_item_hide_show_show", comment: "Menu bar item show option")
                     : NSLocalizedString("menu_bar_item_hide_show_hide", comment: "Menu bar item hide option"))
-                    + " " + NSLocalizedString("menu_bar_item_hide_show_app", comment: "Menu bar item show/hide option suffix"),
+                    + " " + NSLocalizedString("menu_bar_item_hide_show_suffix", comment: "Menu bar item show/hide option suffix"),
             action: #selector(menuActionHideOrShow),
             keyEquivalent: ""
         )

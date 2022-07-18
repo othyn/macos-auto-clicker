@@ -29,13 +29,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
     func applicationDidHide(_ notification: Notification) {
         if let hideOrShowMenuItem = MenuBarService.hideOrShowMenuItem {
-            hideOrShowMenuItem.title = "Show App"
+            hideOrShowMenuItem.title = NSLocalizedString("menu_bar_item_hide_show_show", comment: "Menu bar item show option")
+                + " "
+                + NSLocalizedString("menu_bar_item_hide_show_suffix", comment: "Menu bar item show/hide option suffix")
         }
     }
 
     func applicationDidUnhide(_ notification: Notification) {
         if let hideOrShowMenuItem = MenuBarService.hideOrShowMenuItem {
-            hideOrShowMenuItem.title = "Hide App"
+            hideOrShowMenuItem.title = NSLocalizedString("menu_bar_item_hide_show_hide", comment: "Menu bar item hide option")
+                + " "
+                + NSLocalizedString("menu_bar_item_hide_show_suffix", comment: "Menu bar item show/hide option suffix")
         }
     }
 
