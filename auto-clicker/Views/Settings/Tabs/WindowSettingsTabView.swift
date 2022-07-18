@@ -16,7 +16,7 @@ struct WindowSettingsTabView: View {
                 help: "settings_window_stay_ontop_help"
             ) {
                 Defaults.Toggle(
-                    " " + String(format: NSLocalizedString("settings_window_stay_ontop", comment: "Settings Window window should stay ontop toggle")),
+                    " " + String(format: NSLocalizedString("settings_window_stay_ontop", comment: "Settings Window window should stay on top toggle")),
                     key: .windowShouldKeepOnTop
                 )
                 .onChange { isOn in
