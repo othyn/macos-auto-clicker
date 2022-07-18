@@ -25,7 +25,10 @@ final class MenuBarService {
     static var statusBarItem: NSStatusItem?
     static var statusBarPopover: NSPopover?
 
+    static var startMenuItem: NSMenuItem?
+    static var stopMenuItem: NSMenuItem?
     static var hideOrShowMenuItem: NSMenuItem?
+    static var quitMenuItem: NSMenuItem?
 
     static func create() {
         self.statusBar = NSStatusBar.system
@@ -48,22 +51,23 @@ final class MenuBarService {
 
     private static func buildMenu() -> NSMenu {
         let menu = NSMenu()
+        menu.autoenablesItems = false
 
-        let startMenuItem = NSMenuItem(
-          title: "Start",
-          action: #selector(menuActionStart),
-          keyEquivalent: KeyboardShortcuts.Name.pressStartButton.shortcut!.descriptionKeyOnly.lowercased()
+        self.startMenuItem = NSMenuItem(
+            title: "Start",
+            action: #selector(menuActionStart),
+            keyEquivalent: KeyboardShortcuts.Name.pressStartButton.shortcut!.descriptionKeyOnly.lowercased()
         )
-        startMenuItem.target = self
-        menu.addItem(startMenuItem)
+        self.startMenuItem!.target = self
+        menu.addItem(self.startMenuItem!)
 
-        let stopMenuItem = NSMenuItem(
-          title: "Stop",
-          action: #selector(menuActionStop),
-          keyEquivalent: KeyboardShortcuts.Name.pressStopButton.shortcut!.descriptionKeyOnly.lowercased()
+        self.stopMenuItem = NSMenuItem(
+            title: "Stop",
+            action: #selector(menuActionStop),
+            keyEquivalent: KeyboardShortcuts.Name.pressStopButton.shortcut!.descriptionKeyOnly.lowercased()
         )
-        stopMenuItem.target = self
-        menu.addItem(stopMenuItem)
+        self.stopMenuItem!.target = self
+        menu.addItem(self.stopMenuItem!)
 
         menu.addItem(NSMenuItem.separator())
 
@@ -77,13 +81,13 @@ final class MenuBarService {
 
         menu.addItem(NSMenuItem.separator())
 
-        let quitMenuItem = NSMenuItem(
-          title: "Quit",
-          action: #selector(menuActionQuit),
-          keyEquivalent: "q"
+        self.quitMenuItem = NSMenuItem(
+            title: "Quit",
+            action: #selector(menuActionQuit),
+            keyEquivalent: "q"
         )
-        quitMenuItem.target = self
-        menu.addItem(quitMenuItem)
+        self.quitMenuItem!.target = self
+        menu.addItem(self.quitMenuItem!)
 
         return menu
     }
@@ -125,11 +129,11 @@ final class MenuBarService {
     }
 
     @objc static func menuActionStart(sender: NSMenuItem) {
-        print("start")
+        AutoClickSimulator.shared.start()
     }
 
     @objc static func menuActionStop(sender: NSMenuItem) {
-        print("stop")
+        AutoClickSimulator.shared.stop()
     }
 
     @objc static func menuActionHideOrShow(sender: NSMenuItem) {

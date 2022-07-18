@@ -14,8 +14,8 @@ struct MainView: View {
     @Default(.appearanceSelectedTheme) private var activeTheme
     @Default(.autoClickerState) private var formState
 
-    @StateObject private var autoClickSimulator = AutoClickSimulator()
-    @StateObject private var delayTimer = DelayTimer()
+    @StateObject private var autoClickSimulator = AutoClickSimulator.shared
+    @StateObject private var delayTimer = DelayTimer.shared
 
     @State private var showThemeName = false
 
