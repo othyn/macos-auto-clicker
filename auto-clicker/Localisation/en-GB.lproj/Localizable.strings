@@ -63,7 +63,7 @@
 "menu_bar_item_stop"             = "Stop now";
 "menu_bar_item_hide_show_show"   = "Show";
 "menu_bar_item_hide_show_hide"   = "Hide";
-"menu_bar_item_hide_show_suffix" = "main window";
+"menu_bar_item_hide_show_suffix" = "app";
 "menu_bar_item_preferences"      = "Preferences...";
 "menu_bar_item_about"            = "About...";
 "menu_bar_item_quit"             = "Quit";
