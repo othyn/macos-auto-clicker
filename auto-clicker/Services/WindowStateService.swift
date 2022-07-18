@@ -46,4 +46,14 @@ struct WindowStateService {
     static func shouldExitOnClose() -> Bool {
         Defaults[.appShouldQuitOnClose]
     }
+
+    static func toggleDockIcon(showIcon: Bool) -> Bool {
+        showIcon
+            ? NSApp.setActivationPolicy(NSApplication.ActivationPolicy.regular)
+            : NSApp.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
+    }
+
+    static func refreshDockIconState() {
+        _ = self.toggleDockIcon(showIcon: !Defaults[.menuBarHideDock])
+    }
 }

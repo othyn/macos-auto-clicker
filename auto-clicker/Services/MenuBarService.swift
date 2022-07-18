@@ -48,6 +48,11 @@ final class MenuBarService {
 //        self.statusBarPopover!.contentViewController = NSHostingController(rootView: MenuBarView())
 
         self.statusBarItem!.menu = self.buildMenu()
+
+        // Set default state of disabled if the application is waiting for permissions trust
+        if !PermissionsService.shared.isTrusted {
+            self.disableAllMenuBarItems()
+        }
     }
 
     private static func buildMenu() -> NSMenu {
@@ -141,6 +146,52 @@ final class MenuBarService {
 
     static func hidePopover(_ sender: AnyObject) {
         self.statusBarPopover!.performClose(sender)
+    }
+
+    static func disableAllMenuBarItems() {
+        if let startMenuItem = self.startMenuItem {
+            startMenuItem.isEnabled = false
+        }
+
+        if let stopMenuItem = self.stopMenuItem {
+            stopMenuItem.isEnabled = false
+        }
+
+        if let hideOrShowMenuItem = self.hideOrShowMenuItem {
+            hideOrShowMenuItem.isEnabled = false
+        }
+
+        if let preferencesMenuItem = self.preferencesMenuItem {
+            preferencesMenuItem.isEnabled = false
+        }
+
+        // Intentional, the quit option should always be enabled
+        if let quitMenuItem = self.quitMenuItem {
+            quitMenuItem.isEnabled = true
+        }
+    }
+
+    static func enableAllMenuBarItems() {
+        if let startMenuItem = self.startMenuItem {
+            startMenuItem.isEnabled = true
+        }
+
+        // Intentional, the default state of stop should be disabled as nothing is running
+        if let stopMenuItem = self.stopMenuItem {
+            stopMenuItem.isEnabled = false
+        }
+
+        if let hideOrShowMenuItem = self.hideOrShowMenuItem {
+            hideOrShowMenuItem.isEnabled = true
+        }
+
+        if let preferencesMenuItem = self.preferencesMenuItem {
+            preferencesMenuItem.isEnabled = true
+        }
+
+        if let quitMenuItem = self.quitMenuItem {
+            quitMenuItem.isEnabled = true
+        }
     }
 
     @objc static func menuActionStart(sender: NSMenuItem) {

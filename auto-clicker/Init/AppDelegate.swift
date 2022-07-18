@@ -10,6 +10,10 @@ import Cocoa
 import Defaults
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        WindowStateService.refreshDockIconState()
+    }
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Hacky workaround in SwiftUI in order to have macOS persist the window size state
         // https://stackoverflow.com/a/72558375/4494375

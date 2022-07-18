@@ -37,41 +37,33 @@ struct GeneralSettingsTabView: View {
                         " " + String(format: NSLocalizedString("settings_general_menu_bar_show_icon", comment: "Icon in menu bar toggle")),
                         key: .menuBarShowIcon
                     )
-                    .onChange(MenuBarService.toggle)
+                    .onChange { isOn in
+                        MenuBarService.toggle(isOn)
+
+                        // If the menu bar icon is turned off, enforce that the dock icon is restored
+                        //  otherwise the user can get stuck!
+                        if !isOn {
+                            Defaults[.menuBarHideDock] = false
+                            WindowStateService.refreshDockIconState()
+                        }
+                    }
 
                     Image(systemName: "cursorarrow.click.badge.clock")
                 }
             }
 
             SettingsTabItemView(
-                help: "settings_general_menu_bar_start_to_help"
-            ) {
-                Defaults.Toggle(
-                    " " + String(format: NSLocalizedString("settings_general_menu_bar_start_to", comment: "Start app to menu bar toggle")),
-                    key: .menuBarStartTo
-                )
-                .disabled(!self.menuBarShowIcon)
-            }
-
-            SettingsTabItemView(
-                help: "settings_general_menu_bar_minimise_to_help"
-            ) {
-                Defaults.Toggle(
-                    " " + String(format: NSLocalizedString("settings_general_menu_bar_minimise_to", comment: "Minimise app to menu bar toggle")),
-                    key: .menuBarMinimiseTo
-                )
-                .disabled(!self.menuBarShowIcon)
-            }
-
-            SettingsTabItemView(
-                help: "settings_general_menu_bar_close_to_help",
+                help: "settings_general_menu_bar_hide_dock_help",
                 divider: true
             ) {
                 Defaults.Toggle(
-                    " " + String(format: NSLocalizedString("settings_general_menu_bar_close_to", comment: "Close app to menu bar toggle")),
-                    key: .menuBarCloseTo
+                    " " + String(format: NSLocalizedString("settings_general_menu_bar_hide_dock", comment: "Hide dock icon toggle")),
+                    key: .menuBarHideDock
                 )
-                .disabled(!self.menuBarShowIcon || self.appShouldQuitOnClose)
+                .onChange { _ in
+                    WindowStateService.refreshDockIconState()
+                }
+                .disabled(!self.menuBarShowIcon)
             }
 
             Spacer()
