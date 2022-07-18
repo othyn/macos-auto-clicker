@@ -85,7 +85,7 @@ final class MenuBarService {
                     : NSLocalizedString("menu_bar_item_hide_show_hide", comment: "Menu bar item hide option"))
                     + " " + NSLocalizedString("menu_bar_item_hide_show_suffix", comment: "Menu bar item show/hide option suffix"),
             action: #selector(menuActionHideOrShow),
-            keyEquivalent: ""
+            keyEquivalent: "h"
         )
         self.hideOrShowMenuItem!.target = self
         menu.addItem(self.hideOrShowMenuItem!)
