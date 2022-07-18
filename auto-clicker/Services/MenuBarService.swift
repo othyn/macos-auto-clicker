@@ -54,7 +54,7 @@ final class MenuBarService {
         menu.autoenablesItems = false
 
         self.startMenuItem = NSMenuItem(
-            title: "Start",
+            title: NSLocalizedString("menu_bar_item_start", comment: "Menu bar item start option"),
             action: #selector(menuActionStart),
             keyEquivalent: KeyboardShortcuts.Name.pressStartButton.shortcut!.descriptionKeyOnly.lowercased()
         )
@@ -62,7 +62,7 @@ final class MenuBarService {
         menu.addItem(self.startMenuItem!)
 
         self.stopMenuItem = NSMenuItem(
-            title: "Stop",
+            title: NSLocalizedString("menu_bar_item_stop", comment: "Menu bar item stop option"),
             action: #selector(menuActionStop),
             keyEquivalent: KeyboardShortcuts.Name.pressStopButton.shortcut!.descriptionKeyOnly.lowercased()
         )
@@ -73,7 +73,10 @@ final class MenuBarService {
         menu.addItem(NSMenuItem.separator())
 
         self.hideOrShowMenuItem = NSMenuItem(
-            title: (NSApp.isHidden ? "Show" : "Hide") + " App",
+            title: (NSApp.isHidden
+                    ? NSLocalizedString("menu_bar_item_hide_show_show", comment: "Menu bar item show option")
+                    : NSLocalizedString("menu_bar_item_hide_show_hide", comment: "Menu bar item hide option"))
+                    + " " + NSLocalizedString("menu_bar_item_hide_show_app", comment: "Menu bar item show/hide option suffix"),
             action: #selector(menuActionHideOrShow),
             keyEquivalent: ""
         )
@@ -83,7 +86,7 @@ final class MenuBarService {
         menu.addItem(NSMenuItem.separator())
 
         self.quitMenuItem = NSMenuItem(
-            title: "Quit",
+            title: NSLocalizedString("menu_bar_item_quit", comment: "Menu bar item quit option"),
             action: #selector(menuActionQuit),
             keyEquivalent: "q"
         )
