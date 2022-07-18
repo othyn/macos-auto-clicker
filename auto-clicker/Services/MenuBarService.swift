@@ -29,6 +29,7 @@ final class MenuBarService {
     static var stopMenuItem: NSMenuItem?
     static var hideOrShowMenuItem: NSMenuItem?
     static var preferencesMenuItem: NSMenuItem?
+    static var aboutMenuItem: NSMenuItem?
     static var quitMenuItem: NSMenuItem?
 
     static func create() {
@@ -99,6 +100,14 @@ final class MenuBarService {
         self.preferencesMenuItem!.target = self
         menu.addItem(self.preferencesMenuItem!)
 
+        self.aboutMenuItem = NSMenuItem(
+            title: NSLocalizedString("menu_bar_item_about", comment: "Menu bar item about option"),
+            action: #selector(self.menuActionAbout),
+            keyEquivalent: ""
+        )
+        self.aboutMenuItem!.target = self
+        menu.addItem(self.aboutMenuItem!)
+
         menu.addItem(NSMenuItem.separator())
 
         self.quitMenuItem = NSMenuItem(
@@ -165,6 +174,11 @@ final class MenuBarService {
             preferencesMenuItem.isEnabled = false
         }
 
+        // Intentional, the about option should always be enabled
+        if let aboutMenuItem = self.aboutMenuItem {
+            aboutMenuItem.isEnabled = true
+        }
+
         // Intentional, the quit option should always be enabled
         if let quitMenuItem = self.quitMenuItem {
             quitMenuItem.isEnabled = true
@@ -189,6 +203,10 @@ final class MenuBarService {
             preferencesMenuItem.isEnabled = true
         }
 
+        if let aboutMenuItem = self.aboutMenuItem {
+            aboutMenuItem.isEnabled = true
+        }
+
         if let quitMenuItem = self.quitMenuItem {
             quitMenuItem.isEnabled = true
         }
@@ -204,19 +222,33 @@ final class MenuBarService {
 
     @objc static func menuActionHideOrShow(sender: NSMenuItem) {
         if NSApp.isHidden {
-            NSApp.unhide(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            NSApp.unhide(sender)
         } else {
-            NSApp.hide(nil)
+            NSApp.hide(sender)
         }
     }
 
     @objc static func menuActionPreferences(sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
+
         // https://stackoverflow.com/questions/65355696/how-to-programatically-open-settings-window-in-a-macos-swiftui-app
         if #available(macOS 13, *) {
             NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
         } else {
             NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
         }
+    }
+
+    @objc static func menuActionAbout(sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
+
+        // This isn't documented anywhere SEO'able ~ meaning I ended up trawling menu bar apps I had installed to see if they had
+        //  this functionality and then checking the GitHub repo's powering them to see how they did it.
+        // Turns out Rectangle have this implemented, so I scoured their repo to see how they did it:
+        // https://github.com/rxhanson/Rectangle/blob/master/Rectangle/AppDelegate.swift#L204
+        // Undocumented Apple methods strike again!
+        NSApp.orderFrontStandardAboutPanel(sender)
     }
 
     @objc static func menuActionQuit(sender: NSMenuItem) {

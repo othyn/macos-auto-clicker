@@ -65,6 +65,7 @@
 "menu_bar_item_hide_show_hide"   = "Hide";
 "menu_bar_item_hide_show_suffix" = "main window";
 "menu_bar_item_preferences"      = "Preferences...";
+"menu_bar_item_about"            = "About...";
 "menu_bar_item_quit"             = "Quit";
 
 "colour_black"  = "Black";
