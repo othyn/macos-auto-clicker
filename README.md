@@ -151,7 +151,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/othyn/macos-
 
 ## :gem: Acknowledgements
 
-Use this section to mention useful resources and libraries that you have used in your projects.
+Useful resources and libraries that have been used in the making of this project.
 
 - Readme: [shields.io](https://shields.io/)
 - Readme: [ikatyang/emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
