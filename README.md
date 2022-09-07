@@ -64,6 +64,7 @@ The only other issue is that I will need to wait for GitHub to release a new run
   - [Tech Stack](#space_invader-tech-stack)
   - [Features](#dart-features)
 - [Download](#floppy_disk-download)
+  - [Preferences Storage](#gear-preferences-storage)
 - [Contributing](#mouse-contributing)
 - [Roadmap](https://github.com/users/othyn/projects/1)
 - [Changelog](https://github.com/othyn/macos-auto-clicker/releases)
@@ -122,6 +123,30 @@ Download: [v1.4.1](https://github.com/othyn/macos-auto-clicker/releases/download
 **When first using the app, you will need to right click the app and click 'Open', then on the macOS popup window select 'Open' again to trust this version of the app going forward.** This is as at the moment I don't have a paid Apple developer account in order to notarize the app.
 
 **For more downloads**, checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for app downloads of any version you want to use, even pre-release builds too.
+
+### :gear: Preferences Storage
+
+The configuration for the app is stored using NSUserDefaults, via the [sindresorhus/Defaults](https://github.com/sindresorhus/Defaults) package, meaning all the applications preferences are stored in the following location:
+
+```txt
+~/Library/Preferences/com.othyn.auto-clicker.plist
+```
+
+This file can be backed up and/or be used transfer your preferences to other machines, although I'll leave the mechanism for doing so up to you.
+
+If you are looking for ideas on how to achieve this, I often like to use [Symbolic Links (symlink)](https://www.howtogeek.com/297721/how-to-create-and-use-symbolic-links-aka-symlinks-on-a-mac/). By placing the real version of the file in the backup location (in something like a git repo, cloud storage or local/remote storage) and then creating a symlink to the location that the application is expecting, you can safely store the file in the backup location without having to manually move it around or setup auto copy tasks. I accept no responsibility for using this approach, this is for education purposes only, do this at your own risk.
+
+The following commands are an example of how you can achieve this, **making sure to close the app first before doing this to avoid any issues**:
+
+```sh
+# Firstly, move the preferences file to the backup location
+mv "${HOME}/Library/Preferences/com.othyn.auto-clicker.plist" /path/to/backup/directory/com.othyn.auto-clicker.plist
+
+# Secondly, create a symlink from our backup location to the expected file location for the app
+ln -s /path/to/backup/directory/com.othyn.auto-clicker.plist "${HOME}/Library/Preferences/com.othyn.auto-clicker.plist"
+```
+
+Note that both paths used **must** be the absolute path to the file, any relative paths won't resolve and the symlink will be created but silently fail as it will be pointed at a path that cannot resolve to the target.
 
 <!-- Contributing -->
 
