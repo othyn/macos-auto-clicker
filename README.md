@@ -1,7 +1,7 @@
 <div align="center">
     <img src="art/icon/Icon-1024.png" alt="logo" width="250" height="auto" />
     <h1>Auto Clicker for macOS</h1>
-    <p>A simple auto clicker for macOS Big Sur (11) and Monterey (12), built with ♥️ in Swift 5 & SwiftUI.</p>
+    <p>A simple auto clicker for macOS Big Sur (11), Monterey (12) and Ventura (13) built with ♥️ in Swift 5 & SwiftUI.</p>
 </div>
 
 <div align="center">
@@ -49,7 +49,7 @@
 
 The next release of macOS, Ventura 13.0, [has now arrived](https://www.apple.com/newsroom/2022/10/macos-ventura-is-now-available/).
 
-I've had chance to upgrade my machine and give Auto Clicker a try. In my testing, all functionality appears to work, just with a visual spacing bug on the main app window that doesn't have an impact on the app's functionality. More information can be found on the [Ventura support thread (#42)](https://github.com/othyn/macos-auto-clicker/issues/42).
+I've now had chance to upgrade my machine to Ventura and give Auto Clicker a try. In my testing, all functionality appears to work, just with a visual spacing bug on the main app window that *doesn't* have an impact on the app's functionality. More information can be found on the [Ventura support thread (#42)](https://github.com/othyn/macos-auto-clicker/issues/42).
 
 However, I'll still need to wait for GitHub to release a new runner for `macos-13` in order to have the CI/CD flow generate builds for Big Sur, Monterey _and_ the newly released Ventura. No doubt there will also be required upgrades and patching to get all that to work due to newer versions of packages (maybe) and Xcode also being required, before I can push any fixes out to the app reliably.
 
