@@ -45,14 +45,6 @@
 
 <br />
 
-## macOS Ventura Support
-
-The next release of macOS, Ventura 13.0, [has now arrived](https://www.apple.com/newsroom/2022/10/macos-ventura-is-now-available/).
-
-I've now had chance to upgrade my machine to Ventura and give Auto Clicker a try. In my testing, all functionality appears to work, just with a visual spacing bug on the main app window that *doesn't* have an impact on the app's functionality. More information can be found on the [Ventura support thread (#42)](https://github.com/othyn/macos-auto-clicker/issues/42).
-
-However, I'll still need to wait for GitHub to release a new runner for `macos-13` in order to have the CI/CD flow generate builds for Big Sur, Monterey _and_ the newly released Ventura. No doubt there will also be required upgrades and patching to get all that to work due to newer versions of packages (maybe) and Xcode also being required, before I can push any fixes out to the app reliably.
-
 <!-- Table of Contents -->
 
 # :notebook_with_decorative_cover: Table of Contents
