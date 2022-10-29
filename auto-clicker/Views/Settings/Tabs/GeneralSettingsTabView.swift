@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 import Defaults
+import LaunchAtLogin
 
 struct GeneralSettingsTabView: View {
-    @StateObject private var zoop = Zoop()
+    @ObservedObject private var launchAtLogin = LaunchAtLogin.observable
 
     @Default(.menuBarShowIcon) private var menuBarShowIcon
     @Default(.appShouldQuitOnClose) private var appShouldQuitOnClose
@@ -19,13 +20,21 @@ struct GeneralSettingsTabView: View {
         SettingsTabView {
             SettingsTabItemView(
                 title: "settings_general_app_should_quit_on_close_title",
-                help: "settings_general_app_should_quit_on_close_help",
-                divider: true
+                help: "settings_general_app_should_quit_on_close_help"
             ) {
                 Defaults.Toggle(
                     " " + String(format: NSLocalizedString("settings_general_app_should_quit_on_close", comment: "App should quit on close toggle")),
                     key: .appShouldQuitOnClose
                 )
+            }
+
+            SettingsTabItemView(
+                help: "settings_general_launch_on_login_help",
+                divider: true
+            ) {
+                Toggle(isOn: $launchAtLogin.isEnabled) {
+                    Text(" " + String(format: NSLocalizedString("settings_general_launch_on_login", comment: "App should launch at login toggle")))
+                }
             }
 
             SettingsTabItemView(
@@ -53,8 +62,7 @@ struct GeneralSettingsTabView: View {
             }
 
             SettingsTabItemView(
-                help: "settings_general_menu_bar_hide_dock_help",
-                divider: true
+                help: "settings_general_menu_bar_hide_dock_help"
             ) {
                 Defaults.Toggle(
                     " " + String(format: NSLocalizedString("settings_general_menu_bar_hide_dock", comment: "Hide dock icon toggle")),
@@ -64,18 +72,6 @@ struct GeneralSettingsTabView: View {
                     WindowStateService.refreshDockIconState()
                 }
                 .disabled(!self.menuBarShowIcon)
-            }
-
-            Spacer()
-
-            HStack {
-                Spacer()
-
-                Button(self.zoop.text, action: self.zoop.start)
-                    .buttonStyle(.plain)
-                    .font(.system(size: 28))
-
-                Spacer()
             }
         }
     }
