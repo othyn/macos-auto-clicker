@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -479,6 +479,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		B510762E27F4E72500BB1CDA /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -497,6 +498,7 @@
 		};
 		B5B6B466280345A700C779FD /* Reset Accessibility Permissions */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -515,6 +517,7 @@
 		};
 		B5FEAF342811D25B0099AAA7 /* Increment Build */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
