@@ -97,7 +97,7 @@ platform :mac do
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release
     isReleasable = analyze_commits(
-      match: '*'
+      match: 'v*'
     )
 
     # https://docs.fastlane.tools/plugins/available-plugins/#versioning

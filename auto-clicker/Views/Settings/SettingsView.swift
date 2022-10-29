@@ -29,7 +29,7 @@ struct SettingsView: View {
                     Label("settings_general", systemImage: "gear")
                 }
                 .onAppear {
-                    self.changeFrameHeight(300)
+                    self.changeFrameHeight(330)
                 }
 
             KeyboardShortcutsSettingsTabView()

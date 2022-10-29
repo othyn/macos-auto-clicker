@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,13 +27,13 @@
 		B510763727FF81A000BB1CDA /* PressKeyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763627FF81A000BB1CDA /* PressKeyListener.swift */; };
 		B510763B2800DDFF00BB1CDA /* NSEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */; };
 		B5107640280113DB00BB1CDA /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763F280113DB00BB1CDA /* Input.swift */; };
+		B52C0507290D689600ECB0EE /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B52C0506290D689600ECB0EE /* LaunchAtLogin */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
 		B53BDC54264BED95001F8E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC53264BED95001F8E57 /* Assets.xcassets */; };
 		B53BDC57264BED95001F8E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */; };
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
-		B5B0B2AD2882DCCC00462F11 /* Zoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B2AC2882DCCC00462F11 /* Zoop.swift */; };
 		B5B0B2AF2882EE6E00462F11 /* ACWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */; };
 		B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46228032D3200C779FD /* PermissionsView.swift */; };
 		B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46428033A0F00C779FD /* PermissionsService.swift */; };
@@ -99,7 +99,6 @@
 		B53BDC58264BED95001F8E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53BDC59264BED95001F8E57 /* auto_clicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = auto_clicker.entitlements; sourceTree = "<group>"; };
 		B53BDC5F264BF3A8001F8E57 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
-		B5B0B2AC2882DCCC00462F11 /* Zoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoop.swift; sourceTree = "<group>"; };
 		B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACWindow.swift; sourceTree = "<group>"; };
 		B5B6B46228032D3200C779FD /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
 		B5B6B46428033A0F00C779FD /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 			files = (
 				B510762827F4BD5500BB1CDA /* Defaults in Frameworks */,
 				B510760927F4A21500BB1CDA /* DateStrings in Frameworks */,
+				B52C0507290D689600ECB0EE /* LaunchAtLogin in Frameworks */,
 				B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +298,6 @@
 			children = (
 				B53027F9264C2748002B8610 /* DelayTimer.swift */,
 				B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */,
-				B5B0B2AC2882DCCC00462F11 /* Zoop.swift */,
 			);
 			path = "Observable Objects";
 			sourceTree = "<group>";
@@ -407,6 +406,7 @@
 				B53BDC48264BED93001F8E57 /* Sources */,
 				B53BDC49264BED93001F8E57 /* Frameworks */,
 				B53BDC4A264BED93001F8E57 /* Resources */,
+				B52C0508290D68ED00ECB0EE /* Copy “Launch at Login Helper” */,
 				B5FEAF342811D25B0099AAA7 /* Increment Build */,
 				B510762E27F4E72500BB1CDA /* Run Swiftlint */,
 				B5B6B466280345A700C779FD /* Reset Accessibility Permissions */,
@@ -420,6 +420,7 @@
 				B510760827F4A21500BB1CDA /* DateStrings */,
 				B510760B27F4A23300BB1CDA /* KeyboardShortcuts */,
 				B510762727F4BD5500BB1CDA /* Defaults */,
+				B52C0506290D689600ECB0EE /* LaunchAtLogin */,
 			);
 			productName = "auto-clicker";
 			productReference = B53BDC4C264BED93001F8E57 /* Auto Clicker.app */;
@@ -432,7 +433,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					B53BDC4B264BED93001F8E57 = {
 						CreatedOnToolsVersion = 12.5;
@@ -452,6 +453,7 @@
 				B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */,
 				B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */,
+				B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = B53BDC4D264BED93001F8E57 /* Products */;
 			projectDirPath = "";
@@ -479,6 +481,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		B510762E27F4E72500BB1CDA /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -495,8 +498,28 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download via: brew install swiftlint\"\nfi\n";
 		};
+		B52C0508290D68ED00ECB0EE /* Copy “Launch at Login Helper” */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy “Launch at Login Helper”";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# https://github.com/sindresorhus/LaunchAtLogin#swift-package-manager-1\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
 		B5B6B466280345A700C779FD /* Reset Accessibility Permissions */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -515,6 +538,7 @@
 		};
 		B5FEAF342811D25B0099AAA7 /* Increment Build */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -589,7 +613,6 @@
 				B5F5C60B28039AA40049B04D /* FormState.swift in Sources */,
 				B510760F27F4A25400BB1CDA /* WindowStateService.swift in Sources */,
 				B5E92B1C27F1BA5E00A7FC63 /* ThemeService.swift in Sources */,
-				B5B0B2AD2882DCCC00462F11 /* Zoop.swift in Sources */,
 				C4345BB52846056000365CF9 /* ProcessInfo+Extensions.swift in Sources */,
 				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,
 				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
@@ -653,6 +676,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -715,6 +739,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -746,6 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"auto-clicker/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -756,7 +782,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = "v1.5.0-beta-52b8177668c55ac0e54023cb0b93bdb5cd28dffe";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -774,6 +800,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"auto-clicker/Preview Content\"";
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -784,7 +811,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = "v1.5.0-beta-52b8177668c55ac0e54023cb0b93bdb5cd28dffe";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = "Auto Clicker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -840,6 +867,14 @@
 				version = 6.2.1;
 			};
 		};
+		B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -857,6 +892,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
+		};
+		B52C0506290D689600ECB0EE /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
