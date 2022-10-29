@@ -60,6 +60,7 @@ final class DelayTimer: ObservableObject {
 
         if self.remainingDelaySeconds <= 0 {
             self.stop()
+            self.onFinish()
         }
     }
 
@@ -71,8 +72,6 @@ final class DelayTimer: ObservableObject {
 
         self.activity?.cancel()
         self.activity = nil
-
-        self.onFinish()
 
         if let timer = self.timer {
             timer.invalidate()
