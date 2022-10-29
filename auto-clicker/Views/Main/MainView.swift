@@ -24,7 +24,7 @@ struct MainView: View {
     }
 
     var hasStopped: Bool {
-        !self.autoClickSimulator.isAutoClicking
+        !self.autoClickSimulator.isAutoClicking && !self.delayTimer.isCountingDown
     }
 
     var estNextClickAt: Date {
@@ -38,10 +38,13 @@ struct MainView: View {
     }
 
     func start() {
-        self.delayTimer.start(onFinish: self.autoClickSimulator.start)
+        if !self.hasStarted {
+            self.delayTimer.start(onFinish: self.autoClickSimulator.start)
+        }
     }
 
     func stop() {
+        self.delayTimer.stop()
         self.autoClickSimulator.stop()
     }
 
