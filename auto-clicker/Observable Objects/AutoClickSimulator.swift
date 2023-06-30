@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 import Defaults
+import UserNotifications
 
 final class AutoClickSimulator: ObservableObject {
     static var shared: AutoClickSimulator = .init()
@@ -59,6 +60,14 @@ final class AutoClickSimulator: ObservableObject {
                                           selector: #selector(self.tick),
                                           userInfo: nil,
                                           repeats: true)
+
+        if Defaults[.notifyOnStart] {
+            NotificationService.scheduleNotification(title: "Started", date: self.nextClickAt)
+        }
+        if Defaults[.notifyOnFinish] {
+            NotificationService.scheduleNotification(title: "Finished", date: self.finalClickAt)
+        }
+
     }
 
     func stop() {

@@ -20,4 +20,7 @@ extension Defaults.Keys {
     static let appearanceSelectedTheme = Key<ThemeService>("appearance_selected_theme", default: ThemeService())
 
     static let autoClickerState = Key<FormState>("user_form_state", default: FormState())
+
+    static let notifyOnStart = Key<Bool>("notify_on_start", default: false)
+    static let notifyOnFinish = Key<Bool>("notify_on_finish", default: false)
 }
