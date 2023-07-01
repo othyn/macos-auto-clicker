@@ -24,7 +24,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.2'
+          ruby-version: '3.0'
+          bundler-cache: true
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -37,7 +38,7 @@ jobs:
 
       - name: Fastlane Build - Beta
         if: github.ref == 'refs/heads/staging'
-        uses: maierj/fastlane-action@v2.2.0
+        uses: maierj/fastlane-action@v3.0.0
         with:
           lane: 'beta'
         env:
@@ -45,7 +46,7 @@ jobs:
 
       - name: Fastlane Build - Release
         if: github.ref == 'refs/heads/main'
-        uses: maierj/fastlane-action@v2.2.0
+        uses: maierj/fastlane-action@v3.0.0
         with:
           lane: 'release'
         env:
