@@ -4,6 +4,7 @@ derived_data
 ## Remove local build dependencies
 node_modules
 .bundle
+vendor
 
 # Xcode
 #
