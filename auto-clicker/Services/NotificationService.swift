@@ -12,8 +12,11 @@ final class NotificationService: ObservableObject {
     static func scheduleNotification(title: String, body: String? = nil, date: Date) {
         let content = UNMutableNotificationContent()
         content.title = title
-        if body != nil { content.body = body! }
         content.sound = UNNotificationSound.default
+
+        if let body = body {
+            content.body = body
+        }
 
         let interval = date.timeIntervalSinceNow.rounded()
 

@@ -64,6 +64,7 @@ final class AutoClickSimulator: ObservableObject {
         if Defaults[.notifyOnStart] {
             NotificationService.scheduleNotification(title: "Started", date: self.nextClickAt)
         }
+
         if Defaults[.notifyOnFinish] {
             NotificationService.scheduleNotification(title: "Finished", date: self.finalClickAt)
         }
