@@ -1,7 +1,7 @@
 <div align="center">
     <img src="art/icon/Icon-1024.png" alt="logo" width="250" height="auto" />
     <h1>Auto Clicker for macOS</h1>
-    <p>A simple auto clicker for macOS Big Sur (11), Monterey (12) and Ventura (13) built with ♥️ in Swift 5 & SwiftUI.</p>
+    <p>A simple auto clicker for macOS Big Sur (11), Monterey (12) and Ventura (13) built with ♥️ in Swift & SwiftUI.</p>
 </div>
 
 <div align="center">
@@ -35,11 +35,11 @@
 
 <div align="center">
     <h4>
-        <a href="https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg">Download Latest Version</a>
+        <a href="#floppy_disk-download">Download Latest Version</a>
         <span> · </span>
-        <a href="https://github.com/othyn/macos-auto-clicker/issues">Report Bug</a>
+        <a href="https://github.com/othyn/macos-auto-clicker/issues">Report a Bug</a>
         <span> · </span>
-        <a href="https://github.com/othyn/macos-auto-clicker/issues">Request Feature</a>
+        <a href="https://github.com/othyn/macos-auto-clicker/issues">Request a Feature</a>
     </h4>
 </div>
 
