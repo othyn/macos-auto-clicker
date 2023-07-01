@@ -50,12 +50,13 @@ The main project branches are;
 
 - `main`
   - Holds the 'source of truth' for the current (newest) release version detailed in the [releases page](https://github.com/othyn/macos-auto-clicker/releases).
-  - The only branch that should be PR'd into `main` is `dev`.
+  - The only branch that should be PR'd into `main` is `staging`.
   - The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when this branch is pushed to and kick off a new build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section below for more details).
-- `dev`
+- `staging`
   - Holds the 'source of truth' for the current beta release version detailed in the [releases page](https://github.com/othyn/macos-auto-clicker/releases).
-  - Any development against the project should reside in its own development branch using the `dev` branch as its base, later being PR'd back into `dev` when development is completed.
   - The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when this branch is pushed to and kick off a new beta build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section below for more details)
+- `dev`
+  - Any development against the project should reside in its own development branch using the `dev` branch as its base, later being PR'd back into `dev` when development is completed.
 
 # :speech_balloon: Localisation Strategy
 
@@ -139,7 +140,7 @@ Any development against the project should reside in its own development branch 
 
 There is a [PR template](.github/pull_request_template.md) that will auto populate the PR with required information to fill in. Reviewers, Assignees and Labels should be set appropriately. The Project should be set to 'macOS Auto Clicker'. The Milestone can be left blank if whats being developed is being developed as a standalone 'thing', however should the development be part of a larger bundle of 'things' (an [Epic](https://www.atlassian.com/agile/project-management/epics)), it should be set to the overarching theme of the development; for an example of this see the existing [Ease of Installation](https://github.com/othyn/macos-auto-clicker/milestone/9) or [Advanced Mode](https://github.com/othyn/macos-auto-clicker/milestone/8) project Milestones (Epics), in which they also have detailed descriptions on what they aim to accomplish.
 
-The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when the `dev` branch is pushed to and kick off a new beta build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section above for more details).
+The [GitHub Actions CI/CD workflow](.github/workflows/cicd.yml) will kick in when the `staging` branch is pushed to and kick off a new beta build and release (should one be deemed required, see the [Commit Strategy](#memo-commit-strategy) section above for more details).
 
 # :wrench: Build Strategy
 
@@ -147,12 +148,12 @@ The build process has been automated to provide beta integration builds and prod
 
 ## App
 
-[Fastlane](https://docs.fastlane.tools/actions/build_mac_app/) handles the builds with automatic `.app` and `.dmg` release targets (can be easily installed via Brew ~ `$ brew install fastlane` for local development testing). This is further automated behind [GitHub Actions](.github/workflows/cicd.yml) to make the process even more fluid and provide automated CI/CD releases onto the [projects releases page](https://github.com/othyn/macos-auto-clicker/releases) for both release (`main` branch) and beta (`dev` branch) builds based on the [Commit Strategy](#memo-commit-strategy).
+[Fastlane](https://docs.fastlane.tools/actions/build_mac_app/) handles the builds with automatic `.app` and `.dmg` release targets (can be easily installed via Brew ~ `$ brew install fastlane` for local development testing). This is further automated behind [GitHub Actions](.github/workflows/cicd.yml) to make the process even more fluid and provide automated CI/CD releases onto the [projects releases page](https://github.com/othyn/macos-auto-clicker/releases) for both release (`main` branch) and beta (`staging` branch) builds based on the [Commit Strategy](#memo-commit-strategy).
 
 To locally test the fastlane build, run:
 
 ```sh
-# Beta lane (dev branch)
+# Beta lane (staging branch)
 $ fastlane beta
 
 # Release lane (main branch)

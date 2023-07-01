@@ -2,7 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: [main, dev]
+    branches:
+      - main
+      - staging
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -22,22 +24,22 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "2.7.2"
+          ruby-version: '2.7.2'
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: "yarn"
+          cache: 'yarn'
 
       - name: Install create-dmg (Yarn install)
         run: yarn install
 
       - name: Fastlane Build - Beta
-        if: github.ref == 'refs/heads/dev'
+        if: github.ref == 'refs/heads/staging'
         uses: maierj/fastlane-action@v2.2.0
         with:
-          lane: "beta"
+          lane: 'beta'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -45,6 +47,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: maierj/fastlane-action@v2.2.0
         with:
-          lane: "release"
+          lane: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
