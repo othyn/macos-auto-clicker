@@ -18,7 +18,7 @@ final class NotificationService: ObservableObject {
             content.body = body
         }
 
-        let interval = date.timeIntervalSinceNow.rounded()
+        let interval = date.timeIntervalSinceNow.rounded() > 0 ? date.timeIntervalSinceNow.rounded() : 1
 
         LoggerService.logNotification(title: title,
                                       date: date,
