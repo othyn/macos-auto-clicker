@@ -21,7 +21,7 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane mac beta
 ```
 
-Build the release a version of the Auto Clicker app
+
 
 ### mac release
 

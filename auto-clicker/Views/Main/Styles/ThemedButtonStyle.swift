@@ -34,20 +34,21 @@ struct ThemedButtonStyle: ButtonStyle {
         let height: CGFloat
 
         var body: some View {
-            configuration.label
-                .frame(width: self.width, height: self.height)
-                .foregroundColor(isEnabled ? self.activeTheme.fontColour : self.activeTheme.backgroundColour.darker)
-                .padding(.horizontal)
-                .padding(.bottom, 1)
-                .font(.system(size: self.fontSize))
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(isEnabled ? isHover ? self.activeTheme.backgroundColour.lighter : self.activeTheme.backgroundColour.darker : self.activeTheme.backgroundColour)
-                )
-                .animation(.easeOut)
-                .onHover(perform: { hover in
-                    isHover = hover
-                })
+            withAnimation(.easeOut) {
+                configuration.label
+                    .frame(width: self.width, height: self.height)
+                    .foregroundColor(isEnabled ? self.activeTheme.fontColour : self.activeTheme.backgroundColour.darker)
+                    .padding(.horizontal)
+                    .padding(.bottom, 1)
+                    .font(.system(size: self.fontSize))
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(isEnabled ? isHover ? self.activeTheme.backgroundColour.lighter : self.activeTheme.backgroundColour.darker : self.activeTheme.backgroundColour)
+                    )
+                    .onHover(perform: { hover in
+                        isHover = hover
+                    })
+            }
         }
     }
 }

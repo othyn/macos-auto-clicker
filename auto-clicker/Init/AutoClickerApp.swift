@@ -18,7 +18,7 @@ struct AutoClickerApp: App {
             SettingsView()
         }
 
-        let windowGroup = WindowGroup {
+        WindowGroup {
             ACWindow()
                 .frame(minWidth: WindowStateService.mainWindowMinWidth,
                        idealWidth: WindowStateService.mainWindowMinWidth,
@@ -28,12 +28,9 @@ struct AutoClickerApp: App {
                        maxHeight: WindowStateService.mainWindowMinHeight)
         }
         .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
         .commands {
             HelpCommands()
-        }
-
-        if #available(macOS 13.0, *) {
-            windowGroup.windowResizability(.contentSize)
         }
     }
 }

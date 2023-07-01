@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B53BDC4B264BED93001F8E57"
-               BuildableName = "Auto Clicker.app"
+               BuildableName = "AutoClicker.app"
                BlueprintName = "auto-clicker"
                ReferencedContainer = "container:auto-clicker.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B53BDC4B264BED93001F8E57"
-            BuildableName = "Auto Clicker.app"
+            BuildableName = "AutoClicker.app"
             BlueprintName = "auto-clicker"
             ReferencedContainer = "container:auto-clicker.xcodeproj">
          </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B53BDC4B264BED93001F8E57"
-            BuildableName = "Auto Clicker.app"
+            BuildableName = "AutoClicker.app"
             BlueprintName = "auto-clicker"
             ReferencedContainer = "container:auto-clicker.xcodeproj">
          </BuildableReference>
