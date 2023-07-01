@@ -33,4 +33,8 @@ final class NotificationService: ObservableObject {
 
         UNUserNotificationCenter.current().add(request)
     }
+
+    static func removePendingNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
 }
