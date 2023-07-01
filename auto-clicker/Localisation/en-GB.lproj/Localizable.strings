@@ -35,6 +35,7 @@
 "settings_keyboard_shortcuts" = "Keyboard Shortcuts";
 "settings_window"             = "Window";
 "settings_appearance"         = "Appearance";
+"settings_notifications"      = "Notifications";
 
 "settings_general_app_should_quit_on_close_title" = "Lifecycle";
 "settings_general_app_should_quit_on_close"       = "Quit app on main window close";
@@ -54,6 +55,11 @@
 "settings_keyboard_shortcuts_start" = "Start auto clicker";
 "settings_keyboard_shortcuts_stop"  = "Stop auto clicker";
 "settings_keyboard_shortcuts_help"  = "Global shortcuts to start and stop the auto click functionality.";
+
+"settings_general_notify_title"     = "Notify when";
+"settings_general_notify_on_start"  = "Auto clicker starts";
+"settings_general_notify_on_finish" = "Auto clicker finishes";
+"settings_general_notify_help"      = "Receive a macOS notification when the auto clicker starts and/or finishes.";
 
 "settings_window_stay_ontop_title" = "Visibility";
 "settings_window_stay_ontop"       = "Always keep the main window on top";

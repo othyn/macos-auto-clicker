@@ -55,6 +55,14 @@ struct SettingsView: View {
                 .onAppear {
                     self.changeFrameHeight(200)
                 }
+
+            NotificationsSettingsTabView()
+                .tabItem {
+                    Label("settings_notifications", systemImage: "bell")
+                }
+                .onAppear {
+                    self.changeFrameHeight(130)
+                }
         }
         .frame(width: WindowStateService.settingsMinWidth, height: self.frameHeight)
         .padding()

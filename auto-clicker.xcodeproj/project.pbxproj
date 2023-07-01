@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5D699D2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D699C2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift */; };
+		4C5D699F2A4EED3500E72CEE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D699E2A4EED3500E72CEE /* NotificationService.swift */; };
 		B50022CA2875F5BF00610474 /* HelpCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50022C92875F5BF00610474 /* HelpCommands.swift */; };
 		B510760927F4A21500BB1CDA /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B510760827F4A21500BB1CDA /* DateStrings */; };
 		B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = B510760B27F4A23300BB1CDA /* KeyboardShortcuts */; };
@@ -73,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C5D699C2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsTabView.swift; sourceTree = "<group>"; };
+		4C5D699E2A4EED3500E72CEE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B50022C92875F5BF00610474 /* HelpCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCommands.swift; sourceTree = "<group>"; };
 		B510760E27F4A25400BB1CDA /* WindowStateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateService.swift; sourceTree = "<group>"; };
 		B510761027F4A33D00BB1CDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				B5B6B46428033A0F00C779FD /* PermissionsService.swift */,
 				B5E4213628057BA900C2CA2D /* LoggerService.swift */,
 				B5BF093F2883230D008092D9 /* MenuBarService.swift */,
+				4C5D699E2A4EED3500E72CEE /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				B510762227F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift */,
 				B510762427F4BB7B00BB1CDA /* WindowSettingsTabView.swift */,
 				B510762027F4BB4900BB1CDA /* AppearanceSettingsTabView.swift */,
+				4C5D699C2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				B5E92B0227F0D0D500A7FC63 /* ActionStageLine.swift in Sources */,
 				B5E92B1827F10A9E00A7FC63 /* UnderlinedStyleDivider.swift in Sources */,
 				B510763B2800DDFF00BB1CDA /* NSEvent+Extensions.swift in Sources */,
+				4C5D699F2A4EED3500E72CEE /* NotificationService.swift in Sources */,
 				B510763227FF7EC800BB1CDA /* InputAwareView.swift in Sources */,
 				B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */,
 				B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */,
@@ -604,6 +611,7 @@
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
 				B5E6395627CA76CB008B111A /* Duration.swift in Sources */,
 				B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */,
+				4C5D699D2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift in Sources */,
 				B5BCE809287C2F4D00B739AD /* SmallText.swift in Sources */,
 				B5E4213728057BA900C2CA2D /* LoggerService.swift in Sources */,
 				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,

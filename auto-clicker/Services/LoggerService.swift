@@ -24,6 +24,12 @@ final class LoggerService {
         ])
     }
 
+    static func notificationState(enabled: Bool, callingFile: String = #fileID, callingFunction: String = #function) {
+        LoggerService.log(file: callingFile, function: callingFunction, [
+            "Notification permissions \(enabled ? "" : "not ")granted"
+        ])
+    }
+
     static func permissionTrustedState(callingFile: String = #fileID, callingFunction: String = #function) {
         LoggerService.log(file: callingFile, function: callingFunction, [
             "Is trusted: \(AXIsProcessTrusted())"

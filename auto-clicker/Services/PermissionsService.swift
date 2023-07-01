@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import UserNotifications
 
 // I had a lot of problems getting all this setup so that the Accessibility permissions were clear and prompted to the user.
 // macOS and Xcode have some 'interesting' quirks that impeade the development of this. Mainly that Xcode by default will run
@@ -41,5 +42,12 @@ final class PermissionsService: ObservableObject {
         let enabled = AXIsProcessTrustedWithOptions(options)
 
         LoggerService.permissionState(enabled: enabled)
+    }
+
+    static func acquireNotificationPermissions() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+        { enabled, _ in
+            LoggerService.notificationState(enabled: enabled)
+        }
     }
 }
