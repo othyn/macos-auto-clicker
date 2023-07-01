@@ -30,6 +30,16 @@ final class LoggerService {
         ])
     }
 
+    static func logNotification(title: String, body: String? = nil, date: Date, interval: TimeInterval, callingFile: String = #fileID, callingFunction: String = #function) {
+        LoggerService.log(file: callingFile, function: callingFunction, [
+            "Title: \(title)",
+            "Body: \(String(describing: body))",
+            "Date: \(date)",
+            "Interval: \(interval)",
+            "Current Date: \(Date())"
+        ])
+    }
+
     static func permissionTrustedState(callingFile: String = #fileID, callingFunction: String = #function) {
         LoggerService.log(file: callingFile, function: callingFunction, [
             "Is trusted: \(AXIsProcessTrusted())"

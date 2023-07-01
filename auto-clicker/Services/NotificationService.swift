@@ -15,7 +15,13 @@ final class NotificationService: ObservableObject {
         if body != nil { content.body = body! }
         content.sound = UNNotificationSound.default
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: date.timeIntervalSinceNow.rounded(),
+        let interval = date.timeIntervalSinceNow.rounded()
+
+        LoggerService.logNotification(title: title,
+                                      date: date,
+                                      interval: interval)
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval,
                                                         repeats: false)
 
         let request = UNNotificationRequest(identifier: UUID().uuidString,
