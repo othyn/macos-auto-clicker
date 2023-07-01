@@ -67,7 +67,6 @@ final class AutoClickSimulator: ObservableObject {
         if Defaults[.notifyOnFinish] {
             NotificationService.scheduleNotification(title: "Finished", date: self.finalClickAt)
         }
-
     }
 
     func stop() {

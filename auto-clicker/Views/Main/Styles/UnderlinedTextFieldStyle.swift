@@ -13,7 +13,6 @@ struct UnderlinedTextFieldStyle: TextFieldStyle {
 
     @Default(.appearanceSelectedTheme) private var activeTheme
 
-    // swiftlint:disable:next identifier_name
     func _body(configuration: TextField<_Label>) -> some View {
         configuration
             .textFieldStyle(.plain)

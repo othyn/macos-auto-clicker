@@ -45,8 +45,7 @@ final class PermissionsService: ObservableObject {
     }
 
     static func acquireNotificationPermissions() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
-        { enabled, _ in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { enabled, _ in
             LoggerService.notificationState(enabled: enabled)
         }
     }

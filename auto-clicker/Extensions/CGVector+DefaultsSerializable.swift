@@ -7,5 +7,6 @@
 
 import Foundation
 import Defaults
+import CoreGraphics
 
 extension CGVector: DefaultsSerializable {}

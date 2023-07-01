@@ -9,7 +9,6 @@ import Foundation
 import UserNotifications
 
 final class NotificationService: ObservableObject {
-    
     static func scheduleNotification(title: String, body: String? = nil, date: Date) {
         let content = UNMutableNotificationContent()
         content.title = title
