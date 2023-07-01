@@ -35,7 +35,7 @@
 
 <div align="center">
     <h4>
-        <a href="https://github.com/othyn/macos-auto-clicker/releases/download/v1.5.0/Auto.Clicker.1.5.0.dmg">Download Latest Version</a>
+        <a href="https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg">Download Latest Version</a>
         <span> · </span>
         <a href="https://github.com/othyn/macos-auto-clicker/issues">Report Bug</a>
         <span> · </span>
