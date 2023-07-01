@@ -90,6 +90,8 @@ final class AutoClickSimulator: ObservableObject {
         if let timer = self.timer {
             timer.invalidate()
         }
+
+        NotificationService.removePendingNotifications()
     }
 
     @objc private func tick() {
