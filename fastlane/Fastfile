@@ -4,6 +4,8 @@ default_platform(:mac)
 platform :mac do
   desc "Build the release a version of the Auto Clicker app"
 
+  xcversion(version: "14.3.1")
+
   lane :beta do
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release
