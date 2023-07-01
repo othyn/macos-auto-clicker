@@ -35,7 +35,7 @@
 
 <div align="center">
     <h4>
-        <a href="https://github.com/othyn/macos-auto-clicker/releases/download/v1.5.0/Auto.Clicker.1.5.0.dmg">Download Latest Version</a>
+        <a href="https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg">Download Latest Version</a>
         <span> · </span>
         <a href="https://github.com/othyn/macos-auto-clicker/issues">Report Bug</a>
         <span> · </span>
@@ -108,7 +108,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 ## :floppy_disk: Download
 
-Download: [v1.5.0](https://github.com/othyn/macos-auto-clicker/releases/download/v1.5.0/Auto.Clicker.1.5.0.dmg)
+Download: [v1.6.1](https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg)
 
 **When first using the app, you will need to right click the app and click 'Open', then on the macOS popup window select 'Open' again to trust this version of the app going forward.** This is as at the moment I don't have a paid Apple developer account in order to notarize the app.
 
