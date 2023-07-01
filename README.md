@@ -112,6 +112,8 @@ Download: [v1.5.0](https://github.com/othyn/macos-auto-clicker/releases/download
 
 **When first using the app, you will need to right click the app and click 'Open', then on the macOS popup window select 'Open' again to trust this version of the app going forward.** This is as at the moment I don't have a paid Apple developer account in order to notarize the app.
 
+**When updating the app, does the permission screen get stuck even though you've given it permission?** There can sometimes be an issue with this, I'm not entirely sure why this occurs, as the bundle identifier for the app remains the same and therefor the granted permissions shouldn't either. MacOS gets 'stuck' thinking the app has permissions when it doesn't and so the permission splash screen for the app will never go away. **To fix it,** click the minus button at the bottom of the list of apps under macOS's Accessibility settings where Auto Clicker is listed to manually remove Auto Clicker from the list of permitted apps. Close Auto Clicker and re-open it and grant it access once again, which should fix the issue. [More detail can be found in the thread for Issue #64](https://github.com/othyn/macos-auto-clicker/issues/64#issuecomment-1615933048).
+
 **For more downloads**, checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for app downloads of any version you want to use, even pre-release builds too.
 
 ### :gear: Preferences Storage
