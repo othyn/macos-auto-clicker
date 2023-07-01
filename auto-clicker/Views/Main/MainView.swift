@@ -149,7 +149,7 @@ struct MainView: View {
                     .disabled(self.hasStarted)
                     .buttonStyle(ThemedButtonStyle())
 
-                    KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStartButton.shortcut!)
+                    KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStartButton.shortcut ?? KeyboardShortcuts.Name.pressStartButton.defaultShortcut!)
                 }
 
                 VStack {
@@ -159,7 +159,7 @@ struct MainView: View {
                     .disabled(self.hasStopped)
                     .buttonStyle(ThemedButtonStyle())
 
-                    KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStopButton.shortcut!)
+                    KeyboardShortcutHint(shortcut: KeyboardShortcuts.Name.pressStopButton.shortcut ?? KeyboardShortcuts.Name.pressStopButton.defaultShortcut!)
                 }
 
                 Spacer()

@@ -63,7 +63,7 @@ final class MenuBarService {
         self.startMenuItem = NSMenuItem(
             title: NSLocalizedString("menu_bar_item_start", comment: "Menu bar item start option"),
             action: #selector(menuActionStart),
-            keyEquivalent: KeyboardShortcuts.Name.pressStartButton.shortcut!.descriptionKeyOnly.lowercased()
+            keyEquivalent: KeyboardShortcuts.Name.pressStartButton.shortcut?.descriptionKeyOnly.lowercased() ?? ""
         )
         self.startMenuItem!.target = self
         menu.addItem(self.startMenuItem!)
@@ -71,7 +71,7 @@ final class MenuBarService {
         self.stopMenuItem = NSMenuItem(
             title: NSLocalizedString("menu_bar_item_stop", comment: "Menu bar item stop option"),
             action: #selector(menuActionStop),
-            keyEquivalent: KeyboardShortcuts.Name.pressStopButton.shortcut!.descriptionKeyOnly.lowercased()
+            keyEquivalent: KeyboardShortcuts.Name.pressStopButton.shortcut?.descriptionKeyOnly.lowercased() ?? ""
         )
         self.stopMenuItem!.isEnabled = false
         self.stopMenuItem!.target = self
