@@ -4,7 +4,9 @@ default_platform(:mac)
 platform :mac do
   desc "Build the release a version of the Auto Clicker app"
 
-  xcversion(version: "14.3.1")
+  # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
+  # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
+  xcode_select "/Applications/Xcode_14.3.1.app"
 
   lane :beta do
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
