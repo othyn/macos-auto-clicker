@@ -17,12 +17,18 @@ struct KeyboardShortcutsSettingsTabView: View {
             ) {
                 KeyboardShortcuts.Recorder(
                     String(format: NSLocalizedString("settings_keyboard_shortcuts_start", comment: "Settings Keyboard Shortcut to Start the auto clicker")),
-                    name: .pressStartButton
+                    name: .pressStartButton,
+                    onChange: { _ in
+                        MenuBarService.refreshState()
+                    }
                 )
 
                 KeyboardShortcuts.Recorder(
                     String(format: NSLocalizedString("settings_keyboard_shortcuts_stop", comment: "Settings Keyboard Shortcut to Stop the auto clicker")),
-                    name: .pressStopButton
+                    name: .pressStopButton,
+                    onChange: { _ in
+                        MenuBarService.refreshState()
+                    }
                 )
             }
         }
