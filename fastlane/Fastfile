@@ -119,6 +119,7 @@ platform :mac do
       workspace: "auto-clicker.xcworkspace",
       clean: true,
       output_directory: "build",
+      output_name: "AutoClicker",
       export_method: "mac-application"
     )
 
