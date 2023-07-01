@@ -2,12 +2,36 @@ default_platform(:mac)
 
 # https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
 platform :mac do
-  # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
-  # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
-  xcode_select "/Applications/Xcode_14.3.1.app"
+  lane :local do
+    desc "Build the release a local version of the Auto Clicker app"
+
+    # https://docs.fastlane.tools/actions/build_mac_app/#parameters
+    gym(
+      scheme: "auto-clicker",
+      workspace: "auto-clicker.xcworkspace",
+      clean: true,
+      output_directory: "build",
+      output_name: "AutoClicker",
+      export_method: "mac-application"
+    )
+
+    # https://docs.fastlane.tools/actions/sh/#sh
+    # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
+    sh "../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+      # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
+      #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
+      # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
+      #  but this does not appear to be possible
+      error_occurred = false
+    }
+  end
 
   lane :beta do
     desc "Build the release a beta version of the Auto Clicker app"
+
+    # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
+    # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
+    xcode_select "/Applications/Xcode_14.3.1.app"
 
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release
@@ -100,6 +124,10 @@ platform :mac do
 
   lane :release do
     desc "Build the release a production version of the Auto Clicker app"
+
+    # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
+    # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
+    xcode_select "/Applications/Xcode_14.3.1.app"
 
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release

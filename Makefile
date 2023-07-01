@@ -7,6 +7,10 @@ setup:
 fastlane-update:
 	fastlane update_fastlane
 
+.PHONY: local
+local:
+	fastlane mac local
+
 .PHONY: beta
 beta:
 	fastlane mac beta
