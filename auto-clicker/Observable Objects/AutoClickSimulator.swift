@@ -43,6 +43,8 @@ final class AutoClickSimulator: ObservableObject {
             stopMenuItem.isEnabled = true
         }
 
+        MenuBarService.changeImageColor(newColor: .green)
+
         self.activity = ProcessInfo.processInfo.beginActivity(.autoClicking)
 
         self.duration = Defaults[.autoClickerState].pressIntervalDuration
@@ -80,6 +82,8 @@ final class AutoClickSimulator: ObservableObject {
         if let stopMenuItem = MenuBarService.stopMenuItem {
             stopMenuItem.isEnabled = false
         }
+
+        MenuBarService.changeImageColor(newColor: .white)
 
         self.activity?.cancel()
         self.activity = nil

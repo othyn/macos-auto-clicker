@@ -40,6 +40,7 @@ struct MainView: View {
     func start() {
         if !self.hasStarted {
             self.delayTimer.start(onFinish: self.autoClickSimulator.start)
+            MenuBarService.changeImageColor(newColor: .orange)
         }
     }
 
