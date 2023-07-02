@@ -61,6 +61,27 @@ struct GeneralSettingsTabView: View {
                 }
             }
 
+            if #available(macOS 12.0, *) {
+                SettingsTabItemView(
+                    help: "settings_general_menu_bar_show_dynamic_icon_help"
+                ) {
+                    HStack {
+                        Defaults.Toggle(
+                            " " + String(format: NSLocalizedString("settings_general_menu_bar_show_dynamic_icon", comment: "Dynamic icon in menu bar toggle")),
+                            key: .menuBarShowDynamicIcon
+                        )
+                        .disabled(!self.menuBarShowIcon)
+
+                        Image(systemName: "cursorarrow.click.badge.clock")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.white, .orange)
+                        Image(systemName: "cursorarrow.click.badge.clock")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.white, .green)
+                    }
+                }
+            }
+
             SettingsTabItemView(
                 help: "settings_general_menu_bar_hide_dock_help"
             ) {

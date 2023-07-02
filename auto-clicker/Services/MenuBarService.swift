@@ -41,6 +41,8 @@ final class MenuBarService {
             statusBarButton.image = NSImage(systemSymbolName: "cursorarrow.click.badge.clock", accessibilityDescription: "auto clicker")
             statusBarButton.action = #selector(togglePopover(sender:))
             statusBarButton.target = self
+
+            self.changeImageColor(newColor: .white)
         }
 
 //        Styling just didn't really work, this would work well for a Menu Bar app, but not for just simple clickable Menu Items...
@@ -137,6 +139,14 @@ final class MenuBarService {
 
     static func refreshState() {
         self.toggle(Defaults[.menuBarShowIcon])
+    }
+
+    static func changeImageColor(newColor: NSColor) {
+        if Defaults[.menuBarShowDynamicIcon], #available(macOS 12.0, *),
+        let statusBarButton = self.statusBarItem!.button {
+            let config = NSImage.SymbolConfiguration(paletteColors: [.white, newColor])
+            statusBarButton.image = statusBarButton.image!.withSymbolConfiguration(config)
+        }
     }
 
     @objc static func togglePopover(sender: AnyObject) {

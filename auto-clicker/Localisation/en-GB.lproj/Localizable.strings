@@ -48,6 +48,9 @@
 "settings_general_menu_bar_show_icon"       = "Show menu bar icon";
 "settings_general_menu_bar_show_icon_help"  = "Always show an icon in the macOS menu bar where the app and quick access functionality can be accessed.";
 
+"settings_general_menu_bar_show_dynamic_icon"      = "Show dynamic menu bar icon";
+"settings_general_menu_bar_show_dynamic_icon_help" = "The menu bar icon will update based on the state of the auto clicker.\nOrange = Counting down to start\nGreen = Auto clicker running";
+
 "settings_general_menu_bar_hide_dock"      = "Hide dock icon";
 "settings_general_menu_bar_hide_dock_help" = "Instead of the app running from the dock, the app will instead run from the menu bar.";
 
