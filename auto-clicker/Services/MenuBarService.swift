@@ -142,8 +142,8 @@ final class MenuBarService {
     }
 
     static func changeImageColor(newColor: NSColor) {
-        if Defaults[.menuBarShowDynamicIcon], #available(macOS 12.0, *),
-        let statusBarButton = self.statusBarItem!.button {
+        if Defaults[.menuBarShowDynamicIcon],
+           let statusBarButton = self.statusBarItem!.button {
             let config = NSImage.SymbolConfiguration(paletteColors: [.white, newColor])
             statusBarButton.image = statusBarButton.image!.withSymbolConfiguration(config)
         }
@@ -243,11 +243,7 @@ final class MenuBarService {
         NSApp.activate(ignoringOtherApps: true)
 
         // https://stackoverflow.com/questions/65355696/how-to-programatically-open-settings-window-in-a-macos-swiftui-app
-        if #available(macOS 13, *) {
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-        } else {
-            NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-        }
+        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
     }
 
     @objc static func menuActionAbout(sender: NSMenuItem) {
