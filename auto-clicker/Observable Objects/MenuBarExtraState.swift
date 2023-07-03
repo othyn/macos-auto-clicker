@@ -12,12 +12,12 @@ final class MenuBarExtraState: ObservableObject {
     // https://developer.apple.com/forums/thread/720625?answerId=743546022#743546022
     @Published var menuBarTextHideOrShow = NSLocalizedString("menu_bar_item_hide_show_hide", comment: "Menu bar item hide option")
 
-    @Published var startMenuDisabled: Bool = true
-    @Published var stopMenuDisabled: Bool = true
-    @Published var hideOrShowMenuDisabled: Bool = true
-    @Published var preferencesMenuDisabled: Bool = true
-    @Published var aboutMenuDisabled: Bool = false
-    @Published var quitMenuDisabled: Bool = false
+    @Published var startMenuDisabled = true
+    @Published var stopMenuDisabled = true
+    @Published var hideOrShowMenuDisabled = true
+    @Published var preferencesMenuDisabled = true
+    @Published var aboutMenuDisabled = false
+    @Published var quitMenuDisabled = false
 
     // TODO:
     // - Set the disabled state on app launch depending on PermissionsService.shared.isTrusted state
