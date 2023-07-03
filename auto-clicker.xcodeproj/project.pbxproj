@@ -53,6 +53,7 @@
 		B5D603EF2883027D00655D2C /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603EE2883027D00655D2C /* SettingsTabView.swift */; };
 		B5D603F12883035E00655D2C /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603F02883035E00655D2C /* ContainerView.swift */; };
 		B5D603F528830A3600655D2C /* SettingsTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D603F428830A3600655D2C /* SettingsTabItemView.swift */; };
+		B5D7E2052A5245E80047A46C /* MenuBarExtraState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D7E2042A5245E80047A46C /* MenuBarExtraState.swift */; };
 		B5E4213728057BA900C2CA2D /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4213628057BA900C2CA2D /* LoggerService.swift */; };
 		B5E6395027CA4CDD008B111A /* FieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6394F27CA4CDD008B111A /* FieldConstants.swift */; };
 		B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */; };
@@ -122,6 +123,7 @@
 		B5D603EE2883027D00655D2C /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
 		B5D603F02883035E00655D2C /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		B5D603F428830A3600655D2C /* SettingsTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabItemView.swift; sourceTree = "<group>"; };
+		B5D7E2042A5245E80047A46C /* MenuBarExtraState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarExtraState.swift; sourceTree = "<group>"; };
 		B5E4213628057BA900C2CA2D /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
 		B5E6394F27CA4CDD008B111A /* FieldConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldConstants.swift; sourceTree = "<group>"; };
 		B5E6395227CA62EB008B111A /* ThemedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButtonStyle.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			children = (
 				B53027F9264C2748002B8610 /* DelayTimer.swift */,
 				B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */,
+				B5D7E2042A5245E80047A46C /* MenuBarExtraState.swift */,
 			);
 			path = "Observable Objects";
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */,
 				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
 				B5D603F528830A3600655D2C /* SettingsTabItemView.swift in Sources */,
+				B5D7E2052A5245E80047A46C /* MenuBarExtraState.swift in Sources */,
 				B5F6A01427F388A8003CD730 /* NSColor+Extensions.swift in Sources */,
 				B5F6A01B27F3A8A6003CD730 /* StatBox.swift in Sources */,
 				B50022CA2875F5BF00610474 /* HelpCommands.swift in Sources */,
