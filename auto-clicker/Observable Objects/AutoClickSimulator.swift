@@ -43,7 +43,7 @@ final class AutoClickSimulator: ObservableObject {
             stopMenuItem.isEnabled = true
         }
 
-        MenuBarService.changeImageColor(newColor: .green)
+        MenuBarService.changeImageColour(newColor: .systemBlue)
 
         self.activity = ProcessInfo.processInfo.beginActivity(.autoClicking)
 
@@ -83,7 +83,7 @@ final class AutoClickSimulator: ObservableObject {
             stopMenuItem.isEnabled = false
         }
 
-        MenuBarService.changeImageColor(newColor: .white)
+        MenuBarService.resetImage()
 
         self.activity?.cancel()
         self.activity = nil

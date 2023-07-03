@@ -38,11 +38,10 @@ final class MenuBarService {
         self.statusBarPopover = NSPopover()
 
         if let statusBarButton = self.statusBarItem!.button {
-            statusBarButton.image = NSImage(systemSymbolName: "cursorarrow.click.badge.clock", accessibilityDescription: "auto clicker")
+            self.resetImage()
+
             statusBarButton.action = #selector(togglePopover(sender:))
             statusBarButton.target = self
-
-            self.changeImageColor(newColor: .white)
         }
 
 //        Styling just didn't really work, this would work well for a Menu Bar app, but not for just simple clickable Menu Items...
@@ -84,8 +83,7 @@ final class MenuBarService {
         self.hideOrShowMenuItem = NSMenuItem(
             title: (NSApp.isHidden
                     ? NSLocalizedString("menu_bar_item_hide_show_show", comment: "Menu bar item show option")
-                    : NSLocalizedString("menu_bar_item_hide_show_hide", comment: "Menu bar item hide option"))
-                    + " " + NSLocalizedString("menu_bar_item_hide_show_suffix", comment: "Menu bar item show/hide option suffix"),
+                    : NSLocalizedString("menu_bar_item_hide_show_hide", comment: "Menu bar item hide option")),
             action: #selector(menuActionHideOrShow),
             keyEquivalent: "h"
         )
@@ -141,11 +139,39 @@ final class MenuBarService {
         self.toggle(Defaults[.menuBarShowIcon])
     }
 
-    static func changeImageColor(newColor: NSColor) {
+    /*
+     * I've spent about 2 hours trying to find out how to reset the menu bar colour back to the system default for the
+     *  current colour scheme and/or background wallpaper. In typical Apple docs fashion, this just doesn't appear to
+     *  be a thing, so I have no idea how we can actually reset or follow the system.
+     * If we just create and use a new SymbolConfiguration(), it defaults to blue.
+     * I've also had a look through the code, and there appears to be no way to simply retain or read the existing
+     *  configuration colour. We could re-apply it, but then we need to persist and store it. This appears to be the
+     *  simplest method for now, there is no documentation on this what-so-ever.
+     * The only other way would be something manual like this: https://stackoverflow.com/a/66984289/4494375
+     * NOTE: This is still not perfect. On Dark mode/Dark triggering wallpapers, Color.primary resolves to the correct
+     *  dark colour. However, on Light mode/Light triggering wallpapers, Color.primary resolves to the incorrect light
+     *  colour that is a dullish grey.
+     *  The issue is, on Dark/Light mode the wallpaper will trigger an override to the default colour, so doing an
+     *   AppleInterfaceStyle check does nothing, as one display could be using light mode and the other using dark
+     *   making a check useless.
+     * I feel although I'm missing something, but between hours scouring documentation, search engines and ChatGPT,
+     *  nothing is coming up.
+     */
+    static func resetImage() {
+        if let statusBarButton = self.statusBarItem!.button {
+            statusBarButton.image = NSImage(systemSymbolName: "cursorarrow.click.badge.clock", accessibilityDescription: "auto clicker")
+        }
+    }
+
+    static func changeImageColour(newColor: NSColor) {
+        // let mode = UserDefaults.standard.string(forKey: "AppleInterfaceStyle")
+        // let primaryColour = mode == "Dark" ? Color.primary : Color.white
+
         if Defaults[.menuBarShowDynamicIcon],
-           let statusBarButton = self.statusBarItem!.button {
-            let config = NSImage.SymbolConfiguration(paletteColors: [.white, newColor])
-            statusBarButton.image = statusBarButton.image!.withSymbolConfiguration(config)
+           let statusBarButton = self.statusBarItem?.button {
+            statusBarButton.image = statusBarButton.image!.withSymbolConfiguration(
+                NSImage.SymbolConfiguration(paletteColors: [NSColor(Color.primary), newColor])
+            )
         }
     }
 
