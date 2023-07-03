@@ -169,6 +169,7 @@ final class MenuBarService {
 
         if Defaults[.menuBarShowDynamicIcon],
            let statusBarButton = self.statusBarItem?.button {
+            statusBarButton.image = NSImage(systemSymbolName: "cursorarrow.click.2", accessibilityDescription: "auto clicker")
             statusBarButton.image = statusBarButton.image!.withSymbolConfiguration(
                 NSImage.SymbolConfiguration(paletteColors: [NSColor(Color.primary), newColor])
             )
