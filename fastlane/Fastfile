@@ -22,6 +22,7 @@ platform :mac do
       #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
       # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
       #  but this does not appear to be possible
+      print(result)
       error_occurred = false
     }
   end
@@ -100,6 +101,7 @@ platform :mac do
         #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
         # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
         #  but this does not appear to be possible
+        print(result)
         error_occurred = false
       }
 
@@ -203,6 +205,7 @@ platform :mac do
         #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
         # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
         #  but this does not appear to be possible
+        print(result)
         error_occurred = false
       }
 
