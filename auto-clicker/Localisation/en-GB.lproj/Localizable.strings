@@ -16,7 +16,8 @@
 "main_window_seconds"                 = "seconds";
 "main_window_before_starting"         = " before starting";
 "main_window_stop_mousemove"          = "And";
-"main_window_stop_mousemove_end"      = "when the mouse is moved";
+"main_window_stop_mousemove_end"      = "when the mouse moves";
+"main_window_stop_mousemove_pixel"    = "pixels";
 "main_window_start_btn"               = "START";
 "main_window_stop_btn"                = "STOP";
 "main_window_stat_box_next_press_at"  = "NEXT PRESS AT";

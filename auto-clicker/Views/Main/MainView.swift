@@ -138,6 +138,14 @@ struct MainView: View {
                         .disabled(self.hasStarted)
                     
                     Text("main_window_stop_mousemove_end", comment: "Main window 'Stop mouse move end'")
+                    
+                    DynamicWidthNumberField(text: "",
+                                            min: MIN_MOUSE_THRESHOLD,
+                                            max: MAX_MOUSE_THRESHOLD,
+                                            number: self.$formState.mouseDeltaThreshold)
+                        .disabled(self.hasStarted)
+
+                    Text("main_window_stop_mousemove_pixel", comment: "Main window 'Stop mouse move pixel'")
                 }
             }
             .padding(.top, 20)

@@ -33,6 +33,8 @@ final class AutoClickSimulator: ObservableObject {
     private var activity: Cancellable?
     
     private var monitorObject: Any? = nil
+    private var initialMousePosition: NSPoint? = nil
+    private var mouseDeltaThreshold: CGFloat = 0.0
 
     func start() {
         self.isAutoClicking = true
@@ -64,6 +66,8 @@ final class AutoClickSimulator: ObservableObject {
                                           repeats: true)
 
         if (Defaults[.autoClickerState].stopOnMouseMove.asBoolean()) {
+            self.initialMousePosition = nil
+            self.mouseDeltaThreshold = CGFloat(Defaults[.autoClickerState].mouseDeltaThreshold)
             startMouseMonitoring()
         }
         
@@ -119,7 +123,21 @@ final class AutoClickSimulator: ObservableObject {
     
     private func startMouseMonitoring() {
         self.monitorObject = NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { [weak self] event in
-            self?.stop()
+            self?.mouseMoved(event)
+        }
+    }
+    
+    private func mouseMoved(_ event: NSEvent) {
+        let position = event.locationInWindow
+        if let initialPosition = self.initialMousePosition {
+            let deltaX = position.x - initialPosition.x
+            let deltaY = position.y - initialPosition.y
+            let distance = sqrt(deltaX * deltaX + deltaY * deltaY)
+            if (distance > mouseDeltaThreshold) {
+                self.stop()
+            }
+        } else {
+            self.initialMousePosition = position
         }
     }
 
