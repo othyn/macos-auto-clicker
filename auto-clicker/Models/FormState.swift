@@ -14,6 +14,8 @@ struct FormState: Codable, Defaults.Serializable {
     var pressAmount: Int
     var startDelay: Int
     var repeatAmount: Int
+    var stopOnMouseMove: MouseMove
+    var mouseDeltaThreshold: Int
 }
 
 extension FormState {
@@ -24,5 +26,7 @@ extension FormState {
         self.pressAmount = DEFAULT_PRESS_AMOUNT
         self.startDelay = DEFAULT_START_DELAY
         self.repeatAmount = DEFAULT_REPEAT_AMOUNT
+        self.stopOnMouseMove = MouseMove.disabled
+        self.mouseDeltaThreshold = MIN_MOUSE_THRESHOLD
     }
 }
