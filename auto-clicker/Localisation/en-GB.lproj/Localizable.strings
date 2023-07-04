@@ -15,6 +15,8 @@
 "main_window_second"                  = "second";
 "main_window_seconds"                 = "seconds";
 "main_window_before_starting"         = " before starting";
+"main_window_stop_mousemove"          = "And";
+"main_window_stop_mousemove_end"      = "when the mouse is moved";
 "main_window_start_btn"               = "START";
 "main_window_stop_btn"                = "STOP";
 "main_window_stat_box_next_press_at"  = "NEXT PRESS AT";
@@ -26,6 +28,10 @@
 "duration_minutes"             = "Minutes(s)";
 "duration_hours"               = "Hours(s)";
 "duration_modal_cancel_button" = "Cancel";
+
+"mousemove_enabled"             = "stop";
+"mousemove_disabled"            = "continue";
+"mousemove_modal_cancel_button" = "Cancel";
 
 "key_listener_modal_press_prompt"         = "Press your desired input...";
 "key_listener_modal_dismiss_key_prompt"   = "Hold the escape key when done.";

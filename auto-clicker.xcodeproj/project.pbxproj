@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4C5D699D2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D699C2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift */; };
 		4C5D699F2A4EED3500E72CEE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D699E2A4EED3500E72CEE /* NotificationService.swift */; };
+		5DB2BECC2A54826B008AFE05 /* MouseMoveSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2BECB2A54826B008AFE05 /* MouseMoveSelector.swift */; };
+		5DB2BECE2A5482DC008AFE05 /* MouseMoveModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2BECD2A5482DC008AFE05 /* MouseMoveModal.swift */; };
+		5DB2BED02A548325008AFE05 /* MouseMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2BECF2A548325008AFE05 /* MouseMove.swift */; };
 		B50022CA2875F5BF00610474 /* HelpCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50022C92875F5BF00610474 /* HelpCommands.swift */; };
 		B510760927F4A21500BB1CDA /* DateStrings in Frameworks */ = {isa = PBXBuildFile; productRef = B510760827F4A21500BB1CDA /* DateStrings */; };
 		B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = B510760B27F4A23300BB1CDA /* KeyboardShortcuts */; };
@@ -77,6 +80,9 @@
 /* Begin PBXFileReference section */
 		4C5D699C2A4ECDF800E72CEE /* NotificationsSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsTabView.swift; sourceTree = "<group>"; };
 		4C5D699E2A4EED3500E72CEE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5DB2BECB2A54826B008AFE05 /* MouseMoveSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseMoveSelector.swift; sourceTree = "<group>"; };
+		5DB2BECD2A5482DC008AFE05 /* MouseMoveModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseMoveModal.swift; sourceTree = "<group>"; };
+		5DB2BECF2A548325008AFE05 /* MouseMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseMove.swift; sourceTree = "<group>"; };
 		B50022C92875F5BF00610474 /* HelpCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCommands.swift; sourceTree = "<group>"; };
 		B510760E27F4A25400BB1CDA /* WindowStateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStateService.swift; sourceTree = "<group>"; };
 		B510761027F4A33D00BB1CDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -333,6 +339,8 @@
 				B5F6A01A27F3A8A6003CD730 /* StatBox.swift */,
 				B510761E27F4B6F500BB1CDA /* KeyboardShortcutHint.swift */,
 				B5BCE808287C2F4D00B739AD /* SmallText.swift */,
+				5DB2BECB2A54826B008AFE05 /* MouseMoveSelector.swift */,
+				5DB2BECD2A5482DC008AFE05 /* MouseMoveModal.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				B5E6395527CA76CB008B111A /* Duration.swift */,
+				5DB2BECF2A548325008AFE05 /* MouseMove.swift */,
 				B5BCE802287BF59900B739AD /* Colour.swift */,
 			);
 			path = Enums;
@@ -579,6 +588,7 @@
 				4C5D699F2A4EED3500E72CEE /* NotificationService.swift in Sources */,
 				B510763227FF7EC800BB1CDA /* InputAwareView.swift in Sources */,
 				B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */,
+				5DB2BED02A548325008AFE05 /* MouseMove.swift in Sources */,
 				B510762327F4BB5F00BB1CDA /* KeyboardShortcutsSettingsTabView.swift in Sources */,
 				B510761A27F4A5BD00BB1CDA /* AppDelegate.swift in Sources */,
 				B5D603F528830A3600655D2C /* SettingsTabItemView.swift in Sources */,
@@ -607,6 +617,7 @@
 				B5E92B1427F1087E00A7FC63 /* UnderlinedTextFieldStyle.swift in Sources */,
 				B510762D27F4BF0C00BB1CDA /* Defaults+Workaround.swift in Sources */,
 				B510761627F4A43B00BB1CDA /* GeneralSettingsTabView.swift in Sources */,
+				5DB2BECE2A5482DC008AFE05 /* MouseMoveModal.swift in Sources */,
 				B510761827F4A58500BB1CDA /* KeyboardShortcuts.swift in Sources */,
 				B510763527FF811B00BB1CDA /* PressKeyListenerModal.swift in Sources */,
 				B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */,
@@ -624,6 +635,7 @@
 				B5E92B1C27F1BA5E00A7FC63 /* ThemeService.swift in Sources */,
 				C4345BB52846056000365CF9 /* ProcessInfo+Extensions.swift in Sources */,
 				B5E6395327CA62EB008B111A /* ThemedButtonStyle.swift in Sources */,
+				5DB2BECC2A54826B008AFE05 /* MouseMoveSelector.swift in Sources */,
 				B510762127F4BB4900BB1CDA /* AppearanceSettingsTabView.swift in Sources */,
 				B5BF094328832A4E008092D9 /* MenuBarView.swift in Sources */,
 			);

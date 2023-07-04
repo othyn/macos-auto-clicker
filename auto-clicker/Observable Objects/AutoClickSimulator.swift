@@ -31,6 +31,8 @@ final class AutoClickSimulator: ObservableObject {
     private var timer: Timer?
     private var mouseLocation: NSPoint { NSEvent.mouseLocation }
     private var activity: Cancellable?
+    
+    private var monitorObject: Any? = nil
 
     func start() {
         self.isAutoClicking = true
@@ -61,6 +63,10 @@ final class AutoClickSimulator: ObservableObject {
                                           userInfo: nil,
                                           repeats: true)
 
+        if (Defaults[.autoClickerState].stopOnMouseMove.asBoolean()) {
+            startMouseMonitoring()
+        }
+        
         if Defaults[.notifyOnStart] {
             NotificationService.scheduleNotification(title: "Started", date: self.nextClickAt)
         }
@@ -72,6 +78,10 @@ final class AutoClickSimulator: ObservableObject {
 
     func stop() {
         self.isAutoClicking = false
+        
+        if let monitorObject = self.monitorObject {
+            NSEvent.removeMonitor(monitorObject)
+        }
 
         if let startMenuItem = MenuBarService.startMenuItem {
             startMenuItem.isEnabled = true
@@ -103,6 +113,12 @@ final class AutoClickSimulator: ObservableObject {
 
         if self.remainingInterations <= 0 {
             self.stop()
+        }
+    }
+    
+    private func startMouseMonitoring() {
+        self.monitorObject = NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { [weak self] event in
+            self?.stop()
         }
     }
 

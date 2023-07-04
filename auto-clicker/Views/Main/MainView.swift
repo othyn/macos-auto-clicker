@@ -130,6 +130,15 @@ struct MainView: View {
 
                     Text(self.formState.startDelay == 1 ? "main_window_second" : "main_window_seconds", comment: "Main window 'second(s)'") + Text("main_window_before_starting", comment: "Main window 'before starting'") + Text("main_window_full_stop", comment: "Main window full stop")
                 }
+                
+                ActionStageLine {
+                    Text("main_window_stop_mousemove", comment: "Main window 'Stop mouse move'")
+                   
+                    MouseMoveSelector(selectedMouseMove: self.$formState.stopOnMouseMove)
+                        .disabled(self.hasStarted)
+                    
+                    Text("main_window_stop_mousemove_end", comment: "Main window 'Stop mouse move end'")
+                }
             }
             .padding(.top, 20)
             .padding(.leading, 20)
