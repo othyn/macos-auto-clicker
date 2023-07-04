@@ -81,6 +81,7 @@ final class AutoClickSimulator: ObservableObject {
         
         if let monitorObject = self.monitorObject {
             NSEvent.removeMonitor(monitorObject)
+            self.monitorObject = nil
         }
 
         if let startMenuItem = MenuBarService.startMenuItem {
