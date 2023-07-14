@@ -99,32 +99,18 @@ platform :mac do
         }
       )
 
-      # Debugging
-      sh "ls", "-lah", "../build"
-      sh "ls", "-lah", "/Volumes"
+      output_archive_path = "build/AutoClicker.zip"
 
-      # https://docs.fastlane.tools/actions/sh/#sh
-      # https://docs.fastlane.tools/advanced/actions/#using-the-sh-method
-      # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-      # https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/helper/sh_helper.rb#L60
-      # https://github.com/advoryanskiy/fastlane-plugin-dmg/pull/8/files#diff-3dea31081a0536cea09f436f364f5ce26853b49a023ac8b9836f64920e038cadR33
-      sh "sudo", "../node_modules/.bin/create-dmg", "../build/AutoClicker.app", "--overwrite", "../build" do |status, result, command|
-        unless status.exitstatus == 0 || status.exitstatus == 2
-          UI.error "Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}"
-        end
+      # https://docs.fastlane.tools/actions/zip
+      zip(
+        path: "../build/AutoClicker.app",
+        output_path: output_archive_path,
+        verbose: true
+      )
 
-        UI.message "Output is #{result.inspect}"
-      end
-
-      # Debugging
-      sh "ls", "-lah", "../build"
-      sh "ls", "-lah", "/Volumes"
-
-      output_dmg_path = "build/AutoClicker v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}.dmg"
-
-      unless File.exist?(output_dmg_path)
-        UI.error("File does not exist: #{output_dmg_path}")
-        error!("Exiting lane due to missing output DMG!")
+      unless File.exist?(output_archive_path)
+        UI.error("File does not exist: #{output_archive_path}")
+        raise "Exiting lane due to missing output archive!"
       end
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
@@ -137,7 +123,7 @@ platform :mac do
         is_prerelease: true,
         commitish: "main",
         upload_assets: [
-          output_dmg_path,
+          output_archive_path,
           "build/AutoClicker.app.dSYM.zip"
         ]
       )
