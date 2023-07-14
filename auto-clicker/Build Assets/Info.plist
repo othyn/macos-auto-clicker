@@ -30,12 +30,12 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>cb79d84</string>
+	<string>8eead3f</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Othyn ~ Ben Tindall</string>
+	<string>Copyright © 2023, Ben Tindall. All rights reserved.</string>
 </dict>
 </plist>

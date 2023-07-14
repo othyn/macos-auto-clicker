@@ -31,6 +31,10 @@ struct AutoClickerApp: App {
         .windowResizability(.contentSize)
         .commands {
             HelpCommands()
+
+            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+                Button(NSLocalizedString("about_about", comment: "About") + " \(Bundle.main.appName)...") { delegate.showAboutWindow() }
+            }
         }
     }
 }

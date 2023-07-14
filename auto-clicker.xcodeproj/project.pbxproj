@@ -36,6 +36,8 @@
 		B53BDC54264BED95001F8E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC53264BED95001F8E57 /* Assets.xcassets */; };
 		B53BDC57264BED95001F8E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53BDC56264BED95001F8E57 /* Preview Assets.xcassets */; };
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
+		B5462E742A6173D400C5F280 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5462E732A6173D400C5F280 /* AboutView.swift */; };
+		B5462E762A61761000C5F280 /* Bundle+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5462E752A61761000C5F280 /* Bundle+AppInfo.swift */; };
 		B5B0B2AF2882EE6E00462F11 /* ACWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */; };
 		B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46228032D3200C779FD /* PermissionsView.swift */; };
 		B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46428033A0F00C779FD /* PermissionsService.swift */; };
@@ -103,6 +105,8 @@
 		B53BDC58264BED95001F8E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53BDC59264BED95001F8E57 /* auto_clicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = auto_clicker.entitlements; sourceTree = "<group>"; };
 		B53BDC5F264BF3A8001F8E57 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
+		B5462E732A6173D400C5F280 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		B5462E752A61761000C5F280 /* Bundle+AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+AppInfo.swift"; sourceTree = "<group>"; };
 		B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACWindow.swift; sourceTree = "<group>"; };
 		B5B6B46228032D3200C779FD /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
 		B5B6B46428033A0F00C779FD /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */,
+				B5462E732A6173D400C5F280 /* AboutView.swift */,
 				B5B6B46228032D3200C779FD /* PermissionsView.swift */,
 				B5F6A00E27F37440003CD730 /* MainView.swift */,
 				B5E6395127CA62DE008B111A /* Styles */,
@@ -357,9 +362,9 @@
 		B5E6394E27CA4CB1008B111A /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				B510762927F4BD8F00BB1CDA /* Defaults.swift */,
 				B5E6394F27CA4CDD008B111A /* FieldConstants.swift */,
 				B510761727F4A58500BB1CDA /* KeyboardShortcuts.swift */,
-				B510762927F4BD8F00BB1CDA /* Defaults.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -388,16 +393,17 @@
 		B5F6A01027F38666003CD730 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B5D603F02883035E00655D2C /* ContainerView.swift */,
-				B5F6A01827F3970A003CD730 /* ThemeColour.swift */,
-				B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */,
+				B5462E752A61761000C5F280 /* Bundle+AppInfo.swift */,
+				B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */,
+				B5BCE804287BFB5A00B739AD /* Color+ExpressibleByStringLiteral.swift */,
 				B5F6A01527F3900E003CD730 /* Color+Extensions.swift */,
+				B5D603F02883035E00655D2C /* ContainerView.swift */,
 				B510762C27F4BF0C00BB1CDA /* Defaults+Workaround.swift */,
+				B5BF094428847346008092D9 /* KeyboardShortcuts+Extensions.swift */,
+				B5F6A01327F388A8003CD730 /* NSColor+Extensions.swift */,
 				B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */,
 				C4345BB42846056000365CF9 /* ProcessInfo+Extensions.swift */,
-				B5BCE804287BFB5A00B739AD /* Color+ExpressibleByStringLiteral.swift */,
-				B5BCE810287C38ED00B739AD /* CGVector+DefaultsSerializable.swift */,
-				B5BF094428847346008092D9 /* KeyboardShortcuts+Extensions.swift */,
+				B5F6A01827F3970A003CD730 /* ThemeColour.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				B5D603F12883035E00655D2C /* ContainerView.swift in Sources */,
 				B5BCE805287BFB5A00B739AD /* Color+ExpressibleByStringLiteral.swift in Sources */,
 				B510761F27F4B6F500BB1CDA /* KeyboardShortcutHint.swift in Sources */,
+				B5462E742A6173D400C5F280 /* AboutView.swift in Sources */,
 				B5107640280113DB00BB1CDA /* Input.swift in Sources */,
 				B510762A27F4BD8F00BB1CDA /* Defaults.swift in Sources */,
 				B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */,
@@ -616,6 +623,7 @@
 				B5BCE809287C2F4D00B739AD /* SmallText.swift in Sources */,
 				B5E4213728057BA900C2CA2D /* LoggerService.swift in Sources */,
 				B5E92B0E27F1036B00A7FC63 /* DurationModal.swift in Sources */,
+				B5462E762A61761000C5F280 /* Bundle+AppInfo.swift in Sources */,
 				B5B0B2AF2882EE6E00462F11 /* ACWindow.swift in Sources */,
 				B5BCE803287BF59900B739AD /* Colour.swift in Sources */,
 				B5BF09402883230D008092D9 /* MenuBarService.swift in Sources */,

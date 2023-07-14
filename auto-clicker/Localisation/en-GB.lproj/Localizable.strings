@@ -4,6 +4,10 @@
 "permissions_help_open_sys_pref_btn" = "Open System Preferences";
 "permissions_help_unlock_note"       = "The app will automatically unlock within a few seconds of the permission being granted.";
 
+"about_about" = "About";
+"about_url" = "https://github.com/othyn/macos-auto-clicker";
+"about_url_short" = "github.com/othyn/macos-auto-clicker";
+
 "main_window_comma"                   = ",";
 "main_window_full_stop"               = ".";
 "main_window_every"                   = "Every";

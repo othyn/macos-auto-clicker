@@ -8,8 +8,11 @@
 import Foundation
 import Cocoa
 import Defaults
+import SwiftUI
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+    private var aboutWindowController: NSWindowController?
+
     func applicationWillFinishLaunching(_ notification: Notification) {
         WindowStateService.refreshDockIconState()
     }
@@ -59,5 +62,31 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         }
 
         return true
+    }
+
+    func showAboutWindow() {
+        if aboutWindowController == nil {
+            let window = NSWindow()
+
+            window.contentView = NSHostingView(rootView: AboutView())
+
+            window.styleMask.insert(.titled)
+            window.styleMask.insert(.closable)
+            window.styleMask.insert(.fullSizeContentView)
+
+            window.titlebarAppearsTransparent = true
+
+            window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+            window.standardWindowButton(.closeButton)?.isHidden = false
+            window.standardWindowButton(.zoomButton)?.isHidden = true
+
+            window.isMovableByWindowBackground = true
+
+            window.center()
+
+            aboutWindowController = NSWindowController(window: window)
+        }
+
+        aboutWindowController?.showWindow(aboutWindowController?.window)
     }
 }
