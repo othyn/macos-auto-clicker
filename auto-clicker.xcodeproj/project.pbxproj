@@ -801,7 +801,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = "v1.7.8-beta-44d18fa2e8c2feae8808facf6cecd1e1676a7380";
+				MARKETING_VERSION = "v1.7.9-beta-c00425000626786a3cfcbf81fe097a242151f8f1";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = AutoClicker;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -832,7 +832,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = "v1.7.8-beta-44d18fa2e8c2feae8808facf6cecd1e1676a7380";
+				MARKETING_VERSION = "v1.7.9-beta-c00425000626786a3cfcbf81fe097a242151f8f1";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = AutoClicker;
 				SWIFT_EMIT_LOC_STRINGS = YES;
