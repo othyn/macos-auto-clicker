@@ -21,7 +21,8 @@ platform :mac do
         volume_name: "AutoClicker",                           # optional, by default will be the same as input folder name
         filesystem: "hfs+",                                   # optional, default is 'hfs+'
         format: "udzo",                                       # optional, default is 'udzo'
-        create_applications_symlink: true)                    # optional, default is true
+        create_applications_symlink: true,                    # optional, default is true
+        size: 10)                                             # in megabytes, optional, by default will be calculated as input folder size + 10%
   end
 
   lane :beta do
@@ -97,7 +98,8 @@ platform :mac do
           volume_name: "AutoClicker",                           # optional, by default will be the same as input folder name
           filesystem: "hfs+",                                   # optional, default is 'hfs+'
           format: "udzo",                                       # optional, default is 'udzo'
-          create_applications_symlink: true)                    # optional, default is true
+          create_applications_symlink: true,                    # optional, default is true
+          size: 10)                                             # in megabytes, optional, by default will be calculated as input folder size + 10%
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
@@ -198,7 +200,8 @@ platform :mac do
           volume_name: "AutoClicker",                           # optional, by default will be the same as input folder name
           filesystem: "hfs+",                                   # optional, default is 'hfs+'
           format: "udzo",                                       # optional, default is 'udzo'
-          create_applications_symlink: true)                    # optional, default is true
+          create_applications_symlink: true,                    # optional, default is true
+          size: 10)                                             # in megabytes, optional, by default will be calculated as input folder size + 10%
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
