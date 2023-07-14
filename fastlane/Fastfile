@@ -105,14 +105,12 @@ platform :mac do
       # https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/helper/sh_helper.rb#L60
       # https://github.com/advoryanskiy/fastlane-plugin-dmg/pull/8/files#diff-3dea31081a0536cea09f436f364f5ce26853b49a023ac8b9836f64920e038cadR33
       sh "sudo", "../node_modules/.bin/create-dmg", "../build/AutoClicker.app", "--overwrite", "../build" do |status, result, command|
-        error_occurred = false
-
         unless status.exitstatus == 0 || status.exitstatus == 2
           UI.error "Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}"
-          error_occurred = true
         end
 
         UI.message "Output is #{result.inspect}"
+        return status.exitstatus
       end
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
