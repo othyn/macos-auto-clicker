@@ -5,4 +5,3 @@
 gem 'fastlane-plugin-semantic_release'
 gem 'fastlane-plugin-versioning'
 gem 'fastlane-plugin-find_replace_string'
-gem 'fastlane-plugin-dmg'

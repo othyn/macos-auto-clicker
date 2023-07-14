@@ -15,14 +15,16 @@ platform :mac do
       export_method: "mac-application"
     )
 
-    # https://github.com/advoryanskiy/fastlane-plugin-dmg
-    dmg(path: "../macos-auto-clicker/build/AutoClicker.app",
-        output_path: "../build/AutoClicker.dmg",
-        volume_name: "AutoClicker",
-        filesystem: "hfs+",
-        format: "udzo",
-        create_applications_symlink: true,
-        size: 10)
+    # https://docs.fastlane.tools/actions/sh/#sh
+    # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
+    sh "sudo ../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+      # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
+      #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
+      # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
+      #  but this does not appear to be possible
+      print(result)
+      error_occurred = false
+    }
   end
 
   lane :beta do
@@ -58,7 +60,7 @@ platform :mac do
     commit_version_bump(
       message: "chore: Fastlane automated version bump (beta)",
       xcodeproj: "auto-clicker.xcodeproj",
-      include: %w[Gemfile.lock]
+      include: %w[Gemfile.lock yarn.lock]
     )
 
     # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
@@ -92,14 +94,16 @@ platform :mac do
         }
       )
 
-      # https://github.com/advoryanskiy/fastlane-plugin-dmg
-      dmg(path: "../macos-auto-clicker/build/AutoClicker.app",
-          output_path: "../build/AutoClicker.dmg",
-          volume_name: "AutoClicker",
-          filesystem: "hfs+",
-          format: "udzo",
-          create_applications_symlink: true,
-          size: 10)
+      # https://docs.fastlane.tools/actions/sh/#sh
+      # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
+      sh "sudo ../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+        # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
+        #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
+        # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
+        #  but this does not appear to be possible
+        print(result)
+        error_occurred = false
+      }
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
@@ -111,7 +115,7 @@ platform :mac do
         is_prerelease: true,
         commitish: "main",
         upload_assets: [
-          "build/AutoClicker.dmg",
+          "build/AutoClicker v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}.dmg",
           "build/AutoClicker.app.dSYM.zip"
         ]
       )
@@ -160,7 +164,7 @@ platform :mac do
     commit_version_bump(
       message: "chore: Fastlane automated version bump",
       xcodeproj: "auto-clicker.xcodeproj",
-      include: %w[Gemfile.lock README.md]
+      include: %w[Gemfile.lock yarn.lock README.md]
     )
 
     # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
@@ -194,14 +198,16 @@ platform :mac do
         }
       )
 
-      # https://github.com/advoryanskiy/fastlane-plugin-dmg
-      dmg(path: "../macos-auto-clicker/build/AutoClicker.app",
-          output_path: "../build/AutoClicker.dmg",
-          volume_name: "AutoClicker",
-          filesystem: "hfs+",
-          format: "udzo",
-          create_applications_symlink: true,
-          size: 10)
+      # https://docs.fastlane.tools/actions/sh/#sh
+      # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
+      sh "sudo ../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+        # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
+        #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
+        # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
+        #  but this does not appear to be possible
+        print(result)
+        error_occurred = false
+      }
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
@@ -212,7 +218,7 @@ platform :mac do
         description: notes,
         commitish: "main",
         upload_assets: [
-          "build/AutoClicker.dmg",
+          "build/AutoClicker #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}.dmg",
           "build/AutoClicker.app.dSYM.zip"
         ]
       )

@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "create-dmg": "^6.0.0"
+  }
+}

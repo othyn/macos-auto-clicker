@@ -105,7 +105,6 @@ GEM
       xcodeproj (>= 1.13.0, < 2.0.0)
       xcpretty (~> 0.3.0)
       xcpretty-travis-formatter (>= 0.0.3)
-    fastlane-plugin-dmg (1.0.1)
     fastlane-plugin-find_replace_string (0.1.0)
     fastlane-plugin-semantic_release (1.18.2)
     fastlane-plugin-versioning (0.5.1)
@@ -220,7 +219,6 @@ PLATFORMS
 
 DEPENDENCIES
   fastlane
-  fastlane-plugin-dmg
   fastlane-plugin-find_replace_string
   fastlane-plugin-semantic_release
   fastlane-plugin-versioning
