@@ -99,19 +99,12 @@ platform :mac do
         }
       )
 
-      output_archive_path = "build/AutoClicker.zip"
-
       # https://docs.fastlane.tools/actions/zip
-      zip(
+      output_archive_path = zip(
         path: "build/AutoClicker.app",
-        output_path: output_archive_path,
+        output_path: "build/AutoClicker.zip",
         verbose: true
       )
-
-      unless File.exist?(output_archive_path)
-        UI.error("File does not exist: #{output_archive_path}")
-        raise "Exiting lane due to missing output archive!"
-      end
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
