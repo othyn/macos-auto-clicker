@@ -103,7 +103,7 @@ platform :mac do
 
       # https://docs.fastlane.tools/actions/zip
       zip(
-        path: "../build/AutoClicker.app",
+        path: "build/AutoClicker.app",
         output_path: output_archive_path,
         verbose: true
       )
