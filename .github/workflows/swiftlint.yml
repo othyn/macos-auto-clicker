@@ -27,8 +27,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       # - name: SwiftLint
       #   uses: norio-nomura/action-swiftlint@3.2.1
       # Okay this (strict mode) does work and I do prefer it, as it will fail the run if the code is not validating
@@ -36,6 +39,7 @@ jobs:
       #  see what is wrong, under the PR go to the 'Files changed' tab, then scroll right to the bottom in which there
       #  is a sub-heading 'Unchanged files with check annotations (Beta)' in which I really wish these annotations were
       #  placed onto the main PR page.
+
       - name: SwiftLint (Strict)
         uses: norio-nomura/action-swiftlint@3.2.1
         with:
