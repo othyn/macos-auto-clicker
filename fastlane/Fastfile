@@ -17,7 +17,7 @@ platform :mac do
 
     # https://docs.fastlane.tools/actions/sh/#sh
     # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-    sh "sudo ../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+    sh "sudo ../node_modules/.bin/create-dmg ../macos-auto-clicker/build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
       # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
       #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
       # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
@@ -96,7 +96,7 @@ platform :mac do
 
       # https://docs.fastlane.tools/actions/sh/#sh
       # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-      sh "sudo ../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+      sh "sudo ../node_modules/.bin/create-dmg ../macos-auto-clicker/build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
         # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
         #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
         # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
@@ -200,7 +200,7 @@ platform :mac do
 
       # https://docs.fastlane.tools/actions/sh/#sh
       # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-      sh "sudo ../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
+      sh "sudo ../node_modules/.bin/create-dmg ../macos-auto-clicker/build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
         # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
         #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
         # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
