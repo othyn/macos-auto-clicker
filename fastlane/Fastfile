@@ -65,7 +65,7 @@ platform :mac do
     commit_version_bump(
       message: "chore: Fastlane automated version bump (beta)",
       xcodeproj: "auto-clicker.xcodeproj",
-      include: %w[Gemfile.lock yarn.lock]
+      include: %w[Gemfile.lock]
     )
 
     # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
@@ -186,7 +186,7 @@ platform :mac do
     commit_version_bump(
       message: "chore: Fastlane automated version bump",
       xcodeproj: "auto-clicker.xcodeproj",
-      include: %w[Gemfile.lock yarn.lock README.md]
+      include: %w[Gemfile.lock README.md]
     )
 
     # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
@@ -245,7 +245,7 @@ platform :mac do
         description: notes,
         commitish: "main",
         upload_assets: [
-          "build/AutoClicker #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}.dmg",
+          "build/AutoClicker.dmg",
           "build/AutoClicker.app.dSYM.zip"
         ]
       )
