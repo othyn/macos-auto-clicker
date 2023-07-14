@@ -15,16 +15,13 @@ platform :mac do
       export_method: "mac-application"
     )
 
-    # https://docs.fastlane.tools/actions/sh/#sh
-    # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-    sh "../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
-      # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
-      #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
-      # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
-      #  but this does not appear to be possible
-      print(result)
-      error_occurred = false
-    }
+    # https://github.com/advoryanskiy/fastlane-plugin-dmg
+    dmg(path: "../build/AutoClicker.app",         # required
+        output_path: "../build/AutoClicker.dmg",  # optional, by default will be at the same location as 'myapp' folder
+        volume_name: "AutoClicker",               # optional, by default will be the same as input folder name
+        filesystem: "hfs+",                       # optional, default is 'hfs+'
+        format: "udzo",                           # optional, default is 'udzo'
+        create_applications_symlink: true)        # optional, default is true
   end
 
   lane :beta do
@@ -94,16 +91,13 @@ platform :mac do
         }
       )
 
-      # https://docs.fastlane.tools/actions/sh/#sh
-      # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-      sh "../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
-        # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
-        #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
-        # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
-        #  but this does not appear to be possible
-        print(result)
-        error_occurred = false
-      }
+      # https://github.com/advoryanskiy/fastlane-plugin-dmg
+      dmg(path: "../build/AutoClicker.app",         # required
+          output_path: "../build/AutoClicker.dmg",  # optional, by default will be at the same location as 'myapp' folder
+          volume_name: "AutoClicker",               # optional, by default will be the same as input folder name
+          filesystem: "hfs+",                       # optional, default is 'hfs+'
+          format: "udzo",                           # optional, default is 'udzo'
+          create_applications_symlink: true)        # optional, default is true
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
@@ -115,7 +109,7 @@ platform :mac do
         is_prerelease: true,
         commitish: "main",
         upload_assets: [
-          "build/AutoClicker v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}.dmg",
+          "build/AutoClicker.dmg",
           "build/AutoClicker.app.dSYM.zip"
         ]
       )
@@ -198,16 +192,13 @@ platform :mac do
         }
       )
 
-      # https://docs.fastlane.tools/actions/sh/#sh
-      # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-      sh "../node_modules/.bin/create-dmg ../build/AutoClicker.app --overwrite ../build", log: true, error_callback: -> (result) {
-        # As the code signing will fail, it will respond with an exit code of 2 instead of a success of 0,
-        #  which fastlane will flag as an error. However if the DMG fails to build, it will be an exit code of 1.
-        # It would be great if I could check the exit code and only flag as no error if the exit code is 2,
-        #  but this does not appear to be possible
-        print(result)
-        error_occurred = false
-      }
+      # https://github.com/advoryanskiy/fastlane-plugin-dmg
+      dmg(path: "../build/AutoClicker.app",         # required
+          output_path: "../build/AutoClicker.dmg",  # optional, by default will be at the same location as 'myapp' folder
+          volume_name: "AutoClicker",               # optional, by default will be the same as input folder name
+          filesystem: "hfs+",                       # optional, default is 'hfs+'
+          format: "udzo",                           # optional, default is 'udzo'
+          create_applications_symlink: true)        # optional, default is true
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
@@ -218,7 +209,7 @@ platform :mac do
         description: notes,
         commitish: "main",
         upload_assets: [
-          "build/AutoClicker #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}.dmg",
+          "build/AutoClicker.dmg",
           "build/AutoClicker.app.dSYM.zip"
         ]
       )
