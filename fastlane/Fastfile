@@ -99,6 +99,10 @@ platform :mac do
         }
       )
 
+      # Debugging
+      sh "ls", "-lah", "../build"
+      sh "ls", "-lah", "/Volumes"
+
       # https://docs.fastlane.tools/actions/sh/#sh
       # https://docs.fastlane.tools/advanced/actions/#using-the-sh-method
       # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
@@ -112,6 +116,10 @@ platform :mac do
         UI.message "Output is #{result.inspect}"
         return status.exitstatus
       end
+
+      # Debugging
+      sh "ls", "-lah", "../build"
+      sh "ls", "-lah", "/Volumes"
 
       # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
       set_github_release(
