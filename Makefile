@@ -4,6 +4,7 @@ setup:
 
 # https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile
 # https://docs.fastlane.tools/plugins/using-plugins/
+# This may not work due to permissions, so use `$ fastlane update` which calls `brew` under the hood
 .PHONY: update
 update:
 	sudo bundle update fastlane
