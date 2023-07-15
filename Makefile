@@ -19,4 +19,4 @@ beta:
 
 .PHONY: prod
 prod:
-	bundle exec fastlane mac release
+	bundle exec fastlane mac production

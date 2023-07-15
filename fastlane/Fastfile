@@ -2,38 +2,8 @@ default_platform(:mac)
 
 # https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
 platform :mac do
-  lane :local do
-    desc "Build the release a local version of the Auto Clicker app"
-
-    # https://docs.fastlane.tools/actions/build_mac_app/#parameters
-    gym(
-      scheme: "auto-clicker",
-      workspace: "auto-clicker.xcworkspace",
-      clean: true,
-      output_directory: "build",
-      output_name: "AutoClicker",
-      export_method: "mac-application"
-    )
-
-    # https://docs.fastlane.tools/actions/sh/#sh
-    # https://docs.fastlane.tools/advanced/actions/#using-the-sh-method
-    # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-    # https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/helper/sh_helper.rb#L60
-    # https://github.com/advoryanskiy/fastlane-plugin-dmg/pull/8/files#diff-3dea31081a0536cea09f436f364f5ce26853b49a023ac8b9836f64920e038cadR33
-    sh "sudo", "../node_modules/.bin/create-dmg", "../build/AutoClicker.app", "--overwrite", "../build" do |status, result, command|
-      error_occurred = false
-
-      unless status.exitstatus == 0 || status.exitstatus == 2
-        UI.error "Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}"
-        error_occurred = true
-      end
-
-      UI.message "Output is #{result.inspect}"
-    end
-  end
-
   lane :beta do
-    desc "Build the release a beta version of the Auto Clicker app"
+    desc "Build a beta release version"
 
     # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
     # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
@@ -41,92 +11,17 @@ platform :mac do
 
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release
-    isReleasable = analyze_commits(
-      match: 'beta*'
-    )
-
-    # https://docs.fastlane.tools/plugins/available-plugins/#versioning
-    # https://github.com/SiarheiFedartsou/fastlane-plugin-versioning
-    increment_version_number_in_xcodeproj(
-      version_number: "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}"
-    )
-
-    # https://docs.fastlane.tools/actions/build_mac_app/#parameters
-    gym(
-      scheme: "auto-clicker",
-      workspace: "auto-clicker.xcworkspace",
-      clean: true,
-      output_directory: "build",
-      output_name: "AutoClicker",
-      export_method: "mac-application"
-    )
-
-    # https://docs.fastlane.tools/actions/commit_version_bump/
-    commit_version_bump(
-      message: "chore: Fastlane automated version bump (beta)",
-      xcodeproj: "auto-clicker.xcodeproj",
-      include: %w[Gemfile.lock]
-    )
-
-    # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
-    push_to_git_remote
+    isReleasable = analyze_commits(match: 'beta*')
 
     if isReleasable
-      # https://docs.fastlane.tools/actions/add_git_tag/#add_git_tag
-      add_git_tag(
-        tag: "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}"
-      )
-
-      # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
-      push_to_git_remote
-
-      # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
-      # https://github.com/xotahal/fastlane-plugin-semantic_release
-      notes = conventional_changelog(
-        format: 'markdown',
-        title: 'macOS Auto Clicker',
-        display_title: false,
-        commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
-        sections: {
-          feat: ":star2: Features",
-          fix: ":bug: Bug Fixes",
-          refactor: ":recycle: Code Refactoring",
-          perf: ":rocket: Performance Improvements",
-          chore: ":wrench: Chores",
-          test: ":vertical_traffic_light: Testing",
-          docs: ":book: Documentation",
-          no_type: ":ghost: Unknown... spooky!"
-        }
-      )
-
-      # https://docs.fastlane.tools/actions/zip
-      output_archive_path = zip(
-        path: "build/AutoClicker.app",
-        output_path: "build/AutoClicker.zip",
-        verbose: true
-      )
-
-      # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
-      set_github_release(
-        repository_name: "othyn/macos-auto-clicker",
-        api_bearer: ENV["GITHUB_TOKEN"],
-        name: "Beta Release #{lane_context[SharedValues::RELEASE_NEXT_VERSION]} (#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]})",
-        tag_name: "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}",
-        description: notes,
-        is_prerelease: true,
-        commitish: "main",
-        upload_assets: [
-          output_archive_path,
-          "build/AutoClicker.app.dSYM.zip"
-        ]
-      )
+      build_and_zip("Beta Release", true)
     else
-      print("Not flagged as a release candiate, doing nothing.")
+      print("Not flagged as a release candidate, skipping the beta release.")
     end
   end
 
-  lane :release do
-    desc "Build the release a production version of the Auto Clicker app"
+  lane :production do
+    desc "Build a production release version"
 
     # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
     # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
@@ -134,102 +29,89 @@ platform :mac do
 
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release
-    isReleasable = analyze_commits(
-      match: 'v*'
-    )
-
-    # https://docs.fastlane.tools/plugins/available-plugins/#versioning
-    # https://github.com/SiarheiFedartsou/fastlane-plugin-versioning
-    increment_version_number_in_xcodeproj(
-      version_number: lane_context[SharedValues::RELEASE_NEXT_VERSION] # Automatically increment minor version number
-    )
-
-    # https://docs.fastlane.tools/actions/build_mac_app/#parameters
-    gym(
-      scheme: "auto-clicker",
-      workspace: "auto-clicker.xcworkspace",
-      clean: true,
-      output_directory: "build",
-      output_name: "AutoClicker",
-      export_method: "mac-application"
-    )
-
-    # https://github.com/jonathanneilritchie/fastlane-plugin-find_replace_string
-    find_replace_string(
-      path_to_file: "README.md",
-      old_string: "#{lane_context[SharedValues::RELEASE_LAST_VERSION]}",
-      new_string: "#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}",
-    )
-
-    # https://docs.fastlane.tools/actions/commit_version_bump/
-    commit_version_bump(
-      message: "chore: Fastlane automated version bump",
-      xcodeproj: "auto-clicker.xcodeproj",
-      include: %w[Gemfile.lock README.md]
-    )
-
-    # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
-    push_to_git_remote
+    isReleasable = analyze_commits(match: 'v*')
 
     if isReleasable
-      # https://docs.fastlane.tools/actions/add_git_tag/#add_git_tag
-      add_git_tag(
-        tag: "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}"
-      )
-
-      # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
-      push_to_git_remote
-
-      # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
-      # https://github.com/xotahal/fastlane-plugin-semantic_release
-      notes = conventional_changelog(
-        format: 'markdown',
-        title: 'macOS Auto Clicker',
-        display_title: false,
-        commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
-        sections: {
-          feat: ":star2: Features",
-          fix: ":bug: Bug Fixes",
-          refactor: ":recycle: Code Refactoring",
-          perf: ":rocket: Performance Improvements",
-          chore: ":wrench: Chores",
-          test: ":vertical_traffic_light: Testing",
-          docs: ":book: Documentation",
-          no_type: ":ghost: Unknown... spooky!"
-        }
-      )
-
-      # https://docs.fastlane.tools/actions/sh/#sh
-      # https://docs.fastlane.tools/advanced/actions/#using-the-sh-method
-      # https://docs.fastlane.tools/advanced/fastlane/#directory-behavior
-      # https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/helper/sh_helper.rb#L60
-      # https://github.com/advoryanskiy/fastlane-plugin-dmg/pull/8/files#diff-3dea31081a0536cea09f436f364f5ce26853b49a023ac8b9836f64920e038cadR33
-      sh "sudo", "../node_modules/.bin/create-dmg", "../build/AutoClicker.app", "--overwrite", "../build" do |status, result, command|
-        error_occurred = false
-
-        unless status.exitstatus == 0 || status.exitstatus == 2
-          UI.error "Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}"
-          error_occurred = true
-        end
-
-        UI.message "Output is #{result.inspect}"
-      end
-
-      # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
-      set_github_release(
-        repository_name: "othyn/macos-auto-clicker",
-        api_bearer: ENV["GITHUB_TOKEN"],
-        name: "Release #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}",
-        tag_name: "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}",
-        description: notes,
-        commitish: "main",
-        upload_assets: [
-          "build/AutoClicker.dmg",
-          "build/AutoClicker.app.dSYM.zip"
-        ]
-      )
+      build_and_zip("Release", false)
     else
-      print("Not flagged as a release candiate, doing nothing.")
+      print("Not flagged as a release candidate, skipping the production release.")
     end
   end
+end
+
+def build_and_zip(tag_prefix, is_beta)
+  # https://docs.fastlane.tools/plugins/available-plugins/#versioning
+  # https://github.com/SiarheiFedartsou/fastlane-plugin-versioning
+  increment_version_number_in_xcodeproj(
+    version_number: is_beta ? "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : lane_context[SharedValues::RELEASE_NEXT_VERSION]
+  )
+
+  # https://docs.fastlane.tools/actions/build_mac_app/#parameters
+  gym(
+    scheme: "auto-clicker",
+    workspace: "auto-clicker.xcworkspace",
+    clean: true,
+    output_directory: "build",
+    output_name: "AutoClicker",
+    export_method: "mac-application"
+  )
+
+  # https://docs.fastlane.tools/actions/commit_version_bump/
+  commit_version_bump(
+    message: "chore: Fastlane automated version bump#{is_beta ? ' (beta)' : ''}",
+    xcodeproj: "auto-clicker.xcodeproj",
+    include: %w[Gemfile.lock]
+  )
+
+  # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
+  push_to_git_remote
+
+  # https://docs.fastlane.tools/actions/add_git_tag/#add_git_tag
+  add_git_tag(
+    tag: is_beta ? "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}"
+  )
+
+  # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
+  push_to_git_remote
+
+  # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
+  # https://github.com/xotahal/fastlane-plugin-semantic_release
+  notes = conventional_changelog(
+    format: 'markdown',
+    title: 'macOS Auto Clicker',
+    display_title: false,
+    commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
+    sections: {
+      feat: ":star2: Features",
+      fix: ":bug: Bug Fixes",
+      refactor: ":recycle: Code Refactoring",
+      perf: ":rocket: Performance Improvements",
+      chore: ":wrench: Chores",
+      test: ":vertical_traffic_light: Testing",
+      docs: ":book: Documentation",
+      no_type: ":ghost: Unknown... spooky!"
+    }
+  )
+
+  # https://docs.fastlane.tools/actions/zip
+  output_archive_path = zip(
+    path: "build/AutoClicker.app",
+    output_path: "build/AutoClicker.zip",
+    verbose: true
+  )
+
+  # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
+  set_github_release(
+    repository_name: "othyn/macos-auto-clicker",
+    api_bearer: ENV["GITHUB_TOKEN"],
+    name: "#{tag_prefix} #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}#{is_beta ? " (#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]})" : ""}",
+    tag_name: "#{is_beta ? "beta/" : ""}v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}#{is_beta ? "/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : ""}",
+    description: notes,
+    is_prerelease: is_beta,
+    commitish: "main",
+    upload_assets: [
+      output_archive_path,
+      "build/AutoClicker.app.dSYM.zip"
+    ]
+  )
 end
