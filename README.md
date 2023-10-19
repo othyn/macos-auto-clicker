@@ -1,7 +1,7 @@
 <div align="center">
     <img src="art/icon/Icon-1024.png" alt="logo" width="250" height="auto" />
     <h1>Auto Clicker for macOS</h1>
-    <p>A simple auto clicker for macOS Big Sur (11), Monterey (12) and Ventura (13) built with ♥️ in Swift & SwiftUI.</p>
+    <p>A simple auto clicker for macOS Big Sur (11), Monterey (12), Ventura (13) and Sonoma (14) built with ♥️ in Swift & SwiftUI.</p>
 </div>
 
 <div align="center">
@@ -108,7 +108,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 ## :floppy_disk: Download
 
-Download for macOS Ventura (13) and higher: [v1.7.21](https://github.com/othyn/macos-auto-clicker/releases/download/v1.7.21/AutoClicker.zip)
+Download for macOS Ventura (13), Sonoma (14) and higher: [v1.7.21](https://github.com/othyn/macos-auto-clicker/releases/download/v1.7.21/AutoClicker.zip)
 
 Download for macOS Big Sur (11) or Monterey (12): [v1.6.1](https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg)
 
