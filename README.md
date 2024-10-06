@@ -110,11 +110,37 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 Download for macOS Ventura (13), Sonoma (14), Sequoia (15) and higher: [v1.7.22](https://github.com/othyn/macos-auto-clicker/releases/download/v1.7.22/AutoClicker.zip)
 
+**Known Issue:** v1.7.22 currently has no working 'Launch at Login' support due to dependency changes, I'm working on a fix.
+
 Download for macOS Big Sur (11) or Monterey (12): [v1.6.1](https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg)
 
-**When first using the app, you will need to right click the app and click 'Open', then on the macOS popup window select 'Open' again to trust this version of the app going forward.** This is as at the moment I don't have a paid Apple developer account in order to notarize the app.
+### Using the app for the first time
 
-**When updating the app, does the permission screen get stuck even though you've given it permission?** There can sometimes be an issue with this, I'm not entirely sure why this occurs, as the bundle identifier for the app remains the same and therefor the granted permissions shouldn't either. MacOS gets 'stuck' thinking the app has permissions when it doesn't and so the permission splash screen for the app will never go away. **To fix it,** click the minus button at the bottom of the list of apps under macOS's Accessibility settings where Auto Clicker is listed to manually remove Auto Clicker from the list of permitted apps. Close Auto Clicker and re-open it and grant it access once again, which should fix the issue. [More detail can be found in the thread for Issue #64](https://github.com/othyn/macos-auto-clicker/issues/64#issuecomment-1615933048).
+When first using the app, you will need to right click the app and click 'Open', then on the macOS popup window select 'Open' again to trust this version of the app going forward.** This is as at the moment I don't have a paid Apple developer account in order to notarize the app.
+
+#### First time use for macOS Sequoia (15) users
+
+If you are using macOS Sequoia, there are increased barriers in place to stop you running un-notarized apps. To open the app you will need to do the following;
+
+1. Try to open the app, and when presented with the options to 'Move to trash' or otherwise, close out of that prompt.
+2. Head over to System Settings > Privacy & Security > Security, and scroll all the way at the bottom, you should see the following:
+
+<div align=center>
+    <img width="75%" src="art/ref/readme_macOS_sequoia_settings.png"/>
+</div>
+
+3. Click on the 'Open Anyway' button.
+4. When prompted with the following dialogue, click 'Open Anyway':
+
+<div align=center>
+    <img width="50%" src="art/ref/readme_macOS_sequoia_prompt.png"/>
+</div>
+
+5. Head back to the AutoClicker app and try opening it again, it should now work as normal.
+
+### When updating the app, does the permission screen get stuck even though you've given it permission?
+
+There can sometimes be an issue with this, I'm not entirely sure why this occurs, as the bundle identifier for the app remains the same and therefor the granted permissions shouldn't either. MacOS gets 'stuck' thinking the app has permissions when it doesn't and so the permission splash screen for the app will never go away. **To fix it,** click the minus button at the bottom of the list of apps under macOS's Accessibility settings where Auto Clicker is listed to manually remove Auto Clicker from the list of permitted apps. Close Auto Clicker and re-open it and grant it access once again, which should fix the issue. [More detail can be found in the thread for Issue #64](https://github.com/othyn/macos-auto-clicker/issues/64#issuecomment-1615933048).
 
 **For more downloads**, checkout the [releases page](https://github.com/othyn/macos-auto-clicker/releases) for app downloads of any version you want to use, even pre-release builds too.
 
