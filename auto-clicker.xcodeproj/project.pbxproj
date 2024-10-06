@@ -777,6 +777,7 @@
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "auto-clicker/Build Assets/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Auto Clicker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -808,6 +809,7 @@
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "auto-clicker/Build Assets/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Auto Clicker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
