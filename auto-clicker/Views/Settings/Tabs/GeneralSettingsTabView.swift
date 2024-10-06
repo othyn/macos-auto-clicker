@@ -11,8 +11,6 @@ import Defaults
 import LaunchAtLogin
 
 struct GeneralSettingsTabView: View {
-    @ObservedObject private var launchAtLogin = LaunchAtLogin.observable
-
     @Default(.menuBarShowIcon) private var menuBarShowIcon
     @Default(.appShouldQuitOnClose) private var appShouldQuitOnClose
 
@@ -32,7 +30,7 @@ struct GeneralSettingsTabView: View {
                 help: "settings_general_launch_on_login_help",
                 divider: true
             ) {
-                Toggle(isOn: $launchAtLogin.isEnabled) {
+                LaunchAtLogin.Toggle {
                     Text(" " + String(format: NSLocalizedString("settings_general_launch_on_login", comment: "App should launch at login toggle")))
                 }
             }

@@ -29,7 +29,6 @@
 		B510763727FF81A000BB1CDA /* PressKeyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763627FF81A000BB1CDA /* PressKeyListener.swift */; };
 		B510763B2800DDFF00BB1CDA /* NSEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */; };
 		B5107640280113DB00BB1CDA /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763F280113DB00BB1CDA /* Input.swift */; };
-		B52C0507290D689600ECB0EE /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B52C0506290D689600ECB0EE /* LaunchAtLogin */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
@@ -38,6 +37,7 @@
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
 		B5462E742A6173D400C5F280 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5462E732A6173D400C5F280 /* AboutView.swift */; };
 		B5462E762A61761000C5F280 /* Bundle+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5462E752A61761000C5F280 /* Bundle+AppInfo.swift */; };
+		B5A042552CB298CC000A1E39 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B5A042542CB298CC000A1E39 /* LaunchAtLogin */; };
 		B5B0B2AF2882EE6E00462F11 /* ACWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */; };
 		B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46228032D3200C779FD /* PermissionsView.swift */; };
 		B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46428033A0F00C779FD /* PermissionsService.swift */; };
@@ -152,7 +152,7 @@
 			files = (
 				B510762827F4BD5500BB1CDA /* Defaults in Frameworks */,
 				B510760927F4A21500BB1CDA /* DateStrings in Frameworks */,
-				B52C0507290D689600ECB0EE /* LaunchAtLogin in Frameworks */,
+				B5A042552CB298CC000A1E39 /* LaunchAtLogin in Frameworks */,
 				B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +431,7 @@
 				B510760827F4A21500BB1CDA /* DateStrings */,
 				B510760B27F4A23300BB1CDA /* KeyboardShortcuts */,
 				B510762727F4BD5500BB1CDA /* Defaults */,
-				B52C0506290D689600ECB0EE /* LaunchAtLogin */,
+				B5A042542CB298CC000A1E39 /* LaunchAtLogin */,
 			);
 			productName = "auto-clicker";
 			productReference = B53BDC4C264BED93001F8E57 /* AutoClicker.app */;
@@ -465,7 +465,7 @@
 				B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */,
 				B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */,
-				B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				B5A042532CB298CC000A1E39 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = B53BDC4D264BED93001F8E57 /* Products */;
 			projectDirPath = "";
@@ -872,12 +872,12 @@
 				version = 6.2.1;
 			};
 		};
-		B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+		B5A042532CB298CC000A1E39 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
 			requirement = {
 				kind = exactVersion;
-				version = 4.2.0;
+				version = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -898,9 +898,9 @@
 			package = B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
 		};
-		B52C0506290D689600ECB0EE /* LaunchAtLogin */ = {
+		B5A042542CB298CC000A1E39 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			package = B5A042532CB298CC000A1E39 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
