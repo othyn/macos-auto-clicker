@@ -110,9 +110,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 **Download for macOS Ventura (13), Sonoma (14), Sequoia (15) and higher:** [v1.7.22](https://github.com/othyn/macos-auto-clicker/releases/download/v1.7.22/AutoClicker.zip)
 
-**Known Issue:** v1.7.22 currently has no working 'Launch at Login' support due to dependency changes, I'm working on a fix.
-
-**Download for macOS Big Sur (11) or Monterey (12):** [v1.6.1](https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg)
+**Legacy download for macOS Big Sur (11) or Monterey (12):** [v1.6.1](https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg)
 
 ### Using the app for the first time
 
