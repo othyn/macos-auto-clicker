@@ -133,7 +133,7 @@ If you are using macOS Sequoia, there are increased barriers in place to stop yo
 4. When prompted with the following dialogue, click 'Open Anyway':
 
 <div align=center>
-    <img width="50%" src="art/ref/readme_macOS_sequoia_prompt.png"/>
+    <img width="25%" src="art/ref/readme_macOS_sequoia_prompt.png"/>
 </div>
 
 5. Head back to the AutoClicker app and try opening it again, it should now work as normal.
