@@ -418,7 +418,6 @@
 				B53BDC48264BED93001F8E57 /* Sources */,
 				B53BDC49264BED93001F8E57 /* Frameworks */,
 				B53BDC4A264BED93001F8E57 /* Resources */,
-				B52C0508290D68ED00ECB0EE /* Copy “Launch at Login Helper” */,
 				B5FEAF342811D25B0099AAA7 /* Increment Build */,
 				B510762E27F4E72500BB1CDA /* Run Swiftlint */,
 				B5B6B466280345A700C779FD /* Reset Accessibility Permissions */,
@@ -510,25 +509,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download via: brew install swiftlint\"\nfi\n";
-		};
-		B52C0508290D68ED00ECB0EE /* Copy “Launch at Login Helper” */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy “Launch at Login Helper”";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# https://github.com/sindresorhus/LaunchAtLogin#swift-package-manager-1\n# \"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
 		};
 		B5B6B466280345A700C779FD /* Reset Accessibility Permissions */ = {
 			isa = PBXShellScriptBuildPhase;
