@@ -6,8 +6,9 @@ platform :mac do
     desc "Build a beta release version"
 
     # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
-    # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
-    xcode_select "/Applications/Xcode_14.3.1.app"
+    # https://github.com/actions/runner-images/tree/main/images/macos
+    # https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md
+    xcode_select "/Applications/Xcode_16.app"
 
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release
@@ -24,8 +25,9 @@ platform :mac do
     desc "Build a production release version"
 
     # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
-    # https://github.com/actions/runner-images/blob/macos-13/20230611.2/images/macos/macos-13-Readme.md#xcode
-    xcode_select "/Applications/Xcode_14.3.1.app"
+    # https://github.com/actions/runner-images/tree/main/images/macos
+    # https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md
+    xcode_select "/Applications/Xcode_16.app"
 
     # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
     # https://github.com/xotahal/fastlane-plugin-semantic_release
