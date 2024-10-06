@@ -528,7 +528,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# https://github.com/sindresorhus/LaunchAtLogin#swift-package-manager-1\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+			shellScript = "# https://github.com/sindresorhus/LaunchAtLogin#swift-package-manager-1\n# \"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
 		};
 		B5B6B466280345A700C779FD /* Reset Accessibility Permissions */ = {
 			isa = PBXShellScriptBuildPhase;
