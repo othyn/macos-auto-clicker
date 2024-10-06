@@ -153,6 +153,9 @@ The build process has been automated to provide beta integration builds and prod
 To locally test the fastlane build, run:
 
 ```sh
+# Local release lane (current branch)
+$ fastlane local
+
 # Beta release lane (staging branch)
 $ fastlane beta
 

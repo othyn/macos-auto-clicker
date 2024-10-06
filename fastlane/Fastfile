@@ -2,6 +2,15 @@ default_platform(:mac)
 
 # https://docs.fastlane.tools/actions/build_mac_app/#automating-the-whole-process
 platform :mac do
+  lane :local do
+    desc "Build a local release version"
+
+    # https://docs.fastlane.tools/actions/xcode_select/#xcode_select
+    xcode_select "/Applications/Xcode.app"
+
+    build_and_zip("Local Release", false, true)
+  end
+
   lane :beta do
     desc "Build a beta release version"
 
@@ -15,7 +24,7 @@ platform :mac do
     isReleasable = analyze_commits(match: 'beta*')
 
     if isReleasable
-      build_and_zip("Beta Release", true)
+      build_and_zip("Beta Release", true, false)
     else
       print("Not flagged as a release candidate, skipping the beta release.")
     end
@@ -34,19 +43,21 @@ platform :mac do
     isReleasable = analyze_commits(match: 'v*')
 
     if isReleasable
-      build_and_zip("Release", false)
+      build_and_zip("Release", false, false)
     else
       print("Not flagged as a release candidate, skipping the production release.")
     end
   end
 end
 
-def build_and_zip(tag_prefix, is_beta)
+def build_and_zip(tag_prefix, is_beta, is_local)
   # https://docs.fastlane.tools/plugins/available-plugins/#versioning
   # https://github.com/SiarheiFedartsou/fastlane-plugin-versioning
-  increment_version_number_in_xcodeproj(
-    version_number: is_beta ? "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : lane_context[SharedValues::RELEASE_NEXT_VERSION]
-  )
+  unless is_local
+    increment_version_number_in_xcodeproj(
+      version_number: is_beta ? "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}-beta-#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : lane_context[SharedValues::RELEASE_NEXT_VERSION]
+    )
+  end
 
   # https://docs.fastlane.tools/actions/build_mac_app/#parameters
   gym(
@@ -58,7 +69,7 @@ def build_and_zip(tag_prefix, is_beta)
     export_method: "mac-application"
   )
 
-  unless is_beta
+  unless is_beta or is_local
     # https://github.com/jonathanneilritchie/fastlane-plugin-find_replace_string
     find_replace_string(
       path_to_file: "README.md",
@@ -67,42 +78,44 @@ def build_and_zip(tag_prefix, is_beta)
     )
   end
 
-  # https://docs.fastlane.tools/actions/commit_version_bump/
-  commit_version_bump(
-    message: "chore: Fastlane automated version bump#{is_beta ? ' (beta)' : ''}",
-    xcodeproj: "auto-clicker.xcodeproj",
-    include: %w[Gemfile.lock README.md]
-  )
+  unless is_local
+    # https://docs.fastlane.tools/actions/commit_version_bump/
+    commit_version_bump(
+      message: "chore: Fastlane automated version bump#{is_beta ? ' (beta)' : ''}",
+      xcodeproj: "auto-clicker.xcodeproj",
+      include: %w[Gemfile.lock README.md]
+    )
 
-  # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
-  push_to_git_remote
+    # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
+    push_to_git_remote
 
-  # https://docs.fastlane.tools/actions/add_git_tag/#add_git_tag
-  add_git_tag(
-    tag: is_beta ? "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}"
-  )
+    # https://docs.fastlane.tools/actions/add_git_tag/#add_git_tag
+    add_git_tag(
+      tag: is_beta ? "beta/v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : "v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}"
+    )
 
-  # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
-  push_to_git_remote
+    # https://docs.fastlane.tools/actions/push_to_git_remote/#push_to_git_remote
+    push_to_git_remote
 
-  # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
-  # https://github.com/xotahal/fastlane-plugin-semantic_release
-  notes = conventional_changelog(
-    format: 'markdown',
-    title: 'macOS Auto Clicker',
-    display_title: false,
-    commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
-    sections: {
-      feat: ":star2: Features",
-      fix: ":bug: Bug Fixes",
-      refactor: ":recycle: Code Refactoring",
-      perf: ":rocket: Performance Improvements",
-      chore: ":wrench: Chores",
-      test: ":vertical_traffic_light: Testing",
-      docs: ":book: Documentation",
-      no_type: ":ghost: Unknown... spooky!"
-    }
-  )
+    # http://docs.fastlane.tools/plugins/available-plugins/#semantic_release
+    # https://github.com/xotahal/fastlane-plugin-semantic_release
+    notes = conventional_changelog(
+      format: 'markdown',
+      title: 'macOS Auto Clicker',
+      display_title: false,
+      commit_url: 'https://github.com/othyn/macos-auto-clicker/commit',
+      sections: {
+        feat: ":star2: Features",
+        fix: ":bug: Bug Fixes",
+        refactor: ":recycle: Code Refactoring",
+        perf: ":rocket: Performance Improvements",
+        chore: ":wrench: Chores",
+        test: ":vertical_traffic_light: Testing",
+        docs: ":book: Documentation",
+        no_type: ":ghost: Unknown... spooky!"
+      }
+    )
+  end
 
   # https://docs.fastlane.tools/actions/zip
   output_archive_path = zip(
@@ -112,17 +125,19 @@ def build_and_zip(tag_prefix, is_beta)
   )
 
   # https://docs.fastlane.tools/actions/set_github_release/#set_github_release
-  set_github_release(
-    repository_name: "othyn/macos-auto-clicker",
-    api_bearer: ENV["GITHUB_TOKEN"],
-    name: "#{tag_prefix} #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}#{is_beta ? " (#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]})" : ""}",
-    tag_name: "#{is_beta ? "beta/" : ""}v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}#{is_beta ? "/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : ""}",
-    description: notes,
-    is_prerelease: is_beta,
-    commitish: "main",
-    upload_assets: [
-      output_archive_path,
-      "build/AutoClicker.app.dSYM.zip"
-    ]
-  )
+  unless is_local
+    set_github_release(
+      repository_name: "othyn/macos-auto-clicker",
+      api_bearer: ENV["GITHUB_TOKEN"],
+      name: "#{tag_prefix} #{lane_context[SharedValues::RELEASE_NEXT_VERSION]}#{is_beta ? " (#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]})" : ""}",
+      tag_name: "#{is_beta ? "beta/" : ""}v#{lane_context[SharedValues::RELEASE_NEXT_VERSION]}#{is_beta ? "/#{lane_context[SharedValues::RELEASE_LAST_TAG_HASH]}" : ""}",
+      description: notes,
+      is_prerelease: is_beta,
+      commitish: "main",
+      upload_assets: [
+        output_archive_path,
+        "build/AutoClicker.app.dSYM.zip"
+      ]
+    )
+  end
 end
