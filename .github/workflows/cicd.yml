@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     name: Build & Release
-    runs-on: macos-13
+    runs-on: macos-15
 
     steps:
       - name: Checkout Repo
