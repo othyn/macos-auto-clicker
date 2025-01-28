@@ -35,7 +35,7 @@ struct PressKeyListenerModal: View {
             return
         }
 
-        if input.keyCode != kVK_Escape || (input.keyCode == kVK_Escape && self.escapeKeyStreak > 1) {
+        if (input.keyCode != kVK_Escape || (input.keyCode == kVK_Escape && self.escapeKeyStreak > 1)) && !input.readable.isEmpty {
             self.formState.pressInput = input
 
             self.escapeKeyStreak = 0
