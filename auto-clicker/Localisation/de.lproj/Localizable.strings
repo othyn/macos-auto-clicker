@@ -1,0 +1,107 @@
+"permissions_help_title" = "Benötigte Berechtigungen 🔐";
+"permissions_help_first_paragraph" = "macOS erfordert, dass dieser App Zugriffsberechtigungen gewährt werden, um die angegebenen Tasten oder Schaltflächen zu drücken.";
+"permissions_help_second_paragraph" = "Du solltest bereits von macOS aufgefordert worden sein, diese Berechtigungen zu gewähren. Falls nicht, hier ist ein praktischer Button, der dich dorthin führt:";
+"permissions_help_open_sys_pref_btn" = "Systemeinstellungen öffnen";
+"permissions_help_unlock_note" = "Die App wird automatisch innerhalb weniger Sekunden entsperrt, nachdem die Berechtigung erteilt wurde.";
+
+"about_about" = "Über";
+"about_url" = "https://github.com/othyn/macos-auto-clicker";
+"about_url_short" = "github.com/othyn/macos-auto-clicker";
+
+"main_window_comma" = ",";
+"main_window_full_stop" = ".";
+"main_window_every" = "Alle";
+"main_window_press" = "klicke";
+"main_window_time" = "mal";
+"main_window_times" = "mal";
+"main_window_repeat" = "wiederhole";
+"main_window_wait" = "Warte";
+"main_window_second" = "Sekunde";
+"main_window_seconds" = "Sekunden";
+"main_window_before_starting" = " vor dem Starten";
+"main_window_start_btn" = "STARTEN";
+"main_window_stop_btn" = "STOPPEN";
+"main_window_stat_box_next_press_at" = "NÄCHSTER KLICK UM";
+"main_window_stat_box_final_press_at" = "LETZTER KLICK UM";
+"main_window_repo_vanity" = "mit ♥️ von Othyn";
+
+"duration_milliseconds" = "Millisekunde(n)";
+"duration_seconds" = "Sekunde(n)";
+"duration_minutes" = "Minute(n)";
+"duration_hours" = "Stunde(n)";
+"duration_modal_cancel_button" = "Abbrechen";
+
+"key_listener_modal_press_prompt" = "Drücke deine gewünschte Taste...";
+"key_listener_modal_dismiss_key_prompt" = "Halte die Escape-Taste, wenn du fertig bist.";
+"key_listener_modal_dismiss_key_override" = "Um die Escape-Taste selbst zu verwenden, drücke sie zweimal.";
+
+"settings_general" = "Allgemein";
+"settings_keyboard_shortcuts" = "Tastenkürzel";
+"settings_window" = "Fenster";
+"settings_appearance" = "Erscheinungsbild";
+"settings_notifications" = "Benachrichtigungen";
+
+"settings_general_app_should_quit_on_close_title" = "Lebenszyklus";
+"settings_general_app_should_quit_on_close" = "App beim Schließen des Hauptfensters beenden";
+"settings_general_app_should_quit_on_close_help" = "Wenn das Hauptfenster der Anwendung geschlossen wird, beende die App, anstatt sie im Hintergrund laufen zu lassen (Standardverhalten von macOS).";
+
+"settings_general_launch_on_login" = "App beim macOS-Login starten";
+"settings_general_launch_on_login_help" = "Wenn du dich bei deinem macOS-Konto anmeldest, starte automatisch den Auto Clicker.";
+
+"settings_general_menu_bar_show_icon_title" = "Menüleiste";
+"settings_general_menu_bar_show_icon" = "Symbol in der Menüleiste anzeigen";
+"settings_general_menu_bar_show_icon_help" = "Immer ein Symbol in der macOS-Menüleiste anzeigen, von dem aus die App und die Schnellzugriffs-Funktionalitäten aufgerufen werden können.";
+
+"settings_general_menu_bar_show_dynamic_icon" = "Dynamisches Symbol in der Menüleiste anzeigen";
+"settings_general_menu_bar_show_dynamic_icon_help" = "Das Symbol in der Menüleiste wird basierend auf dem Status des Auto Clickers aktualisiert.\nOrange = Countdown bis zum Start\nGrün = Auto Clicker läuft";
+
+"settings_general_menu_bar_hide_dock" = "Dock-Symbol ausblenden";
+"settings_general_menu_bar_hide_dock_help" = "Anstatt die App aus dem Dock zu starten, wird die App aus der Menüleiste gestartet.";
+
+"settings_keyboard_shortcuts_title" = "Global";
+"settings_keyboard_shortcuts_start" = "Auto Clicker starten";
+"settings_keyboard_shortcuts_stop" = "Auto Clicker stoppen";
+"settings_keyboard_shortcuts_help" = "Globale Tastenkürzel zum Starten und Stoppen der Auto-Clicker-Funktion.";
+"settings_keyboard_shortcuts_help" = "Globale Tastenkürzel zum Starten und Stoppen der Auto-Clicker-Funktion.";
+
+"settings_general_notify_title" = "Benachrichtigen, wenn";
+"settings_general_notify_on_start" = "Auto Clicker startet";
+"settings_general_notify_on_finish" = "Auto Clicker endet";
+"settings_general_notify_help" = "Erhalte eine macOS-Benachrichtigung, wenn der Auto Clicker startet und/oder endet.";
+
+"settings_window_stay_ontop_title" = "Sichtbarkeit";
+"settings_window_stay_ontop" = "Hauptfenster immer oben halten";
+"settings_window_stay_ontop_help" = "Wenn du auf ein anderes Fenster klickst, definiert diese Einstellung, ob das Fenster hinter anderen Fenstern verschwindet (Standardverhalten von macOS) oder immer oben bleibt.";
+
+"help_commands_request_a_feature" = "Funktion anfordern...";
+"help_commands_report_a_bug" = "Problem melden...";
+
+"menu_bar_item_start" = "Jetzt starten";
+"menu_bar_item_stop" = "Jetzt stoppen";
+"menu_bar_item_hide_show_show" = "Einblenden";
+"menu_bar_item_hide_show_hide" = "Ausblenden";
+"menu_bar_item_preferences" = "Einstellungen...";
+"menu_bar_item_about" = "Über...";
+"menu_bar_item_quit" = "Beenden";
+
+"colour_black" = "Schwarz";
+"colour_blue" = "Blau";
+"colour_brown" = "Braun";
+"colour_cyan" = "Cyan";
+"colour_gray" = "Grau";
+"colour_green" = "Grün";
+"colour_indigo" = "Indigo";
+"colour_mint" = "Minze";
+"colour_orange" = "Orange";
+"colour_pink" = "Rosa";
+"colour_purple" = "Lila";
+"colour_red" = "Rot";
+"colour_teal" = "Türkis";
+"colour_white" = "Weiß";
+"colour_yellow" = "Gelb";
+
+"min: %lld, max: %lld" = "min: %lld, max: %lld";
+
+"left_mouse_click" = "Linke Maustaste";
+"right_mouse_click" = "Rechte Maustaste";
+"middle_mouse_click" = "Mittlere Maustaste";

@@ -101,3 +101,7 @@
 
 // NumberField (Legacy)
 "min: %lld, max: %lld" = "min: %lld, max: %lld";
+
+"left_mouse_click" = "Left Mouse";
+"right_mouse_click" = "Right Mouse";
+"middle_mouse_click" = "Middle Mouse";
