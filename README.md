@@ -108,7 +108,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 ## :floppy_disk: Download
 
-**Download for macOS Ventura (13), Sonoma (14), Sequoia (15) and higher:** [v1.7.26](https://github.com/othyn/macos-auto-clicker/releases/download/v1.7.26/AutoClicker.zip)
+**Download for macOS Ventura (13), Sonoma (14), Sequoia (15) and higher:** [v1.7.27](https://github.com/othyn/macos-auto-clicker/releases/download/v1.7.27/AutoClicker.zip)
 
 **Legacy download for macOS Big Sur (11) or Monterey (12):** [v1.6.1](https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg)
 
