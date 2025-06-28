@@ -7,8 +7,18 @@
 
 import Defaults
 
+enum IntervalMode: String, Codable, CaseIterable, Identifiable {
+    case staticInterval
+    case rangeInterval
+    
+    var id: String { self.rawValue }
+}
+
 struct FormState: Codable, Defaults.Serializable {
+    var intervalMode: IntervalMode // new: static or range
     var pressInterval: Int
+    var pressIntervalMin: Int? // new: for range
+    var pressIntervalMax: Int? // new: for range
     var pressIntervalDuration: Duration
     var pressInput: Input
     var pressAmount: Int
@@ -18,7 +28,10 @@ struct FormState: Codable, Defaults.Serializable {
 
 extension FormState {
     init() {
+        self.intervalMode = .staticInterval
         self.pressInterval = DEFAULT_PRESS_INTERVAL
+        self.pressIntervalMin = nil
+        self.pressIntervalMax = nil
         self.pressIntervalDuration = Duration.milliseconds
         self.pressInput = Input()
         self.pressAmount = DEFAULT_PRESS_AMOUNT
