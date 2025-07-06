@@ -27,9 +27,7 @@ struct NotificationsSettingsTabView: View {
                 }
             }
 
-            SettingsTabItemView(
-                help: "settings_general_notify_help"
-            ) {
+            SettingsTabItemView {
                 Defaults.Toggle(
                     " " + String(format: NSLocalizedString("settings_general_notify_on_finish", comment: "Notify on auto clicker finish toggle")),
                     key: .notifyOnFinish

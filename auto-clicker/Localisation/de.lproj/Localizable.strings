@@ -26,6 +26,10 @@
 "main_window_repo_vanity" = "mit ♥️ von Othyn";
 "main_window_to" = "bis";
 
+"interval_mode" = "";
+"static" = "Statisch";
+"range" = "Bereich";
+
 "duration_milliseconds" = "Millisekunde(n)";
 "duration_seconds" = "Sekunde(n)";
 "duration_minutes" = "Minute(n)";
@@ -37,7 +41,7 @@
 "key_listener_modal_dismiss_key_override" = "Um die Escape-Taste selbst zu verwenden, drücke sie zweimal.";
 
 "settings_general" = "Allgemein";
-"settings_keyboard_shortcuts" = "Tastenkürzel";
+"settings_shortcuts" = "Tastenkürzel";
 "settings_window" = "Fenster";
 "settings_appearance" = "Erscheinungsbild";
 "settings_notifications" = "Benachrichtigungen";
@@ -46,6 +50,7 @@
 "settings_general_app_should_quit_on_close" = "App beim Schließen des Hauptfensters beenden";
 "settings_general_app_should_quit_on_close_help" = "Wenn das Hauptfenster der Anwendung geschlossen wird, beende die App, anstatt sie im Hintergrund laufen zu lassen (Standardverhalten von macOS).";
 
+"settings_general_launch_on_login_title" = "Login-Start";
 "settings_general_launch_on_login" = "App beim macOS-Login starten";
 "settings_general_launch_on_login_help" = "Wenn du dich bei deinem macOS-Konto anmeldest, starte automatisch den Auto Clicker.";
 
@@ -63,12 +68,18 @@
 "settings_keyboard_shortcuts_start" = "Auto Clicker starten";
 "settings_keyboard_shortcuts_stop" = "Auto Clicker stoppen";
 "settings_keyboard_shortcuts_help" = "Globale Tastenkürzel zum Starten und Stoppen der Auto-Clicker-Funktion.";
-"settings_keyboard_shortcuts_help" = "Globale Tastenkürzel zum Starten und Stoppen der Auto-Clicker-Funktion.";
+
+"settings_mouse_movement_title" = "Mausaktivierung";
+"settings_mouse_movement_help" = "Starten/Stoppen wird automatisch aktiviert, wenn das Fenster nicht fokussiert ist.";
+"settings_mouse_movement_start_on_move" = "Auto Clicker starten bei Mausbewegung";
+"settings_mouse_movement_stop_on_move" = "Auto Clicker stoppen bei Mausbewegung";
+"settings_mouse_movement_threshold_title" = "Schwelle";
+"settings_mouse_movement_threshold_help" = "Die Entfernung, die die Maus bewegt werden muss, um die Maussteuerung auszulösen.";
+"settings_mouse_movement_threshold_pixels" = "Pixel";
 
 "settings_general_notify_title" = "Benachrichtigen, wenn";
 "settings_general_notify_on_start" = "Auto Clicker startet";
 "settings_general_notify_on_finish" = "Auto Clicker endet";
-"settings_general_notify_help" = "Erhalte eine macOS-Benachrichtigung, wenn der Auto Clicker startet und/oder endet.";
 
 "settings_window_stay_ontop_title" = "Sichtbarkeit";
 "settings_window_stay_ontop" = "Hauptfenster immer oben halten";

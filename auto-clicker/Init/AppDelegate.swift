@@ -27,6 +27,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         MenuBarService.refreshState()
 
         PermissionsService.acquireAccessibilityPrivileges()
+
+        // Initialize mouse start monitoring if enabled
+        if Defaults[.mouseStartOnMove] {
+            AutoClickSimulator.shared.startMouseStartMonitoring()
+        }
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

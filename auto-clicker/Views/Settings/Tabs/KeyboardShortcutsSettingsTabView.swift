@@ -7,13 +7,17 @@
 
 import SwiftUI
 import KeyboardShortcuts
+import Defaults
 
 struct KeyboardShortcutsSettingsTabView: View {
+    @Default(.mouseStartOnMove) private var mouseStartOnMove
+
     var body: some View {
         SettingsTabView {
             SettingsTabItemView(
                 title: "settings_keyboard_shortcuts_title",
-                help: "settings_keyboard_shortcuts_help"
+                help: "settings_keyboard_shortcuts_help",
+                divider: true
             ) {
                 KeyboardShortcuts.Recorder(
                     String(format: NSLocalizedString("settings_keyboard_shortcuts_start", comment: "Settings Keyboard Shortcut to Start the auto clicker")),
@@ -30,6 +34,49 @@ struct KeyboardShortcutsSettingsTabView: View {
                         MenuBarService.refreshState()
                     }
                 )
+            }
+
+            SettingsTabItemView(
+                title: "settings_mouse_movement_title",
+                help: "settings_mouse_movement_help"
+            ) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Defaults.Toggle(
+                        " " + String(format: NSLocalizedString("settings_mouse_movement_start_on_move", comment: "Start auto clicker when mouse moves toggle")),
+                        key: .mouseStartOnMove
+                    )
+
+                    Defaults.Toggle(
+                        " " + String(format: NSLocalizedString("settings_mouse_movement_stop_on_move", comment: "Stop auto clicker when mouse moves toggle")),
+                        key: .mouseStopOnMove
+                    )
+                }
+            }
+
+            SettingsTabItemView(
+                title: "settings_mouse_movement_threshold_title",
+                help: "settings_mouse_movement_threshold_help"
+            ) {
+                HStack {
+                     NumberField(
+                         text: "",
+                         min: MIN_MOUSE_MOVEMENT_THRESHOLD,
+                         max: MAX_MOUSE_MOVEMENT_THRESHOLD,
+                         number: Binding(
+                             get: { Defaults[.mouseDeltaThreshold] },
+                             set: { Defaults[.mouseDeltaThreshold] = $0 }
+                         )
+                     )
+
+                    Text("settings_mouse_movement_threshold_pixels")
+                }.frame(width: 120)
+            }
+        }
+        .onChange(of: mouseStartOnMove) { newValue in
+            if newValue {
+                AutoClickSimulator.shared.startMouseStartMonitoring()
+            } else {
+                AutoClickSimulator.shared.stopMouseStartMonitoring()
             }
         }
     }

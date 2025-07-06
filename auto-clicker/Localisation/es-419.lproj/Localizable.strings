@@ -24,6 +24,11 @@
 "main_window_stat_box_next_press_at"  = "PRÓXIMA PULSACIÓN EN";
 "main_window_stat_box_final_press_at" = "ÚLTIMA PULSACIÓN EN";
 "main_window_repo_vanity"             = "con ♥️ por Othyn";
+"main_window_to"                      = "a";
+
+"interval_mode" = "";
+"static" = "Estático";
+"range" = "Rango";
 
 "duration_milliseconds"        = "Milisegundo(s)";
 "duration_seconds"             = "Segundo(s)";
@@ -36,7 +41,7 @@
 "key_listener_modal_dismiss_key_override" = "Para usar la tecla escape, presiónala dos veces.";
 
 "settings_general"            = "General";
-"settings_keyboard_shortcuts" = "Atajos de teclado";
+"settings_shortcuts"          = "Atajos";
 "settings_window"             = "Ventana";
 "settings_appearance"         = "Apariencia";
 "settings_notifications"      = "Notificaciones";
@@ -45,8 +50,9 @@
 "settings_general_app_should_quit_on_close"       = "Salir de la app al cerrar la ventana principal";
 "settings_general_app_should_quit_on_close_help"  = "Cuando se cierre la ventana principal de la aplicación, en vez de mantener la app en segundo plano (comportamiento predeterminado de macOS), sal de la app.";
 
-"settings_general_launch_on_login"      = "Iniciar app al iniciar sesión en macOS";
-"settings_general_launch_on_login_help" = "Cuando inicies sesión en tu cuenta de macOS, ejecuta Auto Clicker automáticamente.";
+"settings_general_launch_on_login_title" = "Iniciar al entrar";
+"settings_general_launch_on_login"       = "Iniciar app al iniciar sesión en macOS";
+"settings_general_launch_on_login_help"  = "Cuando inicies sesión en tu cuenta de macOS, ejecuta Auto Clicker automáticamente.";
 
 "settings_general_menu_bar_show_icon_title" = "Barra de menú";
 "settings_general_menu_bar_show_icon"       = "Mostrar ícono en la barra de menú";
@@ -63,10 +69,17 @@
 "settings_keyboard_shortcuts_stop"  = "Detener auto clicker";
 "settings_keyboard_shortcuts_help"  = "Atajos globales para iniciar y detener la función de auto click.";
 
+"settings_mouse_movement_title"            = "Activación del ratón";
+"settings_mouse_movement_help"             = "Iniciar/Detener se activará automáticamente cuando la ventana no esté enfocada.";
+"settings_mouse_movement_start_on_move"    = "Iniciar auto clicker al mover el ratón";
+"settings_mouse_movement_stop_on_move"     = "Detener auto clicker al mover el ratón";
+"settings_mouse_movement_threshold_title"  = "Umbral";
+"settings_mouse_movement_threshold_help"   = "La distancia que debe moverse el ratón para activar la acción de Control del ratón.";
+"settings_mouse_movement_threshold_pixels" = "píxeles";
+
 "settings_general_notify_title"     = "Notificar cuando";
 "settings_general_notify_on_start"  = "El auto clicker inicia";
 "settings_general_notify_on_finish" = "El auto clicker termina";
-"settings_general_notify_help"      = "Recibe una notificación de macOS cuando el auto clicker inicie y/o termine.";
 
 "settings_window_stay_ontop_title" = "Visibilidad";
 "settings_window_stay_ontop"       = "Mantener siempre la ventana principal al frente";

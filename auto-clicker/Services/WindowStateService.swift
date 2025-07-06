@@ -14,9 +14,9 @@ struct WindowStateService {
     static let mainWindowMinHeight: CGFloat = 430
     static let mainWindowMaxDimensionMultiplier: CGFloat = 1.3
 
-    static let settingsMinWidth: CGFloat = 500
+    static let settingsMinWidth: CGFloat = 600
     static var settingsWidthSide: CGFloat {
-        WindowStateService.settingsMinWidth / 5
+        WindowStateService.settingsMinWidth / 6
     }
 
     static let menuBarWidth: CGFloat = 150

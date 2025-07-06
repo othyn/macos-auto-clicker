@@ -34,8 +34,8 @@ let DEFAULT_REPEAT_AMOUNT: Int = 100
 
 // MARK: - Mouse movement detection
 
-let MIN_MOUSE_THRESHOLD: Int = 0
-let MAX_MOUSE_THRESHOLD: Int = 1000
+let MIN_MOUSE_MOVEMENT_THRESHOLD: Int = 1
+let MAX_MOUSE_MOVEMENT_THRESHOLD: Int = 1_000
 
 // MARK: - Start Delay
 

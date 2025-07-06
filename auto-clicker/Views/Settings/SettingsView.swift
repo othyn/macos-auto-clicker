@@ -29,15 +29,15 @@ struct SettingsView: View {
                     Label("settings_general", systemImage: "gear")
                 }
                 .onAppear {
-                    self.changeFrameHeight(390)
+                    self.changeFrameHeight(350)
                 }
 
             KeyboardShortcutsSettingsTabView()
                 .tabItem {
-                    Label("settings_keyboard_shortcuts", systemImage: "keyboard")
+                    Label("settings_shortcuts", systemImage: "keyboard")
                 }
                 .onAppear {
-                    self.changeFrameHeight(130)
+                    self.changeFrameHeight(300)
                 }
 
             WindowSettingsTabView()

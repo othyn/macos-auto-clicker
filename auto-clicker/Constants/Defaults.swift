@@ -24,4 +24,8 @@ extension Defaults.Keys {
 
     static let notifyOnStart = Key<Bool>("notify_on_start", default: false)
     static let notifyOnFinish = Key<Bool>("notify_on_finish", default: false)
+
+    static let mouseStopOnMove = Key<Bool>("mouse_stop_on_move", default: false)
+    static let mouseStartOnMove = Key<Bool>("mouse_start_on_move", default: false)
+    static let mouseDeltaThreshold = Key<Int>("mouse_delta_threshold", default: MIN_MOUSE_MOVEMENT_THRESHOLD)
 }

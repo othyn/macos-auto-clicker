@@ -81,9 +81,9 @@ struct MainView: View {
                 ActionStageLine {
                     Text("main_window_every", comment: "Main window 'Every'")
 
-                    Picker("Interval Mode", selection: self.$formState.intervalMode) {
-                        Text("Static").tag(IntervalMode.staticInterval)
-                        Text("Range").tag(IntervalMode.rangeInterval)
+                    Picker("", selection: self.$formState.intervalMode) {
+                        Text("static").tag(IntervalMode.staticInterval)
+                        Text("range").tag(IntervalMode.rangeInterval)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 120)
@@ -153,23 +153,6 @@ struct MainView: View {
                         .disabled(self.hasStarted)
 
                     Text(self.formState.startDelay == 1 ? "main_window_second" : "main_window_seconds", comment: "Main window 'second(s)'") + Text("main_window_before_starting", comment: "Main window 'before starting'") + Text("main_window_full_stop", comment: "Main window full stop")
-                }
-                
-                ActionStageLine {
-                    Text("main_window_stop_mousemove", comment: "Main window 'Stop mouse move'")
-                   
-                    MouseMoveSelector(selectedMouseMove: self.$formState.stopOnMouseMove)
-                        .disabled(self.hasStarted)
-                    
-                    Text("main_window_stop_mousemove_end", comment: "Main window 'Stop mouse move end'")
-                    
-                    DynamicWidthNumberField(text: "",
-                                            min: MIN_MOUSE_THRESHOLD,
-                                            max: MAX_MOUSE_THRESHOLD,
-                                            number: self.$formState.mouseDeltaThreshold)
-                        .disabled(self.hasStarted)
-
-                    Text("main_window_stop_mousemove_pixel", comment: "Main window 'Stop mouse move pixel'")
                 }
             }
             .padding(.top, 20)

@@ -31,13 +31,17 @@ final class AutoClickSimulator: ObservableObject {
     private var timer: Timer?
     private var mouseLocation: NSPoint { NSEvent.mouseLocation }
     private var activity: Cancellable?
-    
-    private var monitorObject: Any? = nil
-    private var initialMousePosition: NSPoint? = nil
+
+    private var monitorObject: Any?
+    private var startMonitorObject: Any?
+    private var initialMousePosition: NSPoint?
     private var mouseDeltaThreshold: CGFloat = 0.0
 
     func start() {
         self.isAutoClicking = true
+
+        // Stop mouse start monitoring if it's running
+        self.stopMouseStartMonitoring()
 
         if let startMenuItem = MenuBarService.startMenuItem {
             startMenuItem.isEnabled = false
@@ -74,12 +78,12 @@ final class AutoClickSimulator: ObservableObject {
                                           userInfo: nil,
                                           repeats: true)
 
-        if (Defaults[.autoClickerState].stopOnMouseMove.asBoolean()) {
+        if Defaults[.mouseStopOnMove] {
             self.initialMousePosition = nil
-            self.mouseDeltaThreshold = CGFloat(Defaults[.autoClickerState].mouseDeltaThreshold)
+            self.mouseDeltaThreshold = CGFloat(Defaults[.mouseDeltaThreshold])
             startMouseMonitoring()
         }
-        
+
         if Defaults[.notifyOnStart] {
             NotificationService.scheduleNotification(title: "Started", date: self.nextClickAt)
         }
@@ -89,9 +93,9 @@ final class AutoClickSimulator: ObservableObject {
         }
     }
 
-    func stop() {
+    func stop(triggeredByMouseMovement: Bool = false) {
         self.isAutoClicking = false
-        
+
         if let monitorObject = self.monitorObject {
             NSEvent.removeMonitor(monitorObject)
             self.monitorObject = nil
@@ -117,7 +121,42 @@ final class AutoClickSimulator: ObservableObject {
             timer.invalidate()
         }
 
-        NotificationService.removePendingNotifications()
+        if triggeredByMouseMovement {
+            NotificationService.removePendingNotifications()
+
+            if Defaults[.notifyOnFinish] {
+                NotificationService.scheduleNotification(title: "Finished", date: Date())
+            }
+        } else {
+            NotificationService.removePendingNotifications()
+        }
+
+        // Re-enable mouse start monitoring if it was enabled
+        if Defaults[.mouseStartOnMove] && !self.isAutoClicking {
+            self.startMouseStartMonitoring()
+        }
+    }
+
+    func startMouseStartMonitoring() {
+        // Stop any existing monitoring
+        if let startMonitorObject = self.startMonitorObject {
+            NSEvent.removeMonitor(startMonitorObject)
+            self.startMonitorObject = nil
+        }
+
+        self.initialMousePosition = nil
+        self.mouseDeltaThreshold = CGFloat(Defaults[.mouseDeltaThreshold])
+
+        self.startMonitorObject = NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { [weak self] event in
+            self?.mouseMovedForStart(event)
+        }
+    }
+
+    func stopMouseStartMonitoring() {
+        if let startMonitorObject = self.startMonitorObject {
+            NSEvent.removeMonitor(startMonitorObject)
+            self.startMonitorObject = nil
+        }
     }
 
     @objc private func tick() {
@@ -141,21 +180,37 @@ final class AutoClickSimulator: ObservableObject {
             self.stop()
         }
     }
-    
+
     private func startMouseMonitoring() {
         self.monitorObject = NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { [weak self] event in
             self?.mouseMoved(event)
         }
     }
-    
+
     private func mouseMoved(_ event: NSEvent) {
         let position = event.locationInWindow
         if let initialPosition = self.initialMousePosition {
             let deltaX = position.x - initialPosition.x
             let deltaY = position.y - initialPosition.y
             let distance = sqrt(deltaX * deltaX + deltaY * deltaY)
-            if (distance > mouseDeltaThreshold) {
-                self.stop()
+            if distance > mouseDeltaThreshold {
+                self.stop(triggeredByMouseMovement: true)
+            }
+        } else {
+            self.initialMousePosition = position
+        }
+    }
+
+    private func mouseMovedForStart(_ event: NSEvent) {
+        let position = event.locationInWindow
+        if let initialPosition = self.initialMousePosition {
+            let deltaX = position.x - initialPosition.x
+            let deltaY = position.y - initialPosition.y
+            let distance = sqrt(deltaX * deltaX + deltaY * deltaY)
+            if distance > mouseDeltaThreshold {
+                // Stop monitoring and start the auto clicker
+                self.stopMouseStartMonitoring()
+                self.start()
             }
         } else {
             self.initialMousePosition = position
