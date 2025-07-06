@@ -10,7 +10,7 @@ import Defaults
 enum IntervalMode: String, Codable, CaseIterable, Identifiable {
     case staticInterval
     case rangeInterval
-    
+
     var id: String { self.rawValue }
 }
 

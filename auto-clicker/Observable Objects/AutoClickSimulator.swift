@@ -156,7 +156,7 @@ final class AutoClickSimulator: ObservableObject {
 
     private func generateMouseClickEvents(source: CGEventSource?) -> [CGEvent?] {
         let mouseX = self.mouseLocation.x
-        let mouseY = NSHeight(NSScreen.screens[0].frame) - mouseLocation.y
+        let mouseY = NSScreen.screens[0].frame.height - mouseLocation.y
 
         let clickingAtPoint = CGPoint(x: mouseX, y: mouseY)
 

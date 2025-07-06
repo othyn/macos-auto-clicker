@@ -1,64 +1,46 @@
-//
-//  DynamicWidthNumberField.swift
-//  auto-clicker
-//
-//  Created by Ben Tindall on 29/03/2022.
-//
-
 import SwiftUI
-import Combine
 
 struct DynamicWidthNumberField: View {
-    var text: String
+    var placeholder: String
     var min: Int
     var max: Int
 
     @Binding var number: Int
 
-    @State private var rawString: String = ""
+    @State private var draft: String = ""
+    @FocusState private var isFocused: Bool
 
-    func setInitNumber() {
-        self.rawString = String(self.number)
+    var body: some View {
+        DynamicWidthTextField(title: placeholder, text: $draft)
+            .textFieldStyle(UnderlinedTextFieldStyle())
+            .padding(.horizontal, 5)
+            .focused($isFocused)
+            .onAppear {
+                draft = String(number)
+            }
+            .onChange(of: isFocused) { focused in
+                if !focused {
+                    commitInput()
+                }
+            }
+            .onChange(of: draft) { newValue in
+                // Filter out non-digit input
+                let filtered = newValue.filter { $0.isWholeNumber }
+                if filtered != newValue {
+                    draft = filtered
+                }
+            }
     }
 
-    func validate(oldRawString: String, newRawString: String) {
-        let newRawStringNumeric = newRawString.filter { "0123456789".contains($0) }
-
-        LoggerService.numberValidator(view: self,
-                                      oldNumber: self.number,
-                                      oldString: oldRawString,
-                                      newString: newRawString,
-                                      newIntString: newRawStringNumeric)
-
-        // Guard that the new value contains numeric characters only
-        // Guard that the new value numeric only string is int cast successfully (should never fail anyway)
-        // Else set the string to the last valid numerical value
-        guard newRawString == newRawStringNumeric, var newNumber = Int(newRawStringNumeric) else {
-            self.rawString = String(self.number)
+    private func commitInput() {
+        guard let newValue = Int(draft) else {
+            // Restore last known valid number
+            draft = String(number)
             return
         }
 
-        // Range validation
-        if newNumber < self.min {
-            newNumber = self.min
-        }
-        if newNumber > self.max {
-            newNumber = self.max
-        }
-
-        self.number = newNumber
-
-        // Hacky way to stop leading and stacked zeros
-        self.rawString = String(self.number)
-    }
-
-    var body: some View {
-        DynamicWidthTextField(title: self.text, text: self.$rawString)
-            .textFieldStyle(UnderlinedTextFieldStyle())
-            .padding(.horizontal, 5)
-            .onChange(of: self.rawString) { [rawString] newValue in
-                self.validate(oldRawString: rawString, newRawString: newValue)
-            }
-            .onAppear(perform: self.setInitNumber)
+        let clamped = Swift.min(Swift.max(newValue, min), max)
+        number = clamped
+        draft = String(clamped)
     }
 }

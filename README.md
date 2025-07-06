@@ -73,6 +73,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 <div align="center">
     <img alt="screenshot" src="art/screenshot.png" width="70%" />
+    <p><em>Screenshot showcasing the multiple color themes available in the app</em></p>
 </div>
 
 <!-- TechStack -->
@@ -103,12 +104,21 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 - Persists all your options between sessions
 - Fresh and modern UI/UX
 - Lots of colour schemes to suit what ever you prefer
+- Multi-language support
+
+#### :globe_with_meridians: Currently Supported Languages
+
+- 🇬🇧 English (British)
+- 🇩🇪 German (Deutsch)
+- 🇪🇸 Spanish (Español - Latin America)
+
+**Missing your language?** We'll happily accept PR's to add support for it!
 
 <!-- Download -->
 
 ## :floppy_disk: Download
 
-**Download for macOS Ventura (13), Sonoma (14), Sequoia (15) and higher:** [v1.8.0](https://github.com/othyn/macos-auto-clicker/releases/download/v1.8.0/AutoClicker.zip)
+**Download for macOS Ventura (13), Sonoma (14), Sequoia (15) and higher:** [v1.9.4](https://github.com/othyn/macos-auto-clicker/releases/download/v1.9.4/AutoClicker.zip)
 
 **Legacy download for macOS Big Sur (11) or Monterey (12):** [v1.6.1](https://github.com/othyn/macos-auto-clicker/releases/download/v1.6.1/Auto.Clicker.1.6.1.dmg)
 
