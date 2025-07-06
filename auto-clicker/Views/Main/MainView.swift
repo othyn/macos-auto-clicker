@@ -81,14 +81,6 @@ struct MainView: View {
                 ActionStageLine {
                     Text("main_window_every", comment: "Main window 'Every'")
 
-                    Picker("", selection: self.$formState.intervalMode) {
-                        Text("static").tag(IntervalMode.staticInterval)
-                        Text("range").tag(IntervalMode.rangeInterval)
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .frame(width: 120)
-                    .disabled(self.hasStarted)
-
                     if self.formState.intervalMode == .staticInterval {
                         DynamicWidthNumberField(placeholder: "",
                                                 min: MIN_PRESS_INTERVAL,

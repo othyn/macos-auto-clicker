@@ -46,6 +46,9 @@
 "settings_appearance"         = "Apariencia";
 "settings_notifications"      = "Notificaciones";
 
+"settings_general_interval_mode_title" = "Modo de Intervalo de Clics";
+"settings_general_interval_mode_help"  = "Elige entre intervalos estáticos (tiempo fijo entre clics) o intervalos de rango (tiempo aleatorio entre valores mín/máx).";
+
 "settings_general_app_should_quit_on_close_title" = "Ciclo de vida";
 "settings_general_app_should_quit_on_close"       = "Salir de la app al cerrar la ventana principal";
 "settings_general_app_should_quit_on_close_help"  = "Cuando se cierre la ventana principal de la aplicación, en vez de mantener la app en segundo plano (comportamiento predeterminado de macOS), sal de la app.";

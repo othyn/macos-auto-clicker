@@ -14,9 +14,23 @@ import UserNotifications
 struct GeneralSettingsTabView: View {
     @Default(.menuBarShowIcon) private var menuBarShowIcon
     @Default(.appShouldQuitOnClose) private var appShouldQuitOnClose
+    @Default(.autoClickerState) private var formState
 
     var body: some View {
         SettingsTabView {
+            SettingsTabItemView(
+                title: "settings_general_interval_mode_title",
+                help: "settings_general_interval_mode_help",
+                divider: true
+            ) {
+                Picker("", selection: self.$formState.intervalMode) {
+                    Text("static", comment: "Static interval mode").tag(IntervalMode.staticInterval)
+                    Text("range", comment: "Range interval mode").tag(IntervalMode.rangeInterval)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 120)
+            }
+
             SettingsTabItemView(
                 title: "settings_general_app_should_quit_on_close_title",
                 help: "settings_general_app_should_quit_on_close_help"
