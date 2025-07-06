@@ -13,7 +13,7 @@ struct SettingsTabView<Content: View>: ContainerView {
     var body: some View {
         GroupBox {
             Form(content: self.content)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .padding()
         }
     }

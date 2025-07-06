@@ -29,7 +29,7 @@ struct SettingsView: View {
                     Label("settings_general", systemImage: "gear")
                 }
                 .onAppear {
-                    self.changeFrameHeight(350)
+                    self.changeFrameHeight(600)
                 }
 
             KeyboardShortcutsSettingsTabView()
@@ -37,15 +37,7 @@ struct SettingsView: View {
                     Label("settings_shortcuts", systemImage: "keyboard")
                 }
                 .onAppear {
-                    self.changeFrameHeight(300)
-                }
-
-            WindowSettingsTabView()
-                .tabItem {
-                    Label("settings_window", systemImage: "macwindow")
-                }
-                .onAppear {
-                    self.changeFrameHeight(110)
+                    self.changeFrameHeight(350)
                 }
 
             AppearanceSettingsTabView()
@@ -53,15 +45,7 @@ struct SettingsView: View {
                     Label("settings_appearance", systemImage: "paintpalette")
                 }
                 .onAppear {
-                    self.changeFrameHeight(200)
-                }
-
-            NotificationsSettingsTabView()
-                .tabItem {
-                    Label("settings_notifications", systemImage: "bell")
-                }
-                .onAppear {
-                    self.changeFrameHeight(130)
+                    self.changeFrameHeight(250)
                 }
         }
         .frame(width: WindowStateService.settingsMinWidth, height: self.frameHeight)

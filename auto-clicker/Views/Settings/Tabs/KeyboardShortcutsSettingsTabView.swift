@@ -40,36 +40,35 @@ struct KeyboardShortcutsSettingsTabView: View {
                 title: "settings_mouse_movement_title",
                 help: "settings_mouse_movement_help"
             ) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Defaults.Toggle(
-                        " " + String(format: NSLocalizedString("settings_mouse_movement_start_on_move", comment: "Start auto clicker when mouse moves toggle")),
-                        key: .mouseStartOnMove
-                    )
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_mouse_movement_start_on_move", comment: "Start auto clicker when mouse moves toggle")),
+                    key: .mouseStartOnMove
+                )
 
-                    Defaults.Toggle(
-                        " " + String(format: NSLocalizedString("settings_mouse_movement_stop_on_move", comment: "Stop auto clicker when mouse moves toggle")),
-                        key: .mouseStopOnMove
-                    )
-                }
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_mouse_movement_stop_on_move", comment: "Stop auto clicker when mouse moves toggle")),
+                    key: .mouseStopOnMove
+                )
             }
 
             SettingsTabItemView(
                 title: "settings_mouse_movement_threshold_title",
                 help: "settings_mouse_movement_threshold_help"
             ) {
-                HStack {
-                     NumberField(
-                         text: "",
-                         min: MIN_MOUSE_MOVEMENT_THRESHOLD,
-                         max: MAX_MOUSE_MOVEMENT_THRESHOLD,
-                         number: Binding(
-                             get: { Defaults[.mouseDeltaThreshold] },
-                             set: { Defaults[.mouseDeltaThreshold] = $0 }
-                         )
-                     )
+                HStack(alignment: .top) {
+                    NumberField(
+                        text: "",
+                        min: MIN_MOUSE_MOVEMENT_THRESHOLD,
+                        max: MAX_MOUSE_MOVEMENT_THRESHOLD,
+                        number: Binding(
+                            get: { Defaults[.mouseDeltaThreshold] },
+                            set: { Defaults[.mouseDeltaThreshold] = $0 }
+                        )
+                    )
 
                     Text("settings_mouse_movement_threshold_pixels")
-                }.frame(width: 120)
+                        .padding(.leading, 4)
+                }.frame(width: 150)
             }
         }
         .onChange(of: mouseStartOnMove) { newValue in

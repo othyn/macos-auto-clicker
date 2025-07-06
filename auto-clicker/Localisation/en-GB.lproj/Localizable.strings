@@ -81,12 +81,12 @@
 "settings_mouse_movement_start_on_move"    = "Start auto clicker when mouse moves";
 "settings_mouse_movement_stop_on_move"     = "Stop auto clicker when mouse moves";
 "settings_mouse_movement_threshold_title"  = "Threshold";
-"settings_mouse_movement_threshold_help"   = "The distance the mouse must move to trigger the Mouse Control action.";
+"settings_mouse_movement_threshold_help"   = "The distance the mouse must move to trigger the Mouse Activation action.";
 "settings_mouse_movement_threshold_pixels" = "pixels";
 
-"settings_general_notify_title"     = "Notify when";
-"settings_general_notify_on_start"  = "Auto clicker starts";
-"settings_general_notify_on_finish" = "Auto clicker finishes";
+"settings_general_notify_title"     = "Notify when...";
+"settings_general_notify_on_start"  = "... auto clicking starts";
+"settings_general_notify_on_finish" = "... auto clicking stops";
 
 "settings_window_stay_ontop_title" = "Visibility";
 "settings_window_stay_ontop"       = "Always keep the main window on top";

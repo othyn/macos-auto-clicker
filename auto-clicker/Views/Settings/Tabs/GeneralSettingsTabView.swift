@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Defaults
 import LaunchAtLogin
+import UserNotifications
 
 struct GeneralSettingsTabView: View {
     @Default(.menuBarShowIcon) private var menuBarShowIcon
@@ -79,7 +80,8 @@ struct GeneralSettingsTabView: View {
             }
 
             SettingsTabItemView(
-                help: "settings_general_menu_bar_hide_dock_help"
+                help: "settings_general_menu_bar_hide_dock_help",
+                divider: true
             ) {
                 Defaults.Toggle(
                     " " + String(format: NSLocalizedString("settings_general_menu_bar_hide_dock", comment: "Hide dock icon toggle")),
@@ -89,6 +91,44 @@ struct GeneralSettingsTabView: View {
                     WindowStateService.refreshDockIconState()
                 }
                 .disabled(!self.menuBarShowIcon)
+            }
+
+            SettingsTabItemView(
+                title: "settings_general_notify_title",
+                divider: true
+            ) {
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_general_notify_on_start", comment: "Notify on auto clicker start toggle")),
+                    key: .notifyOnStart
+                )
+                .onChange { isOn in
+                    if isOn {
+                        PermissionsService.acquireNotificationPermissions()
+                    }
+                }
+
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_general_notify_on_finish", comment: "Notify on auto clicker finish toggle")),
+                    key: .notifyOnFinish
+                )
+                .onChange { isOn in
+                    if isOn {
+                        PermissionsService.acquireNotificationPermissions()
+                    }
+                }
+            }
+
+            SettingsTabItemView(
+                title: "settings_window_stay_ontop_title",
+                help: "settings_window_stay_ontop_help"
+            ) {
+                Defaults.Toggle(
+                    " " + String(format: NSLocalizedString("settings_window_stay_ontop", comment: "Settings Window window should stay on top toggle")),
+                    key: .windowShouldKeepOnTop
+                )
+                .onChange { isOn in
+                    WindowStateService.toggleKeepWindowOnTop(isOn)
+                }
             }
         }
     }

@@ -21,22 +21,17 @@ struct SettingsTabItemView<Content: View>: View {
     }
 
     var body: some View {
-        VStack {
-            HStack(alignment: .top) {
-                // Setting an empty string so we still get the frame size applied for layout uniformity
-                Text(self.title ?? "")
-                    .fontWeight(.bold)
-                    .frame(width: WindowStateService.settingsWidthSide, alignment: .trailing)
+        if let title = self.title {
+            Text(title)
+                .fontWeight(.bold)
+        }
 
-                VStack(alignment: .leading) {
-                    VStack(content: self.content)
+        VStack(alignment: .leading, spacing: 4, content: self.content)
 
-                    if let help = self.help {
-                        Text(help)
-                            .font(.footnote)
-                    }
-                }
-            }
+        if let help = self.help {
+            Text(help)
+                .font(.footnote)
+                .padding(.bottom, self.divider ? 0 : 8)
         }
 
         if self.divider {
