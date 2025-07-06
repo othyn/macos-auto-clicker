@@ -2,15 +2,22 @@
 setup:
 	git config core.hooksPath .githooks
 
-# Fastlane will automatically run `$ brew upgrade fastlane` as part of this
-.PHONY: fastlane-update
-fastlane-update:
-	fastlane update_fastlane
+# https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile
+# https://docs.fastlane.tools/plugins/using-plugins/
+# This may not work due to permissions, so use `$ fastlane update` which calls `brew` under the hood
+.PHONY: update
+update:
+	sudo bundle update fastlane
+	bundle exec fastlane update_plugins
+
+.PHONY: local
+local:
+	bundle exec fastlane mac local
 
 .PHONY: beta
 beta:
-	fastlane mac beta
+	bundle exec fastlane mac beta
 
 .PHONY: prod
 prod:
-	fastlane mac release
+	bundle exec fastlane mac production

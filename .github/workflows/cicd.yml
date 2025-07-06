@@ -13,11 +13,11 @@ concurrency:
 jobs:
   build:
     name: Build & Release
-    runs-on: macos-13
+    runs-on: macos-15
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -27,15 +27,6 @@ jobs:
           ruby-version: '3.0'
           bundler-cache: true
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'yarn'
-
-      - name: Install create-dmg (Yarn install)
-        run: yarn install
-
       - name: Fastlane Build - Beta
         if: github.ref == 'refs/heads/staging'
         uses: maierj/fastlane-action@v3.0.0
@@ -44,10 +35,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Fastlane Build - Release
+      - name: Fastlane Build - Production
         if: github.ref == 'refs/heads/main'
         uses: maierj/fastlane-action@v3.0.0
         with:
-          lane: 'release'
+          lane: 'production'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

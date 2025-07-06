@@ -153,11 +153,14 @@ The build process has been automated to provide beta integration builds and prod
 To locally test the fastlane build, run:
 
 ```sh
-# Beta lane (staging branch)
+# Local release lane (current branch)
+$ fastlane local
+
+# Beta release lane (staging branch)
 $ fastlane beta
 
-# Release lane (main branch)
-$ fastlane release
+# Production release lane (main branch)
+$ fastlane production
 ```
 
 Which should generate the required `build/Auto Clicker.app`, `build/Auto Clicker.app.dSYM.zip` and `build/Auto Clicker.dmg` build fragments.

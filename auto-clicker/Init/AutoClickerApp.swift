@@ -14,10 +14,6 @@ struct AutoClickerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     var body: some Scene {
-        Settings {
-            SettingsView()
-        }
-
         WindowGroup {
             ACWindow()
                 .frame(minWidth: WindowStateService.mainWindowMinWidth,
@@ -31,6 +27,14 @@ struct AutoClickerApp: App {
         .windowResizability(.contentSize)
         .commands {
             HelpCommands()
+
+            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+                Button(NSLocalizedString("about_about", comment: "About") + " \(Bundle.main.appName)...") { delegate.showAboutWindow() }
+            }
+        }
+
+        Settings {
+            SettingsView()
         }
     }
 }

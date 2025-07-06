@@ -4,6 +4,10 @@
 "permissions_help_open_sys_pref_btn" = "Open System Preferences";
 "permissions_help_unlock_note"       = "The app will automatically unlock within a few seconds of the permission being granted.";
 
+"about_about" = "About";
+"about_url" = "https://github.com/othyn/macos-auto-clicker";
+"about_url_short" = "github.com/othyn/macos-auto-clicker";
+
 "main_window_comma"                   = ",";
 "main_window_full_stop"               = ".";
 "main_window_every"                   = "Every";
@@ -23,6 +27,7 @@
 "main_window_stat_box_next_press_at"  = "NEXT PRESS AT";
 "main_window_stat_box_final_press_at" = "FINAL PRESS AT";
 "main_window_repo_vanity"             = "with ♥️ by Othyn";
+"main_window_to"                      = "to";
 
 "duration_milliseconds"        = "Millisecond(s)";
 "duration_seconds"             = "Second(s)";
@@ -55,6 +60,9 @@
 "settings_general_menu_bar_show_icon"       = "Show menu bar icon";
 "settings_general_menu_bar_show_icon_help"  = "Always show an icon in the macOS menu bar where the app and quick access functionality can be accessed.";
 
+"settings_general_menu_bar_show_dynamic_icon"      = "Show dynamic menu bar icon";
+"settings_general_menu_bar_show_dynamic_icon_help" = "The menu bar icon will update based on the state of the auto clicker.\nOrange = Counting down to start\nGreen = Auto clicker running";
+
 "settings_general_menu_bar_hide_dock"      = "Hide dock icon";
 "settings_general_menu_bar_hide_dock_help" = "Instead of the app running from the dock, the app will instead run from the menu bar.";
 
@@ -79,7 +87,6 @@
 "menu_bar_item_stop"             = "Stop now";
 "menu_bar_item_hide_show_show"   = "Show";
 "menu_bar_item_hide_show_hide"   = "Hide";
-"menu_bar_item_hide_show_suffix" = "app";
 "menu_bar_item_preferences"      = "Preferences...";
 "menu_bar_item_about"            = "About...";
 "menu_bar_item_quit"             = "Quit";
@@ -102,3 +109,7 @@
 
 // NumberField (Legacy)
 "min: %lld, max: %lld" = "min: %lld, max: %lld";
+
+"left_mouse_click" = "Left Mouse";
+"right_mouse_click" = "Right Mouse";
+"middle_mouse_click" = "Middle Mouse";

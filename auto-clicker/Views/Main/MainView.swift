@@ -40,6 +40,7 @@ struct MainView: View {
     func start() {
         if !self.hasStarted {
             self.delayTimer.start(onFinish: self.autoClickSimulator.start)
+            MenuBarService.changeImageColour(newColor: .systemOrange)
         }
     }
 
@@ -80,14 +81,37 @@ struct MainView: View {
                 ActionStageLine {
                     Text("main_window_every", comment: "Main window 'Every'")
 
-                    DynamicWidthNumberField(text: "",
-                                            min: MIN_PRESS_INTERVAL,
-                                            max: MAX_PRESS_INTERVAL,
-                                            number: self.$formState.pressInterval)
-                        .disabled(self.hasStarted)
+                    Picker("Interval Mode", selection: self.$formState.intervalMode) {
+                        Text("Static").tag(IntervalMode.staticInterval)
+                        Text("Range").tag(IntervalMode.rangeInterval)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 120)
+                    .disabled(self.hasStarted)
 
-                    DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
-                        .disabled(self.hasStarted)
+                    if self.formState.intervalMode == .staticInterval {
+                        DynamicWidthNumberField(placeholder: "",
+                                                min: MIN_PRESS_INTERVAL,
+                                                max: MAX_PRESS_INTERVAL,
+                                                number: self.$formState.pressInterval)
+                            .disabled(self.hasStarted)
+                        DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
+                            .disabled(self.hasStarted)
+                    } else {
+                        DynamicWidthNumberField(placeholder: "Min",
+                                                min: MIN_PRESS_INTERVAL,
+                                                max: MAX_PRESS_INTERVAL,
+                                                number: Binding(get: { self.formState.pressIntervalMin ?? DEFAULT_PRESS_INTERVAL_MIN }, set: { self.formState.pressIntervalMin = $0 }))
+                            .disabled(self.hasStarted)
+                        Text("main_window_to", comment: "Range separator 'to'")
+                        DynamicWidthNumberField(placeholder: "Max",
+                                                min: MIN_PRESS_INTERVAL,
+                                                max: MAX_PRESS_INTERVAL,
+                                                number: Binding(get: { self.formState.pressIntervalMax ?? DEFAULT_PRESS_INTERVAL_MAX }, set: { self.formState.pressIntervalMax = $0 }))
+                            .disabled(self.hasStarted)
+                        DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
+                            .disabled(self.hasStarted)
+                    }
 
                     Text("main_window_comma", comment: "Main window comma")
                 }
@@ -98,7 +122,7 @@ struct MainView: View {
                     PressKeyListener()
                         .disabled(self.hasStarted)
 
-                    DynamicWidthNumberField(text: "",
+                    DynamicWidthNumberField(placeholder: "",
                                             min: MIN_PRESS_AMOUNT,
                                             max: MAX_PRESS_AMOUNT,
                                             number: self.$formState.pressAmount)
@@ -110,7 +134,7 @@ struct MainView: View {
                 ActionStageLine {
                     Text("main_window_repeat", comment: "Main window 'repeat'")
 
-                    DynamicWidthNumberField(text: "",
+                    DynamicWidthNumberField(placeholder: "",
                                             min: MIN_REPEAT_AMOUNT,
                                             max: MAX_REPEAT_AMOUNT,
                                             number: self.$formState.repeatAmount)
@@ -122,7 +146,7 @@ struct MainView: View {
                 ActionStageLine {
                     Text("main_window_wait", comment: "Main window 'Wait'")
 
-                    DynamicWidthNumberField(text: "",
+                    DynamicWidthNumberField(placeholder: "",
                                             min: MIN_START_DELAY,
                                             max: MAX_START_DELAY,
                                             number: self.$formState.startDelay)

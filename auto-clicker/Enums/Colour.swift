@@ -72,33 +72,17 @@ enum Colour: ThemeColour, Identifiable, CaseIterable, Codable {
         case .Blue:
             return .blue
         case .Brown:
-            if #available(macOS 12.0, *) {
-                return Color.brown
-            } else {
-                return Color(.sRGBLinear, red: 163, green: 132, blue: 94, opacity: 1)
-            }
+            return Color.brown
         case .Cyan:
-            if #available(macOS 12.0, *) {
-                return Color.cyan
-            } else {
-                return Color(.sRGBLinear, red: 84, green: 190, blue: 240, opacity: 1)
-            }
+            return Color.cyan
         case .Gray:
             return .gray
         case .Green:
             return .green
         case .Indigo:
-            if #available(macOS 12.0, *) {
-                return Color.indigo
-            } else {
-                return Color(.sRGBLinear, red: 88, green: 86, blue: 215, opacity: 1)
-            }
+            return Color.indigo
         case .Mint:
-            if #available(macOS 12.0, *) {
-                return Color.mint
-            } else {
-                return Color(.sRGBLinear, red: 3, green: 199, blue: 191, opacity: 1)
-            }
+            return Color.mint
         case .Orange:
             return .orange
         case .Pink:
@@ -108,11 +92,7 @@ enum Colour: ThemeColour, Identifiable, CaseIterable, Codable {
         case .Red:
             return .red
         case .Teal:
-            if #available(macOS 12.0, *) {
-                return Color.teal
-            } else {
-                return Color(.sRGBLinear, red: 89, green: 173, blue: 196, opacity: 1)
-            }
+            return Color.teal
         case .White:
             return .white
         case .Yellow:

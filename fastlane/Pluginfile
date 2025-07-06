@@ -4,4 +4,4 @@
 
 gem 'fastlane-plugin-semantic_release'
 gem 'fastlane-plugin-versioning'
-gem 'fastlane-plugin-find_replace_string'
+gem 'fastlane-plugin-find_replace_string', git: "https://github.com/jonathanneilritchie/fastlane-plugin-find_replace_string"

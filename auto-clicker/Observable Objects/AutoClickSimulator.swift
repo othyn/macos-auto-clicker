@@ -47,10 +47,19 @@ final class AutoClickSimulator: ObservableObject {
             stopMenuItem.isEnabled = true
         }
 
+        MenuBarService.changeImageColour(newColor: .systemBlue)
+
         self.activity = ProcessInfo.processInfo.beginActivity(.autoClicking)
 
         self.duration = Defaults[.autoClickerState].pressIntervalDuration
-        self.interval = Defaults[.autoClickerState].pressInterval
+        let intervalMode = Defaults[.autoClickerState].intervalMode
+        if intervalMode == .rangeInterval {
+            let min = Defaults[.autoClickerState].pressIntervalMin ?? DEFAULT_PRESS_INTERVAL_MIN
+            let max = Defaults[.autoClickerState].pressIntervalMax ?? DEFAULT_PRESS_INTERVAL_MAX
+            self.interval = Int.random(in: min...max)
+        } else {
+            self.interval = Defaults[.autoClickerState].pressInterval
+        }
         self.input = Defaults[.autoClickerState].pressInput
         self.amountOfPresses = Defaults[.autoClickerState].pressAmount
         self.remainingInterations = Defaults[.autoClickerState].repeatAmount
@@ -96,6 +105,8 @@ final class AutoClickSimulator: ObservableObject {
             stopMenuItem.isEnabled = false
         }
 
+        MenuBarService.resetImage()
+
         self.activity?.cancel()
         self.activity = nil
 
@@ -113,6 +124,16 @@ final class AutoClickSimulator: ObservableObject {
         self.remainingInterations -= 1
 
         self.press()
+
+        // Update interval if in range mode
+        let intervalMode = Defaults[.autoClickerState].intervalMode
+        if intervalMode == .rangeInterval {
+            let min = Defaults[.autoClickerState].pressIntervalMin ?? DEFAULT_PRESS_INTERVAL_MIN
+            let max = Defaults[.autoClickerState].pressIntervalMax ?? DEFAULT_PRESS_INTERVAL_MAX
+            self.interval = Int.random(in: min...max)
+        } else {
+            self.interval = Defaults[.autoClickerState].pressInterval
+        }
 
         self.nextClickAt = .init(timeInterval: self.duration.asTimeInterval(interval: self.interval), since: .init())
 
@@ -170,7 +191,7 @@ final class AutoClickSimulator: ObservableObject {
 
     private func generateMouseClickEvents(source: CGEventSource?) -> [CGEvent?] {
         let mouseX = self.mouseLocation.x
-        let mouseY = NSScreen.main!.frame.height - self.mouseLocation.y
+        let mouseY = NSScreen.screens[0].frame.height - mouseLocation.y
 
         let clickingAtPoint = CGPoint(x: mouseX, y: mouseY)
 
