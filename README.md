@@ -73,6 +73,7 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 
 <div align="center">
     <img alt="screenshot" src="art/screenshot.png" width="70%" />
+    <p><em>Screenshot showcasing the multiple color themes available in the app</em></p>
 </div>
 
 <!-- TechStack -->
@@ -103,6 +104,15 @@ All the auto clickers out there were either really outdated, old, buggy and/or h
 - Persists all your options between sessions
 - Fresh and modern UI/UX
 - Lots of colour schemes to suit what ever you prefer
+- Multi-language support
+
+#### :globe_with_meridians: Currently Supported Languages
+
+- 🇬🇧 English (British)
+- 🇩🇪 German (Deutsch)
+- 🇪🇸 Spanish (Español - Latin America)
+
+**Missing your language?** We'll happily accept PR's to add support for it!
 
 <!-- Download -->
 
