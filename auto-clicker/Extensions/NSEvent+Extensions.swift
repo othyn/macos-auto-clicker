@@ -60,13 +60,13 @@ extension NSEvent {
         switch self.type {
         case .leftMouseDown,
              .leftMouseUp:
-            return "Left Mouse"
+            return NSLocalizedString("left_mouse_click", comment: "Left mouse button click")
         case .rightMouseDown,
              .rightMouseUp:
-            return "Right Mouse"
+            return NSLocalizedString("right_mouse_click", comment: "Right mouse button click")
         case .otherMouseDown,
              .otherMouseUp:
-            return "Middle Mouse"
+            return NSLocalizedString("middle_mouse_click", comment: "Middle mouse button click")
         case .keyDown,
              .keyUp:
             return translateKey(event: self)

@@ -29,7 +29,6 @@
 		B510763727FF81A000BB1CDA /* PressKeyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763627FF81A000BB1CDA /* PressKeyListener.swift */; };
 		B510763B2800DDFF00BB1CDA /* NSEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763A2800DDFF00BB1CDA /* NSEvent+Extensions.swift */; };
 		B5107640280113DB00BB1CDA /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510763F280113DB00BB1CDA /* Input.swift */; };
-		B52C0507290D689600ECB0EE /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B52C0506290D689600ECB0EE /* LaunchAtLogin */; };
 		B53027F5264C0D73002B8610 /* AutoClickSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F4264C0D73002B8610 /* AutoClickSimulator.swift */; };
 		B53027FA264C2748002B8610 /* DelayTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53027F9264C2748002B8610 /* DelayTimer.swift */; };
 		B53BDC50264BED93001F8E57 /* AutoClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC4F264BED93001F8E57 /* AutoClickerApp.swift */; };
@@ -38,6 +37,7 @@
 		B53BDC60264BF3A8001F8E57 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BDC5F264BF3A8001F8E57 /* NumberField.swift */; };
 		B5462E742A6173D400C5F280 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5462E732A6173D400C5F280 /* AboutView.swift */; };
 		B5462E762A61761000C5F280 /* Bundle+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5462E752A61761000C5F280 /* Bundle+AppInfo.swift */; };
+		B5A042552CB298CC000A1E39 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B5A042542CB298CC000A1E39 /* LaunchAtLogin */; };
 		B5B0B2AF2882EE6E00462F11 /* ACWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B2AE2882EE6E00462F11 /* ACWindow.swift */; };
 		B5B6B46328032D3200C779FD /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46228032D3200C779FD /* PermissionsView.swift */; };
 		B5B6B46528033A0F00C779FD /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6B46428033A0F00C779FD /* PermissionsService.swift */; };
@@ -152,7 +152,7 @@
 			files = (
 				B510762827F4BD5500BB1CDA /* Defaults in Frameworks */,
 				B510760927F4A21500BB1CDA /* DateStrings in Frameworks */,
-				B52C0507290D689600ECB0EE /* LaunchAtLogin in Frameworks */,
+				B5A042552CB298CC000A1E39 /* LaunchAtLogin in Frameworks */,
 				B510760C27F4A23300BB1CDA /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +418,6 @@
 				B53BDC48264BED93001F8E57 /* Sources */,
 				B53BDC49264BED93001F8E57 /* Frameworks */,
 				B53BDC4A264BED93001F8E57 /* Resources */,
-				B52C0508290D68ED00ECB0EE /* Copy “Launch at Login Helper” */,
 				B5FEAF342811D25B0099AAA7 /* Increment Build */,
 				B510762E27F4E72500BB1CDA /* Run Swiftlint */,
 				B5B6B466280345A700C779FD /* Reset Accessibility Permissions */,
@@ -432,7 +431,7 @@
 				B510760827F4A21500BB1CDA /* DateStrings */,
 				B510760B27F4A23300BB1CDA /* KeyboardShortcuts */,
 				B510762727F4BD5500BB1CDA /* Defaults */,
-				B52C0506290D689600ECB0EE /* LaunchAtLogin */,
+				B5A042542CB298CC000A1E39 /* LaunchAtLogin */,
 			);
 			productName = "auto-clicker";
 			productReference = B53BDC4C264BED93001F8E57 /* AutoClicker.app */;
@@ -446,7 +445,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					B53BDC4B264BED93001F8E57 = {
 						CreatedOnToolsVersion = 12.5;
@@ -466,7 +465,7 @@
 				B510760727F4A21500BB1CDA /* XCRemoteSwiftPackageReference "DateStrings" */,
 				B510760A27F4A23300BB1CDA /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */,
-				B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				B5A042532CB298CC000A1E39 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = B53BDC4D264BED93001F8E57 /* Products */;
 			projectDirPath = "";
@@ -510,25 +509,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download via: brew install swiftlint\"\nfi\n";
-		};
-		B52C0508290D68ED00ECB0EE /* Copy “Launch at Login Helper” */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy “Launch at Login Helper”";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# https://github.com/sindresorhus/LaunchAtLogin#swift-package-manager-1\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
 		};
 		B5B6B466280345A700C779FD /* Reset Accessibility Permissions */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -663,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -697,6 +678,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -711,7 +693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -726,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -760,6 +743,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -768,7 +752,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -793,6 +777,7 @@
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "auto-clicker/Build Assets/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Auto Clicker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -801,7 +786,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = "v1.7.21-beta-5a1b91e42d798ce138a33e0cd1f6171843d93d62";
+				MARKETING_VERSION = 1.7.28;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = AutoClicker;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -824,6 +809,7 @@
 				DEVELOPMENT_TEAM = ZN3SU624TP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "auto-clicker/Build Assets/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Auto Clicker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -832,7 +818,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = "v1.7.21-beta-5a1b91e42d798ce138a33e0cd1f6171843d93d62";
+				MARKETING_VERSION = 1.7.28;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.othyn.auto-clicker";
 				PRODUCT_NAME = AutoClicker;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -888,12 +874,12 @@
 				version = 6.2.1;
 			};
 		};
-		B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+		B5A042532CB298CC000A1E39 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
 			requirement = {
 				kind = exactVersion;
-				version = 4.2.0;
+				version = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -914,9 +900,9 @@
 			package = B510762627F4BD5500BB1CDA /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
 		};
-		B52C0506290D689600ECB0EE /* LaunchAtLogin */ = {
+		B5A042542CB298CC000A1E39 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B52C0505290D689600ECB0EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			package = B5A042532CB298CC000A1E39 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */

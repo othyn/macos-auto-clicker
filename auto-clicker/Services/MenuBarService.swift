@@ -158,9 +158,13 @@ final class MenuBarService {
      *  nothing is coming up.
      */
     static func resetImage() {
-        if let statusBarButton = self.statusBarItem!.button {
-            statusBarButton.image = NSImage(systemSymbolName: "cursorarrow.click.badge.clock", accessibilityDescription: "auto clicker")
+        guard let statusBarItem = self.statusBarItem,
+              let statusBarButton = statusBarItem.button else {
+            return
         }
+
+        statusBarButton.image = NSImage(systemSymbolName: "cursorarrow.click.badge.clock",
+                                        accessibilityDescription: "auto clicker")
     }
 
     static func changeImageColour(newColor: NSColor) {
