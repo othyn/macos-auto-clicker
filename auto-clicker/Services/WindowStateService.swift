@@ -10,7 +10,7 @@ import Cocoa
 import Defaults
 
 struct WindowStateService {
-    static let mainWindowMinWidth: CGFloat = 550
+    static let mainWindowMinWidth: CGFloat = 625
     static let mainWindowMinHeight: CGFloat = 430
     static let mainWindowMaxDimensionMultiplier: CGFloat = 1.3
 

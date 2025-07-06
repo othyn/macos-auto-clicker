@@ -81,14 +81,37 @@ struct MainView: View {
                 ActionStageLine {
                     Text("main_window_every", comment: "Main window 'Every'")
 
-                    DynamicWidthNumberField(placeholder: "",
-                                            min: MIN_PRESS_INTERVAL,
-                                            max: MAX_PRESS_INTERVAL,
-                                            number: self.$formState.pressInterval)
-                        .disabled(self.hasStarted)
+                    Picker("Interval Mode", selection: self.$formState.intervalMode) {
+                        Text("Static").tag(IntervalMode.staticInterval)
+                        Text("Range").tag(IntervalMode.rangeInterval)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 120)
+                    .disabled(self.hasStarted)
 
-                    DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
-                        .disabled(self.hasStarted)
+                    if self.formState.intervalMode == .staticInterval {
+                        DynamicWidthNumberField(placeholder: "",
+                                                min: MIN_PRESS_INTERVAL,
+                                                max: MAX_PRESS_INTERVAL,
+                                                number: self.$formState.pressInterval)
+                            .disabled(self.hasStarted)
+                        DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
+                            .disabled(self.hasStarted)
+                    } else {
+                        DynamicWidthNumberField(placeholder: "Min",
+                                                min: MIN_PRESS_INTERVAL,
+                                                max: MAX_PRESS_INTERVAL,
+                                                number: Binding(get: { self.formState.pressIntervalMin ?? DEFAULT_PRESS_INTERVAL_MIN }, set: { self.formState.pressIntervalMin = $0 }))
+                            .disabled(self.hasStarted)
+                        Text("main_window_to", comment: "Range separator 'to'")
+                        DynamicWidthNumberField(placeholder: "Max",
+                                                min: MIN_PRESS_INTERVAL,
+                                                max: MAX_PRESS_INTERVAL,
+                                                number: Binding(get: { self.formState.pressIntervalMax ?? DEFAULT_PRESS_INTERVAL_MAX }, set: { self.formState.pressIntervalMax = $0 }))
+                            .disabled(self.hasStarted)
+                        DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
+                            .disabled(self.hasStarted)
+                    }
 
                     Text("main_window_comma", comment: "Main window comma")
                 }
