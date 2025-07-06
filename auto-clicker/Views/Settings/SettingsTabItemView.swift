@@ -37,11 +37,11 @@ struct SettingsTabItemView<Content: View>: View {
                     }
                 }
             }
+        }
 
-            if self.divider {
-                Divider()
-                    .padding(.vertical)
-            }
+        if self.divider {
+            Divider()
+                .padding(.vertical)
         }
     }
 }
