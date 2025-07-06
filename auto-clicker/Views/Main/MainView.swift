@@ -97,7 +97,6 @@ struct MainView: View {
                             .disabled(self.hasStarted)
                         DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
                             .disabled(self.hasStarted)
-                        Text("main_window_comma", comment: "Main window comma")
                     } else {
                         DynamicWidthNumberField(text: "Min",
                                                 min: MIN_PRESS_INTERVAL,
@@ -112,7 +111,6 @@ struct MainView: View {
                             .disabled(self.hasStarted)
                         DurationSelector(selectedDuration: self.$formState.pressIntervalDuration)
                             .disabled(self.hasStarted)
-                        Text("main_window_comma", comment: "Main window comma")
                     }
 
                     Text("main_window_comma", comment: "Main window comma")
