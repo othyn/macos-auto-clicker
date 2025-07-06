@@ -24,6 +24,7 @@
 "main_window_stat_box_next_press_at" = "NÄCHSTER KLICK UM";
 "main_window_stat_box_final_press_at" = "LETZTER KLICK UM";
 "main_window_repo_vanity" = "mit ♥️ von Othyn";
+"main_window_to" = "bis";
 
 "duration_milliseconds" = "Millisekunde(n)";
 "duration_seconds" = "Sekunde(n)";

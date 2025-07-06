@@ -15,6 +15,8 @@ let MIN_PRESS_INTERVAL: Int = 1
 let MAX_PRESS_INTERVAL: Int = 100_000_000
 
 let DEFAULT_PRESS_INTERVAL: Int = 50
+let DEFAULT_PRESS_INTERVAL_MIN: Int = 50 // for range
+let DEFAULT_PRESS_INTERVAL_MAX: Int = 100 // for range
 
 // MARK: - Press Amount
 
